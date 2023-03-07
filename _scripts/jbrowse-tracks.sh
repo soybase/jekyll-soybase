@@ -2,6 +2,7 @@
 set -o errexit -o nounset
 
 readonly DATASTORE_URL=https://data.legumeinfo.org
+readonly GBROWSE_DATA_URL=https://www.soybase.org/gbrowse_data
 
 # convert YAML "key: value" into shell assignments
 yaml2sh() { 
@@ -33,6 +34,39 @@ do
       --out=assets/js/jbrowse
   )
 done
+
+# Specify JSON until @jbrowse/cli has native support for MultiQuantitativeTrack
+# https://github.com/GMOD/jbrowse-components/issues/3430
+echo '{
+  "type": "MultiQuantitativeTrack",
+  "trackId": "soybean_gene_expression_atlas_severin_et_al",
+  "name": "MultiWig",
+  "category": ["Gene Expression"],
+  "assemblyNames": ["Wm82.gnm2"],
+  "adapter": {
+    "type": "MultiWiggleAdapter",
+    "bigWigs": [
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/10A_nodule.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/1A_flower.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/2A_cm_pod.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/3A_-2_seed.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/4A_-2_shell.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/5A_-1_seed.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/6A_-1_shell.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/7A_0_seed.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/8A_young_leaf.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/9A_root.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A1.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A2.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A3.bw",
+      "https://www.soybase.org/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A4.bw"
+    ]
+  },
+  "description": "Transcript density of Glycine max tissues mapped onto the Glyma.Wm82.a2 assembly."
+}' |
+  npx jbrowse add-track-json \
+    --out=assets/js/jbrowse \
+    /dev/stdin
 
 # FIXME: too big & slow to generate for testing
 # https://github.com/GMOD/jbrowse-components/issues/3019
