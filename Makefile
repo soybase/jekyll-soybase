@@ -55,7 +55,7 @@ jbrowse-install:
 
 jbrowse:
 	rm -rf ./assets/js/jbrowse/config.json ./assets/js/jbrowse/refNameAliases
-	_scripts/jbrowse-tracks.sh
+	npm exec -c '_scripts/jbrowse-tracks.sh'
 
 clean:
 	rm -rf .jekyll-cache/ .jekyll-metadata _site/ tmp/
