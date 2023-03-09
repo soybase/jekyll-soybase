@@ -9,15 +9,29 @@ yaml2sh() {
    sed -n -e 's/: *"*/='"'"'/' -e 's/ *"* *$/'"'"'/' -e '/=/p' "${@}"
 }
 
+mkdir -p assets/js/jbrowse/refNameAliases
+
 for readme in _data/datastore-metadata/Glycine/*/genomes/*/README.*.yml
 do
   (
     eval $(yaml2sh ${readme})
+    cd assets/js/jbrowse
+
+    assembly_name=${scientific_name_abbrev}.${identifier%.*}
+    refNameAliases=refNameAliases/${assembly_name}.txt
+
+    # reference name aliases file must exist and be relative to jbrowse
+    # directory to be found at load time and served to client
+    while [ $((i=i+1)) -le 20 ]
+    do
+      printf '%s.%s%02i\t%s%02i\n' "${assembly_name}" "${chromosome_prefix}" ${i} "${chromosome_prefix}" ${i}
+    done > "${refNameAliases}"
+
     npx jbrowse add-assembly \
       ${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})/${scientific_name_abbrev}.${identifier}.genome_main.fna.gz \
       --name=${identifier%.*} \
       --type=bgzipFasta \
-      --out=assets/js/jbrowse
+      --refNameAliases="${refNameAliases}"
   )
 done
 

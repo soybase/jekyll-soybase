@@ -54,7 +54,7 @@ jbrowse-install:
 	npx jbrowse create ./assets/js/jbrowse --tag=v${JBROWSE_VERSION}
 
 jbrowse:
-	rm -f assets/js/jbrowse/config.json
+	rm -rf ./assets/js/jbrowse/config.json ./assets/js/jbrowse/refNameAliases
 	_scripts/jbrowse-tracks.sh
 
 clean:
