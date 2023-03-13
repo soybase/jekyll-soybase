@@ -18,6 +18,7 @@ do
     cd assets/js/jbrowse
 
     assembly_name=${scientific_name_abbrev}.${identifier%.*}
+    datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
     refNameAliases=refNameAliases/${assembly_name}.txt
 
     # reference name aliases file must exist and be relative to jbrowse
@@ -28,10 +29,16 @@ do
     done > "${refNameAliases}"
 
     jbrowse add-assembly \
-      ${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})/${scientific_name_abbrev}.${identifier}.genome_main.fna.gz \
-      --name=${identifier%.*} \
+      "${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.genome_main.fna.gz" \
+      --name="${identifier%.*}" \
       --type=bgzipFasta \
       --refNameAliases="${refNameAliases}"
+
+    # https://github.com/GMOD/jbrowse-components/discussions/3570
+    jq --arg name "${identifier%.*}" \
+       --arg uri "${datastore_dir_url}/${readme##*/}" \
+       '(.assemblies[] | select(.name == $name).sequence.adapter.metadataLocation)={uri: $uri, locationType: "UriLocation"}' < config.json > config.json.jq
+    mv config.json.jq config.json
   )
 done
 
