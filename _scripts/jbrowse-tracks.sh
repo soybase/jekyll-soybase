@@ -56,6 +56,21 @@ do
   )
 done
 
+for readme in _data/datastore-metadata/Glycine/*/markers/*/README.*.yml
+do
+  (
+    eval $(yaml2sh ${readme})
+    jbrowse add-track \
+      ${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})/${scientific_name_abbrev}.${identifier}.gff3.gz \
+      --assemblyNames=${identifier%.mrk.*} \
+      --category='Markers' \
+      --name=${identifier##*.} \
+      --trackId=${identifier} \
+      --description="${synopsis}" \
+      --out=assets/js/jbrowse
+  )
+done
+
 # Specify JSON until @jbrowse/cli has native support for MultiQuantitativeTrack
 # https://github.com/GMOD/jbrowse-components/issues/3430
 echo '{
