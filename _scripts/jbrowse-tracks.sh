@@ -23,7 +23,7 @@ do
 
     # reference name aliases file must exist and be relative to jbrowse
     # directory to be found at load time and served to client
-    while [ $((i=i+1)) -le 20 ]
+    while [ $((i=${i:-0}+1)) -le 20 ]
     do
       printf '%s.%s%02i\t%s%02i\n' "${assembly_name}" "${chromosome_prefix}" ${i} "${chromosome_prefix}" ${i}
     done > "${refNameAliases}"
