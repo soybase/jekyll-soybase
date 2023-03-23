@@ -4,6 +4,7 @@ title: Genetic Resources
 sitemap: maps
 tools_menu: true
 ---
+<style>body {font-size: 12pt; color:black}</style>
 {% assign chr = 0 %}
 
 {% assign maps = site.data.maps %}
@@ -23,7 +24,7 @@ tools_menu: true
               <td>
                 <div  data-uk-tooltip="{pos:'bottom-left'}"; uk-tooltip="title: {{ LG }}">
                   {% capture map_path %}maps/cmap/{{ chr | prepend: '00' | slice: -2,2 }} {% endcapture %}
-                  <a href="{{ map_path | relative_url }}">{{ chr | prepend: '00' | slice: -2,2 }}</a>
+                  <b><a href="{{ map_path | relative_url }}">Gm{{ chr | prepend: '00' | slice: -2,2 }}</a></b>
                 </div>
               </td>
             {% endfor %}

@@ -1,6 +1,6 @@
 ---
 - category: "Download / Query"
-  description: "Browser interface to all of the files in SoyBase."
+  description: "Data files for Glycine max and other legumes"
   name: "Datastore"
   url: "https://data.legumeinfo.org/Glycine/"
 - category: "Download / Query"
@@ -12,8 +12,8 @@
   name: "Data Overviews for soy genomic data"
   url: "https://dscensor.legumeinfo.org/multiqc-demo/genome_main:Glycine"
 - category: "Visualize / Browse"
-  description: "Composite Genetic map for Glycine max."
-  name: "SoyBase composite genetic map"
+  description: "SoyBase composite genetic map."
+  name: "Composite genetic map"
   url: "/maps"
 - category: "Visualize / Browse"
   description: "Genome browsers for soybean and related species. (Also accessible from the GENOMICS tab)."
