@@ -29,7 +29,7 @@ ifeq ($(CODESPACE_NAME),)
 # livereload doesn't work behind reverse proxy
 LIVERELOAD = --port 4001 --livereload --livereload_port 35728 
 endif
-JBROWSE_VERSION = 2.4.0
+JBROWSE_VERSION = 2.4.2
 
 serve:
 	$(ENV) bundle exec jekyll serve --incremental $(LIVERELOAD)
@@ -46,9 +46,11 @@ check:
 	$(ENV) bundle exec htmlproofer --allow-missing-href=true --ignore-missing-alt=true --ignore-files '/\/uikit\/tests\//' --ignore-status-codes 503 --cache '{"timeframe": {"external": "30d"}}' --log-level debug ./_site 
 
 # Install jbrowse CLI globally if using a dev container (the default GitHub dev container sets an NPM_GLOBAL environment variable)
+# Also download "jq" if it doesn't exist, (slight bug) assuming osx as the target host
 jbrowse-install:
 	rm -rf ./assets/js/jbrowse
 	npm install $${NPM_GLOBAL:+-g} @jbrowse/cli@${JBROWSE_VERSION}
+	command -v jq >/dev/null 2>&1 || curl -Lo $$(npm bin)/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x $$(npm bin)/jq
 	npx jbrowse create ./assets/js/jbrowse --tag=v${JBROWSE_VERSION}
 
 jbrowse:
