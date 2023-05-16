@@ -53,7 +53,7 @@ check:
 jbrowse-install:
 	rm -rf ./assets/js/jbrowse
 	npm install $${NPM_GLOBAL:+-g} @jbrowse/cli@${JBROWSE_VERSION}
-	command -v jq >/dev/null 2>&1 || curl -Lo $$(npm bin)/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x $$(npm bin)/jq
+	command -v jq >/dev/null 2>&1 || { curl -Lo $$(npm bin)/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x $$(npm bin)/jq; }
 	npx jbrowse create ./assets/js/jbrowse --tag=v${JBROWSE_VERSION}
 
 jbrowse:
