@@ -32,7 +32,7 @@ else
 # temporarily disable in codespace to work around https://github.com/devcontainers/images/issues/551
 BUNDLE_INSTALL_OPTS=--without test
 endif
-JBROWSE_VERSION = 2.4.2
+JBROWSE_VERSION = 2.5.0
 
 serve:
 	$(ENV) bundle exec jekyll serve --incremental $(LIVERELOAD)
@@ -50,11 +50,12 @@ check:
 
 # Install jbrowse CLI globally if using a dev container (the default GitHub dev container sets an NPM_GLOBAL environment variable)
 # Also download "jq" if it doesn't exist, (slight bug) assuming osx as the target host
+# Download jbrowse with curl to work around `jbrowse create` bug with node >= 18 (GMOD/jbrowse-components discussions #3657)
 jbrowse-install:
 	rm -rf ./assets/js/jbrowse
 	npm install $${NPM_GLOBAL:+-g} @jbrowse/cli@${JBROWSE_VERSION}
 	command -v jq >/dev/null 2>&1 || { curl -Lo $$(npm bin)/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x $$(npm bin)/jq; }
-	npx jbrowse create ./assets/js/jbrowse --tag=v${JBROWSE_VERSION}
+	mkdir assets/js/jbrowse && cd assets/js/jbrowse && curl -Lo jbrowse.zip https://github.com/GMOD/jbrowse-components/releases/download/v${JBROWSE_VERSION}/jbrowse-web-v${JBROWSE_VERSION}.zip && unzip jbrowse.zip && rm jbrowse.zip
 
 jbrowse:
 	rm -rf ./assets/js/jbrowse/config.json ./assets/js/jbrowse/refNameAliases
