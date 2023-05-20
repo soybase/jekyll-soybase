@@ -4,7 +4,7 @@
   {% for genus in genera %}
   {% for item in genus.items %}
   {% if item.category == "main" %}
-  <li><a href="/collections{{ item.genus | downcase | relative_url }}">{{ item.genus }}</a></li>
+  <li><a href="{{ site.base_path }}/collections{{ item.genus | downcase }}">{{ item.genus }}</a></li>
   {% endif %}
   {% endfor %}
   {% endfor %}

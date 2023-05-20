@@ -10,7 +10,7 @@
     <ul id="upcoming-events" class="uk-list uk-list-disc"></ul>
   </div>
   <div class="uk-card-footer">
-    <a href="{{ "/events" | relative_url }}" class="uk-button uk-button-text">More Events</a>
+    <a href="{{ site.base_path }}/events/" class="uk-button uk-button-text">More Events</a>
   </div>
 </div>
 
@@ -22,7 +22,7 @@ Populate the widget using JavaScript so the site doesn't have to be rebuilt when
   const events = [
     {% for post in site.categories.events reversed %}
       {
-        url: "{{ post.url }}",
+        url: "{{ site.base_path}}/{{ post.url }}",
         title: "{{ post.title }}",
         date: "{{ post.date | date_to_string }}",
         unixDate: {{ post.date | date: '%s' }},

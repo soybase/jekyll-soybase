@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: mcr.microsoft.com/devcontainers/jekyll:1.0.1-3.2-bullseye
+
+%post
+     gem install -v 1.4.0 jekyll-datapage-generator
+     gem install -v 5.0.7 html-proofer
+
+     # https://github.com/nodesource/distributions#using-debian-as-root-2
+     curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+     apt update
+     apt install -y nodejs
+     rm -rf /var/lib/apt/lists/*
+
+     npm install -g @jbrowse/cli@2.5.0
+
+
+%runscript
+    exec jekyll "$@"

@@ -6,7 +6,12 @@
   <li class="uk-nav-header">{{ group.name }}</li>
   {% assign items_sorted = group.items | sort: "name" %}
   {% for item in items_sorted %}
-  <li uk-tooltip="title: {{ item.description }}"><a href="{{ item.url }}">{{ item.name }}</a></li>
+    {% assign url_start = item.url | slice: 0,4 %}
+    {% if url_start == "http" %}
+      <li uk-tooltip="title: {{ item.description }}"><a href="{{ item.url }}">{{ item.name }}</a></li>
+    {% else %}
+      <li uk-tooltip="title: {{ item.description }}"><a href="{{ site.base_path }}/{{ item.url }}">{{ item.name }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
 {% endfor %}

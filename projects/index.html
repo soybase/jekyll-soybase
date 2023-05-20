@@ -16,7 +16,7 @@ sitemap: community
   <dl>
     <th>
       <dt> <h4><a id="{{ group.DataStoreID }}" 
-                  href="{{ group.DataStoreID | downcase | prepend: '/projects/' | relative_url }}">
+                  href="{{ site.base_path }}/{{ group.DataStoreID | downcase | prepend: 'projects/' }}">
                     {{ group.short_title }}</a> </h4> 
         <dd>
           <strong>Description:</strong> {{ group.description }} <br>

@@ -29,6 +29,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   A collaborative, community resource to facilitate crop improvement by integrating
   genetic, genomic, and trait data across legume species.
 baseurl: "" # the subpath of your site, e.g. /blog
+base_path: "" # custom path like baseurl, but not changed by "jekyll serve" so it works behind a reverse proxy
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: soybasedatabase
 github_username: soybase

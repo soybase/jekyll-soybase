@@ -1,0 +1,32 @@
+.POSIX:
+
+ENV = singularity exec --cleanenv /project/legume_project/containers/jekyll-4.3.2.sif
+
+JBROWSE_VERSION = 2.5.0
+
+serve: clean setup
+	port=$$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()') && \
+	echo "base_path: $${VSCODE_PROXY_URI%{{port\}\}*}$${port}" > $${TMPDIR}/jekyll/_config.yml && \
+	$(ENV) jekyll serve --incremental --disable-disk-cache --destination $${TMPDIR}/jekyll/_site --config _config.yml,$${TMPDIR}/jekyll/_config.yml --port $${port}
+
+check: clean setup
+	$(ENV) jekyll build --destination $${TMPDIR}/jekyll/_site
+	$(ENV) htmlproofer --allow-missing-href --ignore-missing-alt --ignore-files '/\/uikit\/tests\//' --ignore-status-codes 503 --cache '{"timeframe": {"external": "30d"}, "storage_dir": "'"$${TMPDIR}/htmlproofer"'"}' --log-level debug $${TMPDIR}/jekyll/_site
+
+jbrowse:
+	if [ ! -d "$${TMPDIR}/jbrowse" ]; then \
+	mkdir -p "$${TMPDIR}/jbrowse" \
+	&& cd "$${TMPDIR}/jbrowse" \
+	&& curl -Lo jbrowse.zip https://github.com/GMOD/jbrowse-components/releases/download/v${JBROWSE_VERSION}/jbrowse-web-v${JBROWSE_VERSION}.zip \
+	&& unzip jbrowse.zip \
+	&& rm jbrowse.zip; fi
+	rm -f ./assets/js/jbrowse && ln -sf "$${TMPDIR}/jbrowse" ./assets/js/jbrowse
+	rm -f ./assets/js/jbrowse/config.json
+	$(ENV) _scripts/jbrowse-tracks.sh
+
+clean:
+	rm -rf $${TMPDIR}/jekyll ./.jekyll-metadata
+
+setup:	
+	mkdir -p $${TMPDIR}/jekyll/_site
+	ln -sf $${TMPDIR}/jekyll/.jekyll-metadata $${PWD}/.jekyll-metadata

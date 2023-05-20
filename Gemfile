@@ -12,8 +12,6 @@ gem "jekyll", "~> 4.3.1"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  ## handy way to see if an image exists on the site
-  gem 'jekyll_file_exists', :git => 'https://github.com/asperduti/jekyll_file_exists.git'
   ## generates pages based on files under _data
   gem "jekyll-datapage-generator", "~> 1.4.0"
   # FIXME: jekyll-sitemap doesn't work with liquid.strict_variables: true
@@ -23,8 +21,8 @@ end
 
 group :test do
   # html-proofer 5.x requires ruby >= 3.1
-  gem "html-proofer", "= 4.4.3"
   if RUBY_PLATFORM =~ /arm64.*darwin/
+    gem "html-proofer", "= 4.4.3"
     # install nokogiri from source for macos system/Xcode ruby (2.6.10p210) on arm64,
     # as otherwise nokogiri-1.13.10-x86_64-darwin.gem is installed
     gem "nokogiri", :git => "https://github.com/sparklemotion/nokogiri.git", :tag => "v1.13.10"
@@ -33,6 +31,8 @@ group :test do
     # for aarch64 due to this issue:
     # https://github.com/protocolbuffers/protobuf/issues/9397
     gem "jekyll-sass-converter", "= 2.2.0"
+  else
+    gem "html-proofer", "= 5.0.7"
   end
 end
 

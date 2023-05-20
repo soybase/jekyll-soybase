@@ -14,7 +14,7 @@
 - category: "Visualize / Browse"
   description: "Genome browsers for soybean and related species. (Also accessible from the GENOMICS tab)"
   name: "Genome browsers"
-  url: "/tools/browsers"
+  url: "/tools/browsers/"
 - category: "Visualize / Browse"
   description: "Browser for dynamically discovering and viewing genomic synteny across selected species."
   name: "Genome Context Viewer for Glycine"

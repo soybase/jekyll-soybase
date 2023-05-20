@@ -9,7 +9,7 @@ When a tag is pushed, a GitHub Action workflow will build the static site & depl
 This branch is hosted via GitHub Pages at https://www.dev.soybase.org.
 
 ## Development
-### Local (macOS)
+### Local setup
 The site is styled using a custom [UIkit](https://getuikit.com/) theme, which requires UIkit's SCSS files.
 As such, UIkit is a submodule of this repository and must be cloned with the repository:
 ```console
@@ -27,6 +27,32 @@ Changes made will be immediately reflected in the browser due to [LiveReload](ht
     make         # Starts jekyll server listening on localhost:4001
     ... CTRL-C ...
     make check   # build site & check for broken links
+```
+
+### HPC / Singularity
+
+The Singularity definition file [singularity.def](singularity.def) defines a software environment that contains Jekyll and the JBrowse CLI.
+
+The URLs generated & port fowardings are compatible with the reverse-proxy capability provided by code-server >= 4.8 (assuming launched as an Open OnDemand interactive app).
+
+Clone git repository (optionally in the VS Code/code-server web UI)
+```console
+git clone --recurse-submodules https://github.com/soybase/jekyll-soybase.git
+```
+
+Build the Singularity image and update the [Makefile.hpc](Makefile.hpc) to point to the new container image (assuming the SIF doesn't already exist):
+
+```
+ml singularityCE
+singularity build --disable-cache /path/to/image.sif singularity.def
+```
+
+A separate [Makefile.hpc](Makefile.hpc) defines relevant targets, optimized for execution on a compute node with isolated (e.g., job-specific) `$TMPDIR`:
+```
+    make -f Makefile.hpc jbrowse # (optional) set up & configure jbrowse tracks
+    make -f Makefile.hpc         # Starts jekyll server
+    ... CTRL-C ...
+    make -f Makefile.hpc check   # (optional) build site & check for broken links
 ```
 
 ### GitHub Codespaces

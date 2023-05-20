@@ -7,19 +7,19 @@ layout: null
   "description": "{{ site.description | replace: '"', '\"' }}",
   "icons": [
     {
-      "src": "{{ '/splash-512x512.png' | relative_url }}",
+      "src": "{{ site.base_path }}/splash-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "{{ '/favicon-192x192.png' | relative_url }}",
+      "src": "{{ site.base_path }}/favicon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
   ],
-  "start_url": "{{ '/' | relative_url }}",
+  "start_url": "{{ site.base_path }}/",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "{{ '/' | relative_url }}",
+  "scope": "{{ site.base_path }}/",
   "theme_color": "#ffffff"
 }
