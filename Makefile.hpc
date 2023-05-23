@@ -1,6 +1,6 @@
 .POSIX:
 
-ENV = singularity exec --cleanenv /project/legume_project/containers/jekyll-4.3.2.sif
+ENV = command -v singularity || ml singularityCE; singularity exec --cleanenv /project/legume_project/containers/jekyll-4.3.2.sif
 
 JBROWSE_VERSION = 2.5.0
 
@@ -26,7 +26,10 @@ jbrowse:
 
 clean:
 	rm -rf $${TMPDIR}/jekyll ./.jekyll-metadata
+	# remove any dangling symlink from previous session
+	[ -d ./assets/js/jbrowse ] || rm -f ./assets/js/jbrowse
 
 setup:	
+	git submodule update --init
 	mkdir -p $${TMPDIR}/jekyll/_site
 	ln -sf $${TMPDIR}/jekyll/.jekyll-metadata $${PWD}/.jekyll-metadata
