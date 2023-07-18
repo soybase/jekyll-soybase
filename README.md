@@ -9,24 +9,39 @@ When a tag is pushed, a GitHub Action workflow will build the static site & depl
 This branch is hosted via GitHub Pages at https://www.dev.soybase.org.
 
 ## Development
-### Local setup
-The site is styled using a custom [UIkit](https://getuikit.com/) theme, which requires UIkit's SCSS files.
-As such, UIkit is a submodule of this repository and must be cloned with the repository:
-```console
-git clone --recurse-submodules https://github.com/soybase/jekyll-soybase.git
-```
-If running the optional JBrowse setup steps, NodeJS (https://nodejs.org/) is required for the `npm` package manager.
+### Local (macOS)
 
-The following methods will run the site on your computer at http://localhost:4001.
-Changes made will be immediately reflected in the browser due to [LiveReload](http://livereload.com/).
+1. Install XCode Developer Tools (if not already installed):
+
+```console
+xcode-select --install
+```
+
+2. Install [Node.js](https://nodejs.org/) version >= 16.
+
+3. Clone the repository:
+
+```console
+git clone https://github.com/soybase/jekyll-soybase.git
+```
+
+### Dev Container (GitHub Codespaces or VS Code)
+When creating a [GitHub Codespace](https://github.com/features/codespaces) on a branch, or using VS Code locally with a Docker engine installed (e.g., Docker Desktop or Rancher Desktop), a [Dev Container](https://containers.dev/) has been defined (at [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)) to automatically set up Ruby and NodeJS.
+
+### Building the Site
+The following methods will run the site on your computer at http://localhost:4000/.
+Changes made to HTML/Liquid files will be immediately reflected in the browser due to [LiveReload](http://livereload.com/) (*when running a codespace in the browser, LiveReload does not work; a browser reload is necessary to reflect any changes made to the site*).
+Changes made to other file types (e.g., data and config files) may only be reflected the next time `make` is run.
+
 
 ```sh
-    make install # one-time installation of dependencies into vendor/
-    make jbrowse-install # (optional; requires npm) one-time installation of JBrowse CLI
-    make jbrowse # (optional) run _scripts/jbrowse-tracks.sh to generate JBrowse config.json
-    make         # Starts jekyll server listening on localhost:4001
-    ... CTRL-C ...
-    make check   # build site & check for broken links
+make jbrowse # (optional) install JBrowse dependencies if needed
+             # & run _scripts/jbrowse-tracks.sh to generate JBrowse config.json
+make         # install dependencies if needed & start jekyll server listening on localhost:4000
+... CTRL-C ...
+make check   # build site & check for broken links
+
+# make clean : remove everything installed/created by `make jbrowse` and `make`
 ```
 
 ### HPC / Singularity

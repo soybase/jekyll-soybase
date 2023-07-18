@@ -20,7 +20,13 @@ group :jekyll_plugins do
 end
 
 group :test do
-  # html-proofer 5.x requires ruby >= 3.1
+  if RUBY_PLATFORM =~ /.*darwin/
+    # html-proofer 5.x requires ruby >= 3.1
+    gem "html-proofer", "= 4.4.3"
+  else
+    gem "html-proofer", "~> 5.0"
+  end
+
   if RUBY_PLATFORM =~ /arm64.*darwin/
     gem "html-proofer", "= 4.4.3"
     # install nokogiri from source for macos system/Xcode ruby (2.6.10p210) on arm64,
@@ -31,8 +37,6 @@ group :test do
     # for aarch64 due to this issue:
     # https://github.com/protocolbuffers/protobuf/issues/9397
     gem "jekyll-sass-converter", "= 2.2.0"
-  else
-    gem "html-proofer", "= 5.0.7"
   end
 end
 
