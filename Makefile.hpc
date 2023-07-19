@@ -1,8 +1,8 @@
 .POSIX:
 
-ENV = command -v singularity || ml singularityCE; singularity exec --cleanenv /project/legume_project/containers/jekyll-4.3.2.sif
+ENV = command -v singularity || ml apptainer; singularity exec --cleanenv /project/legume_project/containers/jekyll-4.3.2.sif
 
-JBROWSE_VERSION = 2.5.0
+JBROWSE_VERSION = v2.6.2
 
 serve: clean setup
 	port=$$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()') && \
@@ -14,12 +14,7 @@ check: clean setup
 	$(ENV) htmlproofer --allow-missing-href --ignore-missing-alt --ignore-files '/\/uikit\/tests\//' --ignore-status-codes 503 --cache '{"timeframe": {"external": "30d"}, "storage_dir": "'"$${TMPDIR}/htmlproofer"'"}' --log-level debug $${TMPDIR}/jekyll/_site
 
 jbrowse:
-	if [ ! -d "$${TMPDIR}/jbrowse" ]; then \
-	mkdir -p "$${TMPDIR}/jbrowse" \
-	&& cd "$${TMPDIR}/jbrowse" \
-	&& curl -Lo jbrowse.zip https://github.com/GMOD/jbrowse-components/releases/download/v${JBROWSE_VERSION}/jbrowse-web-v${JBROWSE_VERSION}.zip \
-	&& unzip jbrowse.zip \
-	&& rm jbrowse.zip; fi
+	if [ ! -d "$${TMPDIR}/jbrowse" ]; then $(ENV) jbrowse create --tag=$(JBROWSE_VERSION) "$${TMPDIR}/jbrowse"; fi
 	rm -f ./assets/js/jbrowse && ln -sf "$${TMPDIR}/jbrowse" ./assets/js/jbrowse
 	rm -f ./assets/js/jbrowse/config.json
 	$(ENV) _scripts/jbrowse-tracks.sh
