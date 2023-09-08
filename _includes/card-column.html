@@ -1,15 +1,15 @@
 <div class="tm-sidebar-right uk-flex-none uk-visible@l">
 
-  {% if page.news_card %}
+  {% if page contains "news_card" %}
     {% include news-card.html %}
   {% endif %}
 
-  {% if page.announcements_card %}
-    {% include announcements-card.html %}
+  {% if page contains "events_card" %}
+    {% include events-card.html %}
   {% endif %}
 
-  {% if page.blog_card %}
-    {% include blog-card.html %}
+  {% if page contains "twitter_card" %}
+    {% include twitter-card.html %}
   {% endif %}
 
 </div>

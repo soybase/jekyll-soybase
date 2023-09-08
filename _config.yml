@@ -36,6 +36,11 @@ newsletter: https://www.soybase.org/soybaselist/index.php
 author: SoyBase curator
 lang: en
 
+card_item_limit: 3
+
+# allow direct port 4000 requests from outside so we don't have to proxy
+host: 0.0.0.0
+
 # our Google Analytics ID. XX CHANGE THIS for SoyBase
 google_analytics: "UA-49655154-1"
 
@@ -47,10 +52,14 @@ liquid:
   error_mode: strict
   strict_filters: true
   # note incompatibility with "default" filter: https://github.com/Shopify/liquid/issues/1404
-  strict_variables: true
+
+# strict_variables: true
 
 # Build settings
-#theme: jekyll-theme-legumeinfo
+theme: jekyll-theme-legumeinfo
+# enable post from the future so the theme can show upcoming events
+future: true
+
 plugins:
   - jekyll-feed
   - jekyll-datapage-generator
@@ -69,6 +78,11 @@ page_gen:
     index_files: true
     debug: true
 
+# shows posts (i.e. news and events) with a date after the date the site was built on
+future: true
+
+# the default number of items shown in card widgets
+card_item_limit: 3
 
 # SASS compilation
 sass:
@@ -79,9 +93,10 @@ sass:
 style:
     link_color: '#006600'
     link_hover_color: '#0071B3'
-    primary_background: '#488701' # Very dark green: '#296e01'  
+    primary_background: '#235626' # Very dark green: '#296e01'  
     global_muted_color: '#006600'
     invert_navbar_text: true
+    
 
 # Site-wide defaults
 defaults:
@@ -90,29 +105,6 @@ defaults:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
-      path: "announcements/"
-      type: "posts"
-    values:
-      layout: "announcement-item"
-  -
-    scope:
-      path: "blog/"
-      type: "posts"
-    values:
-      layout: "blog-item"
-  -
-    scope:
-      path: "news/"
-      type: "posts"
-    values:
-      layout: "news-item"
-  -
-    scope:
-      path: "uikit/"
-    values:
-      sitemap: false
 
 # Exclude from processing.
 # The following items will not be processed, by default.
