@@ -3,6 +3,90 @@ title: Ontology
 sitemap: ontology
 tools_menu: true
 ---
+  <script type="text/javascript">
+  var menuNumber=0;
+  function wholeOpen(){
+    document.getElementById('whole2').style.fontSize='12pt';
+    document.getElementById('whole1').style.fontSize='0pt';
+    document.getElementById('Wclose').style.fontSize='12pt';
+    document.getElementById('PM1945-2').style.fontSize='12pt';
+    document.getElementById('PlantOntology').style.fontSize='12pt';
+    document.getElementById('conversiontable').style.fontSize='12pt';
+    document.getElementById('whole2').style.lineHeight='normal';
+    document.getElementById('whole2').style.visibility='visible';
+    document.getElementById('whole1').style.lineHeight='0pt';
+    document.getElementById('whole1').style.visibility='hidden';
+    return "TRUE";
+    }
+  function wholeClose(){
+    document.getElementById('whole1').style.fontSize='12pt';
+    document.getElementById('whole2').style.fontSize='0pt';
+    document.getElementById('whole1').style.lineHeight='normal';
+    document.getElementById('whole1').style.visibility='visible';
+    document.getElementById('whole2').style.lineHeight='0pt';
+    document.getElementById('whole2').style.visibility='hidden';
+    document.getElementById('PlantOntology').style.fontSize='0pt';
+    document.getElementById('conversiontable').style.fontSize='0pt';
+    document.getElementById('Wclose').style.fontSize='0pt';
+
+    return "TRUE";
+
+    }
+  function structureOpen(){
+    document.getElementById('structure2').style.fontSize='12pt';
+    document.getElementById('structure1').style.fontSize='0pt';
+    document.getElementById('Sclose').style.fontSize='12pt';
+    document.getElementById('Bucciarellietal-2').style.fontSize='12pt';
+    document.getElementById('structure2').style.lineHeight='normal';
+    document.getElementById('structure2').style.visibility='visible';
+    document.getElementById('structure1').style.lineHeight='0pt';
+    document.getElementById('structure1').style.visibility='hidden';
+    return "TRUE";
+
+    }
+  function structureClose(){
+    document.getElementById('structure1').style.fontSize='12pt';
+    document.getElementById('structure2').style.fontSize='0pt';
+    document.getElementById('structure1').style.lineHeight='normal';
+    document.getElementById('structure1').style.visibility='visible';
+    document.getElementById('structure2').style.lineHeight='0pt';
+    document.getElementById('structure2').style.visibility='hidden';
+    document.getElementById('Bucciarellietal-2').style.fontSize='0pt';
+    document.getElementById('Sclose').style.fontSize='0pt';
+    return "TRUE";
+
+    }
+  function develOpen(){
+
+
+    }
+  function develClose(){
+
+
+    }
+  function traitOpen(){
+    document.getElementById('trait2').style.fontSize='12pt';
+    document.getElementById('trait1').style.fontSize='0pt';
+    document.getElementById('SoybeanDescriptors2').style.fontSize='12pt';
+    document.getElementById('Tclose').style.fontSize='12pt';
+    document.getElementById('trait2').style.lineHeight='12pt';
+    document.getElementById('trait2').style.visibility='visible';
+    document.getElementById('trait1').style.lineHeight='0pt';
+    document.getElementById('trait1').style.visibility='hidden';
+    return "TRUE";
+    }
+  function traitClose(){
+    document.getElementById('trait1').style.fontSize='12pt';
+    document.getElementById('trait2').style.fontSize='0pt';
+    document.getElementById('trait1').style.lineHeight='normal';
+    document.getElementById('trait1').style.visibility='visible';
+    document.getElementById('trait2').style.lineHeight='0pt';
+    document.getElementById('trait2').style.visibility='hidden';
+    document.getElementById('SoybeanDescriptors2').style.fontSize='0pt';
+    document.getElementById('Tclose').style.fontSize='0pt';
+    return "TRUE";
+    }
+</script>
 
 <h1>SoyBase Soybean Ontologies</h1>
 
@@ -51,11 +135,11 @@ tools_menu: true
               <div
                 class="explain"
                 id="whole1"
-                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
+                style="font-size: 12pt; line-height: normal; visibility: visible;">
                 This ontology was developed to unite three different ontologies for soybean development, the BBCH scale, the more generic Plant Ontology Consortium's Whole Plant Growth Ontology and the
                 Soybean Growth and Development growth stages as published in "Soybean Growth and Development" Iowa State University Extension publication
                 <a
-                  href="https://www.extension.iastate.edu/store/ItemDetail.aspx?ProductID=6451&amp;SeriesCode=&amp;CategoryID=&amp;Keyword=PM%201945"
+                  href="https://store.extension.iastate.edu/product/6451"
                   id="PM1945"
                   name="PM1945"
                   title="ISU Extension Publication PM 1945"
@@ -71,11 +155,11 @@ tools_menu: true
               <div
                 class="explain"
                 id="whole2"
-                style="font-size: 12pt; line-height: normal; visibility: visible;">
+                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
                 This ontology was developed to unite three different ontologies for soybean development, the BBCH scale, the more generic Plant Ontology Consortium's Whole Plant Growth Ontology and the
                 Soybean Growth and Development growth stages as published in "Soybean Growth and Development" Iowa State University Extension publication
                 <a
-                  href="https://www.extension.iastate.edu/store/ItemDetail.aspx?ProductID=6451&amp;SeriesCode=&amp;CategoryID=&amp;Keyword=PM%201945"
+                  href="https://store.extension.iastate.edu/product/6451"
                   style="font-size: 12pt;"
                   id="PM1945-2"
                   name="PM1945"
@@ -85,7 +169,7 @@ tools_menu: true
                 It describes soybean growth and development from the stand point of determining the growth of a field of soybeans.  Some terms relate to a single plant,
                 								but others are applicable to a field as a whole.  Where possible, these terms are linked to their
                 <a
-                  href="http://www.plantontology.org/amigo/go.cgi?xpand=PO:0009012&amp;search_constraint=terms&amp;query=PO:0009012&amp;view=details&amp;show_associations=list"
+                  href="https://browser.planteome.org/amigo/search/ontology?q=PO:0009089"
                   style="font-size: 12pt;"
                   id="PlantOntology"
                   name="PlantOntology"
@@ -109,7 +193,7 @@ tools_menu: true
                   onclick="wholeClose()">Close ...</a><br><br>
               </div>
 
-              <button onclick="window.open('/amigo/amigo/term/SOY:0000097','_blank');">Browse and Search Soybean Whole Plant Growth Terms</button>
+              <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0000097','_blank');">Browse and Search Soybean Whole Plant Growth Terms</button>
             </fieldset>
           </div>
         </td>
@@ -122,11 +206,11 @@ tools_menu: true
               <div
                 class="explain"
                 id="structure1"
-                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
+                style="font-size: 12pt; line-height: normal; visibility: visible;">
                 This ontology was developed to enumerate the parts of a soybean plant in order to follow the temporal development of individual plants.
                 The ontology was modeled after the system described in
                 <a
-                  href="http://www.plantphysiol.org/cgi/doi/10.1104/pp.106.082594"
+                  href="https://doi.org/10.1104/pp.106.082594"
                   id="Bucciarellietal"
                   name="Bucciarellietal"
                   title="Bucciarellie et al. Plant Phys 142:207-219"
@@ -141,11 +225,11 @@ tools_menu: true
               <div
                 class="explain"
                 id="structure2"
-                style="font-size: 12pt; line-height: normal; visibility: visible;">
+                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
                 This ontology was developed to enumerate the parts of a soybean plant in order to follow the temporal development of individual plants.
                 The ontology was modeled after the system described in
                 <a
-                  href="http://www.plantphysiol.org/cgi/doi/10.1104/pp.106.082594"
+                  href="https://doi.org/10.1104/pp.106.082594"
                   style="font-size: 12pt;"
                   id="Bucciarellietal-2"
                   name="Bucciarellietal"
@@ -161,7 +245,7 @@ tools_menu: true
                   onclick="structureClose()">Close ...</a>
               </div>
               <br><br>
-              <button onclick="window.open('/amigo/amigo/term/SOY:0000098','_blank');">Browse and Search Soybean Structure Terms</button>
+              <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0000098','_blank');">Browse and Search Soybean Structure Terms</button>
             </fieldset>
           </div>
         </td>
@@ -194,7 +278,7 @@ tools_menu: true
                 style="font-size:12pt"></div>
               <br><br>
 
-              <button onclick="window.open('/amigo/amigo/term/SOY:0001650','_blank');">Browse and Search Developmental Terms</button>
+              <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0001650','_blank');">Browse and Search Developmental Terms</button>
             </fieldset>
           </div>
         </td>
@@ -208,10 +292,10 @@ tools_menu: true
               <div
                 class="explain"
                 id="trait1"
-                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
+                style="font-size: 12pt; line-height: 12pt; visibility: visible;">
                 This ontology was developed as a guide to describing soybean growth taits.  These terms were developed from
                 <a
-                  href="http://www.ars-grin.gov/npgs/descriptors/soybean"
+                  href="https://npgsweb.ars-grin.gov/gringlobal/descriptors"
                   id="SoybeanDescriptors"
                   name="SoybeanDescriptors"
                   title="Grin Soybean Descriptors"
@@ -227,10 +311,10 @@ tools_menu: true
               <div
                 class="explain"
                 id="trait2"
-                style="font-size: 12pt; line-height: 12pt; visibility: visible;">
+                style="font-size: 0pt; line-height: 0pt; visibility: hidden;">
                 This ontology was developed as a guide to describing soybean growth taits.  These terms were developed from
                 <a
-                  href="http://www.ars-grin.gov/npgs/descriptors/soybean"
+                  href="https://npgsweb.ars-grin.gov/gringlobal/descriptors "
                   style="font-size: 12pt;"
                   id="SoybeanDescriptors2"
                   name="SoybeanDescriptors"
@@ -250,7 +334,7 @@ tools_menu: true
               </div>
               <br>
 
-              <button onclick="window.open('/amigo/amigo/term/SOY:0000099','_blank');">Browse and Search Soybean Trait Terms</button>
+              <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0000099','_blank');">Browse and Search Soybean Trait Terms</button>
             </fieldset>
           </div>
         </td>
