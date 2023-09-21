@@ -12,5 +12,5 @@
   data_links:
     - type: data
       description: "White mold GWAS Results File (XLSX File 1.2 MB) - FIX (put in DS collection)"
-      url: "#"
+
 
