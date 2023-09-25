@@ -96,8 +96,11 @@
       description: "Supplemental Table S1: 103 Marker Trait Associations that were signficant for yield, maturity, height, lodging, or seed mass in the soybean NAM population."
       url: "https://soybase.org/SoyNAM/data/Diers%20et%20al._G3_2018_Table_S1.xlsx"
     - type: data
-      description: "Soy50K imputed haplotypes for the parents and progeny for all SoyNAM families"
-      url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Song_NAM_2021"
+      description: "Soy50K imputed haplotypes for the parents and progeny for all SoyNAM families, genotyped using the SoySNP50K and SoyNAM6K assays"
+      url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Song_NAM_2021a"
+    - type: data
+      description: "Soy50K imputed haplotypes for the parents and progeny for all SoyNAM families, genotyped with WGS and the SoySNP50K and SoyNAM6K assays"
+      url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Song_NAM_2021b"
     - type: request seed
       description: "Click here to request Parent seed."
       url: "https://soybase.org/SoyNAM/SoyNAM_Parent_request.htm"
