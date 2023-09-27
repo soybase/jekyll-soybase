@@ -5,86 +5,96 @@ tools_menu: true
 ---
   <script type="text/javascript">
   var menuNumber=0;
-  function wholeOpen(){
-    document.getElementById('whole2').style.fontSize='12pt';
-    document.getElementById('whole1').style.fontSize='0pt';
-    document.getElementById('Wclose').style.fontSize='12pt';
-    document.getElementById('PM1945-2').style.fontSize='12pt';
-    document.getElementById('PlantOntology').style.fontSize='12pt';
-    document.getElementById('conversiontable').style.fontSize='12pt';
-    document.getElementById('whole2').style.lineHeight='normal';
-    document.getElementById('whole2').style.visibility='visible';
-    document.getElementById('whole1').style.lineHeight='0pt';
-    document.getElementById('whole1').style.visibility='hidden';
+  function updateWholeDisplay(open) {
+    const whole1 = document.getElementById('whole1');
+    const whole2 = document.getElementById('whole2');
+    const plantOntology = document.getElementById('PlantOntology');
+    const conversiontable = document.getElementById('conversiontable');
+    const wClose = document.getElementById('Wclose');
+  
+    whole2.style.fontSize = open ? '12pt' : '0pt';
+    whole2.style.lineHeight = open ? 'normal' : '0pt';
+    whole2.style.visibility = open ? 'visible' : 'hidden';
+  
+    whole1.style.fontSize = open ? '0pt' : '12pt';
+    whole1.style.lineHeight = open ? '0pt' : 'normal';
+    whole1.style.visibility = open ? 'hidden' : 'visible';
+  
+    plantOntology.style.fontSize = open ? '12pt' : '0pt';
+    conversiontable.style.fontSize = open ? '12pt' : '0pt';
+    wClose.style.fontSize = open ? '12pt' : '0pt';
+  }
+
+  function updateStructureDisplay(open) {
+    const structure1 = document.getElementById('structure1');
+    const structure2 = document.getElementById('structure2');
+    const bucciarellietal2 = document.getElementById('Bucciarellietal-2');
+    const sClose = document.getElementById('Sclose');
+  
+    structure2.style.fontSize = open ? '12pt' : '0pt';
+    structure2.style.lineHeight = open ? 'normal' : '0pt';
+    structure2.style.visibility = open ? 'visible' : 'hidden';
+  
+    structure1.style.fontSize = open ? '0pt' : '12pt';
+    structure1.style.lineHeight = open ? '0pt' : 'normal';
+    structure1.style.visibility = open ? 'hidden' : 'visible';
+  
+    bucciarellietal2.style.fontSize = open ? '12pt' : '0pt';
+    sClose.style.fontSize = open ? '12pt' : '0pt';
+  }
+
+  function updateTraitDisplay(open) {
+    const trait1 = document.getElementById('trait1');
+    const trait2 = document.getElementById('trait2');
+    const soybeanDescriptors2 = document.getElementById('SoybeanDescriptors2');
+    const tClose = document.getElementById('Tclose');
+  
+    trait2.style.fontSize = open ? '12pt' : '0pt';
+    trait2.style.lineHeight = open ? '12pt' : '0pt';
+    trait2.style.visibility = open ? 'visible' : 'hidden';
+  
+    trait1.style.fontSize = open ? '0pt' : '12pt';
+    trait1.style.lineHeight = open ? '0pt' : 'normal';
+    trait1.style.visibility = open ? 'hidden' : 'visible';
+  
+    soybeanDescriptors2.style.fontSize = open ? '12pt' : '0pt';
+    tClose.style.fontSize = open ? '12pt' : '0pt';
+  }
+  
+  function wholeOpen() {
+    updateWholeDisplay(true);
     return "TRUE";
+  }
+  
+  function wholeClose() {
+    updateWholeDisplay(false);
+    return "TRUE";
+  }
+
+    function structureOpen() {
+      updateStructureDisplay(true);
+      return "TRUE";
     }
-  function wholeClose(){
-    document.getElementById('whole1').style.fontSize='12pt';
-    document.getElementById('whole2').style.fontSize='0pt';
-    document.getElementById('whole1').style.lineHeight='normal';
-    document.getElementById('whole1').style.visibility='visible';
-    document.getElementById('whole2').style.lineHeight='0pt';
-    document.getElementById('whole2').style.visibility='hidden';
-    document.getElementById('PlantOntology').style.fontSize='0pt';
-    document.getElementById('conversiontable').style.fontSize='0pt';
-    document.getElementById('Wclose').style.fontSize='0pt';
-
-    return "TRUE";
-
-    }
-  function structureOpen(){
-    document.getElementById('structure2').style.fontSize='12pt';
-    document.getElementById('structure1').style.fontSize='0pt';
-    document.getElementById('Sclose').style.fontSize='12pt';
-    document.getElementById('Bucciarellietal-2').style.fontSize='12pt';
-    document.getElementById('structure2').style.lineHeight='normal';
-    document.getElementById('structure2').style.visibility='visible';
-    document.getElementById('structure1').style.lineHeight='0pt';
-    document.getElementById('structure1').style.visibility='hidden';
-    return "TRUE";
-
-    }
-  function structureClose(){
-    document.getElementById('structure1').style.fontSize='12pt';
-    document.getElementById('structure2').style.fontSize='0pt';
-    document.getElementById('structure1').style.lineHeight='normal';
-    document.getElementById('structure1').style.visibility='visible';
-    document.getElementById('structure2').style.lineHeight='0pt';
-    document.getElementById('structure2').style.visibility='hidden';
-    document.getElementById('Bucciarellietal-2').style.fontSize='0pt';
-    document.getElementById('Sclose').style.fontSize='0pt';
-    return "TRUE";
-
+    
+    function structureClose() {
+      updateStructureDisplay(false);
+      return "TRUE";
     }
   function develOpen(){
-
 
     }
   function develClose(){
 
-
     }
-  function traitOpen(){
-    document.getElementById('trait2').style.fontSize='12pt';
-    document.getElementById('trait1').style.fontSize='0pt';
-    document.getElementById('SoybeanDescriptors2').style.fontSize='12pt';
-    document.getElementById('Tclose').style.fontSize='12pt';
-    document.getElementById('trait2').style.lineHeight='12pt';
-    document.getElementById('trait2').style.visibility='visible';
-    document.getElementById('trait1').style.lineHeight='0pt';
-    document.getElementById('trait1').style.visibility='hidden';
-    return "TRUE";
+   
+   function traitOpen() {
+      updateTraitDisplay(true);
+      return "TRUE";
     }
-  function traitClose(){
-    document.getElementById('trait1').style.fontSize='12pt';
-    document.getElementById('trait2').style.fontSize='0pt';
-    document.getElementById('trait1').style.lineHeight='normal';
-    document.getElementById('trait1').style.visibility='visible';
-    document.getElementById('trait2').style.lineHeight='0pt';
-    document.getElementById('trait2').style.visibility='hidden';
-    document.getElementById('SoybeanDescriptors2').style.fontSize='0pt';
-    document.getElementById('Tclose').style.fontSize='0pt';
-    return "TRUE";
+    
+    function traitClose() {
+      updateTraitDisplay(false);
+      return "TRUE";
     }
 </script>
 
@@ -131,7 +141,7 @@ tools_menu: true
       <tr>
         <td valign="TOP">
           <div style="width:400px">
-            <fieldset style="width:375px;border-width:2px;border-color:black">
+            <fieldset style="min-height: 300px;width:375px;border-width:2px;border-color:black">
               <legend align="top">
                 Soybean Whole Plant Growth Ontology
               </legend>
@@ -201,7 +211,7 @@ tools_menu: true
         </td>
         <td valign="TOP">
           <div style="width:400px">
-            <fieldset style="width:375px;border-width:2px;border-color:black">
+            <fieldset style="min-height: 300px;width:375px;border-width:2px;border-color:black">
               <legend align="top">
                 Soybean Structure Ontology
               </legend>
@@ -263,7 +273,7 @@ tools_menu: true
       <tr>
         <td valign="TOP">
           <div style="width:400px">
-            <fieldset style="width:375px;border-width:2px;border-color:black">
+            <fieldset style="min-height: 250px;width:375px;border-width:2px;border-color:black">
               <legend align="top">
                 Soybean Developmental Ontology
               </legend>
@@ -287,7 +297,7 @@ tools_menu: true
         <td valign="TOP">
 
           <div style="width:400px">
-            <fieldset style="width:375px;border-width:2px;border-color:black">
+            <fieldset style="min-height: 250px;width:375px;border-width:2px;border-color:black">
               <legend align="top">
                 Soybean Trait Ontology
               </legend>
@@ -343,4 +353,4 @@ tools_menu: true
     </tbody>
   </table>
 
-</div
+</div>

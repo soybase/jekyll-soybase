@@ -56,7 +56,7 @@
   name: "Gene Search Tool"
   url: "/tools/search/gene.html"
 - category: "Visualize / Browse"
-  description: "Ontology"
+  description: "SoyBase Soybean growth, development and structural ontology."
   name: "Ontology"
   url: "/tools/ontology"
 #   category: "FIXME"
