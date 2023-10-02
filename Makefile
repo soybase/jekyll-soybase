@@ -33,7 +33,8 @@ htmlproofer:
 
 # JBrowse CLI will already be installed globally if using a dev container
 jbrowse: setup
-	rm -f assets/js/jbrowse/config.json
+	$(PYTHON_VENV_ACTIVATE) && cd _data && npx -c 'lis-autocontent --jbrowse_url /assets/js/jbrowse --from_github ./_data/datastore-metadata --log_file /dev/stdout --log_level DEBUG'
+	mv _data/autocontent/config.json ./assets/js/jbrowse
 	npm exec -c '_scripts/jbrowse-tracks.sh'
 
 setup:
@@ -42,10 +43,11 @@ setup:
 	if ! { command -v jbrowse || npm ls @jbrowse/cli ; } >/dev/null 2>&1; then npm install $(NPM_INSTALL_OPTIONS) @jbrowse/cli@${JBROWSE_VERSION}; fi
 	if ! npm exec -c 'command -v jq' >/dev/null 2>&1; then curl -Lo ./node_modules/.bin/jq https://github.com/jqlang/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x ./node_modules/.bin/jq; fi
 	if ! [ -d ./assets/js/jbrowse ]; then npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; fi
-	if ! ( $(PYTHON_VENV_ACTIVATE) ); then python3 -mvenv ./vendor/python-venv && pip3 install --no-cache-dir -r requirements.txt; fi
+	if ! ( $(PYTHON_VENV_ACTIVATE) ); then python3 -mvenv ./vendor/python-venv; fi
+	$(PYTHON_VENV_ACTIVATE) && pip3 install -r requirements.txt
 
 mostlyclean:
 	rm -rf .jekyll-cache/ .jekyll-metadata _site/ tmp/
 
 clean: mostlyclean
-	rm -rf ./assets/js/jbrowse Gemfile.lock $${PWD}/vendor package.json package-lock.json node_modules
+	rm -rf ./assets/autocontent ./assets/js/jbrowse Gemfile.lock $${PWD}/vendor package.json package-lock.json node_modules
