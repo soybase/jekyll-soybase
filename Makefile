@@ -40,7 +40,6 @@ setup:
 	git submodule update --init --recursive
 	if ! bundle check; then bundle install; fi
 	if ! { command -v jbrowse || npm ls @jbrowse/cli ; } >/dev/null 2>&1; then npm install $(NPM_INSTALL_OPTIONS) @jbrowse/cli@${JBROWSE_VERSION}; fi
-	if ! npm exec -c 'command -v jq' >/dev/null 2>&1; then curl -Lo ./node_modules/.bin/jq https://github.com/jqlang/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x ./node_modules/.bin/jq; fi
 	if ! [ -d ./assets/js/jbrowse ]; then npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; fi
 	if ! ( $(PYTHON_VENV_ACTIVATE) ); then python3 -mvenv ./vendor/python-venv; fi
 	$(PYTHON_VENV_ACTIVATE) && pip3 install --no-cache-dir -r requirements.txt
