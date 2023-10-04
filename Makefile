@@ -1,18 +1,18 @@
-OS = $(shell uname)
-ifeq ($(OS), Darwin)
-  # additional macOS environment variable needed at install time due to broken
-  # xcode ruby framework
-  export CPATH = /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Ruby.framework/Versions/2.6/Headers/
+USER = $(shell id -un)
+ifneq (,filter-out(code vscode,$(USER)))
+  OS = $(shell uname)
+  ifeq ($(OS), Darwin)
+    # additional macOS environment variable needed at install time due to broken
+    # xcode ruby framework
+    export CPATH = /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Ruby.framework/Versions/2.6/Headers/
+  endif
   # install Ruby dependencies in $PWD/vendor
   export GEM_HOME=${PWD}/vendor/gems
   export PATH := ${PWD}/vendor/gems/bin:${PATH}
 
   JEKYLL_SERVE_ARGS = --livereload
-  HTMLPROOFER_ARGS = --allow-missing-href=true --ignore-missing-alt=true --cache '{"timeframe": {"external": "30d"}}'
   PYTHON_VENV_ACTIVATE = . ./vendor/python-venv/bin/activate
 else # assume dev container
-  # html-proofer 5.x
-  HTMLPROOFER_ARGS = --allow-missing-href --ignore-missing-alt --cache '{"timeframe": {"external": "30d"}}'
   NPM_INSTALL_OPTIONS = -g
   PYTHON_VENV_ACTIVATE = true # no-op
 endif
@@ -29,7 +29,8 @@ yamllint:
 
 htmlproofer:
 	bundle exec jekyll build --profile --trace
-	bundle exec htmlproofer $(HTMLPROOFER_ARGS) --ignore-status-codes 503 --ignore-files '/\/uikit\/tests\//' --log-level debug ./_site
+	case $$(gem list -q html-proofer) in *4.4.3*) optarg='=true';; esac; \
+	bundle exec htmlproofer --allow-missing-href$${optarg:-} --ignore-missing-alt$${optarg:-} --cache '{"timeframe": {"external": "30d"}}' --ignore-status-codes 503 --ignore-files '/\/uikit\/tests\//' --log-level debug ./_site
 
 # JBrowse CLI will already be installed globally if using a dev container
 jbrowse: setup
