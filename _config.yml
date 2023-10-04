@@ -78,13 +78,13 @@ page_gen:
     name: DataStoreID
     index_files: true
     debug: true
-  - data: sgn_list 
+  - data: sgn_list
     template: sgn_issues
     dir: community/sgn_issues
     name: sgn_year
     index_files: true
     debug: true
-  - data: sgn_list 
+  - data: sgn_list
     template: sgn_minutes
     dir: community/sgn_minutes
     name: sgn_year
