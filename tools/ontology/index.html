@@ -113,7 +113,7 @@ tools_menu: true
       name="PO"
       title="Plant Ontology Consortium"
       target="_self"
-      style="background:url(./images/external.png) center right no-repeat;padding-right:13px">Plant Ontology (PO)</a>
+      >Plant Ontology (PO)</a>
     and
     <a
       href="http://www.gramene.org/db/ontology/search?id=TO:0000387"
@@ -121,7 +121,7 @@ tools_menu: true
       name="GrTO"
       title="Gramene Plant Trait Ontology"
       target="_self"
-      style="background:url(./images/external.png) center right no-repeat;padding-right:13px">Gramene Plant Trait Ontology (TO)</a>
+      >Gramene Plant Trait Ontology (TO)</a>
     synonyms to facilitate cross species comparisons.
     Please feel free to contact us for corrections, additions, and questions.
   </p>
@@ -157,7 +157,7 @@ tools_menu: true
                   name="PM1945"
                   title="ISU Extension Publication PM 1945"
                   target="_self"
-                  style="background:url(./images/external.png) center right no-repeat;padding-right:13px">PM 1945</a>
+                  >PM 1945</a>
                 by Palle Pedersen.
                 <br><br><a
                   id="Wopen"
@@ -191,7 +191,7 @@ tools_menu: true
                 This ontology has also been linked where possible to synonymous stages in the BBCH scale to allow researchers to more easily translate research data compiled using the BBCH scale to data compiled using the familiar V and R stages.<br><br>
                 For convienience, a quick conversion
                 <a
-                  href="OntologyConversion.php"
+                  href="./ontologyConversion.html"
                   style="font-size: 12pt;"
                   id="conversiontable"
                   name="conversiontable"
@@ -227,7 +227,7 @@ tools_menu: true
                   name="Bucciarellietal"
                   title="Bucciarellie et al. Plant Phys 142:207-219"
                   target="_self"
-                  style="background:url(./images/external.png) center right no-repeat;padding-right:13px">Bucciarelli et al. (2006) Plant Phys 142:207-219</a>.
+                  >Bucciarelli et al. (2006) Plant Phys 142:207-219</a>.
                 <br><br><a
                   id="Sopen"
                   style="color:green"
@@ -312,7 +312,7 @@ tools_menu: true
                   name="SoybeanDescriptors"
                   title="Grin Soybean Descriptors"
                   target="_self"
-                  style="background:url(./images/external.png) center right no-repeat;padding-right:13px">GRIN Soybean Descriptors</a>
+                  >GRIN Soybean Descriptors</a>
                 and soybean traits and QTLs described in SoyBase as well as other publications.<br><br><a
                   id="Topen"
                   style="color:green"
@@ -344,8 +344,8 @@ tools_menu: true
                   onclick="traitClose()">Close ...</a><br>
               </div>
               <br>
-
-              <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0000099','_blank');">Browse and Search Soybean Trait Terms</button>
+              {% comment %} <button onclick="window.open('https://amigo.soybase.org/amigo/amigo/term/SOY:0000099','_blank');">Browse and Search Soybean Trait Terms</button> {% endcomment %}
+              <button onclick="window.open('../amigo','_blank');">Browse and Search Soybean Trait Terms</button>
             </fieldset>
           </div>
         </td>
