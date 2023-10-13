@@ -14,6 +14,6 @@
     - category:
       - name: data
         instances:
-        - description: "White mold GWAS Results File (XLSX File 1.2 MB) - FIX (put in DS collection)"
-          url: "#"
+          - description: "White mold GWAS Results File (XLSX File 1.2 MB) - FIX (put in DS collection)"
+            url: "#"
 

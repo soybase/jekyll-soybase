@@ -14,10 +14,10 @@
     - category:
       - name: visualization
         instances:
-        - description: "Interactive copy-number viewer"
-          url: "https://shiny.soybase.org/CNV/"
-        - description: "Interactive SNP analysis viewer"
-          url: "https://shiny.soybase.org/SNP/"
-        - description: "Interactive strain & pedigree viwer"
-          url: "https://shiny.soybase.org/SNP/"
+          - description: "Interactive copy-number viewer"
+            url: "https://shiny.soybase.org/CNV/"
+          - description: "Interactive SNP analysis viewer"
+            url: "https://shiny.soybase.org/SNP/"
+          - description: "Interactive strain & pedigree viwer"
+            url: "https://shiny.soybase.org/SNP/"
 

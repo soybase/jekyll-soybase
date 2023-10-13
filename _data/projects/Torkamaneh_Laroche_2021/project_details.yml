@@ -17,25 +17,25 @@
     - category:
       - name: code
         instances:
-        - description: "R library documentation"
-          url: "https://rdrr.io/github/malemay/HaplotypeMiner/"
-        - description: "Code repository on GitHub"
-          url: "https://github.com/malemay/HaplotypeMiner"
+          - description: "R library documentation"
+            url: "https://rdrr.io/github/malemay/HaplotypeMiner/"
+          - description: "Code repository on GitHub"
+            url: "https://github.com/malemay/HaplotypeMiner"
     - category:
       - name: data
         instances:
-        - description: "FigShare repository"
-          url: "https://figshare.com/projects/Soybean_Haplotype_Map_GmHapMap_A_Universal_Resource_for_Soybean_Translational_and_Functional_Genomics/56921"
-        - description: "Data Store repository"
-          url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/"
-        - description: "Download List of Accessions"
-          url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.AccessionTable.txt.gz"
-        - description: "Download GmHapMap data in VCF format (1.9 GB compressed)"
-          url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz"
-        - description: "Download Genotypes by Gene"
-          url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.genotypes_by_gene.hmp.gz"
-        - description: "Download Haplotypes by Gene"
-          url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.haplotypes_by_gene.tsv.gz"
-        - description: "Download Loss of Function SNPs"
-          url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.loss_of_function.xlsx.gz"
+          - description: "FigShare repository"
+            url: "https://figshare.com/projects/Soybean_Haplotype_Map_GmHapMap_A_Universal_Resource_for_Soybean_Translational_and_Functional_Genomics/56921"
+          - description: "Data Store repository"
+            url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/"
+          - description: "Download List of Accessions"
+            url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.AccessionTable.txt.gz"
+          - description: "Download GmHapMap data in VCF format (1.9 GB compressed)"
+            url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz"
+          - description: "Download Genotypes by Gene"
+            url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.genotypes_by_gene.hmp.gz"
+          - description: "Download Haplotypes by Gene"
+            url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.haplotypes_by_gene.tsv.gz"
+          - description: "Download Loss of Function SNPs"
+            url: "https://www.soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.loss_of_function.xlsx.gz"
 

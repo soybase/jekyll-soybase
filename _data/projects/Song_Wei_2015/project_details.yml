@@ -14,18 +14,18 @@
     - category:
       - name: map
         instances:
-        - description: "SoyBase genome viewer - FIX"
-          url: "#"
+          - description: "SoyBase genome viewer - FIX"
+            url: "#"
     - category:
       - name: data
         instances:
-        - description: "InDel coordinates for Hedou12 relative to Wm82.a1 (Text File 2.1 Mb)"
-          url: "https://www.soybase.org/data_distribution/projects/SoyBase.B2014.01/InDel_coordinates.txt"
-        - description: "SNP coordinates for Hedou12 relative to Wm82.a1 (Text File 8.2 Mb)"
-          url: "https://www.soybase.org/data_distribution/projects/SoyBase.B2014.01/SNP_coordinates.txt"
+          - description: "InDel coordinates for Hedou12 relative to Wm82.a1 (Text File 2.1 Mb)"
+            url: "https://www.soybase.org/data_distribution/projects/SoyBase.B2014.01/InDel_coordinates.txt"
+          - description: "SNP coordinates for Hedou12 relative to Wm82.a1 (Text File 8.2 Mb)"
+            url: "https://www.soybase.org/data_distribution/projects/SoyBase.B2014.01/SNP_coordinates.txt"
     - category:
       - name: sequence reads
         instances:
-        - description: "NCBI Short Read Archive SRP051486"
-          url: "https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP051486"
+          - description: "NCBI Short Read Archive SRP051486"
+            url: "https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP051486"
 

@@ -17,8 +17,8 @@
     - category:
       - name: data
         instances:
-        - description: "Genotype information for 4234 cultivars (Data Store repository)"
-          url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Jeong_Moon_2019/"
-        - description: "Genotype information for 222 cultivars (Data Store repository)"
-          url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Lee_Jeong_2015/"
+          - description: "Genotype information for 4234 cultivars (Data Store repository)"
+            url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Jeong_Moon_2019/"
+          - description: "Genotype information for 222 cultivars (Data Store repository)"
+            url: "https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Lee_Jeong_2015/"
 

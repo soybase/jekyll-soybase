@@ -14,15 +14,15 @@
     - category:
       - name: browser
         instances:
-        - description: SoyBase genome viewer
-          url: "https://soybase.org/gb2/gbrowse/gmax1.01/?q=Gm01;%20reset=1;l=soy_atlas_transcript_density%1Eprima_2000%1EGlyma1%1EGlyma1.1%1Ecentromere%3Aoverview%1Epericentromere%3Aoverview;"
+          - description: SoyBase genome viewer
+            url: "https://soybase.org/gb2/gbrowse/gmax1.01/?q=Gm01;%20reset=1;l=soy_atlas_transcript_density%1Eprima_2000%1EGlyma1%1EGlyma1.1%1Ecentromere%3Aoverview%1Epericentromere%3Aoverview;"
     - category:
       - name: data
         instances:
-        - description: "Nodule RNA 4 Weeks Vegetative Stage (BAM File 5.4 Gigs) - FIX (put in DS collection)"
-          url: "#"
-        - description: "Nodule RNA 8 Weeks Reproductive Stage (BAM File 5.8 Gigs) - FIX (put in DS collection)"
-          url: "#"
-        - description: "Nodule RNA 14 Weeks Senescence Stage (BAM File 5.0 Gigs) - FIX (put in DS collection)"
-          url: "#"
+          - description: "Nodule RNA 4 Weeks Vegetative Stage (BAM File 5.4 Gigs) - FIX (put in DS collection)"
+            url: "#"
+          - description: "Nodule RNA 8 Weeks Reproductive Stage (BAM File 5.8 Gigs) - FIX (put in DS collection)"
+            url: "#"
+          - description: "Nodule RNA 14 Weeks Senescence Stage (BAM File 5.0 Gigs) - FIX (put in DS collection)"
+            url: "#"
 
