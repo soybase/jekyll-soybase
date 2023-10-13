@@ -11,15 +11,17 @@
       doi: "10.1111/tpj.14500"
       abstract: "We report reference-quality genome assemblies and annotations for two accessions of soybean (Glycine max) and for one accession of Glycine soja, the closest wild relative of G. max. The G. max assemblies provided are for widely used US cultivars: the northern line Williams 82 (Wm82) and the southern line Lee. The Wm82 assembly improves the prior published assembly, and the Lee and G. soja assemblies are new for these accessions. Comparisons among the three accessions show generally high structural conservation, but nucleotide difference of 1.7 single-nucleotide polymorphisms (snps) per kb between Wm82 and Lee, and 4.7 snps per kb between these lines and G. soja. snp distributions and comparisons with genotypes of the Lee and Wm82 parents highlight patterns of introgression and haplotype structure. Comparisons against the US germplasm collection show placement of the sequenced accessions relative to global soybean diversity. Analysis of a pan-gene collection shows generally high conservation, with variation occurring primarily in genomically clustered gene families. We found approximately 40-42 inversions per chromosome between either Lee or Wm82v4 and G. soja, and approximately 32 inversions per chromosome between Wm82 and Lee. We also investigated five domestication loci. For each locus, we found two different alleles with functional differences between G. soja and the two domesticated accessions. The genome assemblies for multiple cultivated accessions and for the closest wild ancestor of soybean provides a valuable set of resources for identifying causal variants that underlie traits for the domestication and improvement of soybean, serving as a basis for future research and crop improvement efforts for this important crop species."
   data_links:
-    - type: data
-      description: "Genome assembly for Glycine max cv. Lee"
-      url: "https://soybase.org/data/v2/Glycine/max/genomes/Lee.gnm1.BXNC/"
-    - type: data
-      description: "Genome assembly for Glycine max PI 483463"
-      url: "https://soybase.org/data/v2/Glycine/soja/genomes/PI483463.gnm1.YJWS/"
-    - type: browser
-      description: "Genome assembly for Glycine max PI 483463"
-      url: "https://soybase.org/gb2/gbrowse/glyma.Lee.gnm1/"
-    - type: browser
-      description: "Genome assembly for Glycine max PI 483463"
-      url: "https://soybase.org/gb2/gbrowse/glyso.PI483463.gnm1/"
+    - category:
+      - name: data
+        instances:
+        - description: "Genome assembly for Glycine max cv. Lee"
+          url: "https://soybase.org/data/v2/Glycine/max/genomes/Lee.gnm1.BXNC/"
+        - description: "Genome assembly for Glycine max PI 483463"
+          url: "https://soybase.org/data/v2/Glycine/soja/genomes/PI483463.gnm1.YJWS/"
+    - category:
+      - name: browser
+        instances:
+        - description: "Genome assembly for Glycine max PI 483463"
+          url: "https://soybase.org/gb2/gbrowse/glyma.Lee.gnm1/"
+        - description: "Genome assembly for Glycine max PI 483463"
+          url: "https://soybase.org/gb2/gbrowse/glyso.PI483463.gnm1/"
