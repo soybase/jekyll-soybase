@@ -3,9 +3,6 @@ layout: default
 title: SoyNAM project
 sitemap: projects/SoyNAM
 ---
-{% if site.data.nam_list %}
-{% assign nam_lines = site.data.nam_list | group_by: "category" | sort: "accession" %}
-
 <h2>Nested Association Mapping of Genes Controlling Soybean Yield and Other Key Traits</h2>
 
 <p> 
@@ -21,14 +18,32 @@ sitemap: projects/SoyNAM
   See links below for information about each line: images, phenotypes, and associated data.
 </p>
 
-{% for category in nam_lines %} 
-  <strong>{{ category.name }}</strong>
-  <ul>
-  {% for item in category.items %} 
-    <li><a href="{{ "/projects/SoyNam/" | relative_url }}{{ item.accession }}">{{ item.display_name }}</a></li>
-  {% endfor %}
-  </ul>
-{% endfor %}
+<table border="1" cellspacing="1" cellpadding="1" >
+  <thead>
+    <tr>
+      <th style="text-align: center"><b>High yielding</b></th>
+      <th style="text-align: center"><b>Diverse ancestry</b></th>
+      <th style="text-align: center"><b>High yield in drought</b></th>
+      <th style="text-align: center"><b>Hub parent</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for nam_category in site.data.nam_table %}
+      <tr>
+        {% assign drought_display = nam_category.drought | replace: '_', ' ' %}
+        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.yield }}">{{ nam_category.yield }}</a></td>
+        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.diverse }}">{{ nam_category.diverse }}</a></td>
+        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.drought }}">{{ drought_display }}</a></td>
+        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.hub }}">{{ nam_category.hub }}</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
-{% endif %}
+<p class="uk-text-small">Note that line PI 507681B is not shown. Analysis of the progeny of SoyNAM population 46 (PI 507681B x IA3023) showed that the cross was not as described. No phenotypic data for SoyNAM 46 are available.
+</p>
 
+{% comment %}
+
+<table class="uk-table uk-width-1-2 uk-text-center uk-text-nowrap uk-table-condensed uk-padding-small">
+{% endcomment %}
