@@ -11,8 +11,8 @@ sitemap: projects/SoyNAM
   domestic and exotic germplasm have been mapped using a Nested Association Panel composed of 40 important 
   soybean varieties and cultivars crossed to a common hub parent. 
   See further <a href="/projects/soynam_2014/">details about the SoyNAM Project</a>. 
-  Funding was provided by the North Central Soybean research Program (<a href="http://www.ncsrp.com/">NCSRP</a>) 
-  and the United Soybean Board (<a href="http://unitedsoybean.org/">USB</a>).
+  Funding was provided by the North Central Soybean research Program (<a href="https://ncsrp.com">NCSRP</a>) 
+  and the United Soybean Board (<a href="https://www.unitedsoybean.org">USB</a>).
 </p>
 <p>
   See links below for information about each line: images, phenotypes, and associated data.
@@ -32,25 +32,25 @@ sitemap: projects/SoyNAM
       <tr>
         {% assign drought_display = nam_cat.drought | replace: '_', ' ' %}
         {% if nam_cat.yield != "~" %}
-          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.yield }}">{{ nam_cat.yield }}</a></td>
+          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.yield | downcase }}">{{ nam_cat.yield }}</a></td>
         {% else %}
           <td>~</td>
         {% endif %}
 
         {% if nam_cat.diverse != "~" %}
-          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.diverse }}">{{ nam_cat.diverse }}</a></td>
+          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.diverse | downcase }}">{{ nam_cat.diverse }}</a></td>
         {% else %}
           <td>~</td>
         {% endif %}
 
         {% if nam_cat.drought != "~" %}
-          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.drought }}">{{ drought_display }}</a></td>
+          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.drought | downcase }}">{{ drought_display }}</a></td>
         {% else %}
           <td>~</td>
         {% endif %}
 
         {% if nam_cat.hub != "~" %}
-          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.hub }}">{{ nam_cat.hub }}</a></td>
+          <td><a href="{{ "/projects/SoyNAM/" | relative_url }}{{ nam_cat.hub | downcase }}">{{ nam_cat.hub }}</a></td>
         {% else %}
           <td>~</td>
         {% endif %}
