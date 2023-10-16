@@ -1,0 +1,34 @@
+---
+layout: default
+title: SoyNAM project
+sitemap: projects/SoyNAM
+---
+{% if site.data.nam_list %}
+{% assign nam_lines = site.data.nam_list | group_by: "category" | sort: "accession" %}
+
+<h2>Nested Association Mapping of Genes Controlling Soybean Yield and Other Key Traits</h2>
+
+<p> 
+  The goal of the soybean Nested Association Mapping project is to improve the yield potential of soybean varieties. 
+  To this end, the chromosomal locations of genes that control yield and other important agronomic traits in both 
+  domestic and exotic germplasm have been mapped using a Nested Association Panel composed of 40 important 
+  soybean varieties and cultivars crossed to a common hub parent. 
+  See further <a href="/projects/soynam_2014/">details about the SoyNAM Project</a>. 
+  Funding was provided by the North Central Soybean research Program (<a href="http://www.ncsrp.com/">NCSRP</a>) 
+  and the United Soybean Board (<a href="http://unitedsoybean.org/">USB</a>).
+</p>
+<p>
+  See links below for information about each line: images, phenotypes, and associated data.
+</p>
+
+{% for category in nam_lines %} 
+  <strong>{{ category.name }}</strong>
+  <ul>
+  {% for item in category.items %} 
+    <li><a href="{{ "/projects/SoyNam/" | relative_url }}{{ item.accession }}">{{ item.display_name }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+{% endif %}
+
