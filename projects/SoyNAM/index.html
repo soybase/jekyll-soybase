@@ -28,13 +28,32 @@ sitemap: projects/SoyNAM
     </tr>
   </thead>
   <tbody>
-    {% for nam_category in site.data.nam_table %}
+    {% for nam_cat in site.data.nam_table %}
       <tr>
-        {% assign drought_display = nam_category.drought | replace: '_', ' ' %}
-        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.yield }}">{{ nam_category.yield }}</a></td>
-        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.diverse }}">{{ nam_category.diverse }}</a></td>
-        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.drought }}">{{ drought_display }}</a></td>
-        <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_category.hub }}">{{ nam_category.hub }}</a></td>
+        {% assign drought_display = nam_cat.drought | replace: '_', ' ' %}
+        {% if nam_cat.yield != "~" %}
+          <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_cat.yield }}">{{ nam_cat.yield }}</a></td>
+        {% else %}
+          <td>~</td>
+        {% endif %}
+
+        {% if nam_cat.diverse != "~" %}
+          <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_cat.diverse }}">{{ nam_cat.diverse }}</a></td>
+        {% else %}
+          <td>~</td>
+        {% endif %}
+
+        {% if nam_cat.drought != "~" %}
+          <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_cat.drought }}">{{ drought_display }}</a></td>
+        {% else %}
+          <td>~</td>
+        {% endif %}
+
+        {% if nam_cat.hub != "~" %}
+          <td><a href="{{ "/projects/SoyNam/" | relative_url }}{{ nam_cat.hub }}">{{ nam_cat.hub }}</a></td>
+        {% else %}
+          <td>~</td>
+        {% endif %}
       </tr>
     {% endfor %}
   </tbody>
