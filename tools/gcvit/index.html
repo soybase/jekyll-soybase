@@ -16,41 +16,28 @@ iframe_url: "https://gcvit.soybase.org"
 
 {% include navbar.html %}
 
-<script>
-   function dataView() {
-     var x = document.getElementById("gcvit-data-info");
-     var y = document.getElementById("toggle-gcvit-info");
-     if(x.style.display == "none"){
-       x.style.display = "block";
-       y.innerHTML = "Hide citations";
-     } else {
-       x.style.display = "none";
-       y.innerHTML = "Click here to lean more about the datasets available on GCViT";
-     }
-   }
-</script>
-
 <style>
-p, h2, h3, table {
+p, h2, h3, details {
   padding-left: 10%;
   padding-right: 10%;
 }
 </style>
-
-<!--  <div class="sb_middle3"> -->
                            
-      <h2 style='font-weight:bold;'>GCViT (Genotype Comparison Visualization Tool)</h2>
-      <p style='font-weight:bold;'> <a href='https://youtu.be/B2gPVUipWo0'>Video Tutorial on GCViT</a> </p>
-      <p style="font-weight:bold;" id="toggle-gcvit-info" onClick="dataView();"> Click here to learn more about the datasets available on GCViT</p>
+<h2 style='font-weight:bold;'>GCViT (Genotype Comparison Visualization Tool)</h2>
+<p style='font-weight:bold;'> <a href='https://youtu.be/B2gPVUipWo0'>Video Tutorial on GCViT</a> </p>
 
-      <div id="gcvit-data-info" style="display:none;"> 
+<!-- ################# add details button for Datasets on GCVIT-->
+<p>
+  <strong>Learn more about the Datasets available on GCViT</strong>
+</p>
+<details>
 <style>
 th, td {
   padding: 7px;
 }
 </style>
-<h3 style='font-weight:bold;'> GCViT Datasets</h3>
 
+<!--<h3>  GCViT Datasets</h3>-->
 <p>SNPs were sampled at a density of no more than one SNP per 25kb prior to display. This has the effect of partially normalizing the SNP density (though regions of the genome with very sparse SNP density will still show sparse density). </p>
 <p><a href='https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Song_Hyten_2015/glyma.Wm82.gnm2.div.Song_Hyten_2015.PIconversion.txt.gz' style='font-weight:bold;'>Click Here To Download PI to Common Name Conversion Table</a></p>
 <p style="color:blue; font-size:100%;"> If you would like to submit your data to be run on this tool please <span><a href='/about/' style="color:red;">Contact Us </a></span></p>
@@ -107,12 +94,10 @@ th, td {
    <td>Wei, W., Mesquita, A. C. O., FigueirÃ, A. D. A., Wu, X., Manjunatha, S., Wickland, D. P., ...Clough, S. J. (2017). Genome-wide association mapping of resistance to a Brazilian isolate of Sclerotinia sclerotiorum in soybean genotypes mostly from Brazil. BMC genomics, 18(1), 849. <a href='https://doi.org/10.1186/s12864-017-4160-1'>doi.org/10.1186/s12864-017-4160-1</a> </td>
    <td><a href='https://soybase.org/data/v2/Glycine/max/diversity/Wm82.gnm2.div.Wei_Mesquita_2017/'>View Here</a></td>
  </tr>
-
 </table>
 <p> * please cite accordingly </p> 
-   <!--</div>-->  
-
-</div>
+</details>
+<br>
 
 {% assign iframe_style="display: flex; width: 100%; height: 100vh; flex-direction: column;" %}
 <iframe id="myiframe" src="{{ page.iframe_url }}" style="{{ iframe_style }}"></iframe>
