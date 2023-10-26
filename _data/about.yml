@@ -33,7 +33,7 @@
   url: "/about/submitting_data"
 - category: "Data"
   description: "FAIR data at SoyBase"
-  name: "FAIRpractices"
+  name: "FAIR data practices"
   url: "/about/fairpractices"
 - category: "About SoyBase"
   description: "About the SoyBase database and soybeans"
