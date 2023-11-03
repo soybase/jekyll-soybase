@@ -1,0 +1,36 @@
+---
+title: Correspondence
+sitemap: correspondence
+tools_menu: true
+---
+
+<h2>Gene Model Correspondence Lookup</h2>
+
+<p>
+  There are several good options for identifying corresponding genes in different accessions or annotations. If you have ...<br>
+  &nbsp;&nbsp;• One or a few genes to look up? Use the <a href=""><b>pangene search tool</b></a>.<br>
+  &nbsp;&nbsp;• Many genes to look up among reference** accessions? Download a 
+        <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.table_ref_lines.tsv.gz">
+          <b>correspondence table for the reference lines</b>
+        </a>. <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**<i>currently: all assemblies and annotations of Wm82, Lee, Jidou 17, Zh13</i><br>
+  &nbsp;&nbsp;• Many genes to look up among non-reference accessions? Download a 
+        <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.table.tsv.gz">
+          <b>correspondence table for all pangene accessions</b>
+        </a>.<br>
+</p> 
+
+<p>
+If you have extensive programmatic work among arbitrary accessions, see more here:
+<details>
+Download the <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.clust.tsv.gz">
+  Glycine "clust"-format pangene file</a> 
+  and the <a href="https://github.com/legumeinfo/pandagma">pandagma package</a>. <br>
+  Within that package, the scripts <u>bin/gene_trans_db_load.sh</u> and <u>bin/gene_translate.pl</u> can be used to 
+  translate from one annotation to another indicated annotation, for any given list of annotations and desired target annotation; 
+  and bin/pangene_tabularize.pl can be used to convert from the pangene "clust.tsv" 
+  format to a tabular format, for an indicated list of annotations. <br>
+  In fact, pangene_tabularize.pl was used to generate the linked pangene table...tsv files linked above; 
+  so those may be sufficient for most purposes.
+</details>
+</p>
