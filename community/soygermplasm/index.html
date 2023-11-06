@@ -93,8 +93,8 @@ Minutes:
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanminutes2016.pdf
   - name: February 2015
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanminutes2015.pdf
-  - name: All Soybean Crop Germplasm Committee Meeting Minutes
-    website: https://www.ars-grin.gov/CGC
+  # - name: All Soybean Crop Germplasm Committee Meeting Minutes
+  #   website: https://www.ars-grin.gov/CGC
 Report:
   - name: 2020
     website: https://www.ars-grin.gov/npgs/cgc_reports/2021%20-%20Soybean%20Curator%20Report.pdf
@@ -106,23 +106,24 @@ Report:
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanstatus2017.pdf
   - name: 2015
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanstatus2016.pdf
-  - name: All USDA Soybean Germplasm Collection Reports
-    website: https://www.ars-grin.gov/CGC
+  # - name: All USDA Soybean Germplasm Collection Reports
+  #   website: https://www.ars-grin.gov/CGC
 
 ---
 
 <h2>Soybean Crop Germplasm Committee</h2>
 
-<p>The soybean genomics research community is comprised of scientists with expertise ranging from classical breeding to genomics and cell biology to gene discovery. The genomic resources available for soybean are often poorly understood by non-soybean scientists and funding agencies. Consequently the strengths and needs of the soybean genomics research community are also often poorly understood. It is the mission of the Soybean Genomics Executive Committee (SoyGEC) to advance soybean as a genetic and physiological research system that will result in enhanced availability and nutritional quality of the world’s premier source of vegetable protein and oil.</p>
+<p>The Crop Germplasm Committee (CGC) is a generic name for a specific national working group of specialists providing analysis, data, and advice about germplasm within a specific crop or group of related crops of present or future economic importance. In accordance with this convention, this committee will be named the Soybean Crop Germplasm Committee.</p>
 
-<p>In order to achieve this mission, SoyGEC will actively pursue the goal of widening the breadth and scope of existing soybean genomics research. The SoyGEC will proactively communicate with the soybean research community to help define research priorities, and with representatives of federal funding agencies to ensure that research priorities are clearly articulated. When called upon, the SoyGEC will speak on behalf of the research community to commodity board groups and other lay-groups.</p>
-
-<p>The SoyGEC seeks to broaden the number of soybean scientists conducting genomic research and to broaden the diversity of scientific expertise in team research in order to add new dimensions to the scientific and agricultural questions asked. The SoyGEC will encourage research that will target high priority needs of soybean and facilitate training of undergraduates, graduates, and post-doctoral scientists to prepare a new generation of researchers skilled in research techniques targeted for this crop.</p>
-
-<p>The SoyGEC seeks to ensure excellence in research quality and clarity in communication of needs and priorities. Without encumbering individual initiative, the SoyGEC will encourage coordination of dedicated research teams finding solutions to soybean problems of national and international importance.</p>
-
-<a href="https://data.legumeinfo.org/data/annex/Glycine/max/plans/SoyGEC/SoyGEC_Policies_Procedures_083122.pdf">Soybean Genomics & Genetics Consortium: Policies & Procedures</a><br> 
-
+<p>The function of the Soybean Crop Germplasm Committee is to serve soybean commodity groups and provide expert advice to individuals or organizations such as the Agricultural Research Service (ARS), State Agricultural Experiment Stations (SAES), and others on technical matters relating to plant germplasm, its collection, preservation, and effective utilization. Duties and Responsibilities are as follow:.</p>
+<ol style="font-size:16px">
+<li>Develop a strategic overview of the total national scientific effort in the study and utilization of soybean germplasm and recommend cooperative approaches for improvements in the germplasm management system where needs are apparent.
+</li><li>Assess the adequacy of the USDA Soybean Germplasm Collection and make recommendations to appropriate governmental and private agencies for increasing the Collection via additional exploration, exchange, or acquisition.
+</li><li>Assess progress in soybean breeding and the role germplasm resources might play in improving traits of economic importance.
+</li><li>Suggest guidelines for the effective regeneration, distribution, evaluation and utilization of accessions in the USDA Soybean Germplasm Collection.
+</li><li>Provide a means for soybean scientists or commodity groups to voice opinions on needs for plant germplasm resources and their utilization to those individuals responsible for these areas at the national level.
+</li><li>Develop concise reports when requested on ongoing germplasm activities, resource needs, and action plans. 
+</li></ol>
 <h2>Current Soybean Crop Germplasm Committee members are</h2>
 <table>
   <tr>
@@ -140,10 +141,16 @@ Report:
   </tr>
   {% endfor %}
 </table>
-<h2>Committee Meeting Minutes and Reports</h2>
 
+<hr>
+<h4>
+  <a href="https://www.ars-grin.gov/CGC">
+    <strong>Committee Meeting Minutes and Reports</u></strong>
+  </a>
+</h4>
+<details>
 <h3>Soybean Crop Germplasm Committee Meeting Minutes:</h3>
-<ul>
+  <ul>
   {% for meeting in page.Minutes %}
     <li><a href="{{ meeting.website }}">{{ meeting.name }}</a></li>
   {% endfor %}
@@ -155,3 +162,11 @@ Report:
     <li><a href="{{ report.website }}">{{ report.name }}</a></li>
   {% endfor %}
 </ul>
+</details>
+
+<h2></h2>
+
+
+
+
+
