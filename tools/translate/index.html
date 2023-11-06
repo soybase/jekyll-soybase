@@ -1,0 +1,104 @@
+---
+title: Correspondence
+sitemap: correspondence
+tools_menu: true
+
+example:
+- pangene: Glycine.pan4.pan44854
+  glyma_Wm82_gnm1_ann1: Glyma01g00210
+  glyma_Wm82_gnm2_ann1: Glyma.01G000100
+  glyma_Wm82_gnm4_ann1: Glyma.01G000100
+  glyma_Wm82_gnm6_ann1: Glyma.01G000050
+  glyma_Lee_gnm1_ann1: NONE
+  more: "..."
+- pangene: Glycine.pan4.pan47277
+  glyma_Wm82_gnm1_ann1: Glyma0103s100, Glyma01g00291, Glyma08g48450
+  glyma_Wm82_gnm2_ann1: Glyma.01G000300
+  glyma_Wm82_gnm4_ann1: Glyma.01G000322
+  glyma_Wm82_gnm6_ann1: Glyma.01G000150
+  glyma_Lee_gnm1_ann1: NONE
+  more: "..."
+- pangene: Glycine.pan4.pan40540
+  glyma_Wm82_gnm1_ann1: Glyma01g00300
+  glyma_Wm82_gnm2_ann1: Glyma.01G000400
+  glyma_Wm82_gnm4_ann1: Glyma.01G000400
+  glyma_Wm82_gnm6_ann1: Glyma.01G000200
+  glyma_Lee_gnm1_ann1: Gm_00003
+  more: "..."
+- pangene: Glycine.pan4.pan29417
+  glyma_Wm82_gnm1_ann1: Glyma01g00321
+  glyma_Wm82_gnm2_ann1: Glyma.01G000600
+  glyma_Wm82_gnm4_ann1: Glyma.01G000600
+  glyma_Wm82_gnm6_ann1: Glyma.01G000300
+  glyma_Lee_gnm1_ann1: NONE
+  more: "..."
+- pangene: Glycine.pan4.pan69039
+  glyma_Wm82_gnm1_ann1: NONE
+  glyma_Wm82_gnm2_ann1: NONE
+  glyma_Wm82_gnm4_ann1: NONE
+  glyma_Wm82_gnm6_ann1: Glyma.01G000400
+  glyma_Lee_gnm1_ann1: NONE
+  more: "..."
+- pangene: "Glycine.pan4.pan99999"
+  glyma_Wm82_gnm1_ann1: "..."
+  glyma_Wm82_gnm2_ann1: "..."
+  glyma_Wm82_gnm4_ann1: "..."
+  glyma_Wm82_gnm6_ann1: "..."
+  glyma_Lee_gnm1_ann1: "..."
+  more: "..."
+
+---
+
+<h2>Gene Model Translation / Correspondence</h2>
+
+<p>
+  <b>There are several good options for identifying corresponding genes in different accessions or annotations. If you have ...</b>
+  <ul>
+    <li> One or a few genes to look up? Use the <a href=""><b>pangene search tool</b></a>.
+    <li> Many genes to look up among reference** accessions? Download a 
+        <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.table_ref_lines.tsv.gz">
+          <b>correspondence table for the reference lines</b>.
+        </a>
+    <li> Many genes to look up among non-reference accessions? Download a 
+        <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.table.tsv.gz">
+          <b>correspondence table for all pangene accessions.</b>
+        </a>
+  </ul>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**<i>currently: all assemblies and annotations of Wm82, Lee, Jidou 17, Zh13</i><br>
+</p> 
+
+<br>
+<p>Sample data from the 
+  <a href="https://soybase.org/data/v2/Glycine/GENUS/pangenes/Glycine.pan4.RK4P/Glycine.pan4.RK4P.table_ref_lines.tsv.gz">
+    <b>correspondence table for the reference lines</b>:
+  </a>
+</p>
+<table class="uk-width-1-2 uk-text-center uk-table-striped uk-table-condensed">
+  <tr>
+    <th class="uk-text-center uk-text-normal">Pangene ID</th>
+    <th class="uk-text-center uk-text-normal">Wm82.gnm1.ann1 / Wm82.a1.v1</th>
+    <th class="uk-text-center uk-text-normal">Wm82.gnm2.ann1 / Wm82.a2.v1</th>
+    <th class="uk-text-center uk-text-normal">Wm82.gnm4.ann1 / Wm82.a4.v1</th>
+    <th class="uk-text-center uk-text-normal">Wm82.gnm6.ann1 / Wm82.a6.v1</th>
+    <th class="uk-text-center uk-text-normal">Lee.gnm1.ann1 / Lee.a1.v1</th>
+    <th class="uk-text-center uk-text-normal">more</th>
+  </tr>
+  {% for name in page.example %}
+    <tr>
+      <td class="uk-text-light" >{{ name.pangene }}</td>
+      <td class="uk-text-light">{{ name.glyma_Wm82_gnm1_ann1 }}</td>
+      <td class="uk-text-light">{{ name.glyma_Wm82_gnm2_ann1 }}</td>
+      <td class="uk-text-light">{{ name.glyma_Wm82_gnm4_ann1 }}</td>
+      <td class="uk-text-light">{{ name.glyma_Wm82_gnm6_ann1 }}</td>
+      <td class="uk-text-light">{{ name.glyma_Lee_gnm1_ann1 }}</td>
+      <td class="uk-text-light">{{ name.more }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>If you have extensive programmatic work and need to translate among arbitrary accessions, 
+  the <a href="https://github.com/legumeinfo/pandagma/blob/main/bin/gene_translate.pl">gene_translate.pl</a> 
+  utility in the <a href="https://github.com/legumeinfo/pandagma">pandagma package</a> 
+  may be helpful.
+</p>
+
