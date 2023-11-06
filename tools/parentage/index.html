@@ -1,0 +1,64 @@
+---
+title: Parentage
+sitemap: parentage 
+layout: default
+---
+
+<h2>Soy Parentage and Pedigrees</h2>
+
+<p> 
+The soybean parentage information in this database was partially gleaned from the Uniform Soybean Tests for the 
+<a href="https://www.ars.usda.gov/southeast-area/stoneville-ms/crop-genetics-research/docs/uniform-soybean-tests/">Southern</a>
+and 
+<a href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/crop-production-and-pest-control-research/docs/uniform-soybean-tests-northern-region/">Northern</a> 
+regions as well as other sources such as USDA technical bulletins, variety registrations and PVP applications.
+The strains that appear here were part of the uniform trials and not the preliminary trials. In most cases, the pedigree of
+individual strains was followed back to named strains in both maternal and paternal lineages where possible. In some cases,
+the parentage of strains was not specified by the cooperators in the tests. In those cases the maternal and paternal parents
+are labeled as "Unspecified". In some cases, the actual parental information is partially or completely unknown. In those
+cases the unknown parentages is labeled with "Unknown". When available, synonyms for the strains were also collected. If a
+strain was named its PI number was also included as a synonym. In cases where the strain was found to be covered by PVP
+protection, the PVP registration number was also included. Because of the sources used, not all named soybean strains are
+listed. For additional information the user should consult the Germplasm Resources Information Network (GRIN) 
+<a href="https://npgsweb.ars-grin.gov/gringlobal/search">search page</a>.
+</p>
+
+<p>
+Strain names are prefixed with a code that identifies the program that produced them. The code is usually the first two
+letters in the strain name followed by the year it was released as a two digit number. A description of the code prefixes can
+be found here. Strains originating from Pioneer Hybrid generally begin with the letter "P" followed by 4 digits ie P2345.
+Some Pioneer strains have names of the form P followed by two digits followed by one letter followed by two digits ie P49M23.
+</p>
+
+<p><b>Browse or search accessions beginning with ...</b><p>
+<table class="uk-table uk-width-1-2 uk-text-center uk-table-condensed">
+  <tbody>
+    {% for item in site.data.parentage_groups %}
+      {% assign display_name = item.group | remove:"group" %}
+      <tr>&nbsp;<a href="/tools/parentage/{{item.group | downcase}}">{{ display_name }}</a>&nbsp;</tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table border="1" cellspacing="1" cellpadding="1" >
+  <thead>
+    <tr>
+      <th style="text-align: center"><b>Individual</b></th>
+      <th style="text-align: center"><b>Parent1</b></th>
+      <th style="text-align: center"><b>Parent2</b></th>
+      <th style="text-align: center"><b>Pedigree</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in site.data.parentage.group0-9 %}
+      <tr>
+        <td>{{ item.Individual }}</td>
+        <td>{{ item.Parent1 }}</td>
+        <td>{{ item.Parent2 }}</td>
+        <td>{{ item.Pedigree }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
