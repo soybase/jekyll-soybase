@@ -28,8 +28,6 @@
       url: "https://www.ncsrp.com/"
   - name: "Communications"
     resources:
-    - description: "About the SoyBase Genetic Maps"
-      url: "https://soybase.org/community/aboutgeneticmaps.php"
     - description: "Soybean Genetics Newsletter"
       url: "/community/sgn"
     - description: "2009 Soybean Genomic Sequence Assembly Announcement"
