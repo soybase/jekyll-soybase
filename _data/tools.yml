@@ -1,4 +1,8 @@
 ---
+- category: "Analysis"
+  description: "GO term enrichment analysis tool"
+  name: "GO Enrichment Analysis"
+  url: "/tools/analysis/go.html"
 - category: "Download / Query"
   description: "Browser interface to all of the files in SoyBase."
   name: "Datastore"
