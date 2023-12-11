@@ -50,72 +50,6 @@
           "fillColor": ["green"],
           "shape": ["dumbbell"],
           "position":-1
-          }, {      
-          "type" : "qtl",
-          "title": "QTL_oil",
-          "type_acc": "QTL_oil",
-          "filters":["QTL_oil"],
-          "default_rank":2,
-          "drawing_lane":1,
-          "drawing_priority":1,
-          "fillColor": ["darkgoldenrod"],
-          "shape": ["dumbbell"],
-          "position":-1
-        }, {
-          "type" : "qtl",
-          "title": "QTL_other-seed",
-          "type_acc": "QTL_other-seed",
-          "filters":["QTL_other-seed"],
-          "default_rank":2,
-          "drawing_lane":1,
-          "drawing_priority":1,
-          "fillColor": ["violet"],
-          "shape": ["dumbbell"],
-          "position":-1
-        }, {
-          "type" : "qtl",
-          "title": "QTL_pod",
-          "type_acc": "QTL_pod",
-          "filters":["QTL_pod"],
-          "default_rank":2,
-          "drawing_lane":3,
-          "drawing_priority":1,
-          "fillColor": ["darkgreen"],
-          "shape": ["dumbbell"],
-          "position":-1
-        }, {
-          "type" : "qtl",
-          "title": "QTL_protein",
-          "type_acc": "QTL_protein",
-          "filters":["QTL_protein"],
-          "default_rank":2,
-          "drawing_lane":1,
-          "drawing_priority":1,
-          "fillColor": ["cornflowerblue"],
-          "shape": ["dumbbell"],
-          "position":-1
-        }, {
-            "type" : "qtl",
-            "title": "QTL_yield",
-            "type_acc": "QTL_yield",
-            "filters":["QTL_yield"],
-            "default_rank":2,
-            "drawing_lane":1,
-            "drawing_priority":1,
-            "fillColor": ["darkgoldenrod"],
-            "shape": ["dumbbell"],
-            "position":-1
-          },{
-            "type" : "qtl",
-            "title": "QTL_reprod-period",
-            "type_acc": "QTL_reprod-period",
-            "filters":["QTL_reprod-period"],
-            "default_rank":2,
-            "drawing_lane":1,
-            "drawing_priority":1,
-            "fillColor": ["orangered"],
-            "shape": ["dumbbell"],
-            "position":-1
           },{
             "type" : "qtl",
             "title": "QTL_fungal",
@@ -171,17 +105,61 @@
             "fillColor": ["darkmagenta"],
             "shape": ["dumbbell"],
             "position":-1
-          },{
+          }, {
             "type" : "qtl",
-            "title": "QTL_misc",
-            "type_acc": "QTL_misc",
-            "filters":["QTL_misc"],
+            "title": "QTL_pod",
+            "type_acc": "QTL_pod",
+            "filters":["QTL_pod"],
             "default_rank":2,
-            "drawing_lane":4,
+            "drawing_lane":3,
             "drawing_priority":1,
-            "fillColor": ["blueviolet"],
+            "fillColor": ["darkgreen"],
             "shape": ["dumbbell"],
             "position":-1
+          }, {
+          "type" : "qtl",
+          "title": "QTL_other-seed",
+          "type_acc": "QTL_other-seed",
+          "filters":["QTL_other-seed"],
+          "default_rank":2,
+          "drawing_lane":1,
+          "drawing_priority":1,
+          "fillColor": ["violet"],
+          "shape": ["dumbbell"],
+          "position":-1
+      },{      
+            "type" : "qtl",
+            "title": "QTL_oil",
+            "type_acc": "QTL_oil",
+            "filters":["QTL_oil"],
+            "default_rank":2,
+            "drawing_lane":1,
+            "drawing_priority":1,
+            "fillColor": ["darkgoldenrod"],
+            "shape": ["dumbbell"],
+            "position":-1
+      }, {
+        "type" : "qtl",
+        "title": "QTL_protein",
+        "type_acc": "QTL_protein",
+        "filters":["QTL_protein"],
+        "default_rank":2,
+        "drawing_lane":1,
+        "drawing_priority":1,
+        "fillColor": ["cornflowerblue"],
+        "shape": ["dumbbell"],
+        "position":-1
+      }, {
+        "type" : "qtl",
+        "title": "QTL_yield",
+        "type_acc": "QTL_yield",
+        "filters":["QTL_yield"],
+        "default_rank":2,
+        "drawing_lane":1,
+        "drawing_priority":1,
+        "fillColor": ["darkgoldenrod"],
+        "shape": ["dumbbell"],
+        "position":-1
       }
       ]
     },
