@@ -1,0 +1,21 @@
+---
+layout: search
+title: Trait Association Search
+web_components: true
+---
+
+
+<lis-trait-association-search-element id="trait-search" genus="Glycine"></lis-trait-association-search-element>
+<lis-modal-element modalId="modal">
+  <lis-linkout-element id="linkouts"></lis-linkout-element>
+</lis-modal-element>
+
+
+<script type="module">
+    import {getTraitOrganismsFormDataFunction, traitSearchFunctionFactory, identifierModalLinkFactory} from "lis-graphql";
+    const traitSearchElement = document.getElementById('trait-search');
+    traitSearchElement.formDataFunction = getTraitOrganismsFormDataFunction;
+    traitSearchElement.searchFunction = traitSearchFunctionFactory(identifierModalLinkFactory("modal"));
+    const linkoutElement = document.getElementById('linkouts');
+    const modal = document.getElementById('modal'); 
+</script>
