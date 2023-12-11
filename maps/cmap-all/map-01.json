@@ -50,7 +50,7 @@
           "fillColor": ["green"],
           "shape": ["dumbbell"],
           "position":-1
-          },{
+        }, {
             "type" : "qtl",
             "title": "QTL_fungal",
             "type_acc": "QTL_fungal",
@@ -61,7 +61,7 @@
             "fillColor": ["brown"],
             "shape": ["dumbbell"],
             "position":-1
-          },{
+          }, {
             "type" : "qtl",
             "title": "QTL_inorganic",
             "type_acc": "QTL_inorganic",
@@ -72,7 +72,7 @@
             "fillColor": ["fuschia"],
             "shape": ["dumbbell"],
             "position":-1
-          },{
+          }, {
             "type" : "qtl",
             "title": "QTL_leaf-stem",
             "type_acc": "QTL_leaf-stem",
@@ -83,7 +83,7 @@
             "fillColor": ["limegreen"],
             "shape": ["dumbbell"],
             "position":-1
-          },{
+          }, {
             "type" : "qtl",
             "title": "QTL_root",
             "type_acc": "QTL_root",
@@ -94,7 +94,7 @@
             "fillColor": ["maroon"],
             "shape": ["dumbbell"],
             "position":-1
-          },{
+          }, {
             "type" : "qtl",
             "title": "QTL_whole-plant",
             "type_acc": "QTL_whole-plant",
@@ -117,17 +117,17 @@
             "shape": ["dumbbell"],
             "position":-1
           }, {
-          "type" : "qtl",
-          "title": "QTL_other-seed",
-          "type_acc": "QTL_other-seed",
-          "filters":["QTL_other-seed"],
-          "default_rank":2,
-          "drawing_lane":1,
-          "drawing_priority":1,
-          "fillColor": ["violet"],
-          "shape": ["dumbbell"],
-          "position":-1
-      },{      
+            "type" : "qtl",
+            "title": "QTL_other-seed",
+            "type_acc": "QTL_other-seed",
+            "filters":["QTL_other-seed"],
+            "default_rank":2,
+            "drawing_lane":1,
+            "drawing_priority":1,
+            "fillColor": ["violet"],
+            "shape": ["dumbbell"],
+            "position":-1
+          }, {      
             "type" : "qtl",
             "title": "QTL_oil",
             "type_acc": "QTL_oil",
@@ -138,28 +138,28 @@
             "fillColor": ["darkgoldenrod"],
             "shape": ["dumbbell"],
             "position":-1
+          }, {
+            "type" : "qtl",
+            "title": "QTL_protein",
+            "type_acc": "QTL_protein",
+            "filters":["QTL_protein"],
+            "default_rank":2,
+            "drawing_lane":1,
+            "drawing_priority":1,
+            "fillColor": ["cornflowerblue"],
+            "shape": ["dumbbell"],
+            "position":-1
       }, {
-        "type" : "qtl",
-        "title": "QTL_protein",
-        "type_acc": "QTL_protein",
-        "filters":["QTL_protein"],
-        "default_rank":2,
-        "drawing_lane":1,
-        "drawing_priority":1,
-        "fillColor": ["cornflowerblue"],
-        "shape": ["dumbbell"],
-        "position":-1
-      }, {
-        "type" : "qtl",
-        "title": "QTL_yield",
-        "type_acc": "QTL_yield",
-        "filters":["QTL_yield"],
-        "default_rank":2,
-        "drawing_lane":1,
-        "drawing_priority":1,
-        "fillColor": ["darkgoldenrod"],
-        "shape": ["dumbbell"],
-        "position":-1
+            "type" : "qtl",
+            "title": "QTL_yield",
+            "type_acc": "QTL_yield",
+            "filters":["QTL_yield"],
+            "default_rank":2,
+            "drawing_lane":1,
+            "drawing_priority":1,
+            "fillColor": ["darkgoldenrod"],
+            "shape": ["dumbbell"],
+            "position":-1
       }
       ]
     },
