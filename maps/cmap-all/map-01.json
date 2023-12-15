@@ -22,17 +22,23 @@
     },
     {
       "source" : "gm_gwas",
-      "map" : "D1a"
+      "map" : "D1a",
+      "tracks" : [{
+        "title": "genes",
+        "type" : "qtl",
+        "filters":["Gene_model"],
+        "fillColor": ["black"]
+      }]
     }
   ],
   "sources" : [ {
       "id" : "gm_gwas",
       "method": "GET",
-      "url": "https://raw.githubusercontent.com/LegumeFederation/cmap-js/soy-test/data/Soybean-GmGWAS.cmap",
+      "url": "https://data.legumeinfo.org/annex/Glycine/max/maps/mixed.map.GmComposite2003/Soybean-GmGWAS.dat.gz?display=text",
       "filters" : [],
       "config": {
         "method" : "GET",
-        "url" : "https://raw.githubusercontent.com/LegumeFederation/cmap-js/soy-test/config/gm_gwas.json"
+        "url" : "../gm_gwas.json"
       },
       "linkouts" : [
         {
@@ -48,7 +54,7 @@
       "filters" : [],
       "config": {
         "method" : "GET",
-        "url" : "https://raw.githubusercontent.com/LegumeFederation/cmap-js/soy-test/config/gm_composite.json"
+        "url" : "../gm_composite.json"
       },
       "linkouts" : [
         {
