@@ -54,7 +54,7 @@ liquid:
   strict_variables: true
 
 # the GraphQL Server URI; LIS by default
-graphql_uri: https://graphql.lis.ncgr.org/
+graphql_uri: https://graphql.soybase.ncgr.org/
 
 # Build settings
 theme: jekyll-theme-legumeinfo
