@@ -1,6 +1,5 @@
 ---
 # This YAML front matter ensures Jekyll will pass the site variables in.
-layout: none # stops this from being rendered as a page
 ---
 
 /** The URI of the GraphQL server to query. */
