@@ -12,10 +12,10 @@ web_components: true
 
 
 <script type="module">
-    import {getTraitOrganismsFormDataFunction, traitSearchFunctionFactory, identifierModalLinkFactory} from "lis-graphql";
+    import {getOrganismsFormDataFunction, traitSearchFunctionFactory} from "lis-graphql";
     const traitSearchElement = document.getElementById('trait-search');
-    traitSearchElement.formDataFunction = getTraitOrganismsFormDataFunction;
-    traitSearchElement.searchFunction = traitSearchFunctionFactory(identifierModalLinkFactory("modal"));
+    traitSearchElement.formDataFunction = getOrganismsFormDataFunction;
+    traitSearchElement.searchFunction = traitSearchFunctionFactory();
     const linkoutElement = document.getElementById('linkouts');
     const modal = document.getElementById('modal'); 
 </script>
