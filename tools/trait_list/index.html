@@ -1,0 +1,39 @@
+---
+title: Trait List
+sitemap: trait_list 
+layout: default
+---
+{% assign groups = site.data.trait_terms | group_by: "trait_class" | sort: "name" %}
+{% assign separator = ".&nbsp;.&nbsp;." %}
+{% assign qtl_base = '/tools/search/trait.html?page=1&genus=Glycine&type=QTL&traits=' %}
+{% assign gwas_base = '/tools/search/trait.html?page=1&genus=Glycine&type=GWAS&traits=' %}
+
+<h2>Genetic trait terms and categories for soybean</h2>
+
+<p> 
+The traits below have been used in soybean GWAS and/or QTL studies.<br> 
+Click on a "gwas" or "qtl" link to populate a query in the <a href="/tools/search/trait.html">Trait Association Search</a> page.
+</p>
+
+{% for group in groups %}
+  {% assign trait_category = group.name | replace: '_', ' - ' %}
+  <b>{{ trait_category }}</b>
+  <p>
+  {% for item in group.items %}
+    {{ item.term }}
+    {% assign search_term = item.term | url_encode %}
+    {% if item.gwas == "gwas" %}
+      (<a href="{{- gwas_base | append: search_term -}}">{{- item.gwas }}</a>
+    {% else %}
+      (-
+    {% endif %}
+    {% if item.qtl == "qtl" %}
+      <a href="{{- qtl_base | append: search_term -}}">{{ item.qtl -}}</a>)
+    {% else %}
+      -)
+    {% endif %}
+    {{ separator }}
+  {% endfor %}
+  </p>
+{% endfor %}
+
