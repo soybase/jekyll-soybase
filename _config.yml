@@ -72,7 +72,7 @@ plugins:
   - jekyll-sitemap
 
 # LIS Web Components
-web_components_version: 1.3.0
+web_components_version: 1.4.0
 
 #### jekyll-datapage-generator config
 page_gen:
@@ -118,8 +118,6 @@ sass:
 
 # UIkit theme customization (sets site colors)
 style:
-  link_color: '#006600'
-  link_hover_color: '#0071B3'
   primary_background: '#235626' # Very dark green: '#296e01'
   global_muted_color: '#006600'
   invert_navbar_text: true
