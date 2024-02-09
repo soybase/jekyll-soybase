@@ -3,6 +3,7 @@ layout:     news-item
 title:      SoyBase is hiring an IT Specialist
 author:     Jacqueline Campbell
 date:       2022-05-19
+end_date:   2024-01-29
 summary:    USDA-ARS IT Specialist position with the SoyBase and Legume Information System team 
 categories: general
 ---
