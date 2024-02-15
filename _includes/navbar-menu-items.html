@@ -36,7 +36,7 @@
 <li>
   <a class="project_list" href="{{ "/projects" | relative_url }}">Projects</a>
   {% if site.data.project_list %}
-  {% assign groups = site.data.project_list | sort: "year" %}
+  {% assign groups = site.data.project_list | sort: "short_title" %}
   <div class="uk-navbar-dropdown uk-width-auto" uk-dropdown="delay-hide: 0;">
     <ul class="uk-nav uk-navbar-dropdown-nav uk-link-reset">
     {% for group in groups %}
