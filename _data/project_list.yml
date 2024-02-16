@@ -110,6 +110,6 @@
 -
   title: "Soybean fast neutron mutants"
   short_title: "Soybean Fast Neutron Mutants"
-  description: "Soybean fast neutron mutant lines developed for use in soybean functional genomics. Within the catalog are mutants with observed phenotypic variation in seed composition, maturity, morphology, pigmentation, roots and nodulation."
+  description: "Soybean fast neutron mutant lines developed for use in soybean functional genomics. Within the catalog are mutants with observed phenotypic variation in seed composition, maturity, morphology, pigmentation, roots and nodulation. From this project page, access fasta sequence data corresponding with FN mutations, as well as tabular data describing mutagenized lines, phenotypes, inserton-deletion locations, and affected genes. Also see <a href=\"/projects/FN_mutant_details\">examples of the contents of each file here</a>."
   SoyBaseID: "SoyBase.fn_mutants"
   DataStoreID: "FN_mutants_2011"
