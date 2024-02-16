@@ -1,8 +1,11 @@
 ---
 layout: default
 title: Fast Neutron mutants project - file details
-sitemap: projects/FN_mutants - file details
+sitemap: projects/FN_mutant_details
 ---
+{% assign url_base = 'https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/' %}
+{% assign fasta_file = 'fn_indels.nt.20140304.fasta' %}
+
 <h2>Soybean Fast Neutron Mutants; file details</h2>
 
 <p>
@@ -10,183 +13,37 @@ sitemap: projects/FN_mutants - file details
   <strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/">SoyBase Data Store</a></strong>
   in the form of tabular and fasta sequence data.
   Samples from each files are shown first below.
-  Individual files are also linked from the <strong><a href="http://localhost:4000/projects/fn_mutants_2011">main Fast Neutron project page</a></strong>.
+  Individual files are also linked from the <strong><a href="/projects/fn_mutants_2011">main Fast Neutron project page</a></strong>.
 </p>
 
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/insertion_event.tsv.gz">insertion_event.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.insertion_event %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
+<a href="{{- url_base | append: fasta_file -}}.gz"><b>{{ fasta_file }}.gz</b></a> <br>
+Genomic sequence from FN mutation deletions, from the Wm82.a1.v1 / Wm82.gnm1.ann1 assembly
+<pre>
+>EM01.1 Gm09:6094155-6183855    R09C04DSCW08YB_1
+GGAAAAGTCCATCCCACAGTGATAGATTTCTACGTACTTCCACTAATGGGGTTGCTGGTAAATTAGAATGCCTCCAAAAT
+TACCCACACACAGTTGGATAATATTTATTCCCTTAATCACATCGCAAGACACCAAAAGTCCAATACTTTGAACAAGAACA
+ATTTAGATGTACGTGTAACTTCATGGAAAGGACATGTAACTAAGTCGTGCATTTAAGGGAGGAGTCTTCACATTGGGTGT
+</pre>
+<hr>
 
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/insertion_mutant.tsv.gz">insertion_mutant.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.insertion_mutant %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
+{% for item in site.data.fn_mutant_table_samples.__mutant_tables %}
+  <a href="{{- url_base | append: item.table -}}.tsv.gz"><b>{{ item.table }}.tsv.gz</b></a> -- 
+    {{ item.description }}
+  {% assign table_name = item.table %}
+  <table>
+    {% for row in site.data.fn_mutant_table_samples[table_name] %}
+      {% if forloop.first %}
+      <tr> 
+        {% for pair in row %} 
+          <th> {{ pair[0] }} | </th> 
+        {% endfor %} 
+      </tr>
+      {% endif %}
+      {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
+    {% endfor %}
+  </table>
+  <hr>
+{% endfor %}
 
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/insertion_mutant_props.tsv.gz">insertion_mutant_props.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.insertion_mutant_props %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
+Back to the <a href="/projects/fn_mutants_2011"><b>main Fast Neutron project page</b></a>.
 
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/insertion_mutant_synonym.tsv.gz">insertion_mutant_synonym.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.insertion_mutant_synonym %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/insertion_position.tsv.gz">insertion_position.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.insertion_position %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_cgh_experiment_genes_table.tsv.gz">mutant_cgh_experiment_genes_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_cgh_experiment_genes_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_cgh_experiment_indel_table.tsv.gz">mutant_cgh_experiment_indel_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_cgh_experiment_indel_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_cgh_experiment_indel_table_v2.tsv.gz">mutant_cgh_experiment_indel_table_v2.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_cgh_experiment_indel_table_v2 %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_cgh_experiment_locus_table.tsv.gz">mutant_cgh_experiment_locus_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_cgh_experiment_locus_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_descriptor_xref_table.tsv.gz">mutant_descriptor_xref_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_descriptor_xref_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_descriptors_table.tsv.gz">mutant_descriptors_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_descriptors_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_experiment_table.tsv.gz">mutant_experiment_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_experiment_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_files_table.tsv.gz">mutant_files_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_files_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_name_translation_table.tsv.gz">mutant_name_translation_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_name_translation_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_samples_table.tsv.gz">mutant_samples_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_samples_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-<strong><a href="https://soybase.org/data/annex/Glycine/max/projects/FN_mutants/mutant_trait_values_table.tsv.gz">mutant_trait_values_table.tsv.gz</a></strong>
-<table>
-  {% for row in site.data.fn_mutant_table_samples.mutant_trait_values_table %}
-    {% if forloop.first %}
-    <tr> {% for pair in row %} <th>{{ pair[0] }}</th> {% endfor %} </tr>
-    {% endif %}
-    {% tablerow pair in row %} {{ pair[1] }} {% endtablerow %}
-  {% endfor %}
-</table>
-<hr><br>
-
-Back to the <a href="http://localhost:4000/projects/fn_mutants_2011">main Fast Neutron project page</a>.
