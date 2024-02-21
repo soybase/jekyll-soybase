@@ -116,10 +116,10 @@
 -
   title: "Soybean transposable element database / SoyTEdb"
   short_title: "Soybean Transposable Elements / SoyTEdb"
-  description: "The Soybean Transposable Elements database, SoyTEdb, described in 
+  description: "The Soybean Transposable Elements database, SoyTEdb, described in
     <i>SoyTEdb: a comprehensive database of transposable elements in the soybean genome
     Jianchang Du, David Grant, Zhixi Tian, Rex T Nelson, Liucun Zhu, Randy C Shoemaker and Jianxin Ma</a>
-    contains transposable elements identified in the Williams 82 genome assembly 1, including 
+    contains transposable elements identified in the Williams 82 genome assembly 1, including
     32,552 retrotransposons (Class I) and 6,029 DNA transposons (Class II). Linked files
     provide the named and classified sequences, as well as a reduced set clustered at 60% identity and
     represented by centroid sequences from each cluster."
