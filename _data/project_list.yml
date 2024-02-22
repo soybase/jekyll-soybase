@@ -1,4 +1,4 @@
---- 
+---
 -
   title: "Sequencing the USDA core soybean collection reveals gene loss during domestication and breeding"
   short_title: "Sequencing the USDA core soybean collection"
@@ -56,7 +56,7 @@
 -
   title: "Nested Association Mapping (NAM) of Genes Controlling Soybean Yield and Other Key Traits"
   short_title: "SoyNAM"
-  description: "This project identifies the genes and locations that control yield and other important agronomic traits in both domestic and exotic germplasm using association mapping, with a nested association mapping (NAM) population."
+  description: "This project identifies the genes and locations that control yield and other important agronomic traits in both domestic and exotic germplasm using association mapping, with a nested association mapping (NAM) population. For this large project, see both the project page linked below, and the <strong><a href=\"/projects/SoyNAM/\">dedicated SoyNAM page</a></strong>, with additional information and plant images."
   SoyBaseID: "SoyBase.C2014.02"
   DataStoreID: "SoyNAM_2014"
 -
@@ -101,4 +101,27 @@
   description: "Glycine max root nodules of different ages were sequenced to investigate the involvement of cysteine proteases and cystatins in the processes of nodule development and senescence."
   SoyBaseID: "SoyBase.A2014.01"
   DataStoreID: "vanWyk_DuPlessis_2014"
-
+-
+  title: "SoyMap II: Leveraging untapped genetic diversity in soybean"
+  short_title: "SoyMap II"
+  description: "Genomes and gene models were generated from multiple perennial soybean species across the Glycine genus to study insights into the polyploid and perennial genome evolution and genetic potential for soybean improvement."
+  SoyBaseID: "SoyBase.C2022.01"
+  DataStoreID: "Zhuang_Wang_2022"
+-
+  title: "Soybean fast neutron mutants"
+  short_title: "Soybean Fast Neutron Mutants"
+  description: "Soybean fast neutron mutant lines developed for use in soybean functional genomics. Within the catalog are mutants with observed phenotypic variation in seed composition, maturity, morphology, pigmentation, roots and nodulation. From this project page, access fasta sequence data corresponding with FN mutations, as well as tabular data describing mutagenized lines, phenotypes, inserton-deletion locations, and affected genes. Also see <a href=\"/projects/FN_mutant_details\">examples of the contents of each file here</a>."
+  SoyBaseID: "SoyBase.fn_mutants"
+  DataStoreID: "FN_mutants_2011"
+-
+  title: "Soybean transposable element database / SoyTEdb"
+  short_title: "Soybean Transposable Elements / SoyTEdb"
+  description: "The Soybean Transposable Elements database, SoyTEdb, described in
+    <i>SoyTEdb: a comprehensive database of transposable elements in the soybean genome</i>
+    (Jianchang Du, David Grant, Zhixi Tian, Rex T Nelson, Liucun Zhu, Randy C Shoemaker and Jianxin Ma)
+    contains transposable elements identified in the Williams 82 genome assembly 1, including
+    32,552 retrotransposons (Class I) and 6,029 DNA transposons (Class II). Linked files
+    provide the named and classified sequences, as well as a reduced set clustered at 60% identity and
+    represented by centroid sequences from each cluster."
+  SoyBaseID: "SoyBase.soytedb"
+  DataStoreID: "SoyTEdb_2010"

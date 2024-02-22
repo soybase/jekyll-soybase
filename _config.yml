@@ -1,3 +1,4 @@
+---
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -8,7 +9,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -36,10 +37,11 @@ newsletter: https://www.soybase.org/soybaselist/index.php
 author: SoyBase curator
 lang: en
 
-card_item_limit: 3
+# allow direct port 4000 requests from outside so we don't have to proxy
+host: 0.0.0.0
 
 # our Google Analytics ID. XX CHANGE THIS for SoyBase
-google_analytics: "UA-49655154-1"
+google_analytics_id: "GA4-354046633"
 
 # Set the SoyBase/LIS Datastore base URL here
 datastoreurl: https://data.legumeinfo.org
@@ -49,17 +51,28 @@ liquid:
   error_mode: strict
   strict_filters: true
   # note incompatibility with "default" filter: https://github.com/Shopify/liquid/issues/1404
-  strict_variables: true
+  # strict_variables: true
+
+# https://jekyllrb.com/docs/configuration/options/#build-command-options
+strict_front_matter: true
+
+# the GraphQL Server URI; LIS by default
+graphql_uri: https://graphql.soybase.ncgr.org/
 
 # Build settings
-#theme: jekyll-theme-legumeinfo
+theme: jekyll-theme-legumeinfo
+# enable post from the future so the theme can show upcoming events
+future: true
+
 plugins:
-  - jekyll-feed
   - jekyll-datapage-generator
-  # generate /sitemap.xml
+  # generate /sitemap.xml (needed for pa11y)
   # FIXME: jekyll-sitemap doesn't work with liquid.strict_variables: true
   # https://github.com/jekyll/jekyll-sitemap/issues/272
-  #- jekyll-sitemap
+  - jekyll-sitemap
+
+# LIS Web Components
+web_components_version: 1.4.0
 
 #### jekyll-datapage-generator config
 page_gen:
@@ -70,26 +83,45 @@ page_gen:
     name: DataStoreID
     index_files: true
     debug: true
-
-# shows posts (i.e. news and events) with a date after the date the site was built on
-future: true
+  - data: sgn_list
+    template: sgn_issues
+    dir: community/sgn_issues
+    name: sgn_year
+    index_files: true
+    debug: true
+  - data: sgn_list
+    template: sgn_minutes
+    dir: community/sgn_minutes
+    name: sgn_year
+    index_files: true
+    debug: true
+  - data: nam_list
+    template: nam_lines
+    dir: projects/SoyNAM
+    name: accession
+    index_files: true
+    debug: true
+  - data: parentage_groups
+    template: parentage
+    dir: tools/parentage
+    name: group
+    index_files: true
+    debug: true
 
 # the default number of items shown in card widgets
 card_item_limit: 3
 
 # SASS compilation
 sass:
-    sass_dir: _sass
-    style: compressed
+  sass_dir: _sass
+  style: compressed
 
 # UIkit theme customization (sets site colors)
 style:
-    link_color: '#006600'
-    link_hover_color: '#0071B3'
-    primary_background: '#235626' # Very dark green: '#296e01'  
-    global_muted_color: '#006600'
-    invert_navbar_text: true
-    
+  primary_background: '#235626' # Very dark green: '#296e01'
+  global_muted_color: '#006600'
+  invert_navbar_text: true
+
 
 # Site-wide defaults
 defaults:
@@ -100,9 +132,9 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "uikit/"
+      path: "assets"
     values:
-      sitemap: false
+      layout: "none"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -113,7 +145,7 @@ defaults:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - docker-compose.yml
+  - vendor/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

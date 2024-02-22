@@ -12,7 +12,15 @@
 {% include navbar.html %}
 
 {% assign iframe_style="display: flex; width: 100%; height: 100vh; flex-direction: column;" %}
-<iframe src="{{ page.iframe_url }}" style="{{ iframe_style }}"></iframe>
+<iframe id="myiframe" src="{{ page.iframe_url }}" style="{{ iframe_style }}"></iframe>
+
+<script language="javascript">
+    var params = new URL(window.location).searchParams;
+    var iframe_pathname_suffix = params.get("iframe_pathname_suffix") || '';
+    params.delete("iframe_pathname_suffix");
+    var iframe = document.getElementById('myiframe');
+        iframe.src = iframe.src + iframe_pathname_suffix + window.location.search;
+</script>
 
 </body>
 </html>

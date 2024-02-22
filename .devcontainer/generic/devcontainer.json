@@ -1,0 +1,33 @@
+{
+    "name": "Generic VS Code dev container",
+    "image": "mcr.microsoft.com/devcontainers/jekyll",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": 18,
+            "nodeGypDependencies": false
+        },
+        "ghcr.io/devcontainers/features/python:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.vscode-yaml",
+                "sissel.shopify-liquid"
+            ],
+            "settings": {
+                "files.associations": {
+                    "*.html": "liquid"
+                },
+                "yaml.format.enable": true,
+                "yaml.format.proseWrap": "never"
+            }
+        }   
+    },
+    "postCreateCommand": "git config --global --add safe.directory /workspaces/jekyll-soybase",
+    "portsAttributes": {
+        "4000": {
+            "label": "jekyll",
+            "onAutoForward": "openPreview"
+        }
+    }
+}

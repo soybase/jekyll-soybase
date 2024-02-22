@@ -1,28 +1,21 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/jekyll",
-    "features": {
-        "ghcr.io/devcontainers/features/node:1": {
-            "version": 18,
-            "nodeGypDependencies": false
-        },
-        "ghcr.io/devcontainers-contrib/features/npm-package:1": {
-            "package": "@jbrowse/cli",
-            "version": "v2.6.1"
-        }
-    },
+    "name": "GitHub Codespace dev container",
     "customizations": {
         "vscode": {
             "extensions": [
+                "redhat.vscode-yaml",
                 "sissel.shopify-liquid"
             ],
             "settings": {
                 "files.associations": {
                     "*.html": "liquid"
-                }
+                },
+                "yaml.format.enable": true,
+                "yaml.format.proseWrap": "never"
             }
         }   
     },
-    "postCreateCommand": "git config --global --add safe.directory /workspaces/jekyll-soybase",
+    "postCreateCommand": "",
     "portsAttributes": {
         "4000": {
             "label": "jekyll",
