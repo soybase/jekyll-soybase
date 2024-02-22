@@ -1,5 +1,5 @@
 #!/bin/sh
-set -o errexit -o nounset -o xtrace
+set -o errexit -o nounset
 
 readonly DATASTORE_URL=https://data.legumeinfo.org
 readonly GBROWSE_DATA_URL=https://www.soybase.org/gbrowse_data
