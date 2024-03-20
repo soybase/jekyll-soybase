@@ -4,16 +4,28 @@ title: Gene Search
 web_components: true
 ---
 <!-- the custom gene search element -->
-<lis-gene-search-element id="gene-search" genus="Glycine"></lis-gene-search-element>
+<lis-gene-search-element id="gene-search" genus="Glycine" identifierExample="Glyma.16G044100" descriptionExample="proteasome subunit alpha" familyExample="L_6BFHQX"></lis-gene-search-element>
 <lis-modal-element modalId="modal">
   <lis-linkout-element id="linkouts"></lis-linkout-element>
 </lis-modal-element>
 
 <script type="module">
-  import {getOrganismsFormDataFunction, geneSearchFunctionFactory, allLinkoutsFunction, geneLinkoutsFunction, geneIdentifierModalLinkFactory, locationModalLinkFactory} from "lis-graphql";
+    import {
+    // genes
+    getOrganismsFormDataFunction,
+    geneSearchFunctionFactory,
+    allModalLinksFactory,
+    // linkouts
+    allLinkoutsFunction,
+    // modal
+    modalEventToLinkData
+  } from "lis-graphql";
   const geneSearchElement = document.getElementById('gene-search');
   geneSearchElement.formDataFunction = getOrganismsFormDataFunction;
-  geneSearchElement.searchFunction = geneSearchFunctionFactory(geneIdentifierModalLinkFactory('modal'), locationModalLinkFactory('modal'));
+  const searchDataProcessors = allModalLinksFactory('modal');
+  geneSearchElement.searchFunction =
+    geneSearchFunctionFactory(...searchDataProcessors);
+
   const linkoutElement = document.getElementById('linkouts');
   const modal = document.getElementById('modal');
   modal.addEventListener('toggle', (event) => {

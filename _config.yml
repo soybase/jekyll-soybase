@@ -41,7 +41,7 @@ lang: en
 host: 0.0.0.0
 
 # our Google Analytics ID. XX CHANGE THIS for SoyBase
-google_analytics: "UA-49655154-1"
+google_analytics_id: "GA4-354046633"
 
 # Set the SoyBase/LIS Datastore base URL here
 datastoreurl: https://data.legumeinfo.org
@@ -51,10 +51,13 @@ liquid:
   error_mode: strict
   strict_filters: true
   # note incompatibility with "default" filter: https://github.com/Shopify/liquid/issues/1404
-  strict_variables: true
+  # strict_variables: true
+
+# https://jekyllrb.com/docs/configuration/options/#build-command-options
+strict_front_matter: true
 
 # the GraphQL Server URI; LIS by default
-graphql_uri: https://graphql.lis.ncgr.org/
+graphql_uri: https://graphql.soybase.ncgr.org/
 
 # Build settings
 theme: jekyll-theme-legumeinfo
@@ -62,15 +65,14 @@ theme: jekyll-theme-legumeinfo
 future: true
 
 plugins:
-  - jekyll-feed
   - jekyll-datapage-generator
-  # generate /sitemap.xml
+  # generate /sitemap.xml (needed for pa11y)
   # FIXME: jekyll-sitemap doesn't work with liquid.strict_variables: true
   # https://github.com/jekyll/jekyll-sitemap/issues/272
-  # - jekyll-sitemap
+  - jekyll-sitemap
 
 # LIS Web Components
-web_components_version: 1.1.0
+web_components_version: 1.4.0
 
 #### jekyll-datapage-generator config
 page_gen:
@@ -116,8 +118,6 @@ sass:
 
 # UIkit theme customization (sets site colors)
 style:
-  link_color: '#006600'
-  link_hover_color: '#0071B3'
   primary_background: '#235626' # Very dark green: '#296e01'
   global_muted_color: '#006600'
   invert_navbar_text: true
@@ -130,6 +130,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: "assets"
+    values:
+      layout: "none"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
