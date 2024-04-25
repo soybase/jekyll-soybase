@@ -20,8 +20,8 @@
       url: "/community/soygermplasm"
   - name: "Soybean resources provided by the community"
     resources:
-    - description: "American Soybean Associataion"
-      url: "https://www.soygrowers.com/"
+    - description: "American Soybean Association"
+      url: "https://soygrowers.com"
     - description: "United Soybean Board"
       url: "https://www.unitedsoybean.org/"
     - description: "North Central Soybean Research Program"
