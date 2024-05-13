@@ -36,15 +36,10 @@ blog_card: true
         <script type="text/javascript">
           function clearElement(e) {
             var value = document.getElementById('quickSearchInput').value;
-            if (value=='"seed weight"') {
-                      e.value = "";
-                      jQuery('#quickSearchInput').css("color", "#000");
-                      jQuery('#quickSearchInput').css("fontStyle","normal");
-            }
           }
         </script>
         <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;">
-          <input style="width:180px"color:#235626;font-style:italic;font-size:1em" type="text" id="quickSearchInput" name="searchTerm"
+          <input style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
            value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
           <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" />
         </form>
@@ -54,15 +49,10 @@ blog_card: true
         <script type="text/javascript">
           function clearElement(e) {
             var value = document.getElementById('quickSearchInput').value;
-            if (value=='e.g Glyma.08G189800.1, seed size') {
-                      e.value = "";
-                      jQuery('#quickSearchInput').css("color", "#000");
-                      jQuery('#quickSearchInput').css("fontStyle","normal");
-            }
           }
         </script>
         <form action="https://dev.soybase.org/tools/search/gene.html" name="search" method="get" style="display:inline;">
-          <input id="identifier" style="width:180px"color:#235626;font-style:italic;font-size:1em" type="text" id="quickSearchInput" name="identifier"
+          <input id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
            value="Glyma.15g026400" onFocus="clearElement(this);" />
           <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" />
         </form>
@@ -76,7 +66,7 @@ blog_card: true
         </script>
         <form action="https://gcv.soybase.org/search" name="search" method="get" style="display:inline;">
           <input type="hidden" id="sources" name="sources" value="soybase,liu2020">
-          <input id="q" style="width:180px"color:#235626;font-style:italic;font-size:1em" type="text" id="quickSearchInput" name="q"
+          <input id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
            value="Glyma.20G010000" onFocus="clearElement(this);" />
           <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" />
         </form>
