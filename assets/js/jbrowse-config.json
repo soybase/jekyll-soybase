@@ -1,0 +1,51 @@
+{
+  "tracks": [
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "strippedroot",
+      "name": "Stripped Root",
+      "category": ["Methylation","Stripped Root"],
+      "assemblyNames": ["Wm82.gnm2"],
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "bigWigs": [
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B43.CG.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B43.CHG.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B43.CHH.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B44.CG.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B44.CHG.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/methylation/kim_et_al_2015/strippedroot/B44.CHH.bw"
+        ]
+      },
+      "description": "These tracks represent genome-wide DNA methylation by whole genome bisulfate sequencing of Williams 82 as described by Kim et al.[1] Methylation states for three tissues are presented. Whole leaf tissue (Leaf), root hairs (roothair), and stripped roots (strippedroot) were examined in two biological replicates (BR43, BR44). Each methylation type (CG, CHG, CHH) for each tissue is presented in individual sub-tracks. Lines above the centerline are on the positive strand and those below the centerline are on the negative strand.<p /> The height of the lines represent the ratio of the number of reads with methylation to the total number of reads for each methylation site. Thus the values range from -1 to 1 with -1 being all reads were methylated on the negative strand and 1 being all reads on the positive strand were methylated. <p>References: <ol> <li> Kim KD, El Baidouri M, Abernathy B, Iwata-Otsubo A, Chavarro C, Gonzales M, Libault M, Grimwood J, Jackson SA.  A Comparative Epigenomic Analysis of Polyploidy-Derived Genes in Soybean and Common Bean.  <i>Plant Physiol</i>. Plant Physiol. 2015 Aug;168(4):1433-47. doi: 10.1104/pp.15.00408. Epub 2015 Jul 6.(<a href='http://www.ncbi.nlm.nih.gov/pubmed/26149573' target='_blank'>PubMed</a>) </li> </ol>"
+    },
+    {
+      "type": "MultiQuantitativeTrack",
+      "trackId": "soybean_gene_expression_atlas_severin_et_al",
+      "name": "Soybean gene expression atlas - Severin et al. [2010]",
+      "category": ["Gene Expression"],
+      "assemblyNames": ["Wm82.gnm2"],
+      "maxHeight": 3000,
+      "adapter": {
+        "type": "MultiWiggleAdapter",
+        "bigWigs": [
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/10A_nodule.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/1A_flower.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/2A_cm_pod.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/3A_-2_seed.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/4A_-2_shell.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/5A_-1_seed.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/6A_-1_shell.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/7A_0_seed.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/8A_young_leaf.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/9A_root.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A1.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A2.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A3.bw",
+          "https://data.legumeinfo.org/annex/Glycine/GENUS/gbrowse_data/gmax2.0/gene_expression/soybean_gene_expression_atlas_severin_et_al/bw/soy_seed_A4.bw"
+        ]
+      },
+      "description": "Transcript density of Glycine max tissues mapped onto the Glyma.Wm82.a2 assembly."
+    }
+  ]
+}
