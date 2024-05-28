@@ -17,7 +17,8 @@ blog_card: true
  In the meantime, you can also continue to use <a href="https://soybase.org/" target="_blank">"SoyBase classic"</a>.
 </p>
 <div class="uk-overflow-auto">
-  <table class="uk-table" width="100%" cellspacing=5; style="border-spacing: 30px;">
+  <!-- <table class="uk-table" width="100%" cellspacing=5; style="border-spacing: 5px;"> -->
+  <table width="100%" cellspacing=5; style="border-spacing: 1px;">
     <colgroup>
       <col width="33%" />
       <col width="33%" />
@@ -25,14 +26,14 @@ blog_card: true
     </colgroup>
     <thead>
       <tr class="header">
-        <th align="left">Keyword search</th>
-        <th align="left">Gene identifier search</th>
-        <th align="left">Synteny viewer</th>
+        <th align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keyword search</th>
+        <th align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gene identifier search</th>
+        <th align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Synteny viewer</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td align="center">
           <script type="text/javascript">
             function clearElement(e) {
               var value = document.getElementById('quickSearchInput').value;
@@ -45,7 +46,7 @@ blog_card: true
           </form>
         </td>
         
-        <td>
+        <td align="center">
           <script type="text/javascript">
             function clearElement(e) {
               var value = document.getElementById('quickSearchInput').value;
@@ -58,7 +59,7 @@ blog_card: true
           </form>
         </td>
         
-        <td>
+        <td align="center">
           <script type="text/javascript">
             function clearElement(e) {
               var value = document.getElementById('quickSearchInput').value;
@@ -70,13 +71,14 @@ blog_card: true
             value="Glyma.20G010000" onFocus="clearElement(this);" />
             <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" />
           </form>
-
       </tr>
     </tbody>
   </table>
 
+<hr>
 
-  <table class="uk-table" width="100%" cellspacing=5; style="border-spacing: 30px;">
+  <!-- <table class="uk-table" width="100%" cellspacing=5; style="border-spacing: 5px;"> -->
+  <table width="100%"; cellspacing=5; style="border-spacing: 1px;">
     <colgroup>
       <col width="33%" />
       <col width="34%" />
@@ -85,21 +87,21 @@ blog_card: true
     <tbody>
       <tr>
         <td>
-          <div class="uk-button uk-width-1-1" title="Enter one or more sequences and search against soybean genomes, proteins, or transcript sequences.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Enter one or more sequences and search against soybean genomes, proteins, or transcript sequences.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Cornsilk;">
               <a href="/tools/sequenceserver/"><b>Sequence search (BLAST)</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Enter one or more sequences and annotate them, view in a phylogenetic tree, etc.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Enter one or more sequences and annotate them, view in a phylogenetic tree, etc.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Cornsilk;">
               <a href="https://funnotate.legumeinfo.org/"><b>Sequence annotate</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Glycine pangenes, or look up corresponding gene IDs between annotations.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Glycine pangenes, or look up corresponding gene IDs between annotations.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Cornsilk;">
               <a href="/tools/translate/"><b>Pangenes / gene translator</b></a>
             </button>
@@ -110,21 +112,21 @@ blog_card: true
       
       <tr>
         <td>
-          <div class="uk-button uk-width-1-1" title="InterMine for soybean and wild relatives in Glycine.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="InterMine for soybean and wild relatives in Glycine.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Seashell;">
               <a href="https://mines.legumeinfo.org/glycinemine/begin.do"><b>GlycineMine</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Search for studies by trait term, author, etc.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Search for studies by trait term, author, etc.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Seashell;">
               <a href="/tools/search/trait.html"><b>Trait association search</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Enter a list of genes (Wm82 a2) and test for enrichment of gene ontology terms -- or annotate your list.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Enter a list of genes (Wm82 a2) and test for enrichment of gene ontology terms -- or annotate your list.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Seashell;" >
               <a href="/tools/analysis/go.html"><b>GO enrichment</b></a>
             </button>
@@ -135,21 +137,21 @@ blog_card: true
       
       <tr>
         <td>
-          <div class="uk-button uk-width-1-1" title="Visualize trait features (QTL and GWAS) using the CMap-js tool.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Visualize trait features (QTL and GWAS) using the CMap-js tool.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Azure;">
               <a href="/maps"><b>Genetic & trait maps</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Genome browsers (JBrowse and GBrowse) for visualizing genes and other features on chromosomes.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Genome browsers (JBrowse and GBrowse) for visualizing genes and other features on chromosomes.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Azure;">
               <a href="/tools/browsers"><b>Genome browsers</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="GCViT tool for visualizing variants (SNPs) between selected genotypes.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="GCViT tool for visualizing variants (SNPs) between selected genotypes.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:Azure;">
               <a href="/tools/gcvit/"><b>Genotype comparisons</b></a>
             </button>
@@ -159,21 +161,21 @@ blog_card: true
       
       <tr>
         <td>
-          <div class="uk-button uk-width-1-1" title="Soybean GWAS features from many studies, against a common framework (ZZbrowse tools).">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Soybean GWAS features from many studies, against a common framework (ZZbrowse tools).">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:MistyRose;">
               <a href="https://zzbrowse.legumeinfo.org/?tab=WhGen&twoSpecies=n&datasets=Soybean%20GWAS&chr=Gm01&selected=100000&window=250000&traitsFromOntology=y"><b>GWAS viewer</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Soybean QTL features from many studies, against a common framework (ZZbrowse tools).">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Soybean QTL features from many studies, against a common framework (ZZbrowse tools).">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:MistyRose;">
               <a href="https://zzbrowse.legumeinfo.org/?tab=WhGen&twoSpecies=n&datasets=Soybean%20QTL&chr=Gm01&selected=100000&window=250000&traitsFromOntology=y"><b>QTL viewer</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="QTL and/or GWAS features from many studies; compare between soybean and another selected species (slow; please be patient).">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="QTL and/or GWAS features from many studies; compare between soybean and another selected species (slow; please be patient).">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:MistyRose;">
               <a href="https://zzbrowse.legumeinfo.org/?tab=WhGen&twoSpecies=y&datasets=Soybean%20GWAS&chr=Gm01&selected=100000&window=250000&traitsFromOntology=y"><b>cross-species QTL/GWAS</b></a>
             </button>
@@ -184,21 +186,21 @@ blog_card: true
 
       <tr>
         <td>
-          <div class="uk-button uk-width-1-1" title="View geographic origins of Glycine accessions in the USDA GRIN-Global system.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="View geographic origins of Glycine accessions in the USDA GRIN-Global system.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button" style="background-color:AntiqueWhite;">
               <a href="https://germplasm-map.legumeinfo.org/#?zoom=4&maxRecs=2000&taxonQuery=Glycine&traitOverlay=&traitScale=global&country=&geocodedOnly&traitExcludeUnchar=false&limitToMapExtent=false&lat=-15.03&lng=154.16&mapHeight=341.5&baseMap=ESRI%20-%20NatGeo%20(default,%20reference%20map)&ne_lat=-0.17578097424708533&ne_lng=210.05859375000003&sw_lat=-28.921631282421302&sw_lng=98.26171875000001&accessionIdsInclusive=false"><b>Germplasm GIS</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="Search and view soybean genes in their metabolic pathways.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="Search and view soybean genes in their metabolic pathways.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button"  style="background-color:AntiqueWhite;">
               <a href="/tools/soycyc"><b>Metabolic pathways</b></a>
             </button>
           </div>
         </td>
         <td>
-          <div class="uk-button uk-width-1-1" title="View soybean varieties and accessions and their pedigrees.">
+          <div class="uk-button uk-width-1-1 uk-margin-small-bottom" title="View soybean varieties and accessions and their pedigrees.">
             <button class="uk-button uk-width-1-1 uk-button-small uk-text-capitalize uk-text-nowrap" type="button"  style="background-color:AntiqueWhite;">
               <a href="/tools/parentage/"><b>Parentage & pedigrees</b></a>
             </button>
