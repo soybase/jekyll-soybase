@@ -115,7 +115,7 @@ tools_menu: true
           {% assign existing_headers = existing_headers | push: strain.accession_group %}
         {% endunless %}
         
-        {% for collection_dir in datatype_dir[1] %}
+        {% for collection_dir in datatype_dir[1] reversed %}
           {% assign collection_name = collection_dir[0] | split: 'gnm' %}
           {% if collection_name[0] == strain.identifier %}
             {% assign collection = collection_dir[0] %}
