@@ -2,17 +2,58 @@
 title: Genome browsers
 sitemap: sequence map
 tools_menu: true
+
+gbrowse_instances:
+- category: "Glycine max"
+  name: "Wm82.a4"
+  url: "https://soybase.org/gb2/gbrowse/glyma.Wm82.gnm4/"
+- category: "Glycine max"
+  name: "Wm82.a2"
+  url: "https://soybase.org/gb2/gbrowse/gmax2.0/"
+  description: "(The largest track collection: genes, markers, expression, methylation, synteny ...)"
+- category: "Glycine max"
+  name: "Wm82.a1"
+  url: "https://soybase.org/gb2/gbrowse/gmax1.01/"
+- category: "Glycine max"
+  name: "Fiskeby III"
+  url: "https://soybase.org/gb2/gbrowse/glyma.FiskebyIII.gnm1/"
+- category: "Glycine max"
+  name: "Lee"
+  url: "https://soybase.org/gb2/gbrowse/glyma.Lee.gnm1/"
+- category: "Glycine max"
+  name: "Zh13"
+  url: "https://soybase.org/gb2/gbrowse/glyma.Zh13.gnm1/"
+- category: "Glycine soja"
+  name: "PI 483463"
+  url: "https://soybase.org/gb2/gbrowse/glyso.PI483463.gnm1/"
+- category: "Glycine soja"
+  name: "W05"
+  url: "https://soybase.org/gb2/gbrowse/glyso.W05.gnm1/"
+
 ---
 
 {% capture jbrowse_base_url %}/assets/js/jbrowse{% endcapture %}
 <h2>Genome browsers</h2>
 
 <p>
-  Genome browsers are available for most of the genome assemblies at SoyBase. 
-  These can be accessed from the
+  Genome browsers can be accessed from the
   <a href="/resources">GENOMICS</a>
-  tab, with browsers listed under each accession -- or directly from the links below.
+  tab, with browsers listed under each accession -- or directly from the links below; legacy GBrowse first, then JBrowse.
 </p>
+
+{% assign groups = page.gbrowse_instances | group_by: "category" | sort: "name" %}
+{% for species in groups %}
+  <u>G</u>Browse instances for <b><i>{{ species.name }}</i></b> (legacy; see newer JBrowse instances below)
+  <br>
+  <div style="margin-left:10px">
+    {% for item in species.items %}
+      <a href="{{ item.url }}"><b>{{ item.name }}</b></a> 
+      {{ item.description }}
+      <br>
+    {% endfor %}
+  </div>
+{% endfor %}
+
 
 {% assign doi = "DOI" %}
 {% assign genus = "Glycine" %}
@@ -27,10 +68,9 @@ tools_menu: true
     {% continue %}
   {% endif %}
   <hr>
+  
   <h3>
-    <b>
-      <i>{{ genus }} {{ species }}</i>
-      accessions</b>
+    <u>J</u>Browse instances for <i><b>{{ genus }} {{ species }}</b></i> accessions
   </h3>
   {% for datatype_dir in site.data.datastore-metadata[genus][species] %}
     {% assign datatype = datatype_dir[0] %}
