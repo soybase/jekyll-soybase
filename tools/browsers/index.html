@@ -8,6 +8,9 @@ gbrowse_instances:
   name: "Wm82.a2"
   url_suffix: "gmax2.0"
 - category: "Glycine max"
+  name: "Wm82.a6"
+  url_suffix: "glyma.Wm82.gnm6"
+- category: "Glycine max"
   name: "Wm82.a4"
   url_suffix: "glyma.Wm82.gnm4"
 - category: "Glycine max"
@@ -42,7 +45,7 @@ gbrowse_instances:
 
 <b><u>G</u>Browse instances</b> (legacy; see newer JBrowse instances below). The largest track collection is in Wm82.a2.
 <br>
-(Click <b>**</b> for unframed links: use for Safari; also useful for bookmarking and sharing track configurations and views)
+(Click <b>**</b> for unframed links: useful for bookmarking and sharing track configurations and views)
 <br>
 {% assign groups = page.gbrowse_instances | group_by: "category" | sort: "name" %}
 {% assign asterisk = "**" %}
@@ -54,7 +57,9 @@ gbrowse_instances:
       <a href="{{ item.url_suffix | prepend: '/tools/browsers/gbrowse.html?iframe_pathname_suffix=' }}">
         <b>{{ item.name | prepend: ", " }} </b>
       </a>
-      <a href="{{ item.url_suffix | prepend: 'https://legacy.soybase.org/gb2/gbrowse/' }}"><b>{{ asterisk }}</b></a> 
+      <a href="{{ item.url_suffix | prepend: 'https://legacy.soybase.org/gb2/gbrowse/' }}" target="_blank">
+        <b>{{ asterisk }}</b>
+      </a> 
     {% endfor %}
   {%- endcapture -%}
   <div style="margin-left:10px">
