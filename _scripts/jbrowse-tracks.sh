@@ -120,6 +120,37 @@ do
     done
 done
 
+for transcription_manifest in _data/datastore-metadata/Glycine/*/transcription/*/MANIFEST.*.yml
+do
+  assembly_name=${transcription_manifest##*/MANIFEST.}
+  assembly_name=${assembly_name%.trnsc.*}
+  
+  awk -v OFS='\t' '
+  /^- / && jbrowse { print name, description; name=description=jbrowse="" }
+  /^ *- *jbrowse/ { jbrowse=1 }
+  sub(/^[^:]* name: */, "") { name=$0 }
+  sub(/^[^:]* description: */, "") { description=$0 }
+  END { if (jbrowse) print name, description }' "${transcription_manifest}" |
+    while read -r file description
+    do
+      trackId=$(basename ${file} .gff3.gz)
+      name=${trackId##*.trnsc.}
+      jbrowse add-track \
+        ${DATASTORE_URL}/$(dirname ${transcription_manifest#_data/datastore-metadata/})/${file#*/} \
+        --assemblyNames=${assembly_name} \
+        --category='Transcription' \
+        --name=${name} \
+        --trackId=${trackId} \
+        --description="${description}" \
+        --out=assets/js/jbrowse/
+    done
+done
+
+
+
+
+
+
 # FIXME: too big & slow to generate for testing
 # https://github.com/GMOD/jbrowse-components/issues/3019
 #npx jbrowse text-index \
