@@ -47,12 +47,13 @@ for readme in _data/datastore-metadata/Glycine/*/annotations/*/README.*.yml
 do
   (
     eval $(yaml2sh ${readme})
+    datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
     jbrowse add-track \
-      ${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})/${scientific_name_abbrev}.${identifier}.gene_models_main.gff3.gz \
+      ${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.gene_models_main.gff3.gz \
       --assemblyNames=${identifier%.ann[0-9].*} \
       --category='Genes' \
       --trackId=${identifier%.*} \
-      --description="${synopsis}" \
+      --description="${synopsis}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
       --config=$(printf '{"displays":[{"displayId":"%s","renderer":{"maxHeight":3000}}]}' "${identifier%.*}") \
       --out=assets/js/jbrowse
   )
@@ -62,13 +63,14 @@ for readme in _data/datastore-metadata/Glycine/*/markers/*/README.*.yml
 do
   (
     eval $(yaml2sh ${readme})
+    datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
     jbrowse add-track \
-      ${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})/${scientific_name_abbrev}.${identifier}.gff3.gz \
+      ${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.gff3.gz \
       --assemblyNames=${identifier%.mrk.*} \
       --category='Markers' \
       --name=${identifier##*.} \
       --trackId=${identifier} \
-      --description="${synopsis}" \
+      --description="${synopsis}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
       --out=assets/js/jbrowse
   )
 done
@@ -77,6 +79,7 @@ for synteny_md5 in _data/datastore-metadata/Glycine/*/synteny/*/CHECKSUM.*.md5
 do
   assembly_name=${synteny_md5##*/CHECKSUM.}
   assembly_name=${assembly_name%.syn.*}
+  datastore_dir_url=${DATASTORE_URL}/$(dirname ${synteny_md5#_data/datastore-metadata/})
 
   while read -r checksum file
   do
@@ -84,12 +87,12 @@ do
     name=${file##*.x.}
     name=${name%.*.gff3.gz}
     jbrowse add-track \
-      ${DATASTORE_URL}/$(dirname ${synteny_md5#_data/datastore-metadata/})/${file#*/} \
+      ${datastore_dir_url}/${file#*/} \
       --assemblyNames=${assembly_name} \
       --category='Synteny' \
       --name=${name} \
       --trackId=${name} \
-      --description="Synteny with ${name}" \
+      --description="Synteny with ${name}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
       --out=assets/js/jbrowse/
   done < ${synteny_md5}
 done
@@ -98,6 +101,7 @@ for diversity_manifest in _data/datastore-metadata/Glycine/*/diversity/*/MANIFES
 do
   assembly_name=${diversity_manifest##*/MANIFEST.}
   assembly_name=${assembly_name%.div.*}
+  datastore_dir_url=${DATASTORE_URL}/$(dirname ${diversity_manifest#_data/datastore-metadata/})
 
   awk -v OFS='\t' '
   /^- / && jbrowse { print name, description; name=description=jbrowse="" }
@@ -110,12 +114,12 @@ do
       trackId=$(basename ${file} .vcf.gz)
       name=${trackId##*.div.}
       jbrowse add-track \
-        ${DATASTORE_URL}/$(dirname ${diversity_manifest#_data/datastore-metadata/})/${file#*/} \
+        ${datastore_dir_url}/${file#*/} \
         --assemblyNames=${assembly_name} \
         --category='Diversity' \
         --name=${name} \
         --trackId=${trackId} \
-        --description="${description}" \
+        --description="${description}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
         --out=assets/js/jbrowse/
     done
 done
@@ -124,6 +128,7 @@ for transcription_manifest in _data/datastore-metadata/Glycine/*/transcription/*
 do
   assembly_name=${transcription_manifest##*/MANIFEST.}
   assembly_name=${assembly_name%.trnsc.*}
+  datastore_dir_url=${DATASTORE_URL}/$(dirname ${transcription_manifest#_data/datastore-metadata/})
   
   awk -v OFS='\t' '
   /^- / && jbrowse { print name, description; name=description=jbrowse="" }
@@ -136,12 +141,12 @@ do
       trackId=$(basename ${file} .gff3.gz)
       name=${trackId##*.trnsc.}
       jbrowse add-track \
-        ${DATASTORE_URL}/$(dirname ${transcription_manifest#_data/datastore-metadata/})/${file#*/} \
+        ${datastore_dir_url}/${file#*/} \
         --assemblyNames=${assembly_name} \
         --category='Transcription' \
         --name=${name} \
         --trackId=${trackId} \
-        --description="${description}" \
+        --description="${description}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
         --out=assets/js/jbrowse/
     done
 done
