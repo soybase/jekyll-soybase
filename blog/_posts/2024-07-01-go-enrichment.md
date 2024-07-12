@@ -1,4 +1,5 @@
 ---
+layout: blog-post
 title: GO Enrichment
 author: Steven Cannon
 date: 2022-07-01
