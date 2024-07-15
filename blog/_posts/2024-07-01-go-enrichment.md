@@ -60,7 +60,7 @@ glyma.Wm82.gnm4.ann1.Glyma.01G112500, glyma.Wm82.gnm4.ann1.Glyma.01G113400
 
 <details><summary>Results for List 1, showing `biological_process`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set1_biological.png" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set1_biological.gif" style="height: 483px; width: 478px;"  />
 </div>
 </details>
 
@@ -77,7 +77,7 @@ glyma.Wm82.gnm4.ann1.Glyma.11G089400, glyma.Wm82.gnm4.ann1.Glyma.13G162500
 
 <details><summary>Results for List 2, showing `cellular_component`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set2_cellular.png" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set2_cellular.gif" style="height: 483px; width: 478px;"  />
 </div>
 </details>
 
@@ -95,7 +95,7 @@ glyma.Wm82.gnm4.ann1.Glyma.01G112300, glyma.Wm82.gnm4.ann1.Glyma.01G125300
 
 <details><summary>Results for List 3, showing `molecular_function`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set3_molecular.png" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set3_molecular.gif" style="height: 483px; width: 478px;"  />
 </div>
 </details>
 
