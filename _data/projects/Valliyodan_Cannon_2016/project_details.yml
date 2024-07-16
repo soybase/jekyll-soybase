@@ -53,9 +53,9 @@
         - name: data
           instances:
             - description: Genome assembly for Glycine max cv. Lee
-              url: https://legacy.soybase.org/data/v2/Glycine/max/genomes/Lee.gnm1.BXNC/
+              url: https://data.soybase.org/Glycine/max/genomes/Lee.gnm1.BXNC/
             - description: Genome assembly for Glycine max PI 483463
-              url: https://legacy.soybase.org/data/v2/Glycine/soja/genomes/PI483463.gnm1.YJWS/
+              url: https://data.soybase.org/Glycine/soja/genomes/PI483463.gnm1.YJWS/
     - category:
         - name: browser
           instances:
