@@ -2,7 +2,7 @@
 layout: blog-post
 title: GO Enrichment
 author: Steven Cannon
-date: 2022-07-01
+date: 2024-07-01
 summary: SoyBase offers two methods for calculating GO enrichment. This post explains these approaches.
 ---
 
