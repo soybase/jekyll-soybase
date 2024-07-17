@@ -1,0 +1,143 @@
+---
+layout: search
+title: Gene Search
+web_components: true
+---
+  
+  
+  <form>
+    <input class="uk-input" type="text" id="gene-name" rows="10" cols="60" placeholder="Enter gene name"></input>
+    <input class="uk-button" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
+  </form>
+   
+
+    <!-- This is the modal -->
+    <div id="modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title"></h2>
+            <div id="modal-body">
+                <table class="uk-table uk-table-divider">
+                    <caption>Search Results</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Position</th>
+                            <th>Alleles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="id"></td>
+                            <td id="position"></td>
+                            <td id="alleles"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <button class="uk-button uk-modal-close" type="button">Close</button>
+        </div>
+    </div>
+
+  <script >
+
+async function getData() {
+  const geneName = document.getElementById("gene-name").value;
+  let geneNames = geneName.split(",");
+  let geneNamesString = "";
+
+  geneNames.forEach(name => {
+    geneNamesString += `"${name}",`;
+  })
+
+  geneNamesString = geneNamesString.slice(0, -1).replace(/\s/g, '');
+  console.log("string: ", geneNamesString)
+
+  // --------------------------
+  // api call
+  // --------------------------
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "text/plain");
+  let searchString = `{"genes":[${geneNamesString}]}`;
+
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: searchString,
+    redirect: 'follow'
+  };
+
+  await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOptions)
+    .then(response =>{
+        if(!response.ok){
+            throw error
+        }
+        return response.json()})
+    .then(result => {
+      console.log(result)
+      let chromosome = result.genes[0].chromosome
+      let start = result.genes[0].fmin
+      let stop = result.genes[0].fmax
+
+     // console.log(chromosome, start, stop)
+      
+        getDataFromFastA(chromosome,start,stop);
+              
+    })
+    .catch(error => console.log('error', error));
+
+
+    function getDataFromFastA(chromosome,start,stop) {
+        console.log("line 100",chromosome)
+         //let chromosome = "glyma.Wm82.gnm4.Gm01"
+         let collection = "Wm82.gnm4.div.Song_Hyten_2015"  //HOW TO KNOW WHAT COLLECTION?
+         //let start = 1
+         //let stop = 100000
+        let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${start}-${stop}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/glyma.${collection}.vcf.gz`
+        let requestOptionsVariants = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: {
+            "Accept": "application/json"
+        }
+        };
+
+        fetch(url, requestOptionsVariants)
+        .then(response => response.json())
+        .then(result => {
+            console.log("variants: ",result)
+            result.map(gene => {
+                document.getElementById("id").innerHTML +=
+                    `
+                        <div>
+                            <span>${gene.id}</span>
+                        </div>
+                    `
+                document.getElementById("position").innerHTML +=
+                    `
+                        <div>
+                            <span>${gene.pos}</span>
+                        </div>
+                    `
+                document.getElementById("alleles").innerHTML +=
+                    `
+                        <div>
+                            <span>${gene.alleles[0]} ${gene.alleles[1]}</span>
+                        </div>
+                    `
+                })
+
+                let input = document.getElementById("gene-name");
+                input.value = '';
+                })
+                    
+        }
+    }
+
+
+
+  </script>
