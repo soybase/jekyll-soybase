@@ -6,7 +6,7 @@ date: 2024-07-01
 summary: SoyBase offers two methods for calculating GO enrichment. This post explains these approaches.
 ---
 
-**GO enrichment analysis** uses statistical tests to determine if a set of provided genes are statistically different than a comparison set (typically, the set of all genes in the organism), for to each of the three main gene ontology aspects.
+**GO enrichment analysis** uses statistical tests to determine if a set of provided genes are statistically different than a comparison set (typically, the set of all genes in the organism), for each of the three main gene ontology aspects.
 
 [Gene Ontology (GO)](https://geneontology.org/docs/ontology-documentation/) is a classification system that describes three **aspects** of gene function:
 * **Molecular Function**, describing activities such as [catalytic activity](https://amigo.geneontology.org/amigo/term/GO:0003824) or finer-scale activities such as [lipoprotein lipase activity](https://amigo.geneontology.org/amigo/term/GO:0004465);
@@ -16,10 +16,10 @@ summary: SoyBase offers two methods for calculating GO enrichment. This post exp
 SoyBase offers two methods for calculating GO enrichment.
 
 ## 1. Use the custom service at the SoyBase tools page
-The [tools/analysis/go.html](/tools/analysis/go.html) page offers services for annotating provided genes with GO accessions and for calculating GO enrichment, using the method described in [Morales et al. (2013)](https://dx.doi.org/10.1071/FP12296). The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
+The [tools/analysis/go.html](/tools/analysis/go.html) page offers services for annotating your gene list with GO accessions and for calculating GO enrichment, using the method described in [Morales et al. (2013)](https://dx.doi.org/10.1071/FP12296). The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
 
 ## 2. Use the GO enrichment tool at GlycineMine.
-At [GlycineMine](https://mines.legumeinfo.org/glycinemine/begin.do), enrichment can be calculated for genes from ANY <i>Glycine</i> accession and annotation in the system (there are more than 50 annotation sets as of mid-2024).
+At [GlycineMine](https://mines.legumeinfo.org/glycinemine/begin.do), enrichment can be calculated for genes from ANY <i>Glycine</i> accession and annotation in GlycineMine (there are more than 50 annotation sets as of mid-2024).
 
 Here are the steps.
 
@@ -36,12 +36,12 @@ Try one of the gene lists below:
 
 
 ### 2. Name and save the list.
-You can use the provided name if you wish (based on date and time), or you can give it a more meaningful name. Then click the green "<b>Save a list of 10 Genes</b>" button.
+You can use the provided name if you wish (based on date and time), or you can give it a more meaningful name. Then click the green "<b>Save a list of 10 Genes</b>" button. (Note that if you register with GlycineMine you will be able to save your gene list so that you can use the same list over and over again on the same tool or use that list on various GlycineMine tools.)
 
 ### 3. Examine the Gene Ontology Enrichment results.
 The report page will give descriptive information about each gene; and near the bottom of the page are four reports: "Gene Ontology Enrichment", "Gene Family Enrichment", "Pathway Enrichment", and "Chromosome Distribution".
 
-In the "Gene Ontology Enrichment" box, be sure to check each ontology aspect:
+In the "Gene Ontology Enrichment" box, be sure to check each ontology aspect that you wich to evaluate:
 * biological_process
 * cellular_component
 * molecular_function
