@@ -6,45 +6,88 @@ web_components: true
   
   
   <form>
-    <label class="uk-form-label" for="form-stacked-text">Sequence Variant Search</label>
-    <input class="uk-input" type="text" id="gene-name" rows="10" cols="60" placeholder="Enter gene name"></input>
-    <input class="uk-button" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
+    <div class="uk-margin">
+        <h3>Sequence Variant Search</h3>
+    </div>
+    <div>
+        <div>
+            <label class="uk-form-label" for="form-stacked-text">Select a variant collection</label>
+        </div>
+        <select class="uk-select uk-form-width-large" id="variant-collection">
+            <option value="glyma.Wm82.gnm2.div.Song_Hyten_2015.vcf.gz">glyma.Wm82.gnm2.div.Song_Hyten_2015.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2017.SNPdata.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2017.SNPdata.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.NonSynSNPs.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.NonSynSNPs.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Valliyodan_Brown_2021.USB481.vcf.gz">glyma.Wm82.gnm2.div.Valliyodan_Brown_2021.USB481.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata1.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata1.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata2.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata2.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata3.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata3.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_full.vcf.gz">glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_full.vcf.gz</option>
+            <option value="glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_maf01.vcf.gz">glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_maf01.vcf.gz</option>
+        </select>
+        <div style="margin-left: 10px; margin-top: 5px">
+            Synopsis: <span id="collection-synopsis">VCF and HapMap files containing genotype information of the whole U.S. soybean germplasm collection using the SoySNP50K BeadChip.</span>
+        </div>
+    </div>
+    <div class="uk-margin">
+        <div>
+            <label class="uk-form-label" for="form-stacked-text">Enter gene ID and size of left and right flanking regions...</label>
+        </div>
+        <input class="uk-input uk-form-width-large" type="text" id="gene-name" placeholder="Enter gene name"></input>
+        <input class="uk-input uk-form-width-medium" type="text" id="flank-region"  placeholder="Enter flanking region"></input>
+    </div>
+    <div class="uk-margin">
+        <div>
+            <label class="uk-form-label" for="form-stacked-text">... or a genomic region, as a chromosome: start-end.</label>
+        </div>
+    <div>
+        <div><input class="uk-input uk-form-width-small" type="text" id="start-end" rows="10" cols="30" placeholder="Start-End"></input></div>
+    </div>
+    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
+    </div>
   </form>
-   
-
-    <!-- This is the modal -->
-    <div id="modal" uk-modal>
+    <div id="modal" uk-modal bg-close="false">
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title"></h2>
-            <div id="modal-body">
-                <table id="variant-table" class="uk-table uk-table-divider">
-                    <caption>Search Results for <span id="modal-title"></span></caption>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Position</th>
-                            <th>Alleles</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="data-row">
-                            <td id="id"></td>
-                            <td id="position"></td>
-                            <td id="alleles"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+                <div id="modal-body">
+                    <table id="variant-table uk-table-striped" class="uk-table uk-table-divider">
+                        <caption>Search Results for <span id="modal-title"></span></caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Position</th>
+                                <th>Alleles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="data-row">
+                                <td id="id"></td>
+                                <td id="position"></td>
+                                <td id="alleles"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
         </div>
     </div>
 
   <script >
+
+
+let variantCollection = document.getElementById("variant-collection")
+function onChange(){
+    let value = variantCollection.value
+    console.log(value)
+}
+variantCollection.onchange = onChange
+onChange()
+
 
 function deleteRow() {
     window.location.reload();
@@ -92,7 +135,10 @@ async function getData() {
       let start = result.genes[0].fmin
       let stop = result.genes[0].fmax
 
-     document.getElementById("modal-title").innerHTML = result.genes[0].name
+
+     document.getElementById("modal-title").innerHTML = `
+     <span uk-tooltip=${result.genes[0].chromosome}>${result.genes[0].name}</span>
+     `
 
         getDataFromFastA(chromosome,collectionName,start,stop);
     })
@@ -143,11 +189,12 @@ async function getData() {
                 input.value = '';
                 
                 })
+                .catch(error => console.log('error', error))
                     
         }
 
     }
 
-
+    
 
   </script>
