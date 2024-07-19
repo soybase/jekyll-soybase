@@ -8,8 +8,39 @@ tools_menu: true
 
 <p><b>Step 1. Select a variant collection. Note that there are two reference assemblies to choose from.</b></p>
 
-{% assign genus = "Glycine" %}
-{% assign species = "max" %}
+<select id="collection-name" class="uk-select uk-form-width-large">
+  {% assign genus = "Glycine" %}
+  {% assign species = "max" %}
+  {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
+    {% for metadata_file in metadata[1] %}
+      {% if metadata_file[0] contains "MANIFEST" %}
+        {% assign manifest = metadata_file %}
+        {% for item in manifest[1] %}
+          {% if item.applications contains "jbrowse" %}
+            {% assign filename_parts = item.name | split: "." %}
+            {% assign gensp = filename_parts[0] %}
+            {% assign coll_parts = filename_parts | slice: 1, 4 %}
+            {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
+            {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
+            {%- capture collection_item -%}
+            {
+              "name": "{{item.name}}",
+              "collection-name": "{{collection_name}}",
+              "description": "{{item.description}}"
+            }
+            {%- endcapture %}
+            <option value='{{- collection_item | strip_newlines | strip_html -}}'>{{collection_name}}</option>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</select>
+<div style="margin-left: 10px;">
+  Description: <span id="synopsis"></span>
+</div>
+<!-- <br>
+<br>
 {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
   {% for metadata_file in metadata[1] %}
     {% if metadata_file[0] contains "MANIFEST" %}
@@ -25,24 +56,37 @@ tools_menu: true
           <b>Collection:</b> {{ collection_name }} <br>
           <b>Description:</b> {{ item.description }} <br>
           
-          {% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
-          {% for metadata in site.data.datastore-metadata[genus][species].annotations %}
-            {% for metadata_file in metadata[1] %}
-              {% if metadata_file[0] contains "README" %}
-                {% assign annot_coll_id = metadata_file[1].identifier %}
-                {% assign identifier_parts = annot_coll_id | split: "." %}
-                {% assign annot_base = identifier_parts | slice: 0, 2 | join: "." %}
-                {% if annot_base == diversity_base %}
-                  <b>Annotation collection:</b> {{ annot_coll_id }} <br>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-          
           <br>
         {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
 {% endfor %}
+{% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
+{% for metadata in site.data.datastore-metadata[genus][species].annotations %}
+  {% for metadata_file in metadata[1] %}
+    {% if metadata_file[0] contains "README" %}
+        {% assign annot_coll_id = metadata_file[1].identifier %}
+        {% assign identifier_parts = annot_coll_id | split: "." %}
+        {% assign annot_base = identifier_parts | slice: 0, 2 | join: "." %}
+        {% if annot_base == diversity_base %}
+          <b>Annotation collection:</b> {{ annot_coll_id }} <br>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %} -->
 
+
+<script>
+let variantCollection = document.getElementById("collection-name")
+function onChange(){
+  let value = JSON.parse(variantCollection.value)
+  console.log(value)
+  document.getElementById("synopsis").innerHTML = 
+        `
+        <span>${value.description}</span>
+        `
+}
+variantCollection.onchange = onChange
+onChange()
+</script>
