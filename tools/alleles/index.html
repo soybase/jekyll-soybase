@@ -17,10 +17,8 @@ tools_menu: true
       {% for item in manifest[1] %}
         {% if item.applications contains "jbrowse" %}
           {% assign filename_parts = item.name | split: "." %}
-          {% assign gensp = filename_parts[0] %}
-          {% assign coll_parts = filename_parts | slice: 1, 4 %}
+          {% assign collection_name = filename_parts | slice: 1, 4 | join: "." %}
           {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
-          {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
           <b>VCF file:</b> {{ item.name }} <br>
           <b>Collection:</b> {{ collection_name }} <br>
           <b>Description:</b> {{ item.description }} <br>
