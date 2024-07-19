@@ -14,19 +14,9 @@ web_components: true
             <label class="uk-form-label" for="form-stacked-text">Select a variant collection</label>
         </div>
         <select class="uk-select uk-form-width-large" id="variant-collection">
-            <option value="glyma.Wm82.gnm2.div.Song_Hyten_2015.vcf.gz">glyma.Wm82.gnm2.div.Song_Hyten_2015.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2017.SNPdata.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2017.SNPdata.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.NonSynSNPs.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.NonSynSNPs.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz">glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Valliyodan_Brown_2021.USB481.vcf.gz">glyma.Wm82.gnm2.div.Valliyodan_Brown_2021.USB481.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata1.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata1.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata2.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata2.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata3.vcf.gz">glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata3.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_full.vcf.gz">glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_full.vcf.gz</option>
-            <option value="glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_maf01.vcf.gz">glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_maf01.vcf.gz</option>
         </select>
         <div style="margin-left: 10px; margin-top: 5px">
-            Synopsis: <span id="collection-synopsis">VCF and HapMap files containing genotype information of the whole U.S. soybean germplasm collection using the SoySNP50K BeadChip.</span>
+            Synopsis: <span id="collection-synopsis"></span>
         </div>
     </div>
     <div class="uk-margin">
@@ -79,19 +69,95 @@ web_components: true
 
   <script >
 
+//=========================================================================================
+//              TEST DATA
+//=========================================================================================
+const variantCollectionArray = [ 
+            {
+                name: '--',
+                description: ''
+            },
+            {
+                name:'glyma.Wm82.gnm2.div.Song_Hyten_2015.vcf.gz',
+                description: "VCF and HapMap files containing genotype information of the whole U.S. soybean germplasm collection using the SoySNP50K BeadChip."
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2017.SNPdata.vcf.gz', 
+                description: ''},
+            {
+                name: 'glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.NonSynSNPs.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.SNPdata.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Valliyodan_Brown_2021.USB481.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata1.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata2.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Wickland_Battu_2017.SNPdata3.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_full.vcf.gz',
+                description: ''
+            },
+            {
+                name: 'glyma.Wm82.gnm2.div.Zhang_Jiang_2020.SNPdata_maf01.vcf.gz',
+                description: ''
+            }
+        ]
+//=========================================================================================
+//=========================================================================================
+
 
 let variantCollection = document.getElementById("variant-collection")
+let synopsis = ''
 function onChange(){
     let value = variantCollection.value
     console.log(value)
+    variantCollectionArray.forEach(collection =>{
+        if(value === collection.name){
+            synopsis = collection.description
+        }
+        console.log(synopsis)
+        document.getElementById("collection-synopsis").innerHTML = 
+        `
+        <span>${synopsis}</span>
+        `
+    })
 }
 variantCollection.onchange = onChange
 onChange()
 
 
+
 function deleteRow() {
     window.location.reload();
 }
+
+function displayVariantCollection(){      
+        variantCollectionArray.map(collection => {
+            document.getElementById('variant-collection').innerHTML +=
+            `
+                <option value=${collection.name}>${collection.name}</option>
+            `
+        })
+        }
+
+        displayVariantCollection()
+
+
 
 async function getData() {
 
@@ -192,6 +258,13 @@ async function getData() {
                 .catch(error => console.log('error', error))
                     
         }
+
+
+        
+
+        
+
+        
 
     }
 
