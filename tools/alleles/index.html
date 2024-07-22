@@ -73,42 +73,41 @@ tools_menu: true
       <div><label class="uk-form-label uk-text-default uk-text-muted">e.g 1000000-200000</label></div>
     </div>
   </div>
-  <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
+    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
   </div>
 </form>
 
-<div id="modal" uk-modal bg-close="false">
-  <div class="uk-modal-dialog uk-modal-body">
-      <h2 class="uk-modal-title">Allele Search</h2>
-          <div id="modal-body">
-              <table id="variant-table uk-table-striped" class="uk-table uk-table-divider">
-                  <caption>Search Results for <span id="modal-title"></span></caption>
-                  <caption>Genomic Region: <span id="modal-search-region"></span></caption>
-
-                  <thead>
-                      <tr>
-                          <th>ID</th>
-                          <th>Position</th>
-                          <th>Alleles</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr id="data-row">
-                          <td id="id"></td>
-                          <td id="position"></td>
-                          <td id="alleles"></td>
-                      </tr>
-                  </tbody>
-                  <tfoot>
-                      <tr>
-                          <td></td>
-                      </tr>
-                  </tfoot>
-              </table>
-          </div>
-      <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
+  <div id="modal" uk-modal bg-close="false">
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Allele Search</h2>
+            <div id="modal-body">
+                <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small">
+                    <caption>Search Results for <span id="modal-title"></span></caption>
+                    <caption>Genomic Region: <span id="modal-search-region"></span></caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Position</th>
+                            <th>Alleles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="data-row">
+                            <td id="id"></td>
+                            <td id="position"></td>
+                            <td id="alleles"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
+    </div>
   </div>
-</div>
 <!-- <br>
 <br>
 {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
@@ -132,6 +131,8 @@ tools_menu: true
     {% endif %}
   {% endfor %}
 {% endfor %}
+-->
+
 {% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
 {% for metadata in site.data.datastore-metadata[genus][species].annotations %}
   {% for metadata_file in metadata[1] %}
@@ -144,7 +145,7 @@ tools_menu: true
       {% endif %}
     {% endif %}
   {% endfor %}
-{% endfor %} -->
+{% endfor %} 
 
 
 <script>
@@ -159,6 +160,7 @@ function onChange(){
 }
 variantCollection.onchange = onChange
 onChange()
+
 function deleteRow() {
     window.location.reload();
 }
@@ -179,9 +181,6 @@ geneNames.forEach(name => {
 
 geneNamesString = geneNamesString.slice(0, -1).replace(/\s/g, '');
 
-// --------------------------
-// api call
-// --------------------------
 let myHeaders = new Headers();
 myHeaders.append("Content-Type", "text/plain");
 let searchString = `{"genes":[${geneNamesString}]}`;
@@ -217,11 +216,9 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
 
 
   function getDataFromFastA(chromosome,collectionName,start,stop) {
-       //let chromosome = "glyma.Wm82.gnm4.Gm01"
        console.log("CollectionName",collectionName)
        let collectionVariantObj = JSON.parse(variantCollection.value)
        console.log("line226",collectionVariantObj['collection-name'])
-       //let collection = `${collectionName}.div.Song_Hyten_2015`  //HOW TO KNOW WHAT COLLECTION?
        let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
        let fileName = collectionVariantObj.name
        console.log("collect",collection)
@@ -260,33 +257,32 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
       }
       };
 
-        let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
+      let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
 
       fetch(url, requestOptionsVariants)
       .then(response => response.json())
       .then(result => {
-        console.log
-          result.map(gene => {
-              document.getElementById("id").innerHTML +=
-                  `
-                      <div>
-                          <span>${gene.id}</span>
-                      </div>
-                  `
-              document.getElementById("position").innerHTML +=
-                  `
-                      <div>
-                          <span>${gene.pos}</span>
-                      </div>
-                  `
-              document.getElementById("alleles").innerHTML +=
-                  `
-                      <div>
-                          <span>${gene.alleles}</span>
-                      </div>
-                  `
-              })
+              const tableBody = document.getElementById("data-row").parentElement; 
 
+              result.map((gene, index) => {
+                const rowClass = index % 2 === 0 ? "even" : "odd"; 
+                const tableRow = document.createElement("tr");
+                tableRow.classList.add(rowClass);
+
+                const idCell = document.createElement("td");
+                const posCell = document.createElement("td");
+                const allelesCell = document.createElement("td");
+
+                idCell.textContent = gene.id;
+                posCell.textContent = gene.pos;
+                allelesCell.textContent = gene.alleles;
+
+                tableRow.appendChild(idCell);
+                tableRow.appendChild(posCell);
+                tableRow.appendChild(allelesCell);
+
+                tableBody.appendChild(tableRow);
+              });
               let input = document.getElementById("gene-name");
               input.value = '';
               
