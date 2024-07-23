@@ -6,7 +6,7 @@ tools_menu: true
 
 <H2>Allele Search</H2>
 <form>
-  <label class="uk-form-label uk-text-default uk-text-bold" for="form-stacked-text">Step 1. Select a variant collection. Note that there are two reference assemblies to choose from.</label>
+  <label class="uk-form-label uk-text-default uk-text-bold" for="collection-name">Step 1. Select a variant collection. Note that there are two reference assemblies to choose from.</label>
   <div>
     <select id="collection-name" class="uk-select uk-form-width-large uk-margin-small-top">
       {% assign genus = "Glycine" %}
@@ -15,13 +15,13 @@ tools_menu: true
         {% for metadata_file in metadata[1] %}
           {% if metadata_file[0] contains "MANIFEST" %}
             {% assign manifest = metadata_file %}
-            {% for item in manifest[1] %}
+              {% for item in manifest[1] %}
               {% if item.applications contains "jbrowse" %}
                 {% assign filename_parts = item.name | split: "." %}
                 {% assign gensp = filename_parts[0] %}
                 {% assign coll_parts = filename_parts | slice: 1, 4 %}
                 {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
-                {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
+                {% capture collection_name %}{{ coll_parts| join: "." }}{% endcapture %}
                 {%- capture collection_item -%}
                 {
                   "name": "{{item.name}}",
@@ -38,17 +38,17 @@ tools_menu: true
     </select>
   </div>
   <div style="margin-left: 10px;">
-    <label class="uk-form-label uk-text-default uk-text-emphasis">Synopsis: <span id="synopsis"></span></label>
+    <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
 
   <div class="uk-margin" style="display: flex; justify-content: start;">
     <div>
       <div>
-        <label class="uk-form-label uk-text-default uk-text-bold" for="form-stacked-text">Step 2. Enter gene ID and size of left and right flanking regions...</label>
+        <label class="uk-form-label uk-text-default uk-text-bold" for="gene-name">Step 2. Enter gene ID and size of left and right flanking regions...</label>
         <div><input class="uk-input uk-form-width-large uk-margin-small-top" type="text" id="gene-name" placeholder="Enter gene name"></input></div>
       </div>
       <div>
-        <label class="uk-form-label uk-text-default uk-text-muted">e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</label>
+        <p class="uk-text-default uk-text-secondary" >e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</p>
       </div>
     </div>
     <div >
@@ -57,7 +57,7 @@ tools_menu: true
         <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="flank-region"  placeholder="Enter flanking region">
       </input>
       <div>
-        <label class="uk-form-label uk-text-default uk-text-muted">e.g 50000</label>
+        <label class="uk-form-label uk-text-default uk-text-secondary" for="flank-region">e.g 50000</label>
       </div>
     </div>
     </div>
@@ -65,12 +65,12 @@ tools_menu: true
   
   <div class="uk-margin">
     <div>
-        <label class="uk-form-label uk-text-default uk-text-bold" for="form-stacked-text">... or a genomic region, as a chromosome: start-end.</label>
+        <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
     </div>
   <div>
     <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region" rows="10" cols="30" placeholder="Start-End"></input>
     <div>
-      <div><label class="uk-form-label uk-text-default uk-text-muted">e.g 1000000-200000</label></div>
+      <div><p class="uk-text-default uk-text-secondary">e.g 1000000-200000</p></div>
     </div>
   </div>
     <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
@@ -108,9 +108,9 @@ tools_menu: true
         <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
     </div>
   </div>
-<!-- <br>
 <br>
-{% for metadata in site.data.datastore-metadata[genus][species].diversity %}
+<br>
+<!-- {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
   {% for metadata_file in metadata[1] %}
     {% if metadata_file[0] contains "MANIFEST" %}
       {% assign manifest = metadata_file %}
@@ -121,6 +121,15 @@ tools_menu: true
           {% assign coll_parts = filename_parts | slice: 1, 4 %}
           {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
           {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
+          {%- capture collection_item -%}
+          {
+            "name": "{{item.name}}",
+            "collection-name": "{{collection_name}}",
+            "description": "{{item.description}}"
+          }
+          {%- endcapture %}
+          
+
           <b>VCF file:</b> {{ item.name }} <br>
           <b>Collection:</b> {{ collection_name }} <br>
           <b>Description:</b> {{ item.description }} <br>
@@ -130,8 +139,8 @@ tools_menu: true
       {% endfor %}
     {% endif %}
   {% endfor %}
-{% endfor %}
--->
+{% endfor %} -->
+
 
 {% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
 {% for metadata in site.data.datastore-metadata[genus][species].annotations %}
@@ -152,7 +161,6 @@ tools_menu: true
 let variantCollection = document.getElementById("collection-name")
 function onChange(){
   let value = JSON.parse(variantCollection.value)
-  console.log("value",value)
   document.getElementById("synopsis").innerHTML = 
         `
         <span>${value.description}</span>
@@ -205,7 +213,6 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
     let start = result.genes[0].fmin
     let stop = result.genes[0].fmax
 
-    console.log(result)
    document.getElementById("modal-title").innerHTML = `
    <span uk-tooltip=${result.genes[0].chromosome}>${result.genes[0].name}</span>
    `
@@ -215,20 +222,14 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
   .catch(error => console.log('error', error));
 
 
-  function getDataFromFastA(chromosome,collectionName,start,stop) {
-       console.log("CollectionName",collectionName)
+  async function getDataFromFastA(chromosome,collectionName,start,stop) {
        let collectionVariantObj = JSON.parse(variantCollection.value)
-       console.log("line226",collectionVariantObj['collection-name'])
        let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
        let fileName = collectionVariantObj.name
-       console.log("collect",collection)
-
        let flankingRegion = document.getElementById("flank-region").value
-       console.log("Flank",flankingRegion)
        let startWithFlank
        let stopWithFlank
         if(flankingRegion){
-          console.log(true)
           if(flankingRegion > parseInt(start)){
             startWithFlank = 0
             stopWithFlank = parseInt(stop)+parseInt(flankingRegion)
@@ -238,7 +239,6 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
           }
          
         }else{
-          console.log(false)
           startWithFlank = start
           stopWithFlank = stop
         }
@@ -259,7 +259,7 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
 
       let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
 
-      fetch(url, requestOptionsVariants)
+      await fetch(url, requestOptionsVariants)
       .then(response => response.json())
       .then(result => {
               const tableBody = document.getElementById("data-row").parentElement; 
@@ -290,4 +290,5 @@ await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOption
               .catch(error => console.log('error', error))      
       }
   }
+
 </script>
