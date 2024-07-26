@@ -6,7 +6,7 @@ tools_menu: true
 
 <H2>Allele Search</H2>
 <form>
-  <label class="uk-form-label uk-text-default uk-text-bold" for="collection-name">Step 1. Select a variant collection. Note that there are two reference assemblies to choose from.</label>
+  <label class="uk-form-label uk-text-default uk-text-bold" for="collection-name">Step 1. Select a variant collection. Note that there are three reference assemblies to choose from.</label>
   <div>
     <select id="collection-name" class="uk-select uk-form-width-large uk-margin-small-top">
       {% assign genus = "Glycine" %}
@@ -70,42 +70,57 @@ tools_menu: true
   <div>
     <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region" rows="10" cols="30" placeholder="Start-End"></input>
     <div>
-      <div><p class="uk-text-default uk-text-secondary">e.g 1000000-200000</p></div>
+      <div><p class="uk-text-default uk-text-secondary">e.g 1-100000</p></div>
     </div>
   </div>
-    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/>
+    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/> 
   </div>
 </form>
 
-  <div id="modal" uk-modal bg-close="false">
-    <div class="uk-modal-dialog uk-modal-body">
+  <div id="modal" uk-modal esc-close="false" bg-close="false">
+    <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto >
+      <div id="modal-text">
         <h2 class="uk-modal-title">Allele Search</h2>
-            <div id="modal-body">
-                <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small">
-                    <caption>Search Results for <span id="modal-title"></span></caption>
-                    <caption>Genomic Region: <span id="modal-search-region"></span></caption>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Position</th>
-                            <th>Alleles</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="data-row">
-                            <td id="id"></td>
-                            <td id="position"></td>
-                            <td id="alleles"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+        <div>
+          <span class="uk-text-bold">Region searched: </span>
+          <div class="uk-margin-small-bottom">
+            <span id="region-searched"></span>
+            <span><span id="modal-search-region"></span></span>
+          </div>
+        </div>
+
+          <div id="modal-body">
+              <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small">
+                  <thead style="background-color: lightgrey;">
+                      <tr>
+                          <th class="uk-text-emphasis">Chromosome</th>
+                          <th class="uk-text-emphasis">Variant ID</th>
+                          <th class="uk-text-emphasis">Position</th>
+                          <th class="uk-text-emphasis">Ref</th>
+                          <th class="uk-text-emphasis">Alt</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr id="data-row">
+                          <td id="chromosome"></td>
+                          <td id="id"></td>
+                          <td id="position"></td>
+                          <td id="ref"></td>
+                          <td id="alt"></td>
+                      </tr>
+                      
+                  </tbody>
+                  <div id="loading-spinner" style="margin-left: 45%; display: block" uk-spinner ></div>
+                  <tfoot>
+                      <tr>
+                          <td></td>
+                      </tr>
+                  </tfoot>
+              </table>
+          </div>
+      </div>
         <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
+        <button class="uk-button" onclick="download()">Download</button> 
     </div>
   </div>
 <br>
@@ -150,7 +165,7 @@ tools_menu: true
         {% assign identifier_parts = annot_coll_id | split: "." %}
         {% assign annot_base = identifier_parts | slice: 0, 2 | join: "." %}
         {% if annot_base == diversity_base %}
-          <b>Annotation collection:</b> {{ annot_coll_id }} <br>
+          <!-- <b>Annotation collection:</b> {{ annot_coll_id }} <br> -->
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -161,9 +176,9 @@ tools_menu: true
 let variantCollection = document.getElementById("collection-name")
 function onChange(){
   let value = JSON.parse(variantCollection.value)
-  document.getElementById("synopsis").innerHTML = 
+  document.getElementById("synopsis").textContent = 
         `
-        <span>${value.description}</span>
+        ${value.description}
         `
 }
 variantCollection.onchange = onChange
@@ -179,116 +194,138 @@ function deleteRow() {
 /* ========================================================================= */
 async function getData() {
 
-const geneName = document.getElementById("gene-name").value;
-let geneNames = geneName.split(",");
-let geneNamesString = "";
+  const geneName = document.getElementById("gene-name").value;
+  let geneNames = geneName.split(",");
+  let geneNamesString = "";
 
-geneNames.forEach(name => {
-  geneNamesString += `"${name}",`;
-})
+  geneNames.forEach(name => {
+    geneNamesString += `"${name}",`;
+  })
 
-geneNamesString = geneNamesString.slice(0, -1).replace(/\s/g, '');
+  geneNamesString = geneNamesString.slice(0, -1).replace(/\s/g, '');
 
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "text/plain");
-let searchString = `{"genes":[${geneNamesString}]}`;
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "text/plain");
+  let searchString = `{"genes":[${geneNamesString}]}`;
 
-let requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: searchString,
-  redirect: 'follow'
-};
+  let requestOptions = {  
+    method: 'POST',
+    headers: myHeaders,
+    body: searchString,
+    redirect: 'follow'
+  };
 
-await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOptions)
+  await fetch("https://gcv.soybase.org/microservices/soybase/genes", requestOptions)
   .then(response =>{
       if(!response.ok){
           throw error
       }
       return response.json()})
   .then(result => {
-    let chromosomeArray = result.genes[0].chromosome.split('.')
-    let collectionName = `${chromosomeArray[1]}.${chromosomeArray[2]}`
-    let chromosome = result.genes[0].chromosome
-    let start = result.genes[0].fmin
-    let stop = result.genes[0].fmax
+    console.log("microservice",result)
+    const chromosomeArray = result.genes[0].chromosome.split('.')
+    const collectionName = `${chromosomeArray[1]}.${chromosomeArray[2]}`
+    const chromosome = result.genes[0].chromosome
+    const start = result.genes[0].fmin
+    const stop = result.genes[0].fmax
 
-   document.getElementById("modal-title").innerHTML = `
-   <span uk-tooltip=${result.genes[0].chromosome}>${result.genes[0].name}</span>
+   document.getElementById("region-searched").textContent = `
+   ${result.genes[0].chromosome}:
    `
 
       getDataFromFastA(chromosome,collectionName,start,stop);
   })
   .catch(error => console.log('error', error));
 
+}
 
-  async function getDataFromFastA(chromosome,collectionName,start,stop) {
-       let collectionVariantObj = JSON.parse(variantCollection.value)
-       let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
-       let fileName = collectionVariantObj.name
-       let flankingRegion = document.getElementById("flank-region").value
-       let startWithFlank
-       let stopWithFlank
-        if(flankingRegion){
-          if(flankingRegion > parseInt(start)){
-            startWithFlank = 0
-            stopWithFlank = parseInt(stop)+parseInt(flankingRegion)
-          }else{
-            startWithFlank = parseInt(start)-parseInt(flankingRegion)
-            stopWithFlank = parseInt(stop)+parseInt(flankingRegion)
-          }
-         
+async function getDataFromFastA(chromosome,collectionName,start,stop) {
+     let collectionVariantObj = JSON.parse(variantCollection.value)
+     let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
+     let fileName = collectionVariantObj.name
+     let flankingRegion = document.getElementById("flank-region").value
+     let startWithFlank
+     let stopWithFlank
+      if(flankingRegion){
+        if(flankingRegion > parseInt(start)){
+          startWithFlank = 0
+          stopWithFlank = parseInt(stop)+parseInt(flankingRegion)
         }else{
-          startWithFlank = start
-          stopWithFlank = stop
+          startWithFlank = parseInt(start)-parseInt(flankingRegion)
+          stopWithFlank = parseInt(stop)+parseInt(flankingRegion)
         }
-
-      let parsedGenomicRegion = document.getElementById("genomic-region").value.split('-')
-      document.getElementById("genomic-region").value ? document.getElementById("modal-search-region").innerHTML = `<span>${parsedGenomicRegion[0]} - ${parsedGenomicRegion[1]}</span>` : document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
-
-
-      let urlRegion = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${parsedGenomicRegion[0]}-${parsedGenomicRegion[1]}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
-      let urlFlank = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
-      let requestOptionsVariants = {
-      method: 'GET',
-      redirect: 'follow',
-      headers: {
-          "Accept": "application/json"
+       
+      }else{
+        startWithFlank = start
+        stopWithFlank = stop
       }
-      };
 
-      let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
+    let parsedGenomicRegion = document.getElementById("genomic-region").value.split('-')
+    document.getElementById("genomic-region").value ? document.getElementById("modal-search-region").innerHTML = `<span>${parsedGenomicRegion[0]} - ${parsedGenomicRegion[1]}</span>` : document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
 
-      await fetch(url, requestOptionsVariants)
-      .then(response => response.json())
-      .then(result => {
-              const tableBody = document.getElementById("data-row").parentElement; 
 
-              result.map((gene, index) => {
-                const rowClass = index % 2 === 0 ? "even" : "odd"; 
-                const tableRow = document.createElement("tr");
-                tableRow.classList.add(rowClass);
+    let urlRegion = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${parsedGenomicRegion[0]}-${parsedGenomicRegion[1]}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+    let urlFlank = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+    let requestOptionsVariants = {
+    method: 'GET',
+    redirect: 'follow',
+    headers: {
+        "Accept": "application/json"
+    }
+    };
 
-                const idCell = document.createElement("td");
-                const posCell = document.createElement("td");
-                const allelesCell = document.createElement("td");
+    let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
 
-                idCell.textContent = gene.id;
-                posCell.textContent = gene.pos;
-                allelesCell.textContent = gene.alleles;
+    await fetch(url, requestOptionsVariants)
+    .then(response => response.json())
+    .then(result => {
+      console.log("fasta",result)
+            const tableBody = document.getElementById("data-row").parentElement; 
 
-                tableRow.appendChild(idCell);
-                tableRow.appendChild(posCell);
-                tableRow.appendChild(allelesCell);
+            result.map((gene, index) => {
+              const rowClass = index % 2 === 0 ? "even" : "odd"; 
+              const tableRow = document.createElement("tr");
+              tableRow.classList.add(rowClass);
 
-                tableBody.appendChild(tableRow);
-              });
-              let input = document.getElementById("gene-name");
-              input.value = '';
-              
-              })
-              .catch(error => console.log('error', error))      
-      }
-  }
+              const chromosomeCell = document.createElement("td");
+              const idCell = document.createElement("td");
+              const posCell = document.createElement("td");
+              const refCell = document.createElement("td");
+              const altCell = document.createElement("td");
 
+              chromosomeCell.textContent = gene.chrom
+              idCell.textContent = gene.id;
+              posCell.textContent = gene.pos;
+              refCell.textContent = gene.ref;
+              altCell.textContent = gene.alts;
+
+              tableRow.appendChild(chromosomeCell)
+              tableRow.appendChild(idCell);
+              tableRow.appendChild(posCell);
+              tableRow.appendChild(refCell);
+              tableRow.appendChild(altCell);
+
+              tableBody.appendChild(tableRow);
+            });
+            if(result){
+              document.getElementById("loading-spinner").style.display="none"
+              console.log(document.getElementById("modal").innerText)
+            }
+            let input = document.getElementById("gene-name");
+            input.value = '';
+            
+            })
+            .catch(error => console.log('error', error))      
+    }
+
+    function download(){
+      let content = document.getElementById("modal-text").innerText
+      let filename = document.getElementById("region-searched").innerText
+      let a = document.createElement('a')
+      let blob = new Blob([content], {type: 'text'})
+      let url = URL.createObjectURL(blob)
+      a.setAttribute('href', url)
+      a.setAttribute('download', `${filename}.txt`)
+      a.click()
+}
 </script>
