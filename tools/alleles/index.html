@@ -51,36 +51,37 @@ tools_menu: true
         <p class="uk-text-default uk-text-secondary" >e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</p>
       </div>
     </div>
-    <div >
-      <br>
-      <div class="uk-margin-small-left">
-        <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="flank-region"  placeholder="Enter flanking region">
-      </input>
-      <div>
-        <label class="uk-form-label uk-text-default uk-text-secondary" for="flank-region">e.g 50000</label>
+      <div >
+        <br>
+        <div class="uk-margin-small-left">
+          <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="flank-region"  placeholder="Enter flanking region">
+        </input>
+        <div>
+          <label class="uk-form-label uk-text-default uk-text-secondary" for="flank-region">e.g 50000</label>
+        </div>
       </div>
-    </div>
     </div>
   </div>
   
   <div class="uk-margin">
+      <div>
+          <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
+      </div>
     <div>
-        <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
+      <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region" rows="10" cols="30" placeholder="Start-End"></input>
+      <div>
+        <div><p class="uk-text-default uk-text-secondary">e.g 1-100000</p></div>
+      </div>
     </div>
-  <div>
-    <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region" rows="10" cols="30" placeholder="Start-End"></input>
-    <div>
-      <div><p class="uk-text-default uk-text-secondary">e.g 1-100000</p></div>
-    </div>
-  </div>
-    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/> 
+      <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/> 
   </div>
 </form>
 
   <div id="modal" uk-modal esc-close="false" bg-close="false">
-    <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto >
+    <div class="uk-modal-dialog uk-modal-body uk-modal-dialog-large" uk-overflow-auto >
       <div id="modal-text">
         <h2 class="uk-modal-title">Allele Search</h2>
+        <div id="modal-gene-name"></div>
         <div>
           <span class="uk-text-bold">Region searched: </span>
           <div class="uk-margin-small-bottom">
@@ -119,43 +120,13 @@ tools_menu: true
               </table>
           </div>
       </div>
-        <button class="uk-button uk-modal-close" type="button" onclick="deleteRow()">Close</button>
-        <button class="uk-button" onclick="download()">Download</button> 
+        <button class="uk-button uk-modal-close" type="button" onclick="refreshPage()">Close</button>
+        <button class="uk-button" onclick="downloadTxt()">Download txt</button> 
+        <button class="uk-button" onclick="downloadCsv()">Download CSV</button> 
     </div>
   </div>
 <br>
 <br>
-<!-- {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
-  {% for metadata_file in metadata[1] %}
-    {% if metadata_file[0] contains "MANIFEST" %}
-      {% assign manifest = metadata_file %}
-      {% for item in manifest[1] %}
-        {% if item.applications contains "jbrowse" %}
-          {% assign filename_parts = item.name | split: "." %}
-          {% assign gensp = filename_parts[0] %}
-          {% assign coll_parts = filename_parts | slice: 1, 4 %}
-          {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
-          {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
-          {%- capture collection_item -%}
-          {
-            "name": "{{item.name}}",
-            "collection-name": "{{collection_name}}",
-            "description": "{{item.description}}"
-          }
-          {%- endcapture %}
-          
-
-          <b>VCF file:</b> {{ item.name }} <br>
-          <b>Collection:</b> {{ collection_name }} <br>
-          <b>Description:</b> {{ item.description }} <br>
-          
-          <br>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
-{% endfor %} -->
-
 
 {% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
 {% for metadata in site.data.datastore-metadata[genus][species].annotations %}
@@ -184,7 +155,7 @@ function onChange(){
 variantCollection.onchange = onChange
 onChange()
 
-function deleteRow() {
+function refreshPage() {
     window.location.reload();
 }
 
@@ -228,18 +199,22 @@ async function getData() {
     const chromosome = result.genes[0].chromosome
     const start = result.genes[0].fmin
     const stop = result.genes[0].fmax
+    const geneName = result.genes[0].name
 
    document.getElementById("region-searched").textContent = `
-   ${result.genes[0].chromosome}:
+   ${chromosome}:
+   `
+   document.getElementById("modal-gene-name").textContent = `
+   ${geneName}
    `
 
-      getDataFromFastA(chromosome,collectionName,start,stop);
+      getDataFromFastA(chromosome,collectionName,start,stop, geneName);
   })
   .catch(error => console.log('error', error));
 
 }
 
-async function getDataFromFastA(chromosome,collectionName,start,stop) {
+async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
      let collectionVariantObj = JSON.parse(variantCollection.value)
      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
      let fileName = collectionVariantObj.name
@@ -311,21 +286,75 @@ async function getDataFromFastA(chromosome,collectionName,start,stop) {
               document.getElementById("loading-spinner").style.display="none"
               console.log(document.getElementById("modal").innerText)
             }
-            let input = document.getElementById("gene-name");
+            let input = document.getElementById("modal-gene-name");
             input.value = '';
             
             })
             .catch(error => console.log('error', error))      
     }
 
-    function download(){
+    function downloadTxt(){
       let content = document.getElementById("modal-text").innerText
-      let filename = document.getElementById("region-searched").innerText
+      let filename = document.getElementById("modal-gene-name").innerText
       let a = document.createElement('a')
       let blob = new Blob([content], {type: 'text'})
       let url = URL.createObjectURL(blob)
       a.setAttribute('href', url)
       a.setAttribute('download', `${filename}.txt`)
       a.click()
+    } 
+
+function downloadCsv(){
+        // Variable to store the final csv data
+  let csv_data = [];
+
+  // Get each row data
+  let rows = document.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+
+        // Get each column data      
+        let cols = rows[i].querySelectorAll('td,th');
+
+        // Stores each csv row data
+        let csvrow = [];
+        for (let j = 0; j < cols.length; j++) {
+
+            // Get the text data of each cell of
+            // a row and push it to csvrow
+            csvrow.push(cols[j].innerHTML);
+        }
+
+        // Combine each column value with comma
+        csv_data.push(csvrow.join(","));
+    }
+        // Combine each row data with new line character
+        csv_data = csv_data.join('\n');
+
+        csvDownload(csv_data)
 }
+
+function csvDownload(csv_data) {
+
+  let filename = document.getElementById("modal-gene-name").innerText
+  // Create CSV file object and feed our
+  // csv_data into it
+  CSVFile = new Blob([csv_data], { type: "text/csv" });
+
+  // Create to temporary link to initiate
+  // download process
+  let temp_link = document.createElement('a');
+
+  // Download csv file
+  temp_link.download = `${filename}.csv`;
+  let url = window.URL.createObjectURL(CSVFile);
+  temp_link.href = url;
+
+  // This link should not be displayed
+  temp_link.style.display = "none";
+  document.body.appendChild(temp_link);
+
+  // Automatically click the link to trigger download 
+  temp_link.click();
+  document.body.removeChild(temp_link);
+  }
 </script>
