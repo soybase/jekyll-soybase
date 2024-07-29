@@ -120,9 +120,13 @@ tools_menu: true
               </table>
           </div>
       </div>
-        <button class="uk-button uk-modal-close" type="button" onclick="refreshPage()">Close</button>
-        <button class="uk-button" onclick="downloadTxt()">Download txt</button> 
-        <button class="uk-button" onclick="downloadCsv()">Download CSV</button> 
+        <div style="display: flex; justify-content: space-between;">
+          <button class="uk-button uk-modal-close" type="button" onclick="refreshPage()">Close</button>
+          <div>
+            <button class="uk-button" onclick="downloadTxt()">Export txt</button> 
+            <button class="uk-button" onclick="downloadCsv()">Export CSV</button> 
+          </div>
+        </div>
     </div>
   </div>
 <br>
@@ -293,67 +297,43 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             .catch(error => console.log('error', error))      
     }
 
-    function downloadTxt(){
-      let content = document.getElementById("modal-text").innerText
-      let filename = document.getElementById("modal-gene-name").innerText
-      let a = document.createElement('a')
-      let blob = new Blob([content], {type: 'text'})
-      let url = URL.createObjectURL(blob)
-      a.setAttribute('href', url)
-      a.setAttribute('download', `${filename}.txt`)
-      a.click()
-    } 
+function downloadTxt(){
+  let content = document.getElementById("modal-text").innerText
+  let filename = document.getElementById("modal-gene-name").innerText
+  let a = document.createElement('a')
+  let blob = new Blob([content], {type: 'text'})
+  let url = URL.createObjectURL(blob)
+  a.setAttribute('href', url)
+  a.setAttribute('download', `${filename}.txt`)
+  a.click()
+} 
 
 function downloadCsv(){
-        // Variable to store the final csv data
   let csv_data = [];
-
-  // Get each row data
   let rows = document.getElementsByTagName('tr');
-    for (let i = 0; i < rows.length; i++) {
-
-        // Get each column data      
+    for (let i = 0; i < rows.length; i++) {    
         let cols = rows[i].querySelectorAll('td,th');
-
-        // Stores each csv row data
         let csvrow = [];
-        for (let j = 0; j < cols.length; j++) {
 
-            // Get the text data of each cell of
-            // a row and push it to csvrow
+        for (let j = 0; j < cols.length; j++) {
             csvrow.push(cols[j].innerHTML);
         }
-
-        // Combine each column value with comma
         csv_data.push(csvrow.join(","));
     }
-        // Combine each row data with new line character
         csv_data = csv_data.join('\n');
 
         csvDownload(csv_data)
-}
+  }
 
 function csvDownload(csv_data) {
-
   let filename = document.getElementById("modal-gene-name").innerText
-  // Create CSV file object and feed our
-  // csv_data into it
   CSVFile = new Blob([csv_data], { type: "text/csv" });
-
-  // Create to temporary link to initiate
-  // download process
   let temp_link = document.createElement('a');
-
-  // Download csv file
   temp_link.download = `${filename}.csv`;
   let url = window.URL.createObjectURL(CSVFile);
   temp_link.href = url;
-
-  // This link should not be displayed
   temp_link.style.display = "none";
   document.body.appendChild(temp_link);
-
-  // Automatically click the link to trigger download 
   temp_link.click();
   document.body.removeChild(temp_link);
   }
