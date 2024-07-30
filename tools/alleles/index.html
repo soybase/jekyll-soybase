@@ -162,7 +162,12 @@ tools_menu: true
 
 <script>
 
-let chromSelection = ['Gm01', 'Gm02', 'Gm03', 'Gm04', 'Gm05', 'Gm06', 'Gm07', 'Gm08', 'Gm09', 'Gm10', 'Gm11', 'Gm12', 'Gm13', 'Gm14', 'Gm15', 'Gm16', 'Gm17', 'Gm18', 'Gm19', 'Gm20'];
+let chromSelection = ['Gm01', 'Gm02', 'Gm03', 'Gm04',
+                      'Gm05', 'Gm06', 'Gm07', 'Gm08', 
+                      'Gm09', 'Gm10', 'Gm11', 'Gm12', 
+                      'Gm13', 'Gm14', 'Gm15', 'Gm16', 
+                      'Gm17', 'Gm18', 'Gm19', 'Gm20'];
+                      
 for (var i = 0; i < chromSelection.length; i++) {
     var select = document.getElementById("chromosome-select");
     var option = document.createElement("option");
@@ -320,6 +325,13 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
     }
 
     async function getDataFastAWithChrom(){
+      let start = document.getElementById("genomic-region-start").value
+      let end = document.getElementById("genomic-region-end").value
+
+      if(parseInt(start) > parseInt(end)){
+        window.alert("Start value should be smaller then the end value.")
+        return;
+      }else {
       let chromosome = document.getElementById("chromosome-select").value
       console.log("line 329", chromosome)
       let collectionVariantObj = JSON.parse(variantCollection.value)
@@ -328,8 +340,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
       console.log("line247", collection)
       let fileName = collectionVariantObj.name
       console.log("line249", fileName)
-      let start = document.getElementById("genomic-region-start").value
-      let end = document.getElementById("genomic-region-end").value
       
       let fileNameArray = fileName.split('.')
 
@@ -385,7 +395,9 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
               input.value = '';
               
               })
-              .catch(error => console.log('error', error))      
+              .catch(error => console.log('error', error))   
+      }
+   
     }
     
     function downloadTxt(){
