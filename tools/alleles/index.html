@@ -64,20 +64,33 @@ tools_menu: true
   </div>
   
   <div class="uk-margin">
-      <div>
-          <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
-      </div>
+      <input class="uk-button uk-margin-small-bottom" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" /> 
+  </div>
+
+
+  <!-- Search with Chromosome: start - end  -->
+  <div>
+    <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
+  </div>
+  <div class="uk-margin-small-bottom">
+    <select id="chromosome-select" class="uk-select uk-form-width-small uk-margin-small-top"></select>
     <div>
-      <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region" rows="10" cols="30" placeholder="Start-End"></input>
+      <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region-start" rows="10" cols="30" placeholder="Start"></input>
+        <div>
+          <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-start">e.g 1000</label>
+        </div>
+    </div>
+    <div>
+      <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region-end" rows="10" cols="30" placeholder="End"></input>
       <div>
-        <div><p class="uk-text-default uk-text-secondary">e.g 1-100000</p></div>
+        <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-end">e.g 5000</label>
       </div>
     </div>
-      <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" style="margin-top: 10px;"/> 
+    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getDataFastAWithChrom()" style="margin-top: 10px;"/> 
   </div>
 </form>
 
-  <div id="modal" uk-modal esc-close="false" bg-close="false">
+  <div id="modal" class="uk-modal-container" uk-modal esc-close="false" bg-close="false">
     <div class="uk-modal-dialog uk-modal-body uk-modal-dialog-large" uk-overflow-auto >
       <div id="modal-text">
         <h2 class="uk-modal-title">Allele Search</h2>
@@ -124,7 +137,7 @@ tools_menu: true
           <button class="uk-button uk-modal-close" type="button" onclick="refreshPage()">Close</button>
           <div>
             <button class="uk-button" onclick="downloadTxt()">Export txt</button> 
-            <button class="uk-button" onclick="downloadCsv()">Export CSV</button> 
+            <button class="uk-button" onclick="csvDownload()">Export CSV</button> 
           </div>
         </div>
     </div>
@@ -148,6 +161,16 @@ tools_menu: true
 
 
 <script>
+
+let chromSelection = ['Gm01', 'Gm02', 'Gm03', 'Gm04', 'Gm05', 'Gm06', 'Gm07', 'Gm08', 'Gm09', 'Gm10', 'Gm11', 'Gm12', 'Gm13', 'Gm14', 'Gm15', 'Gm16', 'Gm17', 'Gm18', 'Gm19', 'Gm20'];
+for (var i = 0; i < chromSelection.length; i++) {
+    var select = document.getElementById("chromosome-select");
+    var option = document.createElement("option");
+    option.text = chromSelection[i];
+    option.value = chromSelection[i];
+    select.add(option);
+}
+
 let variantCollection = document.getElementById("collection-name")
 function onChange(){
   let value = JSON.parse(variantCollection.value)
@@ -219,9 +242,13 @@ async function getData() {
 }
 
 async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
+    console.log("line 222",chromosome)
      let collectionVariantObj = JSON.parse(variantCollection.value)
+     console.log("line245", collectionVariantObj)
      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
+     console.log("line247", collection)
      let fileName = collectionVariantObj.name
+     console.log("line249", fileName)
      let flankingRegion = document.getElementById("flank-region").value
      let startWithFlank
      let stopWithFlank
@@ -239,12 +266,11 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
         stopWithFlank = stop
       }
 
-    let parsedGenomicRegion = document.getElementById("genomic-region").value.split('-')
-    document.getElementById("genomic-region").value ? document.getElementById("modal-search-region").innerHTML = `<span>${parsedGenomicRegion[0]} - ${parsedGenomicRegion[1]}</span>` : document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
+    //let parsedGenomicRegion = document.getElementById("genomic-region").value.split('-')
+    document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
 
 
-    let urlRegion = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${parsedGenomicRegion[0]}-${parsedGenomicRegion[1]}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
-    let urlFlank = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+    let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
     let requestOptionsVariants = {
     method: 'GET',
     redirect: 'follow',
@@ -252,8 +278,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
         "Accept": "application/json"
     }
     };
-
-    let url = document.getElementById("genomic-region").value ? urlRegion : urlFlank
 
     await fetch(url, requestOptionsVariants)
     .then(response => response.json())
@@ -297,18 +321,90 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             .catch(error => console.log('error', error))      
     }
 
+    async function getDataFastAWithChrom(){
+      let chromosome = document.getElementById("chromosome-select").value
+      console.log("line 329", chromosome)
+      let collectionVariantObj = JSON.parse(variantCollection.value)
+      console.log("line245", collectionVariantObj)
+      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
+      console.log("line247", collection)
+      let fileName = collectionVariantObj.name
+      console.log("line249", fileName)
+      let start = document.getElementById("genomic-region-start").value
+      let end = document.getElementById("genomic-region-end").value
+      
+      let fileNameArray = fileName.split('.')
+
+      document.getElementById("region-searched").innerHTML = `<span>${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}: </span>`
+      document.getElementById("modal-search-region").innerHTML = `<span>${start} - ${end}</span>`
+
+      let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}:${start}-${end}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+      
+      let requestOptionsVariants = {
+      method: 'GET',
+      redirect: 'follow',
+      headers: {
+          "Accept": "application/json"
+      }
+      };
+
+      await fetch(url, requestOptionsVariants)
+      .then(response => response.json())
+      .then(result => {
+        console.log("fasta",result)
+              const tableBody = document.getElementById("data-row").parentElement; 
+
+              result.map((gene, index) => {
+                const rowClass = index % 2 === 0 ? "even" : "odd"; 
+                const tableRow = document.createElement("tr");
+                tableRow.classList.add(rowClass);
+
+                const chromosomeCell = document.createElement("td");
+                const idCell = document.createElement("td");
+                const posCell = document.createElement("td");
+                const refCell = document.createElement("td");
+                const altCell = document.createElement("td");
+
+                chromosomeCell.textContent = gene.chrom
+                idCell.textContent = gene.id;
+                posCell.textContent = gene.pos;
+                refCell.textContent = gene.ref;
+                altCell.textContent = gene.alts;
+
+                tableRow.appendChild(chromosomeCell)
+                tableRow.appendChild(idCell);
+                tableRow.appendChild(posCell);
+                tableRow.appendChild(refCell);
+                tableRow.appendChild(altCell);
+
+                tableBody.appendChild(tableRow);
+              });
+              if(result){
+                document.getElementById("loading-spinner").style.display="none"
+                console.log(document.getElementById("modal").innerText)
+              }
+              let input = document.getElementById("modal-gene-name");
+              input.value = '';
+              
+              })
+              .catch(error => console.log('error', error))      
+    }
+    
+
 function downloadTxt(){
   let content = document.getElementById("modal-text").innerText
   let filename = document.getElementById("modal-gene-name").innerText
+  let filenameChrom = document.getElementById("region-searched").innerText
   let a = document.createElement('a')
   let blob = new Blob([content], {type: 'text'})
   let url = URL.createObjectURL(blob)
   a.setAttribute('href', url)
-  a.setAttribute('download', `${filename}.txt`)
+  a.setAttribute('download', `${filename ? filename : filenameChrom}.txt`)
   a.click()
 } 
 
-function downloadCsv(){
+
+function csvDownload() {
   let csv_data = [];
   let rows = document.getElementsByTagName('tr');
     for (let i = 0; i < rows.length; i++) {    
@@ -322,14 +418,11 @@ function downloadCsv(){
     }
         csv_data = csv_data.join('\n');
 
-        csvDownload(csv_data)
-  }
-
-function csvDownload(csv_data) {
   let filename = document.getElementById("modal-gene-name").innerText
+  let filenameChrom = document.getElementById("region-searched").innerText
   CSVFile = new Blob([csv_data], { type: "text/csv" });
   let temp_link = document.createElement('a');
-  temp_link.download = `${filename}.csv`;
+  temp_link.download = `${filename ? filename : filenameChrom}.csv`;
   let url = window.URL.createObjectURL(CSVFile);
   temp_link.href = url;
   temp_link.style.display = "none";
