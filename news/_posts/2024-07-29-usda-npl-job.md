@@ -1,9 +1,10 @@
 ---
+layout: news-item
 title:  USDA National Program Leader, Crop Protection
 author:  Steven Cannon
 date:  2024-07-29
 end_date: 2024-09-01
-summary:  "National Program Leader for USDA-ARS Crop Production & Protection"
+summary: National Program Leader for USDA-ARS Crop Production & Protection
 categories: general    
 ---
 
