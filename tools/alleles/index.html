@@ -40,12 +40,13 @@ tools_menu: true
   <div style="margin-left: 10px;">
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
-
   <div class="uk-margin" style="display: flex; justify-content: start;">
     <div>
       <div>
         <label class="uk-form-label uk-text-default uk-text-bold" for="gene-name">Step 2. Enter gene ID and size of left and right flanking regions...</label>
-        <div><input class="uk-input uk-form-width-large uk-margin-small-top" type="text" id="gene-name" placeholder="Enter gene name"></input></div>
+        <div>
+          <input class="uk-input uk-form-width-large uk-margin-small-top" type="text" id="gene-name" placeholder="Enter gene name"></input>
+        </div>
       </div>
       <div>
         <p class="uk-text-default uk-text-secondary" >e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</p>
@@ -62,15 +63,11 @@ tools_menu: true
       </div>
     </div>
   </div>
-  
   <div class="uk-margin">
       <input class="uk-button uk-margin-small-bottom" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getData()" /> 
   </div>
-
-
-  <!-- Search with Chromosome: start - end  -->
   <div>
-    <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome: start-end.</label>
+    <label class="uk-form-label uk-text-default uk-text-bold" for="genomic-region">... or a genomic region, as a chromosome, start, and end.</label>
   </div>
   <div class="uk-margin-small-bottom">
     <select id="chromosome-select" class="uk-select uk-form-width-small uk-margin-small-top"></select>
@@ -102,7 +99,6 @@ tools_menu: true
             <span><span id="modal-search-region"></span></span>
           </div>
         </div>
-
           <div id="modal-body" uk-overflow-auto>
               <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small" >
                   <thead style="background-color: lightgrey;">
@@ -121,8 +117,7 @@ tools_menu: true
                           <td id="position"></td>
                           <td id="ref"></td>
                           <td id="alt"></td>
-                      </tr>
-                      
+                      </tr>              
                   </tbody>
                   <div id="loading-spinner" style="margin-left: 45%; display: block" uk-spinner ></div>
                   <tfoot>
@@ -225,7 +220,6 @@ async function getData() {
       }
       return response.json()})
   .then(result => {
-    console.log("microservice",result)
     const chromosomeArray = result.genes[0].chromosome.split('.')
     const collectionName = `${chromosomeArray[1]}.${chromosomeArray[2]}`
     const chromosome = result.genes[0].chromosome
@@ -247,13 +241,9 @@ async function getData() {
 }
 
 async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
-    console.log("line 222",chromosome)
      let collectionVariantObj = JSON.parse(variantCollection.value)
-     console.log("line245", collectionVariantObj)
      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
-     console.log("line247", collection)
      let fileName = collectionVariantObj.name
-     console.log("line249", fileName)
      let flankingRegion = document.getElementById("flank-region").value
      let startWithFlank
      let stopWithFlank
@@ -315,7 +305,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             });
             if(result){
               document.getElementById("loading-spinner").style.display="none"
-              console.log(document.getElementById("modal").innerText)
             }
             let input = document.getElementById("modal-gene-name");
             input.value = '';
@@ -333,13 +322,9 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
         return;
       }else {
       let chromosome = document.getElementById("chromosome-select").value
-      console.log("line 329", chromosome)
       let collectionVariantObj = JSON.parse(variantCollection.value)
-      console.log("line245", collectionVariantObj)
-      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
-      console.log("line247", collection)
+      let collection = collectionVariantObj['collection-name'] 
       let fileName = collectionVariantObj.name
-      console.log("line249", fileName)
       
       let fileNameArray = fileName.split('.')
 
@@ -359,7 +344,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
       await fetch(url, requestOptionsVariants)
       .then(response => response.json())
       .then(result => {
-        console.log("fasta",result)
               const tableBody = document.getElementById("data-row").parentElement; 
 
               result.map((gene, index) => {
@@ -389,7 +373,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
               });
               if(result){
                 document.getElementById("loading-spinner").style.display="none"
-                console.log(document.getElementById("modal").innerText)
               }
               let input = document.getElementById("modal-gene-name");
               input.value = '';
@@ -438,6 +421,5 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
       temp_link.click();
       document.body.removeChild(temp_link);
     }
-
 
 </script>
