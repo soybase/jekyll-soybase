@@ -30,6 +30,10 @@
       url: "https://soybeanbase.breedinginsight.net/"
     - description: "SCNBase"
       url: "https://scnbase.org/"
+    - description: "GRIN-Global-USA"
+      url: "https://npgsweb.ars-grin.gov/gringlobal/search"
+    - description: GRIN-Global-Canada"
+      url: "https://pgrc-rpc.agr.gc.ca/gringlobal/search"
   - name: "Communications"
     resources:
     - description: "Soybean Genetics Newsletter"
