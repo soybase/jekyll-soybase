@@ -1,13 +1,18 @@
 ---
 - DataStoreID: Zhuang_Wang_2022
   short_title: SoyMap II
-  SoyBaseID: SoyBase.C2022.01
   title: "SoyMap II: Leveraging untapped genetic diversity in soybean"
-  description: 'Genomes and gene models were generated from multiple perennial
-    soybean species across the Glycine genus to study insights into the
-    polyploid and perennial genome evolution and genetic potential for soybean
-    improvement.<br> <a
-    href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA315596"
+  description: '<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0822258">The NSF-funded SoyMap II project</a>, 
+    led by Scott Jackson, involved sequencing corresponding regions around six regions of interest 
+    from eight <i>Glycine</i> species, to gain insights into the polyploid and perennial genome evolution and genetic potential for soybean improvement. This project finished in 2012. See more information about the project,
+    including pictures of the focal species and descriptions of the target regions, at
+    <a href="https://legacy.soybase.org/soymap2/">legacy.soybase.org/soymap2</a>.<br><br>
+    A subsequent project, led by Jianxin Ma and Dajian Zhang, with funding primarily from 
+    the Shandong Province (China), completed the genome assemblies for the species used in 
+    the SoyMap II project. The <a href="https://pubmed.ncbi.nlm.nih.gov/35288665/">Zhuang, Wang et al. (2022)</a> paper 
+    below describes the genome assemblies and analyses from the second project. 
+    See references therein for further citations and descriptions of the species and objectives for both projects.<br><br>
+    <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA315596"
     target="_blank">NCBI BioProject for NSF SoyMapII project</a> (with links to
     Illumina HiSeq data in SRA)</br> <a
     href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503746"
