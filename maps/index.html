@@ -9,11 +9,7 @@ tools_menu: true
 {% assign map_resource = site.data.map_resources %}
 {% assign map_cmap = site.data.map_cmap %}
 
-<h2>Genetic Map Resources for Soybean</h2>
-
-<dl>
-  <dt>SoyBase comparative maps, with QTLs and GWAS</dt>
-</dl>
+<h2><b>Genetic Map Resources for Soybean</b></h2>
 
 <p>
   Maps below show QTLs and GWAS features. Click a chromosome number to go to the corresponding linkage group views. 
@@ -23,40 +19,95 @@ tools_menu: true
   <a href="/about/about_maps/" target="_blank">Details about the SoyBase genetic maps.</a>
 </p>
 
+<h3><b>Soybase QTL and GWAS maps, in classic CMap viewer</b></h3>
+
 {% comment %}
   Use idx as the index of cmap-set groups. Set the first accordion item to "open".
 {% endcomment %}
 {% assign idx = 0 %}
+{% assign url_part1 = "ref_map_set_aid=GmComposite2003_;ref_map_aids=GmComposite2003_" %}
+{% assign url_part2 = ";comparative_maps=-1%3Dmap_aid%3DGmGWAS_" %}
+{% assign url_part3 = ";data_source=sbt_cmap" %}
+
 {% for cmap-set in map_cmap.cmap-sets %}
-  <ul uk-accordion>
-    {% if idx == 0 %}
-      <li class="uk-open">
-    {% else %}
-      <li>
-    {% endif %}
-    {% assign idx = idx | plus: 1 %}
-      <a class="uk-accordion-title" href="#"><strong>&#8226;</strong> {{ cmap-set.description }}</a>
-      <div class="uk-accordion-content">
-        <table class="uk-table">
-          <tbody>
-            <tr>
-              {% assign chr = 0 %}
-              {% for LG in cmap-set.linkage_groups %}
-                {% assign chr = chr | plus: 1 %}
-                <td>
-                  <div  data-uk-tooltip="{pos:'bottom-left'}"; uk-tooltip="title: {{ LG }}">
-                    {% capture map_path %}{{ cmap-set.URL }}?config=map-{{ chr | prepend: '00' | slice: -2,2 }}.json {% endcapture %}
-                    <a href="{{ map_path | relative_url }}">{{ chr | prepend: '00' | slice: -2,2 }}</a>
-                  </div>
-                </td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </li>
-  </ul>
+  {% if cmap-set.URL contains "cmap-classic" %}
+    <ul uk-accordion>
+      {% if idx == 0 %}
+        <li class="uk-open">
+      {% else %}
+        <li>
+      {% endif %}
+      {% assign idx = idx | plus: 1 %}
+        <a class="uk-accordion-title" href="#"><strong>&#8226;</strong> {{ cmap-set.description }}</a>
+        <div class="uk-accordion-content">
+          <table class="uk-table">
+            <tbody>
+              <tr>
+                {% assign chr = 0 %}
+                {% for LG in cmap-set.linkage_groups %}
+                  {% assign chr = chr | plus: 1 %}
+                  {% capture url_suffix %}{{ url_part1 }}{{ LG }}{{ url_part2 }}{{ LG }}{{ url_part3 }}{% endcapture %}
+                  {% capture chr_num %}{{ chr | prepend: '00' | slice: -2,2 }}{% endcapture %}
+                  <td>
+                    <div  data-uk-tooltip="{pos:'bottom-left'}"; uk-tooltip="title: {{ LG }}">
+                      <a href="{{ url_suffix | prepend: '/maps/cmap-classic/index.html?iframe_pathname_suffix=' }}">{{ chr_num }}</a>
+                      <a href="{{ url_suffix | prepend: 'https://cmap.soybase.org/viewer?' }}">{{ chr_num }}</a>
+                    </div>
+                  </td>
+                {% endfor %}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  {% endif %}
 {% endfor %}
+
+
+<h3><b>SoyBase QTL and GWAS maps, in new CMap-js viewer</b></h3>
+
+{% assign idx = 0 %}
+{% for cmap-set in map_cmap.cmap-sets %}
+  {% unless cmap-set.URL contains "cmap-classic" %}
+    {% comment %} This block is for cmap-js {% endcomment %}
+    {% comment %}
+      Use idx as the index of cmap-set groups. Set the first accordion item to "open".
+    {% endcomment %}
+
+    <ul uk-accordion>
+      {% if idx == 0 %}
+        <li class="uk-open">
+      {% else %}
+        <li>
+      {% endif %}
+      {% assign idx = idx | plus: 1 %}
+        <a class="uk-accordion-title" href="#"><strong>&#8226;</strong> {{ cmap-set.description }}</a>
+        <div class="uk-accordion-content">
+          <table class="uk-table">
+            <tbody>
+              <tr>
+                {% assign chr = 0 %}
+                {% for LG in cmap-set.linkage_groups %}
+                  {% assign chr = chr | plus: 1 %}
+                  <td>
+                    <div  data-uk-tooltip="{pos:'bottom-left'}"; uk-tooltip="title: {{ LG }}">
+                      {% capture map_path %}{{ cmap-set.URL }}?config=map-{{ chr | prepend: '00' | slice: -2,2 }}.json {% endcapture %}
+                      <a href="{{ map_path | relative_url }}">{{ chr | prepend: '00' | slice: -2,2 }}</a>
+                    </div>
+                  </td>
+                {% endfor %}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  {% endunless %}
+{% endfor %}
+
+
+
 
 {% for resource in map_resource.resources %}
   <dl>
