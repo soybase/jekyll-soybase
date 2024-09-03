@@ -15,7 +15,7 @@
         "drawing_priority":1,
         "fillColor": ["darkgoldenrod"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_other-seed",
@@ -26,7 +26,7 @@
         "drawing_priority":1,
         "fillColor": ["violet"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_pod",
@@ -37,7 +37,7 @@
         "drawing_priority":1,
         "fillColor": ["darkgreen"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_protein",
@@ -48,7 +48,7 @@
         "drawing_priority":1,
         "fillColor": ["cornflowerblue"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }
       ]
     },
@@ -65,7 +65,7 @@
         "drawing_priority":1,
         "fillColor": ["darkgoldenrod"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_other-seed",
@@ -76,7 +76,7 @@
         "drawing_priority":1,
         "fillColor": ["violet"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_pod",
@@ -87,7 +87,7 @@
         "drawing_priority":1,
         "fillColor": ["darkgreen"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }, {
         "type" : "qtl",
         "title": "QTL_protein",
@@ -98,7 +98,7 @@
         "drawing_priority":1,
         "fillColor": ["cornflowerblue"],
         "shape": ["dumbbell"],
-        "position":-1
+        "position":1
       }
       ]
     }
