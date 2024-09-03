@@ -95,6 +95,18 @@ blog_card: true
     background-color: antiquewhite;
   }
   }
+
+  @media (max-width: 1199px){
+    .bottom-bar {
+      display: 'flex';
+  }
+}
+@media (min-width: 1200px){
+    .bottom-bar-disable {
+      display: none;
+  }
+}
+ 
  
 
 </style>
@@ -223,6 +235,21 @@ blog_card: true
       </div>
     </div>
 </div>
+<br>
+<div class="bottom-bar bottom-bar-disable ">
+  {% if page.blog_card %}
+    {% include blog-card.html %}
+  {% endif %}
+
+  {% if page.news_card %}
+    {% include news-card.html %}
+  {% endif %}
+
+  {% if page.events_card %}
+    {% include events-card.html %}
+  {% endif %}
+</div>
+
 
 <div class="footer">
   <h2>Funding and Development</h2>
