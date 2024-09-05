@@ -11,7 +11,8 @@ blog_card: true
 <style>
   h1 {
     margin: 0;
-  }
+}
+
 .search-container {
   display: flex; 
   justify-content: space-between;
@@ -27,10 +28,6 @@ blog_card: true
 
 .go-btn {
   margin-right: 5px;
-}
-
-.footer {
-  margin-top: 50px;
 }
 
 @media (max-width: 700px){
@@ -54,9 +51,6 @@ blog_card: true
   .sv-label {
     margin-left: -118px;
   }
-  .footer {
-    text-align: center;
-  }
 }
 
 @media (min-width: 1600px){
@@ -77,7 +71,6 @@ blog_card: true
   }
 }
  
-
   @media (max-width: 1599px){
   .cornsilk{
     background-color: cornsilk;
@@ -96,19 +89,6 @@ blog_card: true
   }
   }
 
-  @media (max-width: 1199px){
-    .bottom-bar {
-      display: 'flex';
-  }
-}
-@media (min-width: 1200px){
-    .bottom-bar-disable {
-      display: none;
-  }
-}
- 
- 
-
 </style>
 
 <h1>SoyBase</h1>
@@ -123,7 +103,7 @@ blog_card: true
 <div class="search-container">
   <div class="form-wrapper">
     <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;">
-      <label class="search-label kw-label" for="searchTerm">Keyword Search</label><br>
+      <label class="search-label kw-label">Keyword Search</label><br>
       <input style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
       value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
       <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="go-btn"/>
@@ -133,7 +113,7 @@ blog_card: true
   <div>
     <div class="form-wrapper">
       <form action="https://dev.soybase.org/tools/search/gene.html" name="search" method="get" style="display:inline;">
-      <label class="search-label gis-label" for="identifier">Gene identifier search</label><br>
+      <label class="search-label gis-label">Gene identifier search</label><br>
       <input id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
       value="Glyma.15g026400" onFocus="clearElement(this);" />
       <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="go-btn" />
@@ -144,7 +124,7 @@ blog_card: true
   <div>
     <div class="form-wrapper">
       <form action="https://gcv.soybase.org/search" name="search" method="get" style="display:inline;">
-      <label class="search-label sv-label" for="q">Synteny viewer</label><br>
+      <label class="search-label sv-label">Synteny viewer</label><br>
       <input type="hidden" id="sources" name="sources" value="soybase,liu2020">
       <input id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
       value="Glyma.20G010000" onFocus="clearElement(this);" />
@@ -236,7 +216,7 @@ blog_card: true
     </div>
 </div>
 <br>
-<div class="bottom-bar bottom-bar-disable ">
+<div class="uk-hidden@l">
   {% if page.blog_card %}
     {% include blog-card.html %}
   {% endif %}
@@ -245,16 +225,29 @@ blog_card: true
     {% include news-card.html %}
   {% endif %}
 
-  {% if page.events_card %}
-    {% include events-card.html %}
-  {% endif %}
+  <div class="uk-card uk-card-small uk-card-default uk-margin-bottom">
+    <div class="uk-card-header">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-expand">
+          <h3 class="uk-card-title uk-margin-remove-bottom">EVENTS</h3>
+        </div>
+      </div>
+    </div>
+    
+    <div id="event-card" class="uk-card-body"></div>
+  
+    <div class="uk-card-footer">
+      
+      <a href="/events" class="uk-button uk-button-text">More Events</a>
+  
+    </div>
+  </div>
+  
 </div>
 
-
-<div class="footer">
-  <h2>Funding and Development</h2>
-<p>SoyBase is funded by the USDA-ARS. SoyBase is developed and hosted by the USDA-ARS SoyBase and Legume Clade Database group at Ames, IA, with development assistance from the National Center for Genome Resources (NCGR) with the help of many other researchers in the soybean community.</p>
-<div class="uk-child-width-expand@s uk-flex uk-flex-middle" uk-grid>
+  <h2 style="text-align: left;">Funding and Development</h2>
+<p style="text-align: left;">SoyBase is funded by the USDA-ARS. SoyBase is developed and hosted by the USDA-ARS SoyBase and Legume Clade Database group at Ames, IA, with development assistance from the National Center for Genome Resources (NCGR) with the help of many other researchers in the soybean community.</p>
+<div class="uk-child-width-expand@s uk-flex uk-flex-middle uk-text-center" uk-grid>
   <a href="https://www.ars.usda.gov/main/main.htm" target="_blank" title="USDA ARS website">
     <img src="{{ "assets/img/usda.svg" | relative_url }}" width="150" height="auto" alt="USDA logo"/>
   </a>
@@ -262,13 +255,13 @@ blog_card: true
     <img src="{{ "assets/img/ncgr.png" | relative_url }}" width="200" height="auto" alt="NCGR logo"/>
   </a>
 </div>
-</div>
+
 
 
 <script>
 
-function clearElement(e) {
-        var value = document.getElementById('quickSearchInput').value;
+async function clearElement(e) {
+        var value = await document.getElementById('quickSearchInput').value;
       }
 
-</script>
+  </script>
