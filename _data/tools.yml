@@ -89,4 +89,8 @@
   description: "GO term enrichment analysis tool"
   name: "GO Enrichment Analysis"
   url: "/tools/analysis/go.html"
+- category: "Search"
+  description: "Search for Allele"
+  name: "Allele Search Tool"
+  url: "/tools/alleles/index.html"
 
