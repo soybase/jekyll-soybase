@@ -6,11 +6,15 @@ tools_menu: true
 <h2><b>Gene Expression Resources for Soybean</b></h2>
 
 <p>
-  <b style="font-size:larger">Expression profile, phylogenetic tree, and coexpression network</b> for a gene.<br>
+  <b style="font-size:larger">Expression profile, phylogenetic tree, and coexpression network</b> for a single gene.<br>
   From the <b><a target="_blank" href="https://conekt.legumeinfo.org">CoNekT report</a></b>, 
-  you can view the expression profile, view the <u>phylogenetic tree of orthologous genes</u> with expression values, 
-  and view <u>profile neighbors</u> (genes with similar co-expression profiles).
-  This is available for the Williams 82 assembly 2 annotation.
+  <ul>
+    <li>you can view the expression profile,</li>
+    <li>view the <u>phylogenetic tree of orthologous genes</u> with expression values,</li>
+    <li>and view <u>profile neighbors</u> (genes with similar co-expression profiles).</li>
+  </ul>
+  
+  This is available for the Williams 82 assembly 2 annotation <i>(glyma.Wm82.gnm2.ann1.)</i>.
   <form id="gotogeneform" oninput="urlgene = parturl.value +''+ geneid.value.trim(); gotogeneform.action= urlgene; genelink.href= urlgene; genelink.innerHTML = urlgene;">
     <input id="parturl" type="hidden" value="https://conekt.legumeinfo.org/sequence/find_forLIS/">
        &nbsp;&nbsp; geneID: <input type="text" id="geneid" defaultvalue="glyma.Wm82.gnm2.ann1.Glyma.15g026400" size="40"
@@ -22,6 +26,13 @@ tools_menu: true
   <font style="color:gray">&nbsp;&nbsp; URL for the gene:</font> <a id="genelink"></a>
 </p>
 
+
+<p>
+  <b style="font-size:larger">Comparing Expression profiles of multiple genes</b><br>
+  From the <b><a target="_blank" href="https://conekt.legumeinfo.org/profile_comparison/">CoNekT Compare Profiles page</a></b>, you can compare the expression of up to 50 genes on the same graph in each experimental condition or tissue
+To use this tool: 
+
+</p>
 
 <p>
   <b style="font-size:larger">Expression plot in GlycineMine</b> for genes from the in the Williams 82 assembly 2.<br>
