@@ -58,7 +58,7 @@
     meta_cat: see_corresponding
     category: tools
     legacy_url: "legacy.soybase.org/search/"
-    redirect_url: /tools/
+    redirect_url: /tools/index.html#search
 -
     meta_cat: see_corresponding
     category: tools
@@ -163,25 +163,25 @@
     meta_cat: see_legacy
     category: legacy
     legacy_url: "legacy.soybase.org/experiments/"
-    redirect_url: https://legacy.soybase.org/experiments/
+    redirect_url: https://soybase.org/experiments/
 -
     meta_cat: see_legacy
     category: legacy
     legacy_url: "legacy.soybase.org/grindata/"
-    redirect_url: https://legacy.soybase.org/grindata/
+    redirect_url: https://soybase.org/grindata/
 -
     meta_cat: see_legacy
     category: legacy
     legacy_url: "legacy.soybase.org/mutants/"
-    redirect_url: https://legacy.soybase.org/mutants/
+    redirect_url: https://soybase.org/mutants/
 -
     meta_cat: see_legacy
     category: legacy
     legacy_url: "legacy.soybase.org/resources/ssr.php"
-    redirect_url: https://legacy.soybase.org/resources/ssr.php
+    redirect_url: https://soybase.org/resources/ssr.php
 -
     meta_cat: see_legacy
     category: legacy
     legacy_url: "legacy.soybase.org/soybaselist"
-    redirect_url: https://legacy.soybase.org/soybaselist/
+    redirect_url: https://soybase.org/soybaselist/
 
