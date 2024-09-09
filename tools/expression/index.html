@@ -77,13 +77,22 @@ tools_menu: true
   
   &nbsp;&nbsp; Examples (no prefix; assemby 1 or 2): 
   &nbsp;&nbsp; Glyma12g04390 &nbsp;&nbsp; Glyma.12G040000 &nbsp;&nbsp; Glyma15g03040 &nbsp;&nbsp; Glyma.15g026400 
-  
 </p>
 
 
 <p>
   <b style="font-size:larger">Expression plot in GlycineMine</b> for genes from the in the Williams 82 assembly 2.<br>
-  Enter a gene ID, click Search, select the glyma.Wm82.gnm2 gene model, then select the link to GlycineMine.
+
+  <form id="gotogeneform" oninput="2urlgene = parturl.value +''+ geneid.value.trim(); gotogeneform.action = 2urlgene; 
+        2genelink.href = 2urlgene; 2genelink.innerHTML = 2urlgene;" target="_blank">
+    <input id="parturl" type="hidden" value="https://mines.legumeinfo.org/glycinemine/gene:">
+    &nbsp;&nbsp; Prefixed gene ID: <input style="color:#235626;font-style:italic;font-size:0.9em" type="text" id="geneid" size="40">
+    <input type="submit" value="GO"><br>
+    &nbsp;&nbsp; Examples (include prefix; assembly 2): &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.15g026400 &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.12G040000
+  </form>
+
+  <br>
+  ... or enter a gene in the Gene Search Tool, then choose the link to GlycineMine:<br>
   <script type="text/javascript">
     function clearElement(e) {
       var value = document.getElementById('quickSearchInput').value;
