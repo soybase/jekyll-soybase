@@ -5,6 +5,7 @@ tools_menu: true
 
 <h2><b>Gene Expression Resources for Soybean</b></h2>
 
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
 <p>
   <b style="font-size:larger">Expression profile, phylogenetic tree, and coexpression network</b> for a single gene.<br>
   From the <b><a target="_blank" href="https://conekt.legumeinfo.org">CoNekT report</a></b>, 
@@ -15,33 +16,28 @@ tools_menu: true
   </ul>
   
   This is available for the Williams 82 assembly 2 annotation <i>(glyma.Wm82.gnm2.ann1.)</i>.
-  <form id="gotogeneform" oninput="urlgene = parturl.value +''+ geneid.value.trim(); gotogeneform.action= urlgene; genelink.href= urlgene; genelink.innerHTML = urlgene;">
-    <input id="parturl" type="hidden" value="https://conekt.legumeinfo.org/sequence/find_forLIS/">
-       &nbsp;&nbsp; geneID: <input type="text" id="geneid" defaultvalue="glyma.Wm82.gnm2.ann1.Glyma.15g026400" size="40"
-    >
+  <form id="gotogeneform" oninput="buildURL()" >
+       &nbsp;&nbsp; GeneID: <input type="text" id="geneid" style="color:#235626;font-style:italic;font-size:0.9em" value="glyma.Wm82.gnm2.ann1.Glyma.15g026400" size="40">
     <input type="submit" value="GO">
     <br>
     &nbsp;&nbsp; Examples (include prefix but omit splice variant): &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.15g026400 &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.12G040000
   </form>
-  <font style="color:gray">&nbsp;&nbsp; URL for the gene:</font> <a id="genelink"></a>
+  <font">&nbsp;&nbsp; URL for the gene:</font> <a id="genelink"></a>
 </p>
+</div>
 
-
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
 <p>
   <b style="font-size:larger">Comparing Expression profiles of multiple genes</b><br>
   From the <b><a target="_blank" href="https://conekt.legumeinfo.org/profile_comparison/">CoNekT Compare Profiles page</a></b>, you can compare the expression of up to 50 genes on the same graph in each experimental condition or tissue
 To use this tool: 
-
 </p>
+</div>
 
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
 <p>
   <b style="font-size:larger">Expression plot in GlycineMine</b> for genes from the in the Williams 82 assembly 2.<br>
   Enter a gene ID, click Search, select the glyma.Wm82.gnm2 gene model, then select the link to GlycineMine.
-  <script type="text/javascript">
-    function clearElement(e) {
-      var value = document.getElementById('quickSearchInput').value;
-    }
-  </script>
   <form action="/tools/search/gene.html" name="search" method="get" style="display:inline;">
     &nbsp;&nbsp; GeneID: <input id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
     value="Glyma.15g026400" onFocus="clearElement(this);" />
@@ -50,16 +46,12 @@ To use this tool:
   <br>
   &nbsp;&nbsp; Examples (prefix optional, but omit splice variant): &nbsp;&nbsp; Glyma.15g026400 &nbsp;&nbsp; Glyma.12G040000
 </p>
+</div>
 
-
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
 <p>
   <b style="font-size:larger">BAR eFP (electronic fluorescent pictograph) browser</b> for genes from the in the Williams 82 assembly 2.</br>
   Enter a gene ID, click Search, select the glyma.Wm82.gnm2 gene model, then select the link to BAR eFP.
-  <script type="text/javascript">
-    function clearElement(e) {
-      var value = document.getElementById('quickSearchInput').value;
-    }
-  </script>
   <form action="/tools/search/gene.html" name="search" method="get" style="display:inline;">
     &nbsp;&nbsp; GeneID: <input id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
     value="Glyma.15g026400" onFocus="clearElement(this);" />
@@ -68,12 +60,34 @@ To use this tool:
   <br>
   &nbsp;&nbsp; Examples (prefix optional, but omit splice variant): &nbsp;&nbsp; Glyma.15g026400 &nbsp;&nbsp; Glyma.12G040000
 </p>
+</div>
 
-
-<p> 
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
   <b style="font-size:larger">Expression tracks in genome browsers</b> for the Williams 82 assembly 2 and 4.<br>
   <ul>
     <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm2&tracks=Wm82.gnm2.ann1&loc=glyma.Wm82.gnm2.Gm01:1-1000000&tracklist=true">Wm82.gnm2</a></li>
     <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm4&tracks=Wm82.gnm4.ann1&loc=glyma.Wm82.gnm4.Gm01:1-1000000&tracklist=true">Wm82.gnm4</a></li>
   </ul>
 </p>
+</div>
+<p> 
+
+<script>
+
+  let partialUrl = "https://conekt.legumeinfo.org/sequence/find_forLIS/";
+
+  function buildURL(){
+   let urlgene = partialUrl +''+ document.getElementById('geneid').value.trim(); 
+        document.getElementById('gotogeneform').action = urlgene; 
+        document.getElementById('genelink').href = urlgene; 
+        document.getElementById('genelink').innerHTML = urlgene;
+  }
+
+  function clearElement(e) {
+      var value = document.getElementById('quickSearchInput').value;
+    }
+
+
+
+
+</script>
