@@ -32,7 +32,7 @@ See below for corresponding content in the new (post-2024) SoyBase -- or, where 
 
   {% elsif group.name == "see_legacy" %}
     <b style="font-size:larger">See this content at legacy.soybase.org:</b>
-    {% assign group2 = group.items | group_by: "category" %}
+    {% assign group2 = group.items | group_by: "category" | sort: "legacy_url" %}
     {% for cat in group2 %}
       <dl>
         {% for item2 in cat.items %}
