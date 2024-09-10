@@ -27,7 +27,14 @@ blog_card: true
 }
 
 .go-btn {
+  background-color: #235626;
+  color: white;
   margin-right: 5px;
+}
+.go-btn:hover {
+  cursor: pointer;
+  background-color: #1d4720;
+  color: white;
 }
 
 @media (max-width: 700px){
@@ -100,13 +107,14 @@ blog_card: true
  In the meantime, you can also continue to use <a href="https://legacy.soybase.org/" target="_blank">"legacy SoyBase"</a>.
 </p>
 
+<div >
 <div class="search-container">
   <div class="form-wrapper">
     <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;">
       <label class="search-label kw-label">Keyword Search</label><br>
-      <input style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
+      <input class="uk-input uk-form-small" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
       value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="go-btn"/>
+      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
     </form>
   </div>
 
@@ -114,9 +122,9 @@ blog_card: true
     <div class="form-wrapper">
       <form action="https://dev.soybase.org/tools/search/gene.html" name="search" method="get" style="display:inline;">
       <label class="search-label gis-label">Gene identifier search</label><br>
-      <input id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
+      <input class="uk-input uk-form-small" id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
       value="Glyma.15g026400" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="go-btn" />
+      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn" />
     </form>
   </div>
   </div>
@@ -126,9 +134,9 @@ blog_card: true
       <form action="https://gcv.soybase.org/search" name="search" method="get" style="display:inline;">
       <label class="search-label sv-label">Synteny viewer</label><br>
       <input type="hidden" id="sources" name="sources" value="soybase,liu2020">
-      <input id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
+      <input class="uk-input uk-form-small" id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
       value="Glyma.20G010000" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="go-btn"/>
+      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
     </form>
   </div>
   </div>
@@ -233,16 +241,13 @@ blog_card: true
         </div>
       </div>
     </div>
-    
-    <div id="event-card" class="uk-card-body"></div>
-  
+    <div id="custom-event-card" class="uk-card-body"></div>
     <div class="uk-card-footer">
-      
       <a href="/events" class="uk-button uk-button-text">More Events</a>
-  
     </div>
   </div>
   
+</div>
 </div>
 
   <h2 style="text-align: left;">Funding and Development</h2>
@@ -258,10 +263,21 @@ blog_card: true
 
 
 
-<script>
-
-async function clearElement(e) {
-        var value = await document.getElementById('quickSearchInput').value;
+<script type="module">
+  
+  async function clearElement(e) {
+    var value = await document.getElementById('quickSearchInput').value;
+  }
+  
+  /* render upcoming events to #custom-event-card when screen is smaller than 1200px */
+  /* This solves data not rendering to event cards in more then one event element on the home page */
+  import { upcomingEvents } from "lis-events";
+      function displayUpcomingEvents(){
+      console.log(upcomingEvents)
+      document.getElementById('custom-event-card').innerHTML += upcomingEvents.map(event =>  `
+      <li><a class="uk-text-bold" href=${event.url}>${event.title}</a> ${event.date} - ${event.endDate}</li>
+      `)
       }
-
-  </script>
+      displayUpcomingEvents()
+     
+</script>
