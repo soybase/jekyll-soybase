@@ -110,7 +110,7 @@ blog_card: true
 <div >
 <div class="search-container">
   <div class="form-wrapper">
-    <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;">
+    <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;" target="_blank">
       <label class="search-label kw-label">Keyword Search</label><br>
       <input class="uk-input uk-form-small" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
       value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
@@ -275,7 +275,7 @@ blog_card: true
       function displayUpcomingEvents(){
       console.log(upcomingEvents)
       document.getElementById('custom-event-card').innerHTML += upcomingEvents.map(event =>  `
-      <li><a class="uk-text-bold" href=${event.url}>${event.title}</a> ${event.date} - ${event.endDate}</li>
+      <li style="margin-left: 10px"><a class="uk-text-bold" href=${event.url}>${event.title}</a> ${event.date} - ${event.endDate}</li>
       `)
       }
       displayUpcomingEvents()
