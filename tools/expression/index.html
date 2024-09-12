@@ -4,10 +4,16 @@ tools_menu: true
 ---
 
 <style>
+#quickSearchButton {
+  color: black;
+}
 #quickSearchButton:hover {
   cursor: pointer;
   background-color: #235626;
   color: white;
+}
+#go-btn {
+  color: black;
 }
 #go-btn:hover {
   cursor: pointer;
@@ -21,7 +27,7 @@ body {
 
 <body onload="buildURLGeneSequence(), buildURLGlycineMineGene()">
   <h2><b>Gene Expression Resources for Soybean</b></h2>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
   <p>
     <b style="font-size:larger">Expression profile, phylogenetic tree, and coexpression network</b> for a single gene.<br>
     From the <b><a target="_blank" href="https://conekt.legumeinfo.org">CoNekT report</a></b>, you can ...
@@ -37,11 +43,11 @@ body {
       <br>
       &nbsp;&nbsp; Examples (include prefix; assembly 2): &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.15g026400 &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.12G040000
     </form>
-    <font style="color:#666">&nbsp;&nbsp;&nbsp;&nbsp; URL for the gene:</font> <a id="genelink" href="" target="_blank" style="word-wrap: break-word;"></a>
+    <font>&nbsp;&nbsp;&nbsp;&nbsp; URL for the gene:</font> <a id="genelink" href="" target="_blank" style="word-wrap: break-word;"></a>
   </p>
 </div>
 
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
    <b style="font-size:larger">Comparing Expression profiles of multiple genes</b><br>
   From the <b><a target="_blank" href="https://conekt.legumeinfo.org/profile_comparison/">CoNekT Compare Profiles page</a></b>, you can compare the expression of up to 50 genes on the same graph in each experimental condition or tissue. To use this tool: 
 <ul>
@@ -59,7 +65,7 @@ body {
 </p>
 </div>
 
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
   <b style="font-size:larger">BAR eFP (electronic fluorescent pictograph) browser</b> for genes from the in the Williams 82 assemblies 1 and 2.<br><br>
     <div class="uk-margin-small">
       <form action="https://bar.utoronto.ca/efpsoybean/cgi-bin/efpWeb.cgi" name="search" method="get" style="display:inline;" target="_blank">
@@ -106,7 +112,7 @@ body {
     </div>
 </div>
 
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
   <p>
     <b style="font-size:larger">Expression plot in GlycineMine</b> for genes from the in the Williams 82 assembly 2.<br>
   
@@ -116,7 +122,7 @@ body {
       <input type="submit" id="go-btn" value="GO" class="uk-input uk-form-width-xsmall uk-form-small"><br>
       &nbsp;&nbsp; Examples (include prefix; assembly 2): &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.15g026400 &nbsp;&nbsp; glyma.Wm82.gnm2.ann1.Glyma.12G040000
     </form>
-    <font style="color:#666">&nbsp;&nbsp;&nbsp;&nbsp; URL for the gene:</font> <a id="genelink_2" href="" target="_blank" style="word-wrap: break-word;"></a>
+    <font>&nbsp;&nbsp;&nbsp;&nbsp; URL for the gene:</font> <a id="genelink_2" href="" target="_blank" style="word-wrap: break-word;"></a>
     <br>
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... or enter a gene in the Gene Search Tool, then choose the link to GlycineMine:<br>
@@ -131,7 +137,7 @@ body {
   
 </div>
 
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
     <b style="font-size:larger">Expression tracks in genome browsers</b> for the Williams 82 assembly 2 and 4.<br>
     <ul>
       <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm2&tracks=Wm82.gnm2.ann1&loc=glyma.Wm82.gnm2.Gm01:1-1000000&tracklist=true">Wm82.gnm2</a></li>
