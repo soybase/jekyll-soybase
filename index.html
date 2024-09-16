@@ -184,13 +184,12 @@ blog_card: true
   }
   
   /* render upcoming events to #custom-event-card when screen is smaller than 1200px */
-  /* This solves data not rendering to event cards in more then one event element on the home page */
   import { upcomingEvents } from "lis-events";
       function displayUpcomingEvents(){
-      console.log(upcomingEvents)
-      document.getElementById('custom-event-card').innerHTML += upcomingEvents.map(event =>  `
-      <li style="margin-left: 10px"><a class="uk-text-bold" href=${event.url}>${event.title}</a> ${event.date} - ${event.endDate}</li>
-      `)
+      document.getElementById('custom-event-card').innerHTML += upcomingEvents.map(event => 
+      `
+      <li style="margin-left: 10px"><a class="uk-text-bold" href=${event.url}>${event.title}</a><div style="margin-left: 20px; color: black">${event.date} - ${event.endDate}</div></li>
+      `).join('');
       }
       displayUpcomingEvents()
      
