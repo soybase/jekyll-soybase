@@ -8,97 +8,7 @@ blog_card: true
 
 ---
 
-<style>
-  h1 {
-    margin: 0;
-}
-
-.search-container {
-  display: flex; 
-  justify-content: space-between;
-}
-
-.form-wrapper {
-  white-space: nowrap;
-}
-
-.search-label{
-  font-weight: bold;
-}
-
-.go-btn {
-  background-color: #235626;
-  color: white;
-  margin-right: 5px;
-}
-.go-btn:hover {
-  cursor: pointer;
-  background-color: #1d4720;
-  color: white;
-}
-
-@media (max-width: 700px){
-  .search-container{
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .form-wrapper{
-    margin-top: 10px;
-  }
-  form {
-    text-align: left;
-  }
-  .kw-label {
-    margin-left: -113px;
-  }
-  .gis-label {
-    margin-left: -70px;
-  }
-  .sv-label {
-    margin-left: -118px;
-  }
-}
-
-@media (min-width: 1600px){
-  .col3-cornsilk{
-    background-color: cornsilk;
-  }
-  .col3-seashell{
-    background-color: seashell;
-  }
-  .col3-azure{
-    background-color: azure;
-  }
-  .col3-mistyrose{
-    background-color: mistyrose;
-  }
-  .col3-antiquewhite{
-    background-color: antiquewhite;
-  }
-}
- 
-  @media (max-width: 1599px){
-  .cornsilk{
-    background-color: cornsilk;
-  }
-  .seashell{
-    background-color: seashell;
-  }
-  .azure{
-    background-color: azure;
-  }
-  .mistyrose{
-    background-color: mistyrose;
-  }
-  .antiquewhite{
-    background-color: antiquewhite;
-  }
-  }
-
-</style>
-
-<h1>SoyBase</h1>
+<h1 style="margin: 0">SoyBase</h1>
 
 <p class="uk-text-default">SoyBase integrates genetic and genomic information to aid
  soybean breeders and researchers. This instance of the site has been ported to a 
@@ -109,37 +19,41 @@ blog_card: true
 
 <div >
 <div class="search-container">
-  <div class="form-wrapper">
+
+  <div class="uk-text-nowrap uk-margin-remove-bottom uk-margin-small-top uk-align-center">
     <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;" target="_blank">
-      <label class="search-label kw-label">Keyword Search</label><br>
+      <div class="uk-text-left">
+        <label class="uk-text-bold">Keyword Search</label><br>
       <input class="uk-input uk-form-small" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
       value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
       <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
+    </div>
     </form>
   </div>
 
-  <div>
-    <div class="form-wrapper">
-      <form action="https://dev.soybase.org/tools/search/gene.html" name="search" method="get" style="display:inline;">
-      <label class="search-label gis-label">Gene identifier search</label><br>
-      <input class="uk-input uk-form-small" id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
-      value="Glyma.15g026400" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn" />
+  <div class="uk-text-nowrap uk-margin-remove-bottom uk-margin-small-top uk-align-center">
+    <form action="https://dev.soybase.org/tools/search/gene.html" name="search" method="get" style="display:inline;">
+  <div class="uk-text-left">
+    <label class="uk-text-bold">Gene identifier search</label><br>
+    <input class="uk-input uk-form-small" id="identifier" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="identifier"
+    value="Glyma.15g026400" onFocus="clearElement(this);" />
+    <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn" />
+  </div>
     </form>
   </div>
+ 
+  <div class="uk-text-nowrap uk-margin-remove-bottom uk-margin-small-top uk-align-center">
+    <form action="https://gcv.soybase.org/search" name="search" method="get" style="display:inline;">
+      <div class="uk-text-left">
+        <label class="uk-text-bold">Synteny viewer</label><br>
+        <input type="hidden" id="sources" name="sources" value="soybase,liu2020">
+        <input class="uk-input uk-form-small" id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
+        value="Glyma.20G010000" onFocus="clearElement(this);" />
+        <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
+      </div>
+    </form>
   </div>
 
-  <div>
-    <div class="form-wrapper">
-      <form action="https://gcv.soybase.org/search" name="search" method="get" style="display:inline;">
-      <label class="search-label sv-label">Synteny viewer</label><br>
-      <input type="hidden" id="sources" name="sources" value="soybase,liu2020">
-      <input class="uk-input uk-form-small" id="q" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="q"
-      value="Glyma.20G010000" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
-    </form>
-  </div>
-  </div>
 </div>
 
 <hr>
