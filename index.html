@@ -24,7 +24,7 @@ blog_card: true
     <form action="https://mines.legumeinfo.org/glycinemine/keywordSearchResults.do" name="search" method="get" style="display:inline;" target="_blank">
       <div class="uk-text-left">
         <label class="uk-text-bold">Keyword Search</label><br>
-      <input class="uk-input uk-form-small" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInputKeyword" name="searchTerm"
+      <input class="uk-input uk-form-small" style="width:180px;color:#235626;font-style:italic;font-size:0.9em" type="text" id="quickSearchInput" name="searchTerm"
       value="&quot;seed weight&quot;" onFocus="clearElement(this);" />
       <input type="submit" id="quickSearchButtonKeyword" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn"/>
     </div>
@@ -175,14 +175,27 @@ blog_card: true
   </a>
 </div>
 
-
-
-<script type="module">
-  
-  async function clearElement(e) {
+<script>
+    async function clearElement(e) {
     var value = await document.getElementById('quickSearchInput').value;
   }
-  
+
+  function disableButton(btn_id,input_id){
+    const btn = document.getElementById(btn_id);
+    const textarea = document.getElementById(input_id);
+    textarea.addEventListener('input', () => {
+    btn.disabled = textarea.value == '';
+    });
+  }
+
+  disableButton('quickSearchButtonKeyword','quickSearchInput');
+  disableButton('quickSearchButtonGene','identifier');
+  disableButton('quickSearchButtonSynteny','q');
+     
+</script>
+
+<script type="module">
+
   /* render upcoming events to #custom-event-card when screen is smaller than 1200px */
   import { upcomingEvents } from "lis-events";
       function displayUpcomingEvents(){
@@ -193,16 +206,4 @@ blog_card: true
       }
       displayUpcomingEvents()
 
-    async function disableButton(btn_id,input_id){
-    const btn = await document.getElementById(btn_id);
-    const textarea = document.getElementById(input_id);
-    textarea.addEventListener('input', () => {
-    btn.disabled = textarea.value == '';
-    });
-  }
-
-  disableButton('quickSearchButtonKeyword','quickSearchInputKeyword');
-  disableButton('quickSearchButtonGene','identifier');
-  disableButton('quickSearchButtonSynteny','q');
-     
 </script>
