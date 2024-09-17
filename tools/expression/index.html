@@ -169,9 +169,10 @@ tools_menu: true
           document.getElementById('genelink_2').href = urlgene_2; 
           document.getElementById('genelink_2').innerHTML = urlgene_2;
     }
+
   
-    function clearElement(e) {
-        var value = document.getElementById('quickSearchInput').value;
+    async function clearElement(e) {
+        var value = await document.getElementById('primaryGene').value;
       } 
   </script>
 
