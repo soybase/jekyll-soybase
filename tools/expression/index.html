@@ -5,7 +5,7 @@ tools_menu: true
 
 <body onload="buildURLGeneSequence(), buildURLGlycineMineGene()">
   <h2><b>Gene Expression Resources for Soybean</b></h2>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" style="color: black">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin" >
   <p>
     <b style="font-size:larger">Expression profile, phylogenetic tree, and coexpression network</b> for a single gene.<br>
     From the <b><a target="_blank" href="https://conekt.legumeinfo.org">CoNekT report</a></b>, you can ...
@@ -19,7 +19,7 @@ tools_menu: true
 <div class="bar-input-group">
   <input class="uk-margin-small" id="parturl" type="hidden" value="https://conekt.legumeinfo.org/sequence/find_forLIS/">
   <input class="uk-input uk-width-large uk-form-small" style="color:#235626;font-style:italic;font-size:0.9em" type="text" id="geneid" value="glyma.Wm82.gnm2.ann1.Glyma.15g026400">
- <input id="go-btn" type="submit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small uk-margin-small go-btn">
+ <button id="go-btn" type="submit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
 </div>
       <br>
        Examples (include prefix; assembly 2):  glyma.Wm82.gnm2.ann1.Glyma.15g026400  glyma.Wm82.gnm2.ann1.Glyma.12G040000
@@ -55,9 +55,9 @@ tools_menu: true
           <div class="bar-input-group">
             <input type="hidden" id="dataSource" name="dataSource" value="soybean_severin">
             <input type="hidden" id="mode" name="mode" value="Absolute">
-           <input class="uk-input uk-form-width-small uk-form-small uk-margin-small-top" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
+           <input class="uk-input uk-form-width-small uk-form-small" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
             id="quickSearchInput" name="primaryGene" value="Glyma12g04390" onFocus="clearElement(this);" />
-            <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn uk-margin-small-top" />
+            <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
           </div>
           <span style="margin-left: 5px;">Whole-plant atlas; Severin et al. (2010)</span>
         </div>
@@ -71,9 +71,9 @@ tools_menu: true
             <div class="bar-input-group">
               <input type="hidden" id="dataSource" name="dataSource" value="soybean">
               <input type="hidden" id="mode" name="mode" value="Absolute">
-              <input class="uk-input uk-form-width-small uk-form-small uk-margin-small-top" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
+              <input class="uk-input uk-form-width-small uk-form-small" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
                 id="quickSearchInput" name="primaryGene" value="Glyma.12G040000" onFocus="clearElement(this);" />
-              <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn uk-margin-small-top" />
+              <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
           </div>
           <span style="margin-left: 5px;">Whole-plant and root expression data; Libault et al. (2010)</span>
           </div>
@@ -86,9 +86,9 @@ tools_menu: true
           <div class="bar-input-group">
             <input type="hidden" id="dataSource" name="dataSource" value="soybean_embryonic_development">
             <input type="hidden" id="mode" name="mode" value="Absolute">
-             <input class="uk-input uk-form-width-small uk-form-small uk-margin-small-top" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
+             <input class="uk-input uk-form-width-small uk-form-small" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
               id="quickSearchInput" name="primaryGene" value="Glyma15g03040" onFocus="clearElement(this);" />
-            <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn uk-margin-small-top" />
+            <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
            </div>
             <span style="margin-left: 5px;">Godberg-Harada Soybean embryonic seed; Danzer et al. (2015)</span>
         </div>
@@ -101,9 +101,9 @@ tools_menu: true
           <div class="bar-input-group">
             <input type="hidden" id="dataSource" name="dataSource" value="soybean_heart_cotyledon_globular">
             <input type="hidden" id="mode" name="mode" value="Absolute">
-             <input class="uk-input uk-form-width-small uk-form-small uk-margin-small-top" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
+             <input class="uk-input uk-form-width-small uk-form-small" id="primaryGene" style="width:300px;color:#235626;font-style:italic;font-size:0.9em" type="text" 
               id="quickSearchInput" name="primaryGene" value="Glyma.15g026400" onFocus="clearElement(this);" />
-            <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-form-small go-btn uk-margin-small-top" />
+            <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
            </div>
             <span style="margin-left: 5px;">Godberg-Harada Soybean heart / globular / cotyledon; Peltier et al. (2017)</span>
          </div>
@@ -126,7 +126,7 @@ tools_menu: true
        <div>Prefixed gene ID:</div>
        <div class="bar-input-group">
        <input class="uk-input uk-width-large uk-form-small" style="color:#235626;font-style:italic;font-size:0.9em" type="text" id="geneid_2" value="glyma.Wm82.gnm2.ann1.Glyma.15g026400">
-      <input type="submit" id="go-btn" value="GO" class="uk-input uk-form-width-xsmall uk-form-small uk-margin-small go-btn"><br>
+      <button type="submit" id="go-btn" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button><br>
     </div>
        Examples (include prefix; assembly 2):  glyma.Wm82.gnm2.ann1.Glyma.15g026400  glyma.Wm82.gnm2.ann1.Glyma.12G040000
     </form>
@@ -138,8 +138,7 @@ tools_menu: true
       <div class="bar-input-group">
        <input class="uk-input uk-width-large uk-form-small" id="identifier" style="color:#235626;font-style:italic;font-size:0.9em" type="text" 
         id="quickSearchInput" name="identifier" value="Glyma.15g026400" onFocus="clearElement(this);" />
-      <input type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-input uk-form-width-xsmall uk-margin-small uk-form-small go-btn" />
-    </div>
+      <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
     </form>
     <br>
      Examples (prefix optional; assembly 2):  Glyma.15g026400  glyma.Wm82.gnm2.ann1.Glyma.12G040000
