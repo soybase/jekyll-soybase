@@ -124,7 +124,7 @@ jobs:
       - run: busybox httpd -p 4000
       # FIXME: patty-ci concurrency > 1 results in errors in this GA workflow
       - run: |
-          printf '{"defaults": {"runners": ["axe"]}}\n' > .pa11yci
+          printf '{"defaults": {"runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
       - run: pa11y-ci --sitemap http://0.0.0.0:4000/sitemap.xml --sitemap-exclude '/cmap-*' --sitemap-find '^/' --sitemap-replace http://0.0.0.0:4000/
 
   # Deployment job
