@@ -14,9 +14,11 @@ sitemap: projects
 {% assign prev_DataStoreID = "top" %}
 
 {% for group in groups %}
+<dl>
   <dt>
     <dd> <a href="#{{ prev_DataStoreID }}">{{ group.short_title }}</a> </dd>
   </dt>
+</dl>
   {% assign prev_DataStoreID = group.DataStoreID %}
 {% endfor %}
 <hr>

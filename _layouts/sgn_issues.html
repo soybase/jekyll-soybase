@@ -11,6 +11,7 @@ layout: default
 {% for item in issue %}
   <h3>{{ item.title}}</h3>
 
+  <dl>
   <dt>
     <dd><strong>Authors:</strong></dd> 
     <dd>{{ item.authors}}</dd>
@@ -27,6 +28,7 @@ layout: default
       </dd>
     {% endif %}
   </dt>
+</dl>
 {% endfor %}
 
 <h4><a href="/community/sgn/index.html">Back to the Soybean Genetics Newsletter index page</a></h4>
