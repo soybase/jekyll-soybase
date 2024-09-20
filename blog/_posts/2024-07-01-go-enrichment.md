@@ -25,9 +25,9 @@ Here are the steps.
 
 ### 1. Enter a gene list under Analyze a List.
 
-Open <a href="https://mines.legumeinfo.org/glycinemine/begin.do" target="_blank">GlycineMine</a>, and paste a list of genes in the central box ("Analyze a List"). The list can consist of un-prefixed gene IDs such as `Glyma.01G022700`, but if that gene exists in multiple assemblies or annotation sets, you will see an intermediate page in which you will be asked to select which genes you want to analyze. Therefore, it is generally best to prefix your identifiers with the following four, dot-separated fields: `Genusspecies.Accession.Assemblyversion.Annotationversion.GeneID` `glyma.Wm82.gnm4.ann1.Glyma.01G022700`
+Open <a href="https://mines.legumeinfo.org/glycinemine/begin.do" target="_blank">GlycineMine</a>, and paste a list of genes in the central box ("Analyze a List"). The list can consist of un-prefixed gene IDs such as <code style="color:#235626">Glyma.01G022700</code>, but if that gene exists in multiple assemblies or annotation sets, you will see an intermediate page in which you will be asked to select which genes you want to analyze. Therefore, it is generally best to prefix your identifiers with the following four, dot-separated fields: <code style="color:#235626">Genusspecies.Accession.Assemblyversion.Annotationversion.GeneID</code> <code style="color:#235626">glyma.Wm82.gnm4.ann1.Glyma.01G022700</code>
 
-Also note that the identifiers should be **gene IDs** rather than **mRNAs**; these are typically distinguished by a numeric suffix. That is: use gene `Glyma.01G022700` rather than mRNA `Glyma.01G022700.1`
+Also note that the identifiers should be **gene IDs** rather than **mRNAs**; these are typically distinguished by a numeric suffix. That is: use gene <code style="color:#235626">Glyma.01G022700</code> rather than mRNA <code style="color:#235626">Glyma.01G022700.1</code>
 
 Try one of the gene lists below:
 * [List 1](#list1)
@@ -60,7 +60,7 @@ glyma.Wm82.gnm4.ann1.Glyma.01G112500, glyma.Wm82.gnm4.ann1.Glyma.01G113400
 
 <details><summary>Results for List 1, showing `biological_process`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set1_biological.gif" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set1_biological.gif" style="height: 483px; width: 478px;" alt=""/>
 </div>
 </details>
 
@@ -77,7 +77,7 @@ glyma.Wm82.gnm4.ann1.Glyma.11G089400, glyma.Wm82.gnm4.ann1.Glyma.13G162500
 
 <details><summary>Results for List 2, showing `cellular_component`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set2_cellular.gif" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set2_cellular.gif" style="height: 483px; width: 478px;" alt=""/>
 </div>
 </details>
 
@@ -95,7 +95,7 @@ glyma.Wm82.gnm4.ann1.Glyma.01G112300, glyma.Wm82.gnm4.ann1.Glyma.01G125300
 
 <details><summary>Results for List 3, showing `molecular_function`</summary>
 <div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set3_molecular.gif" style="height: 483px; width: 478px;"  />
+  <img src="/assets/img/blog_images/GO_set3_molecular.gif" style="height: 483px; width: 478px;" alt=""/>
 </div>
 </details>
 
