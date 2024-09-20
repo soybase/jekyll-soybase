@@ -1,11 +1,11 @@
-<nav uk-dropnav class="uk-flex-inline" style="margin-top: 20px;">
+<li uk-dropnav class="uk-flex-inline" style="margin-top: 20px;">
   <ul  class="uk-subnav">
   <li><a class="uk-text-capitalize nav-title" href="{{ "/" | relative_url }}" style="color: white;">Home</a></li>
 
   <li>
     <a class="uk-text-capitalize nav-title" href="{{ "/tools" | relative_url }}" style="color: white;">Tools</a>
     {% assign groups = site.data.tools | group_by: "category" | sort: "name" %}
-    <div class="uk-dropdown">
+    <li class="uk-dropdown">
       <ul class="uk-nav uk-dropdown-nav uk-link-reset">
         {% for group in groups %}
           {% for item in group.items %}
@@ -13,7 +13,7 @@
           {% endfor %}
         {% endfor %}
       </ul>
-    </div>
+    </li>
   </li>
  
   <li>
@@ -27,26 +27,26 @@
     <li>
       <a class="uk-text-capitalize nav-title" href="{{ "/collections" | relative_url }}" style="color: white;">Data Collections</a>
       {% assign genus_description = site.data.datastore-metadata.Glycine.GENUS.about_this_collection.description_Glycine %}
-      <div class="uk-dropdown">
+      <li class="uk-dropdown">
         <ul class="uk-nav uk-dropdown-nav uk-link-reset">
           {% for species in genus_description.species %}
             <li class="nav-item"><a href="/collections/#{{ genus_description.genus }}_{{ species }}"> {{ species }}</a></li>
           {% endfor %}
         </ul>
-      </div>
+      </li>
     </li>
   
     <li>
       <a class="uk-text-capitalize nav-title" href="{{ "/projects" | relative_url }}" style="color: white;">Projects</a>
       {% if site.data.projects %}
       {% assign groups = site.data.projects | sort: "short_title" %}
-        <div class="uk-dropdown">
+        <li class="uk-dropdown">
           <ul class="uk-nav uk-dropdown-nav uk-link-reset">
           {% for group in groups %}
             <li class="nav-item"><a href="{{ group.DataStoreID | downcase | prepend: '/projects/' | relative_url }}">{{ group.short_title }}</a></li>
           {% endfor %}
           </ul>
-        </div>
+        </li>
       {% endif %}
     </li>
 
@@ -56,5 +56,5 @@
 
   <li><a class=" uk-text-capitalize nav-title" href="{{ "/help" | relative_url }}" style="color: white;">Help & Tutorials</a></li>
   </ul>
-</nav>
+</li>
 
