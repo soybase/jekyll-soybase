@@ -11,7 +11,7 @@ sitemap: community
 {% for item in community %}
   {% for cat in item.category %}
     <th>
-      <dt>{{ cat.name }}</dt>
+      <dl><dt>{{ cat.name }}</dt></dl>
       <ul>
         {% for resource in cat.resources %}
           <li><a href="{{ resource.url }}">{{ resource.description }}</a></li>

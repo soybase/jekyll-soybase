@@ -96,6 +96,6 @@ redirect_from: /sbt/
 {% for resource in map_resource.resources %}
   <dl>
     <dt><a href="{{ resource.URL }}">{{ resource.name }}</a></dt>
-    {{ resource.description }}
+    <dd>{{ resource.description }}</dd>
   </dl>
 {% endfor %}
