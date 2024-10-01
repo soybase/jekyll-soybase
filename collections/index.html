@@ -25,14 +25,16 @@ redirect_from: /dlpages/
 {% assign species_list=genus_description.species %}
 
 {% assign genus = "Glycine" %}
-
 {% for desired_species in species_list %}
+<ul uk-accordion animation="false">
+  <li>
   {% for species_dir in site.data.datastore-metadata[genus] %}
     {% assign species = species_dir[0] %}
     {% if species != desired_species%}
       {% continue %}
     {% endif %}
-    <h3><a target="_blank" id="{{ genus }}_{{ species }}" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/"><i>{{genus}} {{ species }}</i></a></h3>
+    <a class="uk-text-large uk-text-italic" target="_blank" id="{{ genus }}_{{ species }}" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/">{{genus}} {{ species }}</a><a class="uk-accordion-title uk-width-1-3 uk-float-right"></a>
+    <div class="uk-accordion-content">
     {% for datatype_dir in species_dir[1] %}
       {% assign datatype = datatype_dir[0] %}
       {% if datatype == "about_this_collection" %} 
@@ -44,14 +46,17 @@ redirect_from: /dlpages/
         {% for metadata_file in collection_dir[1] %}
           {% if metadata_file[0] contains "README" %}
           {% assign readme = metadata_file[1] %}
-          <dl><dt><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
+          <dl>
+            <dt><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
             <dd>{{ readme.synopsis }}</dd>
           </dl>
           {% endif %}
         {% endfor %}
       {% endfor %}
-    {% endfor %}
-  {% endfor %}
-  <hr>
-{% endfor %}
-
+      {% endfor %}
+    </div>
+      {% endfor %}
+      <hr>
+      {% endfor %}
+  </li>
+</ul>
