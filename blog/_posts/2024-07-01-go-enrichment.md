@@ -26,9 +26,15 @@ Here are the steps.
 
 ### 1. Enter a gene list under Analyze a List.
 
+<<<<<<< HEAD
 Open <a href="https://mines.legumeinfo.org/glycinemine/begin.do" target="_blank">GlycineMine</a>, and paste a list of genes in the central box ("Analyze a List"). The list can consist of un-prefixed gene IDs such as <code class="uk-text-primary">Glyma.01G022700</code>, but if that gene exists in multiple assemblies or annotation sets, you will see an intermediate page in which you will be asked to select which genes you want to analyze. Therefore, it is generally best to prefix your identifiers with the following four, dot-separated fields: <code class="uk-text-primary">Genusspecies.Accession.Assemblyversion.Annotationversion.GeneID</code> <code class="uk-text-primary">glyma.Wm82.gnm4.ann1.Glyma.01G022700</code>
 
 Also note that the identifiers should be <span class="uk-text-bold">gene IDs</span> rather than <span class="uk-text-bold">mRNAs</span> these are typically distinguished by a numeric suffix. That is: use gene <code class="uk-text-primary">Glyma.01G022700</code> rather than mRNA <code class="uk-text-primary">Glyma.01G022700.1</code>
+=======
+Open <a href="https://mines.legumeinfo.org/glycinemine/begin.do" target="_blank">GlycineMine</a>, and paste a list of genes in the central box ("Analyze a List"). The list can consist of un-prefixed gene IDs such as <code style="color:#235626">Glyma.01G022700</code>, but if that gene exists in multiple assemblies or annotation sets, you will see an intermediate page in which you will be asked to select which genes you want to analyze. Therefore, it is generally best to prefix your identifiers with the following four, dot-separated fields: <code style="color:#235626">Genusspecies.Accession.Assemblyversion.Annotationversion.GeneID</code> <code style="color:#235626">glyma.Wm82.gnm4.ann1.Glyma.01G022700</code>
+
+Also note that the identifiers should be **gene IDs** rather than **mRNAs**; these are typically distinguished by a numeric suffix. That is: use gene <code style="color:#235626">Glyma.01G022700</code> rather than mRNA <code style="color:#235626">Glyma.01G022700.1</code>
+>>>>>>> fix-pa11y-errors
 
 Try one of the gene lists below:
 <ul class="uk-list uk-list-disc">

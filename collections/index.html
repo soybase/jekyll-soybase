@@ -44,8 +44,9 @@ redirect_from: /dlpages/
         {% for metadata_file in collection_dir[1] %}
           {% if metadata_file[0] contains "README" %}
           {% assign readme = metadata_file[1] %}
-            <dt><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
+          <dl><dt><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
             <dd>{{ readme.synopsis }}</dd>
+          </dl>
           {% endif %}
         {% endfor %}
       {% endfor %}

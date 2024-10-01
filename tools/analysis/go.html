@@ -26,7 +26,7 @@ the gene-list report at <a href="https://mines.legumeinfo.org/glycinemine/begin.
 <form method="post" class="uk-text-center uk-text-left@m">
   <fieldset style="display: inline-block;">
     <legend>
-      Insert Gene List:<br />
+      <label for="glyma.list">Insert Gene List:</label><br />
       (One per line)
     </legend>
     <textarea id="glyma.list" name="glyma.list" rows=20 cols=32>Glyma.09G044100&#10;Glyma.09G048500&#10;Glyma.09G048600&#10;Glyma.09G051100</textarea>
@@ -41,9 +41,9 @@ Or upload a text file containing one gene model name per line:<br /><br />
 
 <form class="uk-text-center uk-text-left@m" method="post" enctype="multipart/form-data">
   <fieldset style="display: inline-block;">
-  <legend>Upload a text file</legend>
+  <legend><label for="glyma.list.upload">Upload a text file</label></legend>
   <ol>
-    <li><input type="file" id="glyma.list" name="glyma.list" /></li>
+    <li><input type="file" id="glyma.list.upload" name="glyma.list" /></li>
     <li class="uk-text-left">Choose analysis type:<br />
     </li>
   </ol>
@@ -70,7 +70,7 @@ Or upload a text file containing one gene model name per line:<br /><br />
   }
 
 
-  disableButton('go-annotation-btn', 'glyma.list');
+  disableButton('go-annotation-btn', 'glyma.list.upload');
   disableButton('go-term-btn', 'glyma.list')
   disableUploadButton('go-annotation-upload-btn');
   disableUploadButton('go-term-upload-btn')
