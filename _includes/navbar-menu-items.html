@@ -30,7 +30,7 @@
       <div class="uk-dropdown">
         <ul class="uk-nav uk-dropdown-nav uk-link-reset">
           {% for species in genus_description.species %}
-            <li class="nav-item"><a href="/collections/#{{ genus_description.genus }}_{{ species }}"> {{ species }}</a></li>
+            <li class="nav-item uk-text-capitalize"><a href="/collections/#{{ genus_description.genus }}_{{ species }}"> {{ species }}</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -58,3 +58,13 @@
   </ul>
 </li>
 
+<script>
+
+  function getId(){
+    id = Object.id
+
+    console.log(id)
+  }
+
+
+</script>

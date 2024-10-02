@@ -27,31 +27,34 @@ redirect_from: /dlpages/
 {% assign genus = "Glycine" %}
 {% for desired_species in species_list %}
 <ul uk-accordion animation="false">
-  <li>
+  <li class="">
   {% for species_dir in site.data.datastore-metadata[genus] %}
     {% assign species = species_dir[0] %}
     {% if species != desired_species%}
       {% continue %}
     {% endif %}
-    <a class="uk-text-large uk-text-italic" target="_blank" id="{{ genus }}_{{ species }}" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/">{{genus}} {{ species }}</a><a class="uk-accordion-title uk-width-1-3 uk-float-right"></a>
+    <a class="uk-text-large uk-text-italic uk-accordion-title" target="_blank" id="{{ genus }}_{{ species }}" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/">{{genus}} {{ species }}</a>
+    
     <div class="uk-accordion-content">
+      <a class="text-size-large uk-margin-left" target="_blank" id="{{ genus }}_{{ species }}" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/">{{ species }}</a>
     {% for datatype_dir in species_dir[1] %}
       {% assign datatype = datatype_dir[0] %}
       {% if datatype == "about_this_collection" %} 
         {% continue %}
       {% endif %}
       <ul uk-accordion animation="false">
-        <li class="uk-margin-left uk-margin-right">  
-      <a class="text-size-med" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a><a class="uk-accordion-title uk-width-1-3 uk-float-right"></a>
+        <li class="uk-margin-medium-left uk-margin-right">  
+      <a class="text-size-med uk-accordion-title" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a>
       <div class="uk-accordion-content">
+        <a class="text-size-med uk-margin-small-left" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a>
       {% for collection_dir in datatype_dir[1] %}
         {% assign collection = collection_dir[0] %}
         {% for metadata_file in collection_dir[1] %}
           {% if metadata_file[0] contains "README" %}
           {% assign readme = metadata_file[1] %}
           <dl>
-            <dt><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
-            <dd>{{ readme.synopsis }}</dd>
+            <dt><a class="uk-margin-small-left" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/{{ readme.identifier }}/">{{ readme.identifier }}</a></dt>
+            <dd class="uk-margin-small-left">{{ readme.synopsis }}</dd>
           </dl>
           {% endif %}
           {% endfor %}
