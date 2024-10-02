@@ -40,7 +40,10 @@ redirect_from: /dlpages/
       {% if datatype == "about_this_collection" %} 
         {% continue %}
       {% endif %}
-      <h4><a target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a></h4>
+      <ul uk-accordion animation="false">
+        <li class="uk-margin-left uk-margin-right">  
+      <a class="text-size-med" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a><a class="uk-accordion-title uk-width-1-3 uk-float-right"></a>
+      <div class="uk-accordion-content">
       {% for collection_dir in datatype_dir[1] %}
         {% assign collection = collection_dir[0] %}
         {% for metadata_file in collection_dir[1] %}
@@ -51,8 +54,12 @@ redirect_from: /dlpages/
             <dd>{{ readme.synopsis }}</dd>
           </dl>
           {% endif %}
-        {% endfor %}
-      {% endfor %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+          </li>
+          </ul>
+
       {% endfor %}
     </div>
       {% endfor %}
