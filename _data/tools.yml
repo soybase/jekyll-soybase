@@ -97,5 +97,5 @@
 - category: "Legacy tools"
   description: "Legacy.SoyBase tool: Gene expression resources for soybean"
   name: "Gene Expression Explorer"
-  url: "https://legacy.soybase.org/experiments/'
+  url: "https://legacy.soybase.org/experiments/"
   target: "_blank" 
