@@ -10,14 +10,12 @@ sitemap: community
 {% assign community = site.data.community %}
 {% for item in community %}
   {% for cat in item.category %}
-    <th>
           <p class="uk-text-bold">{{ cat.name }}</p>
-      <ul>
+      <ul class="uk-list uk-list-disc">
         {% for resource in cat.resources %}
-          <li><a href="{{ resource.url }}">{{ resource.description }}</a></li>
+          <li class="uk-margin-remove"><a href="{{ resource.url }}">{{ resource.description }}</a></li>
         {% endfor %}
       </ul>
-    </th>
   {% endfor %}
 {% endfor %}
 {% endif %}
