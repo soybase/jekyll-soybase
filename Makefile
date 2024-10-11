@@ -1,12 +1,11 @@
 OS = $(shell uname)
 ifeq ($(OS), Darwin)
-  # additional macOS environment variable needed at install time due to broken
-  # xcode ruby framework
-  export CPATH = /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Ruby.framework/Versions/2.6/Headers/
   # install Ruby dependencies in $PWD/vendor
   export GEM_HOME=${PWD}/vendor/gems
   export PATH := ${PWD}/vendor/gems/bin:${PATH}
 
+  # select SDK from /Library/Developer/CommandLineTools/SDKs
+  XCRUN = DEVELOPER_DIR=/Library/Developer/CommandLineTools xcrun --sdk macosx14.5
   JEKYLL_SERVE_ARGS = --livereload
   HTMLPROOFER_ARGS = --allow-missing-href=true --ignore-missing-alt=true
   PYTHON_VENV_ACTIVATE = . ./vendor/python-venv/bin/activate
@@ -49,7 +48,7 @@ jbrowse: setup
 
 setup:
 	git submodule status | grep -q '^-' && git submodule update --init --recursive || true
-	if ! bundle check; then bundle install; fi
+	if ! bundle check; then $(XCRUN) bundle install; fi
 
 mostlyclean:
 	rm -rf .jekyll-cache/ .jekyll-metadata _site/
