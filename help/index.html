@@ -12,18 +12,18 @@ sitemap: homepage
   {% for cat1 in item.category_main %}
     <h3>{{ cat1.name }}</h3>
     {% for resource in cat1.resources %}
-      <dl>
+      <div>
         {% for cat2 in resource.category_sub %}
-          <th>
-            <dt>{{ cat2.name }}</dt>
-            <ul>
+          <div>
+            <h5 class="uk-text-bold uk-margin-top">{{ cat2.name }}</h5>
+            <ul class="uk-list uk-list-disc">
               {% for instance in cat2.instances %}
-                <li><a href="{{ instance.url }}" target="_blank">{{ instance.description }}</a></li>
+                <li class=" uk-margin-remove"><a href="{{ instance.url }}" target="_blank">{{ instance.description }}</a></li>
               {% endfor %}  
             </ul>
-          </th>
+          </div>
         {% endfor %}
-      </dl>
+      </div>
     {% endfor %}
   {% endfor %}
 {% endfor %}
