@@ -12,8 +12,7 @@ tools_menu: true
           view the expression profile, 
           view the <u>phylogenetic tree of orthologous genes</u> with expression values, and 
           view <u>profile neighbors</u> (genes with similar co-expression profiles).
-        
-        This is available for the Williams 82 assembly 2 annotation <i>(glyma.Wm82.gnm2.ann1.)</i>.
+          This is available for the Williams 82 assembly 2 annotation <i>(glyma.Wm82.gnm2.ann1.)</i>.
         <form id="gotogeneform" oninput="buildURLGeneSequence()" target="_blank">
           <div> Prefixed gene ID:</div>
           <div class="bar-input-group">
@@ -93,16 +92,14 @@ tools_menu: true
                 <button type="submit" id="quickSearchButton" name="searchSubmit" value="GO" class="uk-button uk-button-primary uk-button-small uk-margin-small">GO</button>
                </div>
             </form>
-          </div>
-             <div>
-              Examples (no prefix; assemby 1 or 2): 
-             Glyma12g04390  Glyma.12G040000  Glyma15g03040  Glyma.15g026400  
-             </div>
+        </div>
+        <div>
+          Examples (no prefix; assemby 1 or 2): 
+          Glyma12g04390  Glyma.12G040000  Glyma15g03040  Glyma.15g026400  
+        </div>
     </div>
     <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
-    
         <b class="uk-text-medium">Expression plot in GlycineMine</b> for genes from the in the Williams 82 assembly 2.<br>
-      
         <form id="gotogeneform_2" oninput="buildURLGlycineMineGene()" target="_blank">
           <input id="parturl_2" type="hidden" value="https://mines.legumeinfo.org/glycinemine/gene:" class="uk-margin-small">
            <div>Prefixed gene ID:</div>
@@ -126,13 +123,13 @@ tools_menu: true
          Examples (prefix optional; assembly 2):  Glyma.15g026400  glyma.Wm82.gnm2.ann1.Glyma.12G040000
     </div>
   </div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
-  <b class="uk-text-medium">Expression tracks in genome browsers</b> for the Williams 82 assembly 2 and 4.<br>
-  <ul>
-    <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm2&tracks=Wm82.gnm2.ann1&loc=glyma.Wm82.gnm2.Gm01:1-1000000&tracklist=true">Wm82.gnm2</a></li>
-    <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm4&tracks=Wm82.gnm4.ann1&loc=glyma.Wm82.gnm4.Gm01:1-1000000&tracklist=true">Wm82.gnm4</a></li>
-  </ul>
-</div>
+  <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin">
+    <b class="uk-text-medium">Expression tracks in genome browsers</b> for the Williams 82 assembly 2 and 4.<br>
+    <ul>
+      <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm2&tracks=Wm82.gnm2.ann1&loc=glyma.Wm82.gnm2.Gm01:1-1000000&tracklist=true">Wm82.gnm2</a></li>
+      <li><a href="/assets/js/jbrowse/?assembly=Wm82.gnm4&tracks=Wm82.gnm4.ann1&loc=glyma.Wm82.gnm4.Gm01:1-1000000&tracklist=true">Wm82.gnm4</a></li>
+    </ul>
+  </div>
 
   <script>
     addEventListener("load", (event) => {
@@ -154,7 +151,6 @@ tools_menu: true
           document.getElementById('genelink_2').innerHTML = urlgene_2;
     }
 
-  
     async function clearElement(e) {
         var value = await document.getElementById('primaryGene').value;
       } 
