@@ -5,6 +5,7 @@ tools_menu: true
 redirect_from: /amigo/
 ---
 
+
 <h2>SoyBase Soybean Ontologies</h2>
 
 <p class="uk-margin-remove-vertical">
@@ -33,7 +34,7 @@ redirect_from: /amigo/
     <strong>Browse and Search Soybean <u>Whole Plant Growth Terms</u></strong>
   </a>
 </p>
-<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #whole-plant-grouth-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-whole-plant-growth"><div class="uk-flex">details<span id="triangle-icon-whole-plant-growth" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
+<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #whole-plant-grouth-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-whole-plant-growth"><div class="uk-flex">details<span id="triangle-icon-whole-plant-growth" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
 <div id="whole-plant-grouth-terms" class="uk-margin-small uk-hidden">
   <p id="toggle-usage">  This ontology was developed to unite three different ontologies for soybean development: the BBCH scale, the more generic 
     Plant Ontology Consortium's Whole Plant Growth Ontology, and the Soybean Growth and Development growth stages as published in 
@@ -60,7 +61,7 @@ redirect_from: /amigo/
 </a>
 </p>
 
-<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #soybean-structure-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-soybean-structure"><div class="uk-flex">details<span id="triangle-icon-soybean-structure" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
+<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #soybean-structure-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-soybean-structure"><div class="uk-flex">details<span id="triangle-icon-soybean-structure" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
 <div id="soybean-structure-terms" class="uk-margin-small uk-hidden">
   This ontology was developed to enumerate the parts of a soybean plant in order to follow the temporal development of individual plants. The ontology was modeled after the system described in 
   <a href="https://doi.org/10.1104/pp.106.082594" name="Bucciarellietal" title="Bucciarellie et al. Plant Phys 142:207-219" target="_self">
@@ -78,7 +79,7 @@ redirect_from: /amigo/
   <strong>Browse and Search <u>Developmental Terms</u></strong>
 </a>
 </p>
-<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #devlopment-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-developmental"><div class="uk-flex">details <span id="triangle-icon-developmental" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
+<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #devlopment-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-developmental"><div class="uk-flex">details <span id="triangle-icon-developmental" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
 <div id="devlopment-terms" class="uk-margin-small uk-hidden">
   This ontology was developed to describe the growth and maturation of individual soybean tissues or organ systems. The structure 
   was modeled on that of the greater Plant Ontology with modifications to accommodate soybean development. 
@@ -91,7 +92,7 @@ redirect_from: /amigo/
   <strong>Browse and Search Soybean <u>Trait Terms</u></strong>
 </a>
 </p>
-<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #trait-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-soybean-trait"><div class="uk-flex">details <span id="triangle-icon-soybean-trait" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
+<button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #trait-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-soybean-trait"><div class="uk-flex">details <span id="triangle-icon-soybean-trait" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></div></button>
 <div id="trait-terms" class="uk-margin-small uk-hidden">
 
   This ontology was developed as a guide to describing soybean growth taits. These terms were developed from 
@@ -108,17 +109,5 @@ redirect_from: /amigo/
   Plant Trait Ontology are also included where applicable to facilitate cross-species comparisons.
 </div>
 
-<script>
-
-function rotate(e){
-  let id = e.value
-
-  const icon = document.getElementById(id);
-  if (icon.style.transform === 'rotate(90deg)') {
-    icon.style.transform = 'rotate(0deg)'
-  } else {
-    icon.style.transform = 'rotate(90deg)'
-  }
-}
-  
+<script src="../../assets/js/utils.js">
 </script>
