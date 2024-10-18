@@ -33,7 +33,7 @@ redirect_from: /amigo/
     <strong>Browse and Search Soybean <u>Whole Plant Growth Terms</u></strong>
   </a>
 </p>
-<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #whole-plant-grouth-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateIcon()">details<span id="triangle-icon" uk-icon="icon:triangle-right" ></span></button>
+<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #whole-plant-grouth-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-whole-plant-growth">details<span id="triangle-icon-whole-plant-growth" uk-icon="icon:triangle-right"></span></button>
 <div id="whole-plant-grouth-terms" class="uk-margin-small uk-hidden">
   <p id="toggle-usage">  This ontology was developed to unite three different ontologies for soybean development: the BBCH scale, the more generic 
     Plant Ontology Consortium's Whole Plant Growth Ontology, and the Soybean Growth and Development growth stages as published in 
@@ -60,7 +60,7 @@ redirect_from: /amigo/
 </a>
 </p>
 
-<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #soybean-structure-terms; animation: uk-animation-fade; cls: uk-hidden">details</button>
+<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #soybean-structure-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-soybean-structure">details<span id="triangle-icon-soybean-structure" uk-icon="icon:triangle-right"></span></button>
 <div id="soybean-structure-terms" class="uk-margin-small uk-hidden">
   This ontology was developed to enumerate the parts of a soybean plant in order to follow the temporal development of individual plants. The ontology was modeled after the system described in 
   <a href="https://doi.org/10.1104/pp.106.082594" name="Bucciarellietal" title="Bucciarellie et al. Plant Phys 142:207-219" target="_self">
@@ -78,7 +78,7 @@ redirect_from: /amigo/
   <strong>Browse and Search <u>Developmental Terms</u></strong>
 </a>
 </p>
-<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #devlopment-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateIcon()">details</button>
+<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #devlopment-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-developmental">details<span id="triangle-icon-developmental" uk-icon="icon:triangle-right"></span></button>
 <div id="devlopment-terms" class="uk-margin-small uk-hidden">
   This ontology was developed to describe the growth and maturation of individual soybean tissues or organ systems. The structure 
   was modeled on that of the greater Plant Ontology with modifications to accommodate soybean development. 
@@ -91,7 +91,7 @@ redirect_from: /amigo/
   <strong>Browse and Search Soybean <u>Trait Terms</u></strong>
 </a>
 </p>
-<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #trait-terms; animation: uk-animation-fade; cls: uk-hidden">details</button>
+<button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #trait-terms; animation: uk-animation-fade; cls: uk-hidden" onclick="rotate(this)" value="triangle-icon-soybean-trait">details<span id="triangle-icon-soybean-trait" uk-icon="icon:triangle-right"></span></button>
 <div id="trait-terms" class="uk-margin-small uk-hidden">
 
   This ontology was developed as a guide to describing soybean growth taits. These terms were developed from 
@@ -110,23 +110,34 @@ redirect_from: /amigo/
 
 <script>
 
-    const icon = document.getElementById("triangle-icon");
+// const icon = document.getElementById("triangle-icon");
 
+// function rotateIcon() {
+//   icon.style.transform = 'rotate(90deg)';
+// }
 
-function rotateIcon() {
-  icon.style.transform = 'rotate(90deg)';
-}
+// function rotateBack() {
+//   icon.style.transform = 'rotate(0deg)'
+// }
 
-function rotateBack() {
-  icon.style.transform = 'rotate(0deg)';
-}
+// icon.addEventListener('click', function() {
+//   if (icon.style.transform === 'rotate(90deg)') {
+//     rotateBack();
+//   } else {
+//     rotateIcon();
+//   }
+// });
 
-icon.addEventListener('click', function() {
+function rotate(e){
+  console.log(e)
+  let id = e.value
+  console.log(id)
+  const icon = document.getElementById(id);
   if (icon.style.transform === 'rotate(90deg)') {
-    rotateBack();
+    icon.style.transform = 'rotate(0deg)'
   } else {
-    rotateIcon();
+    icon.style.transform = 'rotate(90deg)'
   }
-});
+}
   
 </script>
