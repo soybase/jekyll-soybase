@@ -7,7 +7,7 @@ tools_menu: false
 <h1>Informatic Tools</h1>
 
 {% for group in groups %}
-<dl>
+<dl class="uk-margin-remove-vertical">
   <dt>
     <dd> <a href="#{{ group.name | replace: " / ", "_"  | replace: " ", "_" | downcase }}">{{ group.name }}</a> </dd>
   </dt>
