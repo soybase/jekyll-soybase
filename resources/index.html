@@ -45,8 +45,6 @@ tools_menu: true
 <p>
   See additional <b>details about the main reference assemblies at the <a href="/resources/genome_info">Genome Assembly page</a></b>.
 </p>
-
-<p>
   To examine <b>statistics about all genome assemblies and annotations held at SoyBase</b>, use these two links:
 </p>
 <ul>
@@ -68,7 +66,7 @@ tools_menu: true
   </dl>
 {% endif %}
 
-<h2>Tools and resources for particular species</h2>
+<h2>Tools and resources for particular species</h2>  <span><button onclick="expandAllAccordion()">expand all</button></span> <span><button onclick="collapseAllAccordion()">collapse all</button></span>
 
 {% for species in genus_resources.species %}
   {% for about_file in site.data.datastore-metadata[genus][species].about_this_collection %}
@@ -80,9 +78,12 @@ tools_menu: true
 
   <hr>
 
-  <h3>
+  <ul uk-accordion animation="false">
+    <li class="ukaccordion">
+  <h3 class="uk-accordion-title">
     <i>{{ species_resources.genus }} {{ species_resources.species }}</i>: {{ genus_resources.commonName }}
   </h3>
+  <div class="uk-accordion-content">
   {% capture species_photo_path %}assets/img/species_images/{{ species_resources.abbrev }}.jpg{% endcapture %}
   {% assign species_photo = site.static_files | where: "path", species_photo_path | first %}
   {% if species_photo %}
@@ -270,4 +271,30 @@ tools_menu: true
       {% endfor %}
     {% endif %}
   {% endfor %}
+    </div>
+  </li>
+</ul>
 {% endfor %}
+
+<script>
+function expandAllAccordion() {
+  const nodeList = document.querySelectorAll(".ukaccordion");
+  const contentDiv = document.querySelectorAll(".uk-accordion-content")
+  console.log(nodeList)
+  if(nodeList){
+    for (let i = 0; i < nodeList.length; i++){
+      contentDiv[i].removeAttribute('hidden')
+      nodeList[i].setAttribute("class","uk-open")
+    }
+  }
+}
+
+function collapseAllAccordion(){
+  const nodeList = document.querySelectorAll(".uk-open");
+  const contentDiv = document.querySelectorAll(".uk-accordion-content")
+  for (let i = 0; i < nodeList.length; i++){
+      nodeList[i].setAttribute("class", "ukaccordion")
+      contentDiv[i].setAttribute('hidden', true)
+    }
+}
+</script>
