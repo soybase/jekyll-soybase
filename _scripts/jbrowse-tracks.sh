@@ -48,13 +48,21 @@ do
   (
     eval $(yaml2sh ${readme})
     datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
+    trackId=${identifier%.*}
     jbrowse add-track \
       ${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.gene_models_main.gff3.gz \
       --assemblyNames=${identifier%.ann[0-9].*} \
       --category='Genes' \
-      --trackId=${identifier%.*} \
+      --trackId=${trackId} \
       --description="${synopsis}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
       --config=$(printf '{"displays":[{"displayId":"%s","renderer":{"maxHeight":3000}}]}' "${identifier%.*}") \
+      --out=assets/js/jbrowse
+
+    jbrowse text-index \
+      --perTrack \
+      --tracks=${trackId} \
+      --prefixSize=40 \
+      --exclude=exon,CDS,five_prime_UTR,three_prime_UTR \
       --out=assets/js/jbrowse
   )
 done

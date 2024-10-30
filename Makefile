@@ -17,7 +17,7 @@ else # assume dev container
   PYTHON_VENV_ACTIVATE = true # no-op
 endif
 
-JBROWSE_VERSION = 2.15.4
+JBROWSE_VERSION = 2.16.0
 PA11YCI_VERSION = 3.1.X
 
 serve: mostlyclean setup
@@ -46,6 +46,10 @@ jbrowse: setup
 	if ! [ -d ./assets/js/jbrowse ]; then npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; fi
 	cp assets/js/jbrowse-config.json assets/js/jbrowse/config.json
 	npm exec -c '_scripts/jbrowse-tracks.sh'
+	# Add .csv suffix to trix index files (*.ix/*.ixx) to trix GitHub pages into serving them with Content-Encoding: gz
+	if [ -d assets/js/jbrowse/trix ]; then find assets/js/jbrowse/trix \( -name '*.ix' -o -name '*.ixx' \) -exec mv {} {}.csv \; ; fi
+	sed -i.bak 's/\(\.ixx\{0,1\}\)"/\1.csv"/' assets/js/jbrowse/config.json && rm assets/js/jbrowse/config.json.bak
+	
 
 setup:
 	git submodule status | grep -q '^-' && git submodule update --init --recursive || true
