@@ -11,7 +11,7 @@ function rotateTriangle(e){
     }
   }
  
-  // use to expand all uikit accordion on page
+  // expand all uikit accordion on page
   function expandAllAccordion() {
     const nodeList = document.querySelectorAll(".ukaccordion");
     const contentDiv = document.querySelectorAll(".uk-accordion-content")
@@ -21,12 +21,14 @@ function rotateTriangle(e){
       }
   }
   
-   // use to collapse all uikit accordion on page
+      // collapse all uikit accordion on page
   function collapseAllAccordion(){
     const nodeList = document.querySelectorAll(".uk-open");
     const contentDiv = document.querySelectorAll(".uk-accordion-content")
     for (let i = 0; i < nodeList.length; i++){
         nodeList[i].setAttribute("class", "ukaccordion")
-        contentDiv[i].setAttribute('hidden', true)
+        for(let j = 0; j < contentDiv.length; j++){
+          contentDiv[j].setAttribute('hidden', true)
+        }
       }
-  }
+    }

@@ -7,6 +7,10 @@ sitemap: projects
 {% assign groups = site.data.projects | sort: "short_title" %}
 <h3>Projects</h3> <a id="top"></a>
 
+<div class="uk-flex uk-flex-center uk-flex-right@s">
+  <button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
+  <button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
+</div>
 {% comment %} 
   Shift the in-page anchor links to the preceding item; otherwise the links are too high in the page. 
 {% endcomment %}
@@ -14,7 +18,7 @@ sitemap: projects
 <hr>
 {% for group in groups %}
   <ul uk-accordion>
-      <li> 
+      <li class="ukaccordion"> 
           <a class="uk-accordion-title" id="{{ group.DataStoreID }}" >{{ group.short_title }}</a> 
         <div class="uk-accordion-content">
           <h4><a id="{{ group.DataStoreID }}" href="{{ group.DataStoreID | downcase | prepend: '/projects/' | relative_url }}">{{ group.short_title }}</a> </h4>
@@ -29,3 +33,4 @@ sitemap: projects
 {% endfor %}
 {% endif %}
 
+<script src="../assets/js/utils.js"></script>

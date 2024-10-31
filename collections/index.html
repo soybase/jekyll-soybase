@@ -22,13 +22,18 @@ redirect_from: /dlpages/
 
   <h2>Collection synopses and links</h2>
 
+  <div class="uk-flex uk-flex-center uk-flex-right@s">
+    <button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
+    <button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
+  </div>
+
   {% assign genus_description = site.data.datastore-metadata.Glycine.GENUS.about_this_collection.description_Glycine %}
   {% assign species_list=genus_description.species %}
 
   {% assign genus = "Glycine" %}
   {% for desired_species in species_list %}
   <ul uk-accordion animation="false">
-    <li id={{desired_species}} species={{desired_species}} class="">
+    <li id={{desired_species}} species={{desired_species}} class="ukaccordion">
     {% for species_dir in site.data.datastore-metadata[genus] %}
       {% assign species = species_dir[0] %}
       {% if species != desired_species%}
@@ -44,7 +49,7 @@ redirect_from: /dlpages/
           {% continue %}
         {% endif %}
         <ul uk-accordion animation="false">
-          <li class="uk-margin-medium-left uk-margin-right">  
+          <li class="uk-margin-medium-left uk-margin-right ukaccordion">  
         <a class="text-size-med uk-accordion-title" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a>
         <div class="uk-accordion-content">
           <a class="text-size-med uk-margin-small-left" target="_blank" href="{{ site.datastoreurl }}/{{ genus }}/{{ species }}/{{ datatype }}/">{{ datatype }}</a>
@@ -89,3 +94,5 @@ redirect_from: /dlpages/
   }
   
 </script>
+
+ <script src="../assets/js/utils.js"></script>
