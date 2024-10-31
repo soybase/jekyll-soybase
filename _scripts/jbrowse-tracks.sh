@@ -58,12 +58,18 @@ do
       --config=$(printf '{"displays":[{"displayId":"%s","renderer":{"maxHeight":3000}}]}' "${identifier%.*}") \
       --out=assets/js/jbrowse
 
-    jbrowse text-index \
-      --perTrack \
-      --tracks=${trackId} \
-      --prefixSize=40 \
-      --exclude=exon,CDS,five_prime_UTR,three_prime_UTR \
-      --out=assets/js/jbrowse
+    # index only if under the "Reference" category
+    if awk '$2 == "identifier:" && $3 == identifier {
+            getline; getline; exit(/accession_group:.* et al\.,/)}' \
+       identifier=${identifier%%.*} ${readme%/annotations/*}/about_this_collection/description_*_*.yml
+    then
+      jbrowse text-index \
+        --perTrack \
+        --tracks=${trackId} \
+        --prefixSize=40 \
+        --exclude=exon,CDS,five_prime_UTR,three_prime_UTR \
+        --out=assets/js/jbrowse
+    fi
   )
 done
 
