@@ -10,4 +10,23 @@ function rotateTriangle(e){
       icon.style.transform = 'rotate(90deg)'
     }
   }
-    
+ 
+  // use to expand all uikit accordion on page
+  function expandAllAccordion() {
+    const nodeList = document.querySelectorAll(".ukaccordion");
+    const contentDiv = document.querySelectorAll(".uk-accordion-content")
+      for (let i = 0; i < nodeList.length; i++){
+        contentDiv[i].removeAttribute('hidden')
+        nodeList[i].setAttribute("class","uk-open")
+      }
+  }
+  
+   // use to collapse all uikit accordion on page
+  function collapseAllAccordion(){
+    const nodeList = document.querySelectorAll(".uk-open");
+    const contentDiv = document.querySelectorAll(".uk-accordion-content")
+    for (let i = 0; i < nodeList.length; i++){
+        nodeList[i].setAttribute("class", "ukaccordion")
+        contentDiv[i].setAttribute('hidden', true)
+      }
+  }

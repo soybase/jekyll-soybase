@@ -66,7 +66,12 @@ tools_menu: true
   </dl>
 {% endif %}
 
-<h2>Tools and resources for particular species</h2>  <span><button onclick="expandAllAccordion()">expand all</button></span> <span><button onclick="collapseAllAccordion()">collapse all</button></span>
+<h2>Tools and resources for particular species</h2> 
+
+<div class="uk-flex uk-flex-center uk-flex-right@s">
+<button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
+<button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
+</div>
 
 {% for species in genus_resources.species %}
   {% for about_file in site.data.datastore-metadata[genus][species].about_this_collection %}
@@ -276,25 +281,5 @@ tools_menu: true
 </ul>
 {% endfor %}
 
-<script>
-function expandAllAccordion() {
-  const nodeList = document.querySelectorAll(".ukaccordion");
-  const contentDiv = document.querySelectorAll(".uk-accordion-content")
-  console.log(nodeList)
-  if(nodeList){
-    for (let i = 0; i < nodeList.length; i++){
-      contentDiv[i].removeAttribute('hidden')
-      nodeList[i].setAttribute("class","uk-open")
-    }
-  }
-}
 
-function collapseAllAccordion(){
-  const nodeList = document.querySelectorAll(".uk-open");
-  const contentDiv = document.querySelectorAll(".uk-accordion-content")
-  for (let i = 0; i < nodeList.length; i++){
-      nodeList[i].setAttribute("class", "ukaccordion")
-      contentDiv[i].setAttribute('hidden', true)
-    }
-}
-</script>
+<script src="../assets/js/utils.js"></script>
