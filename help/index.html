@@ -6,6 +6,10 @@ sitemap: homepage
 
 <h2>Help and Tutorials</h2>
 
+<div class="uk-flex uk-flex-center uk-flex-right@s">
+  <button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
+  <button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
+</div>
 {% if site.data.tutorials %}
 {% assign tutorials = site.data.tutorials %}
 {% for item in tutorials %}
@@ -14,18 +18,24 @@ sitemap: homepage
     {% for resource in cat1.resources %}
       <div>
         {% for cat2 in resource.category_sub %}
-          <div>
-            <h5 class="uk-text-bold uk-margin-top">{{ cat2.name }}</h5>
-            <ul class="uk-list uk-list-disc">
-              {% for instance in cat2.instances %}
-                <li class=" uk-margin-remove"><a href="{{ instance.url }}" target="_blank">{{ instance.description }}</a></li>
-              {% endfor %}  
-            </ul>
-          </div>
+          <ul uk-accordion>
+            <li class="ukaccordion">
+            <a class="uk-margin-left uk-accordion-title">{{ cat2.name }}</a>
+            <div class="uk-accordion-content">
+              <ul class="uk-list uk-list-disc">
+                {% for instance in cat2.instances %}
+                  <li class=" uk-margin-remove"><a href="{{ instance.url }}" target="_blank">{{ instance.description }}</a></li>
+                {% endfor %}  
+              </ul>
+            </div>
+          </li>
+          </ul>
+          {% endfor %}
+        </div>
         {% endfor %}
-      </div>
-    {% endfor %}
+        <hr>
   {% endfor %}
 {% endfor %}
 {% endif %}
 
+<script src="../assets/js/utils.js"></script>
