@@ -6,7 +6,7 @@ sitemap: homepage
 
 <h1>Help and Tutorials</h1>
 
-<div class="uk-flex uk-flex-center uk-flex-right@s">
+<div class="uk-flex uk-flex-center uk-flex-right@s uk-margin-bottom">
   <button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
   <button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
 </div>
@@ -14,7 +14,7 @@ sitemap: homepage
 {% assign tutorials = site.data.tutorials %}
 {% for item in tutorials %}
   {% for cat1 in item.category_main %}
-    <h3>{{ cat1.name }}</h3>
+    <h3 class="uk-margin-remove-top">{{ cat1.name }}</h3>
     {% for resource in cat1.resources %}
       <div>
         {% for cat2 in resource.category_sub %}
