@@ -62,14 +62,14 @@ redirect_from: /sbt/
       Use idx as the index of cmap-set groups. Set the first accordion item to "open".
     {% endcomment %}
 
-    <ul uk-accordion>
+    <ul class="uk-margin-small-left uk-margin-small-right" uk-accordion>
       {% if idx == 0 %}
-        <li class="uk-open">
+        <li>
           {% else %}
           <li>
       {% endif %}
       {% assign idx = idx | plus: 1 %}
-        <a class="uk-accordion-title" href="#"><strong>&#8226;</strong> {{ cmap-set.description }}</a>
+        <a class="uk-accordion-title" href="#">{{ cmap-set.description }}</a>
         <div class="uk-accordion-content uk-overflow-auto">
           <table class="uk-table">
             <tbody>
@@ -90,6 +90,7 @@ redirect_from: /sbt/
         </div>
       </li>
     </ul>
+    <hr>
   {% endunless %}
 {% endfor %}
 
