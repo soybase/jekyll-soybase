@@ -49,27 +49,41 @@ do
     eval $(yaml2sh ${readme})
     datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
     trackId=${identifier%.*}
+    assemblyNames=${identifier%.ann[0-9].*}
+    config=$(printf '
+    {
+      "displays": [{"displayId":"%s","renderer":{"maxHeight":3000}}],
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "%s-index",
+          "ixFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s.ix",
+            "locationType": "UriLocation"
+          },
+          "ixxFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s.ixx",
+            "locationType": "UriLocation"
+          },
+          "metaFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s_meta.json",
+            "locationType": "UriLocation"
+          },
+          "assemblyNames": [
+            "%s"
+          ]
+        }
+      }
+    }' "${trackId}" "${trackId}" "${trackId}" "${trackId}" "${trackId}" "${assemblyNames}")
+
     jbrowse add-track \
       ${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.gene_models_main.gff3.gz \
-      --assemblyNames=${identifier%.ann[0-9].*} \
+      --assemblyNames=${assemblyNames} \
       --category='Genes' \
       --trackId=${trackId} \
       --description="${synopsis}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
-      --config=$(printf '{"displays":[{"displayId":"%s","renderer":{"maxHeight":3000}}]}' "${identifier%.*}") \
+      --config="${config}" \
       --out=assets/js/jbrowse
-
-    # index only if under the "Reference" category
-    if awk '$2 == "identifier:" && $3 == identifier {
-            getline; getline; exit(/accession_group:.* et al\.,/)}' \
-       identifier=${identifier%%.*} ${readme%/annotations/*}/about_this_collection/description_*_*.yml
-    then
-      jbrowse text-index \
-        --perTrack \
-        --tracks=${trackId} \
-        --prefixSize=40 \
-        --exclude=exon,CDS,five_prime_UTR,three_prime_UTR \
-        --out=assets/js/jbrowse
-    fi
   )
 done
 
@@ -78,12 +92,38 @@ do
   (
     eval $(yaml2sh ${readme})
     datastore_dir_url=${DATASTORE_URL}/$(dirname ${readme#_data/datastore-metadata/})
+    assemblyNames=${identifier%.mrk.*}
+    config=$(printf '
+    {
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "%s-index",
+          "ixFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s.ix",
+            "locationType": "UriLocation"
+          },
+          "ixxFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s.ixx",
+            "locationType": "UriLocation"
+          },
+          "metaFilePath": {
+            "uri": "https://data.soybase.org/jbrowse-index/trix/%s_meta.json",
+            "locationType": "UriLocation"
+          },
+          "assemblyNames": [
+            "%s"
+          ]
+        }
+      }
+    }' "${identifier}" "${identifier}" "${identifier}" "${identifier}" "${assemblyNames}")
     jbrowse add-track \
       ${datastore_dir_url}/${scientific_name_abbrev}.${identifier}.gff3.gz \
-      --assemblyNames=${identifier%.mrk.*} \
+      --assemblyNames=${assemblyNames} \
       --category='Markers' \
       --name=${identifier##*.} \
       --trackId=${identifier} \
+      --config="${config}" \
       --description="${synopsis}<br /><br /><b>more info:</b> ${datastore_dir_url}/" \
       --out=assets/js/jbrowse
   )
