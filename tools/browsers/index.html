@@ -37,6 +37,10 @@ tools_menu: true
   </div>
 {% endfor %}
 
+<div class="uk-flex uk-flex-center uk-flex-right@s">
+  <button class="uk-button uk-margin-small-right uk-button-primary" onclick="expandAllAccordion()">expand all</button>
+  <button class="uk-button uk-button-primary"  onclick="collapseAllAccordion()">collapse all</button>
+</div>
 
 {% assign doi = "DOI" %}
 {% assign genus = "Glycine" %}
@@ -52,12 +56,14 @@ tools_menu: true
   {% endif %}
   <hr>
   
-  <h3>
-    <u>J</u>Browse instances for <i><b>{{ genus }} {{ species }}</b></i> accessions
-  </h3>
-  {% for datatype_dir in site.data.datastore-metadata[genus][species] %}
+  <ul animation="false" uk-accordion>
+    <li class="ukaccordion">
+  
+    <a class="uk-accordion-title"> JBrowse instances for <i><b>{{ genus }} {{ species }}</b></i> accessions</a>
+    {% for datatype_dir in site.data.datastore-metadata[genus][species] %}
     {% assign datatype = datatype_dir[0] %}
     {% if datatype == "about_this_collection" %}
+    <div class="uk-accordion-content">
       {% for about_file in datatype_dir[1] %}
         {% if about_file[0] contains "description_" %}
           {% assign about = about_file[1] %}
@@ -202,4 +208,9 @@ tools_menu: true
       {% endfor %}
     {% endif %}
   {% endfor %}
+</div>
 {% endfor %}
+  </li>
+</ul>
+
+<script src="../../assets/js/utils.js"></script>
