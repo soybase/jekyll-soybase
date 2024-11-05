@@ -43,7 +43,7 @@ tools_menu: false
 
 <div class="uk-padding-small uk-padding-remove-vertical">
   <h1>Students and Postdocs</h1>
-<table class="uk-table uk-table-striped uk-table-small">
+<table class="uk-table uk-table-striped uk-table-small uk-table-hover">
   <tbody>
     {% assign student_team = site.data.team | where: "status", "student" %}
     {% for member in student_team %}
@@ -58,7 +58,7 @@ tools_menu: false
 
 <div class="uk-padding-small uk-padding-remove-vertical">
   <h1>Alumni</h1>
-  <table class="uk-table uk-table-striped uk-table-small">
+  <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
     <tbody>
       {% assign past_team = site.data.team | where: "status", "Alumni" %}
       {% for member in past_team %}
