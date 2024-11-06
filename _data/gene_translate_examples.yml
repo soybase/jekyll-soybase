@@ -1,3 +1,4 @@
+---
 example:
 - pangene: Glycine.pan5.pan46446
   glyma_Wm82_gnm1_ann1: Glyma01g00210
@@ -41,3 +42,4 @@ example:
   glyma_Wm82_gnm5_ann1: ...
   glyma_Wm82_gnm6_ann1: ...
   more: ...
+  
