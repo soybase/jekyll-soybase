@@ -1,3 +1,4 @@
+---
 Minutes:
   - name: September 2020
     website: https://www.ars-grin.gov/npgs/cgc_reports/2020(2)%20-%20Soybean%20CGC%20Minutes.pdf
@@ -13,8 +14,8 @@ Minutes:
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanminutes2016.pdf
   - name: February 2015
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanminutes2015.pdf
-  # - name: All Soybean Crop Germplasm Committee Meeting Minutes
-  #   website: https://www.ars-grin.gov/CGC
+# - name: All Soybean Crop Germplasm Committee Meeting Minutes
+#   website: https://www.ars-grin.gov/CGC
 Report:
   - name: 2020
     website: https://www.ars-grin.gov/npgs/cgc_reports/2021%20-%20Soybean%20Curator%20Report.pdf
@@ -26,5 +27,5 @@ Report:
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanstatus2017.pdf
   - name: 2015
     website: https://www.ars-grin.gov/npgs/cgc_reports/soybeanstatus2016.pdf
-  # - name: All USDA Soybean Germplasm Collection Reports
-  #   website: https://www.ars-grin.gov/CGC
+# - name: All USDA Soybean Germplasm Collection Reports
+#   website: https://www.ars-grin.gov/CGC
