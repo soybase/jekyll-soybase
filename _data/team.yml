@@ -10,7 +10,7 @@
   website: https://www.ars.usda.gov/midwest-area/ames/cicgru/people/steven-cannon/
   status: current
 - name: Wei Huang
-  role: 	Genome Browser
+  role: Biologist
   specialization: Genome Browser, Bioinformatics
   website: https://www.ars.usda.gov/people-locations/person?person-id=57295
   status: current
@@ -30,17 +30,14 @@
   website: https://www.ars.usda.gov/people-locations/person?person-id=60073
   status: current
   # current student employee
-- name: Kimberly Raymer
-  role: Student Programmer
-  status: student
 - name: Simon Novak
   role: Student Programmer
   status: student
-- name: Chee Hau Fong
-  role: Student Programmer
+- name: Ella Townsend
+  role: Student Curator
   status: student
-- name: Brandon Jordan
-  role: Postdoctoral Researcher
+- name: Reagan Nelson
+  role: Student Curator
   status: student
   # past employee
 - name: David Grant
@@ -49,10 +46,13 @@
 - name: Robert Baker
   role: Data Curation
   status: Alumni
-- name: Victoria Blake 
+- name: Victoria Blake
   role: Data Curation
   status: Alumni
 - name: Anne Brown
+  role: Postdoctoral Researcher
+  status: Alumni
+- name: Brandon Jordan
   role: Postdoctoral Researcher
   status: Alumni
 - name: Shawn Conner
@@ -62,13 +62,19 @@
   role: Programmer, Web Development
   status: Alumni
   # past student employee
-- name: William Hardison 
+- name: Kimberly Raymer
+  role: Student Programmer
+  status: Alumni
+- name: Chee Hau Fong
+  role: Student Programmer
+  status: Alumni
+- name: William Hardison
   role: Student Curator
   status: Alumni
 - name: Abigial Pigatto
   role: Student Curator
   status: Alumni
-- name: Marlene Dorneich-Hayes 
+- name: Marlene Dorneich-Hayes
   role: Student Curator
   status: Alumni
 - name: Laura Climer
@@ -91,7 +97,7 @@
   status: Alumni
 - name: Andrew Wilkey
   role: Student Programmer
-  status: Alumni  
+  status: Alumni
 - name: Aditya Kumar
   role: Student Programmer
-  status: Alumni  
+  status: Alumni
