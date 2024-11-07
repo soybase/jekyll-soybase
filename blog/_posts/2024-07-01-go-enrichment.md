@@ -8,23 +8,25 @@ summary: SoyBase offers two methods for calculating GO enrichment. This post exp
 
 <span class="uk-text-bold">GO enrichment analysis</span> uses statistical tests to determine if a set of provided genes are statistically different than a comparison set (typically, the set of all genes in the organism), for each of the three main gene ontology aspects.
 
-[Gene Ontology (GO)](https://geneontology.org/docs/ontology-documentation/) is a classification system that describes three <span class="uk-text-bold">aspects</span> of gene function:
+<a href="https://geneontology.org/docs/ontology-documentation/" target="_blank">Gene Ontology (GO)</a> is a classification system that describes three <span class="uk-text-bold">aspects</span> of gene function:
 
-* **Molecular Function**, describing activities such as [catalytic activity](https://amigo.geneontology.org/amigo/term/GO:0003824) or finer-scale activities such as [lipoprotein lipase activity](https://amigo.geneontology.org/amigo/term/GO:0004465);
-* **Cellular Component**, describing cellular components such as the [cytoskeleton](https://amigo.geneontology.org/amigo/term/GO:0005856), or finer-scale locations such as [centrosome](https://amigo.geneontology.org/amigo/term/GO:0005813);
-* **Biological Process**, describing biological programs such as [signal transduction](https://amigo.geneontology.org/amigo/term/GO:0007165), or finer-scale processes such as [protein serine/threonine kinase activity](https://amigo.geneontology.org/amigo/term/GO:0004674).
+<ul class="uk-list uk-list-disc">
+  <li><span class="uk-text-bold">Molecular Function</span>, describing activities such as <a href="https://amigo.geneontology.org/amigo/term/GO:0003824" target="_blank">catalytic activity</a> or finer-scale activities such as <a href="https://amigo.geneontology.org/amigo/term/GO:0004465" target="_blank">lipoprotein lipase activity</a>;</li>
+  <li><span class="uk-text-bold">Cellular Component</span>, describing cellular components such as the <a href="https://amigo.geneontology.org/amigo/term/GO:0005856" target="_blank">cytoskeleton</a>, or finer-scale locations such as <a href="https://amigo.geneontology.org/amigo/term/GO:0005813" target="_blank">centrosome</a>;</li>
+  <li><span class="uk-text-bold">Biological Process</span>, describing biological programs such as <a href="https://amigo.geneontology.org/amigo/term/GO:0007165" target="_blank">signal transduction</a>, or finer-scale processes such as <a href="https://amigo.geneontology.org/amigo/term/GO:0004674" target="_blank">protein serine/threonine kinase activity</a>.</li>
+</ul>
 
 SoyBase offers two methods for calculating GO enrichment.
 
-## 1. Use the custom service at the SoyBase tools page
-The [tools/analysis/go.html](/tools/analysis/go.html) page offers services for annotating your gene list with GO accessions and for calculating GO enrichment, using the method described in [Morales et al. (2013)](https://dx.doi.org/10.1071/FP12296). The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
+<h2>1. Use the custom service at the SoyBase tools page</h2>
+The <a href="/tools/analysis/go.html target="_blank>tools/analysis/go.html</a> page offers services for annotating your gene list with GO accessions and for calculating GO enrichment, using the method described in <a href="https://dx.doi.org/10.1071/FP12296" target="_blank">Morales et al. (2013)</a>. The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
 
-## 2. Use the GO enrichment tool at GlycineMine.
+<h2>2. Use the GO enrichment tool at GlycineMine.</h2>
 At [GlycineMine](https://mines.legumeinfo.org/glycinemine/begin.do), enrichment can be calculated for genes from ANY <i>Glycine</i> accession and annotation in GlycineMine (there are more than 50 annotation sets as of mid-2024).
 
 Here are the steps.
 
-### 1. Enter a gene list under Analyze a List.
+<h3>1. Enter a gene list under Analyze a List.</h3>
 
 Open <a href="https://mines.legumeinfo.org/glycinemine/begin.do" target="_blank">GlycineMine</a>, and paste a list of genes in the central box ("Analyze a List"). The list can consist of un-prefixed gene IDs such as <code class="uk-text-primary">Glyma.01G022700</code>, but if that gene exists in multiple assemblies or annotation sets, you will see an intermediate page in which you will be asked to select which genes you want to analyze. Therefore, it is generally best to prefix your identifiers with the following four, dot-separated fields: <code class="uk-text-primary">Genusspecies.Accession.Assemblyversion.Annotationversion.GeneID</code> <code class="uk-text-primary">glyma.Wm82.gnm4.ann1.Glyma.01G022700</code>
 
