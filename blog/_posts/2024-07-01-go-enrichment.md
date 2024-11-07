@@ -39,10 +39,10 @@ Try one of the gene lists below:
   <li><a href="#list3">List 3</a></li>
 </ul>
 
-### 2. Name and save the list.
+<h3>2. Name and save the list.</h3>
 You can use the provided name if you wish (based on date and time), or you can give it a more meaningful name. Then click the green "<b>Save a list of 10 Genes</b>" button. (Note that if you register with GlycineMine you will be able to save your gene list so that you can use the same list over and over again on the same tool or use that list on various GlycineMine tools.)
 
-### 3. Examine the Gene Ontology Enrichment results.
+<h3>3. Examine the Gene Ontology Enrichment results.</h3>
 The report page will give descriptive information about each gene; and near the bottom of the page are four reports: "Gene Ontology Enrichment", "Gene Family Enrichment", "Pathway Enrichment", and "Chromosome Distribution".
 
 In the "Gene Ontology Enrichment" box, be sure to check each ontology aspect that you wich to evaluate:
@@ -55,40 +55,42 @@ In the "Gene Ontology Enrichment" box, be sure to check each ontology aspect tha
 It is common for a set of genes to show enrichment for one aspect and not others.
 
 <hr>
-<b>List 1:</b><a name="list1"></a>
-<p>
-glyma.Wm82.gnm4.ann1.Glyma.01G022700, glyma.Wm82.gnm4.ann1.Glyma.01G035000, 
-glyma.Wm82.gnm4.ann1.Glyma.01G041400, glyma.Wm82.gnm4.ann1.Glyma.01G041450, 
-glyma.Wm82.gnm4.ann1.Glyma.01G042100, glyma.Wm82.gnm4.ann1.Glyma.01G081600, 
-glyma.Wm82.gnm4.ann1.Glyma.01G081700, glyma.Wm82.gnm4.ann1.Glyma.01G105000, 
-glyma.Wm82.gnm4.ann1.Glyma.01G112500, glyma.Wm82.gnm4.ann1.Glyma.01G113400
-</p>
+<div>
+  <p class="uk-text-bold">List 1:</p><a name="list1"></a>
+  <p>
+  glyma.Wm82.gnm4.ann1.Glyma.01G022700, glyma.Wm82.gnm4.ann1.Glyma.01G035000, 
+  glyma.Wm82.gnm4.ann1.Glyma.01G041400, glyma.Wm82.gnm4.ann1.Glyma.01G041450, 
+  glyma.Wm82.gnm4.ann1.Glyma.01G042100, glyma.Wm82.gnm4.ann1.Glyma.01G081600, 
+  glyma.Wm82.gnm4.ann1.Glyma.01G081700, glyma.Wm82.gnm4.ann1.Glyma.01G105000, 
+  glyma.Wm82.gnm4.ann1.Glyma.01G112500, glyma.Wm82.gnm4.ann1.Glyma.01G113400
+  </p>
 
-<details><summary>Results for List 1, showing `biological_process`</summary>
-<div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set1_biological.gif" style="height: 483px; width: 478px;" alt=""/>
+  <button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #list-1; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-list-1">Results for List 1, showing `biological_process`<span id="triangle-icon-list-1" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></button>
+  <div id="list-1" class="uk-margin-small uk-hidden">
+    <img class="uk-width-2-3" id="toggle-usage" src="/assets/img/blog_images/GO_set1_biological.gif"  alt="result list 1"/>
+  </div>
 </div>
-</details>
-
-<hr>
-<b>List 2:</b><a name="list2"></a>
-
-<p>
-glyma.Wm82.gnm4.ann1.Glyma.01G128700, glyma.Wm82.gnm4.ann1.Glyma.01G155300, 
-glyma.Wm82.gnm4.ann1.Glyma.03G041600, glyma.Wm82.gnm4.ann1.Glyma.03G146200, 
-glyma.Wm82.gnm4.ann1.Glyma.05G158300, glyma.Wm82.gnm4.ann1.Glyma.08G116000, 
-glyma.Wm82.gnm4.ann1.Glyma.09G194900, glyma.Wm82.gnm4.ann1.Glyma.09G279900, 
-glyma.Wm82.gnm4.ann1.Glyma.11G089400, glyma.Wm82.gnm4.ann1.Glyma.13G162500
-</p>
-
-<details><summary>Results for List 2, showing `cellular_component`</summary>
-<div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set2_cellular.gif" style="height: 483px; width: 478px;" alt=""/>
-</div>
-</details>
-
 <hr>
 
+<div>
+  <p class="uk-text-bold">List 2:</p><a name="list2"></a>
+
+  <p>
+  glyma.Wm82.gnm4.ann1.Glyma.01G128700, glyma.Wm82.gnm4.ann1.Glyma.01G155300, 
+  glyma.Wm82.gnm4.ann1.Glyma.03G041600, glyma.Wm82.gnm4.ann1.Glyma.03G146200, 
+  glyma.Wm82.gnm4.ann1.Glyma.05G158300, glyma.Wm82.gnm4.ann1.Glyma.08G116000, 
+  glyma.Wm82.gnm4.ann1.Glyma.09G194900, glyma.Wm82.gnm4.ann1.Glyma.09G279900, 
+  glyma.Wm82.gnm4.ann1.Glyma.11G089400, glyma.Wm82.gnm4.ann1.Glyma.13G162500
+  </p>
+
+  <button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #list-2; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-list-2">Results for List 1, showing `cellular_component`<span id="triangle-icon-list-2" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></button>
+  <div id="list-2" class="uk-margin-small uk-hidden">
+    <img class="uk-width-2-3" src="/assets/img/blog_images/GO_set2_cellular.gif" alt="reulst list 2"/>
+  </div>
+</div>
+<hr>
+
+<div>
 <b>List 3:</b><a name="list3"></a>
 
 <p>
@@ -99,10 +101,26 @@ glyma.Wm82.gnm4.ann1.Glyma.01G060300, glyma.Wm82.gnm4.ann1.Glyma.01G112200,
 glyma.Wm82.gnm4.ann1.Glyma.01G112300, glyma.Wm82.gnm4.ann1.Glyma.01G125300
 </p>
 
-<details><summary>Results for List 3, showing `molecular_function`</summary>
-<div class="blog-image">
-  <img src="/assets/img/blog_images/GO_set3_molecular.gif" style="height: 483px; width: 478px;" alt=""/>
+  <button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #list-3; animation: uk-animation-fade; cls: uk-hidden" onclick="rotateTriangle(this)" value="triangle-icon-list-3">Results for List 1, showing `molecular_function`<span id="triangle-icon-list-3" uk-icon="icon:triangle-right" class="toggle-top-margin"></span></button>
+  <div id="list-3" class="uk-margin-small uk-hidden">
+
+  <img class="uk-width-2-3" src="/assets/img/blog_images/GO_set3_molecular.gif" alt="result list 3"/>
+  </div>
 </div>
-</details>
 
 
+
+<script >
+// This is built for Toggle buttons icon
+// Used to rotate the triangle icon inside the button.
+function rotateTriangle(e){
+    let id = e.value
+    const icon = document.getElementById(id);
+    if (icon.style.transform === 'rotate(90deg)') {
+      icon.style.transform = 'rotate(0deg)'
+    } else {
+      icon.style.transform = 'rotate(90deg)'
+    }
+  }
+ 
+</script>
