@@ -1,0 +1,47 @@
+---
+web_components: true
+---
+
+
+<div>
+    <select id="collection-name" class="uk-select uk-form-width-large uk-margin-small-top">
+      {% assign genus = "Glycine" %}
+      {% assign species = "max" %}
+      {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
+        {% for metadata_file in metadata[1] %}
+          {% if metadata_file[0] contains "MANIFEST" %}
+            {% assign manifest = metadata_file %}
+              {% for item in manifest[1] %}
+              {% if item.applications contains "jbrowse" %}
+                {% assign filename_parts = item.name | split: "." %}
+                {% assign gensp = filename_parts[0] %}
+                {% assign coll_parts = filename_parts | slice: 1, 4 %}
+                {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
+                {% capture collection_name %}{{ coll_parts| join: "." }}{% endcapture %}
+                {%- capture collection_item -%}
+                {
+                  "name": "{{item.name}}",
+                  "collection-name": "{{collection_name}}",
+                  "description": "{{item.description}}"
+                }
+                {%- endcapture %}
+                <option value='{{- collection_item | strip_newlines | strip_html -}}'>{{collection_name}}</option>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </select>
+</div>
+
+
+<div>{{item}}</div>
+
+
+
+<body>
+    <h1>
+        Allele Search
+    </h1>
+    <lis-allele-search-element variantCollection={collection_name}></lis-allele-search-element>
+</body>
