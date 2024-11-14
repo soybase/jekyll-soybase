@@ -57,7 +57,8 @@ liquid:
 strict_front_matter: true
 
 # the GraphQL Server URI; LIS by default
-graphql_uri: https://graphql.soybase.ncgr.org/
+# graphql_uri: https://graphql.soybase.ncgr.org/
+graphql_uri: https://graphql.lis.ncgr.org/
 
 # Build settings
 theme: jekyll-theme-legumeinfo
@@ -73,7 +74,7 @@ plugins:
   - jekyll-sitemap
 
 # LIS Web Components
-web_components_version: 1.4.0
+web_components_version: 1.6.0
 
 #### jekyll-datapage-generator config
 page_gen:
