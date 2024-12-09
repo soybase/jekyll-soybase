@@ -75,9 +75,7 @@
     visibility: hidden;
     display: none;
 }
-#divFieldsContainer{
-    padding: 50px;
-}
+
 #divFieldsHelperText{
     padding: 5px;
 }
