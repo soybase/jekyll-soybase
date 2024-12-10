@@ -42,9 +42,6 @@ function funPageLoad(){
             }
         }
     }
-    
-    
-    
 }
 
 function funAllCultivarsClick(){

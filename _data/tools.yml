@@ -97,7 +97,7 @@
 - category: "Legacy tools"
   description: "Legacy SoyBase tool: Search for the GRIN descriptor data (New)"
   name: "GRIN Data Explorer - (WIP)"
-  url: "tools/grin/"
+  url: "/tools/grin/"
 - category: "Legacy tools"
   description: "Legacy SoyBase tool: Gene expression resources for soybean"
   name: "Gene Expression Explorer"
