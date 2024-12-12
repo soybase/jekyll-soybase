@@ -106,6 +106,7 @@ title: Grin Data Explorer
 </script>
 
 <script src="/assets/js/utils.js"></script>
+<script src="./script/db.js"></script>
 <div id='menu'>
     <div id='item' onmouseout='flattenMenu();' onmouseover='clearTimeout(x);'></div>
 </div>
@@ -143,7 +144,7 @@ title: Grin Data Explorer
     <button class="uk-button uk-button-primary uk-width-1-1@s uk-width-1-6@l"  onclick="collapseAllAccordion()">collapse all</button>
 </div>
 
-<form action="results.php" method="post" id="frmGrin" name="frmGrin" onsubmit="return funFormSubmit()">
+<form action="./results.html" method="post" id="frmGrin" name="frmGrin" onsubmit="return funFormSubmit()">
 
         <!-- Buttons -->
         <!-- <div class="uk-flex uk-flex-center uk-flex  -left@s uk-margin-bottom">
@@ -3267,7 +3268,7 @@ title: Grin Data Explorer
 
 <!-- Buttons -->
 </form>
-    <button id="btnTopSubmitMainForm_test" class="uk-button uk-button-primary uk-width-1-1@s uk-width-1-6@l" onclick="funFormSubmit()">Test</button>
+    <button id="btnTopSubmitMainForm_test" class="uk-button uk-button-primary uk-width-1-1@s uk-width-1-6@l" onclick="fetchData()">Test</button>
 
 
 

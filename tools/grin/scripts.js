@@ -169,3 +169,48 @@ function funCultivarFileChanged(){
 
     reader.readAsText(f);
 }
+
+function fetchData(){
+    fetch('http://localhost:3000/data') // Replace with your Express server URL
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Assuming your server sends JSON data
+  })
+  .then(data => {
+    // Do something with the fetched data
+    console.log(data); 
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+}
+
+function fetchDataPost(){
+    fetch('http://localhost:3000/data1', {
+        method: "POST",
+        body: JSON.stringify({
+        id: 2916156,
+
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+    }) // Replace with your Express server URL
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Assuming your server sends JSON data
+  })
+  .then(data => {
+    // Do something with the fetched data
+    console.log(data); 
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+}

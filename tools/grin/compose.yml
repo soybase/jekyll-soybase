@@ -1,0 +1,8 @@
+services:
+  mongo:
+    image: docker.io/library/mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - /data/db

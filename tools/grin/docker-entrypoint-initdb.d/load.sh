@@ -1,0 +1,1 @@
+gzip -dc /docker/entrypoint-initdb.d/observations-Glycine.json.gz | mongoimport -c observations --jsonArray

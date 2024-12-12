@@ -6,7 +6,7 @@
 
     // FIX - Get an array of all possible distinct cultivars
         $arrDistinctCultivarResults = array();
-        $strSQLDistinctCultivars = "SELECT DISTINCT(cultivar_name) FROM germplasm_grin_descriptor_data";
+        $strSQLDistinctCultivars = "SELECT DISTINCT(cultivar_name) FROM germplasm_grin_descriptor_data"; 
         $prepSQLDistinctCultivars = $dbConnectionSoybase->prepare($strSQLDistinctCultivars);
         $prepSQLDistinctCultivars->execute();
         $arrDistinctCultivars = $prepSQLDistinctCultivars->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,7 @@
             $prepSQLAlternateNames = $dbConnectionSoybase->prepare($strSQLAlternateNames);
             $prepSQLAlternateNames->execute();
             $arrAlternateNames = $prepSQLAlternateNames->fetchAll(PDO::FETCH_ASSOC);
-            if (!empty($arrAlternateNames)){
+            if (!empty($arrAlternateNames))
             	$intAlternateNamesCount = $prepSQLAlternateNames->rowCount();
             	$intCultivarsCount = $prepSQLAlternateNames->rowCount();
             	if($intAlternateNamesCount > 0){
