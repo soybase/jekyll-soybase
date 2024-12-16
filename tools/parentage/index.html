@@ -1,83 +1,62 @@
 ---
-title: Parentage
-sitemap: parentage 
-layout: default
-
+title: Parentage Viewer
 ---
 
-<h2>Soy Parentage and Pedigrees</h2>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+    {% include head.html %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
 
-<p> 
-The soybean parentage information below was partially gleaned from the Uniform Soybean Tests for the 
-<a href="https://www.ars.usda.gov/southeast-area/stoneville-ms/crop-genetics-research/docs/uniform-soybean-tests/"><b>Southern</b></a>
-and 
-<a href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/crop-production-and-pest-control-research/docs/uniform-soybean-tests-northern-region/"><b>Northern</b></a> 
-regions as well as other sources such as USDA technical bulletins, variety registrations and PVP applications. 
-The strains that appear here were part of the uniform trials and not the preliminary trials. The pedigree of 
-individual strains was followed back to named strains in both maternal and paternal lineages where possible. 
-An unknown parent is indicated with "-". When available, PVP registration numbers are noted, 
-as are synonyms for the strains - including the PI number for lines deposited at GRIN. 
-Check for additional information about PI lines at the <a href="https://npgsweb.ars-grin.gov/gringlobal/search"><b>GRIN search page</b></a>.
-</p>
+<body>
+    <div id="detail-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+            <h2 id="modal-title"></h2>
+            <div id="modal-content">
+                <div id="modal-loader" class="uk-flex uk-flex-center uk-flex-middle" hidden>
+                    <div uk-spinner="ratio: 1"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="uk-container">
+        <h1>Parentage</h1>
+        <p>
+            Put a description and instructions here...
+        </p>
+        <p>
+            Click on the name to view more information.
+        </p>
+        <div id="loader" class="uk-flex uk-flex-center uk-flex-middle" hidden>
+            <div uk-spinner="ratio: 1"></div>
+        </div>
+        <span id="error" class="uk-label uk-label-danger" hidden>
+            Data could not be loaded. This is likely due to a problem with the server. Please try again later.
+        </span>
+        <div class="letter-filter uk-margin"></div>
+        <table id="parentageTable" class="uk-table uk-table-divider stripe">
+            <thead>
+                <tr>
+                    <th>Individual</th>
+                    <th>Female Parent</th>
+                    <th>Male Parent</th>
+                    <!-- <th>Pedigree</th>
+                    <th>Synonyms</th>
+                    <th>Notes</th> -->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
 
-<p>
-Strain names are prefixed with a code that identifies the program that produced them. The code is usually the first two
-letters in the strain name followed by the year it was released as a two digit number. 
-See <a href="/tools/parentage/prefix_codes"><b>code prefixes and descriptions here</b></a>. 
-</p>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+</body>
 
-<p>
-Pedigrees are represented in column 4. To give an example: 
-<a href="/tools/parentage/groupc/"><u><b>CS31</b></u></a> has parents <u>S10</u> (maternal) and <u>Mitchell</u> (paternal). 
-The pedigree string <u>( S10 , Mitchell ( Amsoy , Wayne ) )</u> 
-can be read as: <u>CS31</u> is progeny of <u>S10</u> and <u>Mitchell</u>; 
-and <u>Mitchell</u> is progeny of <u>Amsoy</u> and <u>Wayne</u>.
-</p>
-<p>
-The information below is also available for 
-<a href="https://data.soybase.org/annex/Glycine/max/pedigrees/glyma.mixed.ped.2023-11-08.tsv.gz"><b>download</b>
-</a> - for example, 
-if you wish to filter on pedigrees that contain an accession of interest.<br>
-We welcome submissions by the community of new or updated pedigree information. 
-Please use this 
-<a href="https://data.soybase.org/annex/Glycine/max/pedigrees/SoyBaseParentageWorksheetV3.xls"><b>data submission spreadsheet</b></a>.
-</p>
-
-<p><b>Browse or search accessions beginning with ...</b><p>
-<table class="uk-table uk-width-1-2 uk-text-center uk-table-condensed">
-  <tbody>
-    {% for item in site.data.parentage_groups %}
-      {% assign display_name = item.group | remove:"group" %}
-      <tr>&nbsp;<a href="/tools/parentage/{{item.group | downcase}}">{{ display_name }}</a>&nbsp;</tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-<div class="uk-overflow-auto">
-  <table class="uk-table uk-table-small uk-table-hover uk-table-divider uk-table-striped">
-    <thead>
-      <tr>
-        <th><b>Individual</b></th>
-        <th><b>Female Parent</b></th>
-        <th><b>Male Parent</b></th>
-        <th><b>Pedigree</b></th>
-        <th><b>Synonyms</b></th>
-        <th><b>Notes</b></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in site.data.parentage.group0-9 %}
-        <tr>
-          <td>{{ item.Individual }}</td>
-          <td>{{ item.Parent1 }}</td>
-          <td>{{ item.Parent2 }}</td>
-          <td>{{ item.Pedigree }}</td>
-          <td>{{ item.Synonyms}}</td>
-          <td>{{ item.Comment }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-
-
+</html>
