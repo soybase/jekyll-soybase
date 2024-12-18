@@ -170,6 +170,8 @@ function funCultivarFileChanged(){
     reader.readAsText(f);
 }
 
+
+// calls to the server needs to be moved to it's own file
 function fetchData(){
     fetch('http://localhost:3000/data') // Replace with your Express server URL
   .then(response => {
