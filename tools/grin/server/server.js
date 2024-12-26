@@ -32,7 +32,17 @@ MongoClient.connect(MONGODB_URI)
 
     });
 
-
+    app.get('/brapi', async (req, res) => {
+      let requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch("https://npgsweb.ars-grin.gov/gringlobal/brapi/v2/traits?commonCropName=GLYCINE-PERENNIAL", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    })
 
     app.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);

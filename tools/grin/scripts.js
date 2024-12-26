@@ -216,3 +216,18 @@ function fetchDataPost(){
     console.error('There has been a problem with your fetch operation:', error);
   });
 }
+
+async function getBrapi(){
+    const url = "https://npgsweb.ars-grin.gov/gringlobal/brapi/v2/traits?commonCropName=GLYCINE-PERENNIAL";
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error.message);
+    }
+}
