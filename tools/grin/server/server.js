@@ -27,28 +27,42 @@ MongoClient.connect(MONGODB_URI)
       }
     });
 
-    app.post('/data1', async (req, res) => {
-      console.log(req.body.id)
 
-    });
-
-    app.get('/brapi', async (req, res) => {
-      let requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-      
-      fetch("https://npgsweb.ars-grin.gov/gringlobal/brapi/v2/traits?commonCropName=GLYCINE-PERENNIAL", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-    })
-
-    app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT}`);
-    });
   })
   .catch(err => {
     console.error('Error connecting to MongoDB:', err);
   });
 
+
+
+
+
+
+
+// const express = require('express');
+// const {MongoClient} = require('mongodb');
+// const cors = require('cors')
+
+// const app = express();
+// const PORT = process.env.PORT || 3000;
+// const MONGODB_URI = 'mongodb://localhost:27017/';
+
+
+// app.use(express.json());
+// app.use(cors());
+
+app.get('/brapi', (req, res)=>{
+    res.status(200);
+        fetch("https://npgsweb.ars-grin.gov/gringlobal/brapi/v2/traits?commonCropName=GLYCINE-PERENNIAL")
+        .then(response => response.text())
+        .then(result => res.send(result))
+        .catch(error => console.log('error', error));
+});
+
+app.listen(PORT, (error) =>{
+    if(!error)
+        console.log("Server is Successfully Running, and App is listening on port "+ PORT)
+    else 
+        console.log("Error occurred, server can't start", error);
+    }
+);

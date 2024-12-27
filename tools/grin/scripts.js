@@ -218,16 +218,19 @@ function fetchDataPost(){
 }
 
 async function getBrapi(){
-    const url = "https://npgsweb.ars-grin.gov/gringlobal/brapi/v2/traits?commonCropName=GLYCINE-PERENNIAL";
-    try {
-      const response = await fetch(url);
+    fetch('http://localhost:3000/brapi') // Replace with your Express server URL
+    .then(response => {
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
+        throw new Error('Network response was not ok');
       }
-  
-      const json = await response.json();
-      console.log(json);
-    } catch (error) {
-      console.error(error.message);
-    }
+      return response.json(); // Assuming your server sends JSON data
+    })
+    .then(data => {
+      // Do something with the fetched data
+      console.log(data); 
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('There has been a problem with your fetch operation:', error);
+    });
 }
