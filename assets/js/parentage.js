@@ -139,12 +139,12 @@ $(document).ready(function () {
                     if (Array.isArray(parsedData.matches) && parsedData.matches.length > 0) {
                         htmlContent += `
                             <h4>${individualName} is in the pedigree of these lines:</h4>
-                            <p>${parsedData.matches.slice(0, 10).join(', ')}${parsedData.matches.length > 10 ? ', ...' : ''}</p>
+                            <pre>${parsedData.matches.slice(0, 10).join(', ')}${parsedData.matches.length > 10 ? ', ...' : ''}</pre>
                         `;
                     } else if (typeof parsedData.matches === 'string') {
                         htmlContent += `
                             <h4>${individualName} is in the pedigree of these lines:</h4>
-                            <p>${parsedData.matches}</p>
+                            <pre>${parsedData.matches}</pre>
                         `;
                     }
                 }
