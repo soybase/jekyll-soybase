@@ -139,7 +139,7 @@ $(document).ready(function () {
                     if (Array.isArray(parsedData.matches) && parsedData.matches.length > 0) {
                         htmlContent += `
                             <h4>${individualName} is in the pedigree of these lines:</h4>
-                            <pre>${parsedData.matches.slice(0, 10).join(', ')}${parsedData.matches.length > 10 ? ', ...' : ''}</pre>
+                            <pre>${parsedData.matches.join(', ')}</pre>
                         `;
                     } else if (typeof parsedData.matches === 'string') {
                         htmlContent += `
