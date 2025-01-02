@@ -50,7 +50,7 @@ else # assume dev container
   PYTHON_VENV_ACTIVATE = true # no-op
 endif
 
-JBROWSE_VERSION = 2.15.4
+JBROWSE_VERSION = 2.18.0
 PA11YCI_VERSION = 3.1.X
 
 serve: mostlyclean setup
@@ -74,9 +74,14 @@ pa11y: setup
 	
 
 # JBrowse CLI will already be installed globally if using a dev container
+# Ensure JBrowse index.html is parsed by jekyll & inline GA script
 jbrowse: setup
 	if ! { command -v jbrowse || npm ls @jbrowse/cli ; } >/dev/null 2>&1; then npm install $(NPM_INSTALL_OPTIONS) @jbrowse/cli@${JBROWSE_VERSION}; fi
-	if ! [ -d ./assets/js/jbrowse ]; then npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; fi
+	if ! [ -d ./assets/js/jbrowse ]; then \
+      npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; \
+      sed -i.bak -e 's/^/---\n---\n/' -e 's/>/>\n/g' assets/js/jbrowse/index.html; \
+      sed -i.bak -e '/<\/script>/r ./_themes/jekyll-theme-legumeinfo/_includes/analytics.html' assets/js/jbrowse/index.html; \
+    fi
 	cp assets/js/jbrowse-config.json assets/js/jbrowse/config.json
 	npm exec -c '_scripts/jbrowse-tracks.sh'
 
