@@ -78,6 +78,7 @@ function funCategoryClick(inc_element){
 
 function funDescriptorClick(inc_element){
     intCategoryKey = inc_element.id.split("_")[1];
+    console.log("intCategoryKey", intCategoryKey)
     intTotalDescriptorsInCategory = 0;
     intSelectedDescriptorsInCategory = 0;
     elmCategory = document.getElementById("inpCategoryCheckbox_" + intCategoryKey);
@@ -173,7 +174,7 @@ function funCultivarFileChanged(){
 
 // calls to the server needs to be moved to it's own file
 function fetchData(){
-    fetch('http://localhost:3000/data') // Replace with your Express server URL
+    fetch('http://localhost:3000/data') // Replace with Express server URL
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -190,35 +191,9 @@ function fetchData(){
   });
 }
 
-function fetchDataPost(){
-    fetch('http://localhost:3000/data1', {
-        method: "POST",
-        body: JSON.stringify({
-        id: 2916156,
-
-  }),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
-    }) // Replace with your Express server URL
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json(); // Assuming your server sends JSON data
-  })
-  .then(data => {
-    // Do something with the fetched data
-    console.log(data); 
-  })
-  .catch(error => {
-    // Handle errors
-    console.error('There has been a problem with your fetch operation:', error);
-  });
-}
 
 async function getBrapi(){
-    fetch('http://localhost:3000/brapi') // Replace with your Express server URL
+    fetch('http://localhost:3000/brapi') // Replace with Express server URL
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -227,10 +202,104 @@ async function getBrapi(){
     })
     .then(data => {
       // Do something with the fetched data
-      console.log(data); 
+      console.log(data.result.data); 
+      const container = document.getElementById('results')
+      data.result.data.forEach( i => {
+        const listItem = document.createElement('li');
+        listItem.textContent = i.traitName;
+        container.appendChild(listItem)
+      })
     })
     .catch(error => {
       // Handle errors
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
+
+async function renderTraitsCheckbox(){
+    //fetch data
+    fetch('./data/traits-Glycine.json')
+    .then(response => response.json())
+    .then(data => {
+        // create unique value of Top Level traits
+        let traitsSet = new Set()
+      for (const item of data) {
+        traitsSet.add(item.traitClass)
+      }
+      console.log(traitsSet)
+
+      // Create checkbox and render traitClass
+      const container = document.getElementById('traits-dropdown')
+      traitsSet.forEach(trait =>{
+        console.log('traitClass', trait)
+        const newDiv = document.createElement('div');
+        const checkbox = document.createElement('input');
+        newDiv.setAttribute('id',trait)
+        checkbox.type = 'checkbox';
+        checkbox.id = trait;
+        checkbox.name = trait;
+        checkbox.value = trait;
+  
+        const label = document.createElement('label');
+        // label.htmlFor = item.id;
+        document.body.appendChild(newDiv);
+        label.textContent = trait; 
+        checkbox.classList.add('uk-checkbox');
+        checkbox.classList.add('uk-margin-small-right');
+        newDiv.appendChild(checkbox);
+        newDiv.appendChild(label);
+        newDiv.appendChild(document.createElement('br'));
+        newDiv.classList.add('uk-card');
+        newDiv.classList.add('uk-card-default');
+        newDiv.classList.add('uk-card-body');
+        newDiv.classList.add('uk-padding-small');
+        newDiv.classList.add('uk-margin-remove-top');
+        // newDiv.classList.add('uk-margin-medium-right')
+        newDiv.classList.add('uk-margin-medium-left')
+        newDiv.classList.add('uk-margin-medium-bottom')
+        container.appendChild(newDiv)
+        // Render traitName
+        data.forEach(item => {
+            const traitNames_container = document.getElementById(trait);
+            if(item.traitClass === trait){
+                console.log(item.traitName)
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = item.traitName; 
+                checkbox.name = item.traitName;
+                checkbox.value = item.traitName;
+          
+                const label = document.createElement('label');
+                label.textContent = item.traitName;
+  
+                traitNames_container.appendChild(checkbox);
+                traitNames_container.appendChild(label);
+                traitNames_container.appendChild(document.createElement('br'));
+                checkbox.classList.add('uk-margin-medium-left');
+                checkbox.classList.add('uk-checkbox');
+                checkbox.classList.add('uk-margin-small-right');
+    
+            }
+        })
+      })
+    })
+
+    .catch(error => console.error('Error:', error));
+}
+
+
+
+async function getObservationData(){
+    fetch('./data/observations-Glycine.json')
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the JSON data
+    for (let key in data) {
+      console.log(key + ": " + data[key]);
+    }
+  })
+  .catch(error => console.error('Error:', error)); 
+}
+
+
+window.onload = renderTraitsCheckbox();
