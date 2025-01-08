@@ -254,15 +254,17 @@ async function renderTraitsCheckbox(){
         newDiv.classList.add('uk-card-body');
         newDiv.classList.add('uk-padding-small');
         newDiv.classList.add('uk-margin-remove-top');
-        // newDiv.classList.add('uk-margin-medium-right')
-        newDiv.classList.add('uk-margin-medium-left')
+        newDiv.classList.add('uk-margin-medium-right')
+        // newDiv.classList.add('uk-margin-medium-left')
         newDiv.classList.add('uk-margin-medium-bottom')
+        
         container.appendChild(newDiv)
-        // Render traitName
+        // Create checkboxes and Render traitName under unique classes
         data.forEach(item => {
             const traitNames_container = document.getElementById(trait);
+
             if(item.traitClass === trait){
-                console.log(item.traitName)
+
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = item.traitName; 
@@ -274,6 +276,8 @@ async function renderTraitsCheckbox(){
   
                 traitNames_container.appendChild(checkbox);
                 traitNames_container.appendChild(label);
+                traitNames_container.style.minWidth = "380px";
+                label.setAttribute("uk-tooltip",item.traitDescription)
                 traitNames_container.appendChild(document.createElement('br'));
                 checkbox.classList.add('uk-margin-medium-left');
                 checkbox.classList.add('uk-checkbox');
