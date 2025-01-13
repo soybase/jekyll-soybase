@@ -19,7 +19,7 @@ MongoClient.connect(MONGODB_URI)
     app.get('/data', async (req, res) => {
       console.log("/data")
       try {
-        const result = await collection.find({observationDbId: '615056'}).toArray();
+        const result = await collection.find({observationVariableDbId: '51009'}).toArray();
         res.json(result);
       } catch (err) {
         console.error(err);

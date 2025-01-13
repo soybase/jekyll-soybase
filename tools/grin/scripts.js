@@ -232,9 +232,9 @@ async function renderTraitsCheckbox(){
       const container = document.getElementById('traits-dropdown')
       traitsSet.forEach(trait =>{
         console.log('traitClass', trait)
-        const newDiv = document.createElement('div');
+        const traitNameDiv = document.createElement('div');
         const checkbox = document.createElement('input');
-        newDiv.setAttribute('id',trait)
+        traitNameDiv.setAttribute('id',trait)
         checkbox.type = 'checkbox';
         checkbox.id = trait;
         checkbox.name = trait;
@@ -242,23 +242,23 @@ async function renderTraitsCheckbox(){
   
         const label = document.createElement('label');
         // label.htmlFor = item.id;
-        document.body.appendChild(newDiv);
+        document.body.appendChild(traitNameDiv);
         label.textContent = trait; 
         checkbox.classList.add('uk-checkbox');
         checkbox.classList.add('uk-margin-small-right');
-        newDiv.appendChild(checkbox);
-        newDiv.appendChild(label);
-        newDiv.appendChild(document.createElement('br'));
-        newDiv.classList.add('uk-card');
-        newDiv.classList.add('uk-card-default');
-        newDiv.classList.add('uk-card-body');
-        newDiv.classList.add('uk-padding-small');
-        newDiv.classList.add('uk-margin-remove-top');
-        newDiv.classList.add('uk-margin-medium-right')
-        // newDiv.classList.add('uk-margin-medium-left')
-        newDiv.classList.add('uk-margin-medium-bottom')
+        traitNameDiv.appendChild(checkbox);
+        traitNameDiv.appendChild(label);
+        traitNameDiv.appendChild(document.createElement('br'));
+        traitNameDiv.classList.add('uk-card');
+        traitNameDiv.classList.add('uk-card-default');
+        traitNameDiv.classList.add('uk-card-body');
+        traitNameDiv.classList.add('uk-padding-small');
+        traitNameDiv.classList.add('uk-margin-remove-top');
+        traitNameDiv.classList.add('uk-margin-medium-right')
+        // traitNameDiv.classList.add('uk-margin-medium-left')
+        traitNameDiv.classList.add('uk-margin-medium-bottom')
         
-        container.appendChild(newDiv)
+        container.appendChild(traitNameDiv)
         // Create checkboxes and Render traitName under unique classes
         data.forEach(item => {
             const traitNames_container = document.getElementById(trait);
@@ -267,7 +267,7 @@ async function renderTraitsCheckbox(){
 
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.id = item.traitName; 
+                checkbox.id = item.traitDbId; 
                 checkbox.name = item.traitName;
                 checkbox.value = item.traitName;
           
