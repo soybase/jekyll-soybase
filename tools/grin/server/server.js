@@ -27,6 +27,17 @@ MongoClient.connect(MONGODB_URI)
       }
     });
 
+    app.get('/value/:traitDbId', async (req, res) => {
+      console.log("/value", req.params.traitDbId)
+      try {
+        const result = await collection.find({observationVariableDbId: req.params.traitDbId}).toArray();
+        res.json(result);
+      } catch (err) {
+        console.error(err);
+        res.status(500).send('Error fetching data from MongoDB');
+      }
+    });
+
 
   })
   .catch(err => {

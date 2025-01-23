@@ -191,6 +191,71 @@ function fetchData(){
   });
 }
 
+function getTraitValues(traitDbId){
+    fetch(`http://localhost:3000/value/${traitDbId}`) // Replace with Express server URL
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Assuming your server sends JSON data
+  })
+  .then(data => {
+    // Do something with the fetched data
+    console.log("line 204 data",data); 
+    findMinMax(data, 'value', traitDbId)
+    
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+}
+
+
+function findMinMax(arr, property, id) {
+  console.log("findMinMax id: ", id)
+    let min = Infinity;
+    let max = -Infinity;
+  
+    for (let obj of arr) {
+      let value = parseFloat(obj[property]);
+      if (value < min) min = value;
+      if (value > max) max = value;
+    }
+    console.log({ min, max }) ;
+    renderValueSlider(min, max, id)
+  }
+
+  function renderValueSlider(min, max, id){
+    console.log("renderValueSlider id:", id)
+    const container = document.getElementById(id + '-value-slider')
+    console.log("container: ",container)
+    
+    const slider =  document.createElement('input')
+     
+    slider.setAttribute("step", "0.1")
+        slider.type = 'range'
+        slider.id = id + '-slider'
+        slider.min = min
+        slider.max = max
+        slider.defaultValue = min;
+        
+        const valueOutput = document.createElement('span')
+        container.appendChild(slider)
+        container.appendChild(valueOutput)
+
+        valueOutput.id = id + '-value-output';
+        let rangslider = document.getElementById(id + '-slider')
+        let output = document.getElementById(id + "-value-output");
+            output.innerHTML = min;
+
+          rangslider.oninput = function () {
+          output.innerHTML = this.value;
+        }
+  
+  }
+
+  
 
 async function getBrapi(){
     fetch('http://localhost:3000/brapi') // Replace with Express server URL
@@ -215,6 +280,8 @@ async function getBrapi(){
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
+
+
 
 async function renderTraitsCheckbox(){
     //fetch data
@@ -269,10 +336,16 @@ async function renderTraitsCheckbox(){
                 checkbox.type = 'checkbox';
                 checkbox.id = item.traitDbId; 
                 checkbox.name = item.traitName;
-                checkbox.value = item.traitName;
+                checkbox.value = item.traitDbId;
+                checkbox.setAttribute("onclick", "getTraitValues(this.value)")
           
                 const label = document.createElement('label');
                 label.textContent = item.traitName;
+
+                const sliderContainer = document.createElement('div');
+                sliderContainer.setAttribute('id', item.traitDbId + '-value-slider')
+        
+
   
                 traitNames_container.appendChild(checkbox);
                 traitNames_container.appendChild(label);
@@ -282,6 +355,8 @@ async function renderTraitsCheckbox(){
                 checkbox.classList.add('uk-margin-medium-left');
                 checkbox.classList.add('uk-checkbox');
                 checkbox.classList.add('uk-margin-small-right');
+
+                traitNames_container.appendChild(sliderContainer)
     
             }
         })
