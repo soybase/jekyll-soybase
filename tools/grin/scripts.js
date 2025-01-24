@@ -223,35 +223,98 @@ function findMinMax(arr, property, id) {
       if (value > max) max = value;
     }
     console.log({ min, max }) ;
-    renderValueSlider(min, max, id)
+
+    let checkedbox = document.getElementById(id)
+    let sliderbox = document.getElementById(id + '-slider')
+    let valuebox = document.getElementById(id + '-value-output')
+    let selectbox = document.getElementById(id + '-select');
+
+    if(checkedbox.checked){
+      renderValueSlider(min, max, id)
+    }
+    else{
+      if(sliderbox !== null){
+        sliderbox.remove();
+
+      }
+      if(valuebox !== null){
+
+        valuebox.remove();
+      }
+      if(selectbox !== null){
+
+        selectbox.remove();
+      }
+    }
   }
 
   function renderValueSlider(min, max, id){
-    console.log("renderValueSlider id:", id)
-    const container = document.getElementById(id + '-value-slider')
-    console.log("container: ",container)
-    
-    const slider =  document.createElement('input')
+
+    if(min !== Infinity) {
+      console.log("renderValueSlider id:", id)
+      const container = document.getElementById(id + '-value-slider')
+      console.log("container: ",container)
+      
+      const slider =  document.createElement('input')
+       
+      slider.setAttribute("step", "0.1")
+          slider.type = 'range'
+          slider.id = id + '-slider'
+          slider.min = min
+          slider.max = max
+          slider.defaultValue = min;
+          slider.classList.add('uk-margin-medium-left')
+          slider.classList.add('uk-margin-small-top')
+          slider.classList.add('uk-margin-small-bottom')
+          
+          const valueOutput = document.createElement('span')
+          container.appendChild(slider)
+          container.appendChild(valueOutput)
+  
+          valueOutput.id = id + '-value-output';
+          let rangslider = document.getElementById(id + '-slider')
+          let output = document.getElementById(id + "-value-output");
+              output.innerHTML = min;
+  
+            rangslider.oninput = function () {
+            output.innerHTML = this.value;
+          }
+    }else {
+
+      // render select dropdown
+      const container = document.getElementById(id + '-value-slider')
+      
+      const select =  document.createElement('select')
+      
+      
+      select.id = id + '-select'
+      select.classList.add('uk-margin-medium-left')
+      select.classList.add('uk-margin-small-top')
+      select.classList.add('uk-margin-small-bottom')
+      select.classList.add('uk-select')
+      select.classList.add('uk-form-width-small')
+      
+      // for testing need to retrieve from json??
+      const optionsArr = [
+        'option 1', 'option 2', 'option 3'
+      ]
+      
+      // render options for selection element
+      optionsArr.forEach(option => {
+        container.appendChild(select)
+        const selectContainer = document.getElementById(id + '-select')
+        const options = document.createElement('option')
+        options.value = option
+        options.innerHTML = option
+        selectContainer.appendChild(options)
+      })
      
-    slider.setAttribute("step", "0.1")
-        slider.type = 'range'
-        slider.id = id + '-slider'
-        slider.min = min
-        slider.max = max
-        slider.defaultValue = min;
-        
-        const valueOutput = document.createElement('span')
-        container.appendChild(slider)
-        container.appendChild(valueOutput)
+    }
+  
+          
 
-        valueOutput.id = id + '-value-output';
-        let rangslider = document.getElementById(id + '-slider')
-        let output = document.getElementById(id + "-value-output");
-            output.innerHTML = min;
-
-          rangslider.oninput = function () {
-          output.innerHTML = this.value;
-        }
+  
+  
   
   }
 
