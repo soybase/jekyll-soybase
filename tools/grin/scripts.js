@@ -275,7 +275,9 @@ function findMinMax(arr, property, id) {
           let rangslider = document.getElementById(id + '-slider')
           let output = document.getElementById(id + "-value-output");
               output.innerHTML = min;
-  
+            output.classList.add('uk-margin-small-left')
+            output.classList.add('uk-margin-small-top')
+            output.classList.add('uk-margin-small-bottom')
             rangslider.oninput = function () {
             output.innerHTML = this.value;
           }
@@ -407,9 +409,7 @@ async function renderTraitsCheckbox(){
 
                 const sliderContainer = document.createElement('div');
                 sliderContainer.setAttribute('id', item.traitDbId + '-value-slider')
-        
-
-  
+                sliderContainer.classList.add('uk-flex')
                 traitNames_container.appendChild(checkbox);
                 traitNames_container.appendChild(label);
                 traitNames_container.style.minWidth = "380px";
