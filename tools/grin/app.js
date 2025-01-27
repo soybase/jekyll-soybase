@@ -52,9 +52,9 @@ function findMinMax(arr, property, id) {
     console.log({ min, max }) ;
 
     let checkedbox = document.getElementById(id)
-    let sliderbox = document.getElementById(id + '-slider')
-    let valuebox = document.getElementById(id + '-value-output')
-    let selectbox = document.getElementById(id + '-select');
+    let sliderbox = document.getElementById(`${id}-slider`)
+    let valuebox = document.getElementById(`${id}-value-output`)
+    let selectbox = document.getElementById(`${id}-select`);
 
     if(checkedbox.checked){
       renderValueSlider(min, max, id)
@@ -79,7 +79,7 @@ function findMinMax(arr, property, id) {
 
     if(min !== Infinity) {
       console.log("renderValueSlider id:", id)
-      const container = document.getElementById(id + '-value-slider')
+      const container = document.getElementById(`${id}-value-slider`)
       console.log("container: ",container)
       
       const slider =  document.createElement('input')
@@ -90,38 +90,30 @@ function findMinMax(arr, property, id) {
           slider.min = min
           slider.max = max
           slider.defaultValue = min;
-          slider.classList.add('uk-margin-medium-left')
-          slider.classList.add('uk-margin-small-top')
-          slider.classList.add('uk-margin-small-bottom')
+          slider.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom')
           
           const valueOutput = document.createElement('span')
           container.appendChild(slider)
           container.appendChild(valueOutput)
   
           valueOutput.id = id + '-value-output';
-          let rangslider = document.getElementById(id + '-slider')
-          let output = document.getElementById(id + "-value-output");
+          let rangslider = document.getElementById(`${id}-slider`)
+          let output = document.getElementById(`${id}-value-output`);
               output.innerHTML = min;
-            output.classList.add('uk-margin-small-left')
-            output.classList.add('uk-margin-small-top')
-            output.classList.add('uk-margin-small-bottom')
+            output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
             rangslider.oninput = function () {
             output.innerHTML = this.value;
           }
     }else {
 
       // render select dropdown
-      const container = document.getElementById(id + '-value-slider')
+      const container = document.getElementById(`${id}-value-slider`)
       
       const select =  document.createElement('select')
       
       
-      select.id = id + '-select'
-      select.classList.add('uk-margin-medium-left')
-      select.classList.add('uk-margin-small-top')
-      select.classList.add('uk-margin-small-bottom')
-      select.classList.add('uk-select')
-      select.classList.add('uk-form-width-small')
+      select.id = `${id}-select`
+      select.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom','uk-select','uk-form-width-small')
       
       // for testing need to retrieve from json??
       const optionsArr = [
@@ -131,7 +123,7 @@ function findMinMax(arr, property, id) {
       // render options for selection element
       optionsArr.forEach(option => {
         container.appendChild(select)
-        const selectContainer = document.getElementById(id + '-select')
+        const selectContainer = document.getElementById(`${id}-select`)
         const options = document.createElement('option')
         options.value = option
         options.innerHTML = option
@@ -139,11 +131,6 @@ function findMinMax(arr, property, id) {
       })
      
     }
-  
-          
-
-  
-  
   
   }
 
@@ -175,86 +162,69 @@ async function getBrapi(){
 
 
 
-async function renderTraitsCheckbox(){
-    //fetch data
-    fetch('./data/traits-Glycine.json')
-    .then(response => response.json())
-    .then(data => {
-        // create unique value of Top Level traits
-        let traitsSet = new Set()
-      for (const item of data) {
-        traitsSet.add(item.traitClass)
-      }
-      console.log(traitsSet)
+async function renderTraitsCheckbox() {
+    try {
+        // Fetch data
+        const response = await fetch('./data/traits-Glycine.json');
+        const data = await response.json();
 
-      // Create checkbox and render traitClass
-      const container = document.getElementById('traits-dropdown')
-      traitsSet.forEach(trait =>{
-        console.log('traitClass', trait)
-        const traitNameDiv = document.createElement('div');
-        const checkbox = document.createElement('input');
-        traitNameDiv.setAttribute('id',trait)
-        checkbox.type = 'checkbox';
-        checkbox.id = trait;
-        checkbox.name = trait;
-        checkbox.value = trait;
-  
-        const label = document.createElement('label');
-        // label.htmlFor = item.id;
-        document.body.appendChild(traitNameDiv);
-        label.textContent = trait; 
-        checkbox.classList.add('uk-checkbox');
-        checkbox.classList.add('uk-margin-small-right');
-        traitNameDiv.appendChild(checkbox);
-        traitNameDiv.appendChild(label);
-        traitNameDiv.appendChild(document.createElement('br'));
-        traitNameDiv.classList.add('uk-card');
-        traitNameDiv.classList.add('uk-card-default');
-        traitNameDiv.classList.add('uk-card-body');
-        traitNameDiv.classList.add('uk-padding-small');
-        traitNameDiv.classList.add('uk-margin-remove-top');
-        traitNameDiv.classList.add('uk-margin-medium-right')
-        // traitNameDiv.classList.add('uk-margin-medium-left')
-        traitNameDiv.classList.add('uk-margin-medium-bottom')
-        
-        container.appendChild(traitNameDiv)
-        // Create checkboxes and Render traitName under unique classes
-        data.forEach(item => {
-            const traitNames_container = document.getElementById(trait);
+        // Create a unique set of top-level trait classes
+        const traitsSet = new Set(data.map(item => item.traitClass));
+        console.log(traitsSet);
 
-            if(item.traitClass === trait){
+        // Get the container element
+        const container = document.getElementById('traits-dropdown');
 
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = item.traitDbId; 
-                checkbox.name = item.traitName;
-                checkbox.value = item.traitDbId;
-                checkbox.setAttribute("onclick", "getTraitValues(this.value)")
-          
-                const label = document.createElement('label');
-                label.textContent = item.traitName;
+        // Create checkboxes for each unique trait class
+        traitsSet.forEach(traitClass => {
+            console.log('traitClass:', traitClass);
+
+            const traitContainer = document.createElement('div');
+            traitContainer.id = traitClass;
+            traitContainer.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 
+                                         'uk-padding-small', 'uk-margin-remove-top', 
+                                         'uk-margin-medium-right', 'uk-margin-medium-bottom');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = traitClass;
+            checkbox.name = traitClass;
+            checkbox.value = traitClass;
+            checkbox.classList.add('uk-checkbox', 'uk-margin-small-right');
+
+            const label = document.createElement('label');
+            label.textContent = traitClass;
+
+            traitContainer.append(checkbox, label, document.createElement('br'));
+            container.appendChild(traitContainer);
+
+            // Append trait-specific checkboxes
+            data.filter(item => item.traitClass === traitClass).forEach(item => {
+                const traitItemCheckbox = document.createElement('input');
+                traitItemCheckbox.type = 'checkbox';
+                traitItemCheckbox.id = item.traitDbId;
+                traitItemCheckbox.name = item.traitName;
+                traitItemCheckbox.value = item.traitDbId;
+                traitItemCheckbox.setAttribute("onclick", "getTraitValues(this.value)");
+                traitItemCheckbox.classList.add('uk-margin-medium-left', 'uk-checkbox', 'uk-margin-small-right');
+
+                const traitLabel = document.createElement('label');
+                traitLabel.textContent = item.traitName;
+                traitLabel.setAttribute("uk-tooltip", item.traitDescription);
 
                 const sliderContainer = document.createElement('div');
-                sliderContainer.setAttribute('id', item.traitDbId + '-value-slider')
-                sliderContainer.classList.add('uk-flex')
-                traitNames_container.appendChild(checkbox);
-                traitNames_container.appendChild(label);
-                traitNames_container.style.minWidth = "380px";
-                label.setAttribute("uk-tooltip",item.traitDescription)
-                traitNames_container.appendChild(document.createElement('br'));
-                checkbox.classList.add('uk-margin-medium-left');
-                checkbox.classList.add('uk-checkbox');
-                checkbox.classList.add('uk-margin-small-right');
+                sliderContainer.id = `${item.traitDbId}-value-slider`;
+                sliderContainer.classList.add('uk-flex');
 
-                traitNames_container.appendChild(sliderContainer)
-    
-            }
-        })
-      })
-    })
-
-    .catch(error => console.error('Error:', error));
+                traitContainer.style.minWidth = "380px";
+                traitContainer.append(traitItemCheckbox, traitLabel, document.createElement('br'), sliderContainer);
+            });
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
+
 
 
 
