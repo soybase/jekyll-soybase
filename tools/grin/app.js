@@ -57,7 +57,7 @@ function findMinMax(arr, property, id) {
     let selectbox = document.getElementById(`${id}-select`);
 
     if(checkedbox.checked){
-      renderValueSlider(min, max, id)
+      renderValueSlider(min, max, id, arr)
     }
     else{
       if(sliderbox !== null){
@@ -75,9 +75,9 @@ function findMinMax(arr, property, id) {
     }
   }
 
-  function renderValueSlider(min, max, id){
+  function renderValueSlider(min, max, id, data){
 
-    if(min !== Infinity) {
+    if(min !== Infinity && max !== 0) {
       console.log("renderValueSlider id:", id)
       const container = document.getElementById(`${id}-value-slider`)
       console.log("container: ",container)
@@ -115,13 +115,16 @@ function findMinMax(arr, property, id) {
       select.id = `${id}-select`
       select.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom','uk-select','uk-form-width-small')
       
-      // for testing need to retrieve from json??
-      const optionsArr = [
-        'option 1', 'option 2', 'option 3'
-      ]
-      
-      // render options for selection element
-      optionsArr.forEach(option => {
+       // create unique value array
+    let options = new Set(['any'])
+    data.forEach(obj => {
+        if(obj.observationVariableDbId === id){
+            options.add(obj.value)
+        }
+    })
+        
+        // render array in as select options
+    options.forEach(option => {
         container.appendChild(select)
         const selectContainer = document.getElementById(`${id}-select`)
         const options = document.createElement('option')
@@ -134,7 +137,19 @@ function findMinMax(arr, property, id) {
   
   }
 
-  
+
+
+  function uniqueSelectionOption(data,id){
+    let options = new Set()
+    data.forEach(obj => {
+        if(obj.observationVariableDbId === id){
+            options.add(obj.value)
+        }
+        console.log(options)
+    })
+    
+  }
+
 
 async function getBrapi(){
     fetch('http://localhost:3000/brapi') // Replace with Express server URL
