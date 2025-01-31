@@ -13,7 +13,7 @@ app.use(cors());
 MongoClient.connect(MONGODB_URI)
   .then(client => {
     const db = client.db('grin'); 
-    const collection = db.collection('glycine'); 
+    const collection = db.collection('glycine_filtered'); 
 
     // API endpoint to get data from MongoDB
     app.get('/data', async (req, res) => {

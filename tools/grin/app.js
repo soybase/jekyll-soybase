@@ -52,66 +52,46 @@ function findMinMax(arr, property, id) {
     console.log({ min, max }) ;
 
     let checkedbox = document.getElementById(id)
-    let sliderbox = document.getElementById(`${id}-slider`)
+    let minBox = document.getElementById(`${id}-min`);
+    let maxBox = document.getElementById(`${id}-max`);
     let valuebox = document.getElementById(`${id}-value-output`)
+    let minValueBox = document.getElementById(`${id}-min-value-output`)
+    let maxValueBox = document.getElementById(`${id}-max-value-output`)
     let selectbox = document.getElementById(`${id}-select`);
 
     if(checkedbox.checked){
-      renderValueSlider(min, max, id, arr)
+      renderMinMaxInput(min, max, id, arr)
     }
     else{
-      if(sliderbox !== null){
-        sliderbox.remove();
+      if(minValueBox !== null){  
+      minBox.remove();
+      maxBox.remove();
+      minValueBox.remove();
+      maxValueBox.remove();
 
       }
       if(valuebox !== null){
-
         valuebox.remove();
       }
       if(selectbox !== null){
-
         selectbox.remove();
       }
     }
-  }
-
-  function renderValueSlider(min, max, id, data){
-
-    if(min !== Infinity && max !== 0) {
-      console.log("renderValueSlider id:", id)
-      const container = document.getElementById(`${id}-value-slider`)
-      console.log("container: ",container)
-      
-      const slider =  document.createElement('input')
-       
-      slider.setAttribute("step", "0.1")
-          slider.type = 'range'
-          slider.id = id + '-slider'
-          slider.min = min
-          slider.max = max
-          slider.defaultValue = min;
-          slider.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom')
-          
-          const valueOutput = document.createElement('span')
-          container.appendChild(slider)
-          container.appendChild(valueOutput)
+    }
+    
   
-          valueOutput.id = id + '-value-output';
-          let rangslider = document.getElementById(`${id}-slider`)
-          let output = document.getElementById(`${id}-value-output`);
-              output.innerHTML = min;
-            output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
-            rangslider.oninput = function () {
-            output.innerHTML = this.value;
-          }
+
+  // render min and max input box
+  function renderMinMaxInput(min, max, id, data){
+    if(min !== Infinity && max !== 0) {
+      renderMinInput(min, id)
+      renderMaxInput(max, id)
     }else {
 
       // render select dropdown
-      const container = document.getElementById(`${id}-value-slider`)
-      
+      const container = document.getElementById(`${id}-value-min-max`)
       const select =  document.createElement('select')
-      
-      
+        
       select.id = `${id}-select`
       select.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom','uk-select','uk-form-width-small')
       
@@ -123,7 +103,7 @@ function findMinMax(arr, property, id) {
         }
     })
         
-        // render array in as select options
+        // render select options
     options.forEach(option => {
         container.appendChild(select)
         const selectContainer = document.getElementById(`${id}-select`)
@@ -131,12 +111,9 @@ function findMinMax(arr, property, id) {
         options.value = option
         options.innerHTML = option
         selectContainer.appendChild(options)
-      })
-     
-    }
-  
+      })   
+    } 
   }
-
 
 
   function uniqueSelectionOption(data,id){
@@ -147,7 +124,6 @@ function findMinMax(arr, property, id) {
         }
         console.log(options)
     })
-    
   }
 
 
@@ -228,7 +204,7 @@ async function renderTraitsCheckbox() {
                 traitLabel.setAttribute("uk-tooltip", item.traitDescription);
 
                 const sliderContainer = document.createElement('div');
-                sliderContainer.id = `${item.traitDbId}-value-slider`;
+                sliderContainer.id = `${item.traitDbId}-value-min-max`;
                 sliderContainer.classList.add('uk-flex');
 
                 traitContainer.style.minWidth = "380px";
@@ -240,14 +216,65 @@ async function renderTraitsCheckbox() {
     }
 }
 
+// function tonrender min input box
+function renderMinInput(min, id){
+    console.log("renderMinMaxInput id:", id)
+    const container = document.getElementById(`${id}-value-min-max`)
+    console.log("container: ",container)
+    const minInput =  document.createElement('input')
+      
+  minInput.type = 'text'
+  minInput.id = id + '-min'
+  minInput.min = min
+  minInput.defaultValue = min;
+  minInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-xsmall', 'uk-input')
+  
+  const valueOutput = document.createElement('span')
+  container.appendChild(minInput)
+  container.appendChild(valueOutput)
 
+  valueOutput.id = id + '-min-value-output';
+  let rangminInput = document.getElementById(`${id}-min`)
+  let output = document.getElementById(`${id}-min-value-output`);
+      output.innerHTML = `min: ${min}`;
+    output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
+    rangminInput.oninput = function () {
+    output.innerHTML = `min: ${this.value}`;
+  }
+  }
+
+// function to render max input box
+  function renderMaxInput(max, id){
+    console.log("renderMinMaxInput id:", id)
+    const container = document.getElementById(`${id}-value-min-max`)
+    console.log("container: ",container)
+    const maxInput = document.createElement('input')       
+
+  maxInput.type = 'text'
+  maxInput.id = id + '-max'
+  maxInput.max = max
+  maxInput.defaultValue = max;
+  maxInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-xsmall', 'uk-input')
+  
+  const valueOutput = document.createElement('span')
+  container.appendChild(maxInput)
+  container.appendChild(valueOutput)
+
+  valueOutput.id = id + '-max-value-output';
+  let rangMaxInput = document.getElementById(`${id}-max`)
+  let output = document.getElementById(`${id}-max-value-output`);
+      output.innerHTML = `max: ${max}`;
+    output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
+    rangMaxInput.oninput = function () {
+    output.innerHTML = `max: ${this.value}`;
+  }
+  }
 
 
 async function getObservationData(){
     fetch('./data/observations-Glycine.json')
   .then(response => response.json())
   .then(data => {
-    // Loop through the JSON data
     for (let key in data) {
       console.log(key + ": " + data[key]);
     }
