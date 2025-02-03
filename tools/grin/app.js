@@ -84,8 +84,8 @@ function findMinMax(arr, property, id) {
   // render min and max input box
   function renderMinMaxInput(min, max, id, data){
     if(min !== Infinity && max !== 0) {
-      renderMinInput(min, id)
-      renderMaxInput(max, id)
+      renderMinInput(min,id,max)
+      renderMaxInput(max,id,min)
     }else {
 
       // render select dropdown
@@ -217,7 +217,7 @@ async function renderTraitsCheckbox() {
 }
 
 // function tonrender min input box
-function renderMinInput(min, id){
+function renderMinInput(min,id,max){
     console.log("renderMinMaxInput id:", id)
     const container = document.getElementById(`${id}-value-min-max`)
     console.log("container: ",container)
@@ -227,8 +227,9 @@ function renderMinInput(min, id){
   minInput.id = id + '-min'
   minInput.min = min
   minInput.defaultValue = min;
-  minInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-xsmall', 'uk-input')
-  
+  minInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-small', 'uk-input')
+  minInput.setAttribute('type', 'number')
+
   const valueOutput = document.createElement('span')
   container.appendChild(minInput)
   container.appendChild(valueOutput)
@@ -239,12 +240,13 @@ function renderMinInput(min, id){
       output.innerHTML = `min: ${min}`;
     output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
     rangminInput.oninput = function () {
+      checkMinOutOfRange(this.value,min,max)
     output.innerHTML = `min: ${this.value}`;
   }
   }
 
 // function to render max input box
-  function renderMaxInput(max, id){
+  function renderMaxInput(max,id,min){
     console.log("renderMinMaxInput id:", id)
     const container = document.getElementById(`${id}-value-min-max`)
     console.log("container: ",container)
@@ -254,8 +256,8 @@ function renderMinInput(min, id){
   maxInput.id = id + '-max'
   maxInput.max = max
   maxInput.defaultValue = max;
-  maxInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-xsmall', 'uk-input')
-  
+  maxInput.classList.add('uk-margin-medium-left','uk-margin-small-top','uk-margin-small-bottom', 'uk-form-width-small', 'uk-input')
+  maxInput.setAttribute('type', 'number')
   const valueOutput = document.createElement('span')
   container.appendChild(maxInput)
   container.appendChild(valueOutput)
@@ -266,8 +268,30 @@ function renderMinInput(min, id){
       output.innerHTML = `max: ${max}`;
     output.classList.add('uk-margin-small-left','uk-margin-small-top','uk-margin-small-bottom')
     rangMaxInput.oninput = function () {
+      checkMaxOutOfRange(this.value,min,max)
     output.innerHTML = `max: ${this.value}`;
   }
+    }
+
+  function checkMinOutOfRange(enteredValue,min,max){
+  console.log(max)
+        if(enteredValue < min){
+          console.log("Value can not be smaller then min value.")
+        }
+        if(enteredValue >= max){
+          console.log("Value must be less then max value.")
+        }
+       
+  }
+  function checkMaxOutOfRange(enteredValue,min,max){
+  console.log(max)
+        if(enteredValue > max){
+          console.log("Value can not be larger than max value.")
+        }
+        if(enteredValue <= min){
+          console.log("Value must be larger than min value.")
+        }
+       
   }
 
 
