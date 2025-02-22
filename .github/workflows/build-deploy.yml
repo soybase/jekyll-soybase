@@ -105,7 +105,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: install htmlproofer
         # need ruby >= 3.1 for html-proofer 5.x
-        run: gem install html-proofer -v 5.0.9
+        run: gem install html-proofer -v 5.0.10
       # Cache HTMLProofer external URL results for 30 days, but using actions/cache/restore
       # and actions/cache/save so cache can still be saved when failure is reported
       # https://github.com/gjtorikian/html-proofer/#caching-with-continuous-integration
@@ -127,8 +127,7 @@ jobs:
           key: html-proofer
 
   pa11y:
-    # https://github.com/GSA/notifications-admin/pull/475
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: build
     steps:
       # need repository for .pa11yci
@@ -138,9 +137,10 @@ jobs:
       - run: tar -xf artifact.tar && rm artifact.tar
       - run: npm install -g pa11y-ci@3.X
       - run: busybox httpd -p 4000
+      # need chromeLaunchConfig for ubuntu-22.04 per pa11y/pa11y-ci issue #198
       # FIXME: patty-ci concurrency > 1 results in errors in this GA workflow
       - run: |
-          printf '{"defaults": {"runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
+          printf '{"defaults": {"chromeLaunchConfig": {"executablePath": "/usr/bin/google-chrome"}, "runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
       - run: pa11y-ci --sitemap http://0.0.0.0:4000/sitemap.xml --sitemap-exclude '/cmap-*' --sitemap-find '^/' --sitemap-replace http://0.0.0.0:4000/
 
   # Deployment job
