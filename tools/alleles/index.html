@@ -121,6 +121,7 @@ web_components: true
                       </tr>              
                   </tbody>
                   <div id="loading-spinner" style="margin-left: 45%; display: block" uk-spinner ></div>
+                  <div uk-alert hidden class="uk-alert-danger" id="alert" ></div>
                   <tfoot>
                       <tr>
                           <td></td>
@@ -159,6 +160,13 @@ web_components: true
 
 
 <script>
+
+// Shwos and sets alert message inside modal
+function setAlert(value) {
+  document.getElementById("alert").removeAttribute("hidden");
+  document.getElementById("alert").textContent = value;
+}
+
 
 let chromSelection = ['Gm01', 'Gm02', 'Gm03', 'Gm04',
                       'Gm05', 'Gm06', 'Gm07', 'Gm08', 
@@ -206,7 +214,7 @@ async function getData() {
   geneNamesString = geneNamesString.slice(0, -1).replace(/\s/g, '');
 
   let myHeaders = new Headers();
-  myHeaders.append("Content-Type", "text/plain");
+  myHeaders.append("Content-Type", "application/json");
   let searchString = `{"genes":[${geneNamesString}]}`;
 
   let requestOptions = {  
@@ -223,6 +231,13 @@ async function getData() {
       }
       return response.json()})
   .then(result => {
+    // Handle no gene found
+    if(result.genes.length === 0){
+      document.getElementById("loading-spinner").style.display="none";
+      setAlert("No gene found.");
+      return;
+    }
+
     const chromosomeArray = result.genes[0].chromosome.split('.')
     const collectionName = `${chromosomeArray[1]}.${chromosomeArray[2]}`
     const chromosome = result.genes[0].chromosome
