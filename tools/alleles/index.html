@@ -131,7 +131,7 @@ web_components: true
           </div>
       </div>
         <div class="uk-margin" style="display: flex; justify-content: space-between;">
-          <button class="uk-button uk-modal-close" type="button" onclick="refreshPage()">Close</button>
+          <button class="uk-button uk-modal-close" type="button" onclick="closeModal()">Close</button>
           <div>
             <button class="uk-button" onclick="downloadTxt()">Export txt</button> 
             <button class="uk-button" onclick="csvDownload()">Export CSV</button> 
@@ -193,8 +193,9 @@ function onChange(){
 variantCollection.onchange = onChange
 onChange()
 
-function refreshPage() {
-    window.location.reload();
+// Close modal
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
 }
 
 
@@ -231,6 +232,7 @@ async function getData() {
       }
       return response.json()})
   .then(result => {
+
     // Handle no gene found
     if(result.genes.length === 0){
       document.getElementById("loading-spinner").style.display="none";
@@ -282,6 +284,15 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
     document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
 
     let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+
+    // Handle no start/stop values
+    if(!start || !stop){
+      document.getElementById("loading-spinner").style.display="none";
+      setAlert("Error: Please input start and stop values.");
+      return;
+    }
+
+
     let requestOptionsVariants = {
     method: 'GET',
     redirect: 'follow',
@@ -293,7 +304,6 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
     await fetch(url, requestOptionsVariants)
     .then(response => response.json())
     .then(result => {
-      console.log("fasta",result)
             const tableBody = document.getElementById("data-row").parentElement; 
 
             result.map((gene, index) => {
@@ -351,6 +361,14 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
 
       let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}:${start}-${end}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
       
+      // Handle no start/stop values
+      if(!start || !stop){
+        document.getElementById("loading-spinner").style.display="none";
+        setAlert("Error: Please input start and stop values.");
+        return;
+      }
+
+
       let requestOptionsVariants = {
       method: 'GET',
       redirect: 'follow',
