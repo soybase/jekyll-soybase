@@ -184,18 +184,21 @@ for (var i = 0; i < chromSelection.length; i++) {
 
 let variantCollection = document.getElementById("collection-name")
 function onChange(){
-  let value = JSON.parse(variantCollection.value)
-  document.getElementById("synopsis").textContent = 
-        `
-        ${value.description}
-        `
+  try {
+    let value = JSON.parse(variantCollection.value);
+    document.getElementById("synopsis").textContent = value.description || "No description available.";
+  } catch (error) {
+    console.error("Error parsing JSON from variantCollection: ", error);
+    document.getElementById("synopsis").textContent = "Invalid selection data.";
+  }
 }
+
 variantCollection.onchange = onChange
 onChange()
 
 // Close modal
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
+  UIkit.modal('#modal').hide();
 }
 
 
