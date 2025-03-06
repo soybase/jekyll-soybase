@@ -195,9 +195,15 @@ function onChange(){
 
 variantCollection.onchange = onChange
 onChange()
-
+  
 // Close modal
 function closeModal() {
+  const tableBody = document.getElementById("data-row").parentElement;
+  while (tableBody.rows.length > 1) {
+    tableBody.deleteRow(1);
+  }
+  document.getElementById("loading-spinner").style.display="block";
+  document.getElementById("alert").setAttribute("hidden", true);
   UIkit.modal('#modal').hide();
 }
 
