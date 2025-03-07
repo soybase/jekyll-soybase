@@ -10,8 +10,6 @@ categories: general
 <div>
   <a href="">Just Announced:</a> 2025 Soybean Breeders Tour will be Sept. 3rd - 5th, 2025 in Tifton, GA
 </div>
-<br>
-<br>
 <p>
 <b>Details Comming Soon</b>:
 <ul class="uk-list">
