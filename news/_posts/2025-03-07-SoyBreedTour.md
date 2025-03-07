@@ -2,7 +2,7 @@
 layout: news-item
 title:  2025 Soybean Breeders Tour
 author: Rex Nelson
-date:  2025-09-03
+date:  2025-03-07
 end_date: 2025-09-05
 summary: Soybean Breeders Tour Announcement
 categories: general    
