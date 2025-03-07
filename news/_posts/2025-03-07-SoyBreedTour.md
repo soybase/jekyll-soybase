@@ -8,7 +8,7 @@ summary: Soybean Breeders Tour Announcement
 categories: general    
 ---
 <p>
-  <a href="">Just Announced:</a> 2025 Soybean Breeders Tour will be Sept. 3rd - 5th, 2025 in Tifton, GA
+  <a href="https://data.soybase.org/annex/Glycine/max/meetings/soybean_breeders_tour/2025_tour/2025-03-07_2025_BreedersTour.pdf">Just Announced:</a> 2025 Soybean Breeders Tour will be Sept. 3rd - 5th, 2025 in Tifton, GA
 </p>
 <p>
 <b>Details Comming Soon</b>:
