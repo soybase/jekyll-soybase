@@ -1,6 +1,6 @@
 ---
 layout: news-item
-title:  Soybean Career Awards due June 1st
+title:  Career Award Nominations due June 1st
 author: Jacqueline Campbell
 date:  2025-03-14
 end_date: 2025-06-01
