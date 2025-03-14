@@ -4,9 +4,14 @@ title:  SoyGEC Soybean Career Awards
 author: Jacqueline Campbell
 date:  2025-03-14
 end_date: 2025-06-01
-summary: Soybean Career Awards: Nomination packets due June 1st.
+summary: Soybean Career Awards Nomination packets due June 1st
 categories: general    
 ---
-<div>
-  <a href="/community/soygec/nominate.html">Nomination</a> packets for the 2025 Soybean Genomics Executive Committee <a href="/community/soygec/index.html">(SoyGEC)</a> are due <b>June 1st</b>. 
-</div>
+<h3>Nomination packet requirements:</h3>
+  <ul class="uk-list uk-list-collapse uk-margin-left">
+    <li>Nomination letter summaring why nominee is an outstanding candidate</li>
+    <li>2 letters of support (2 page max for each letter)
+      <ul class="uk-list uk-list-collapse uk-margin-left">
+        <li>One letter from someone outside the soybean community</li>
+      </ul>
+    </li>
