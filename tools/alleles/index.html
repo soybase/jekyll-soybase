@@ -270,7 +270,7 @@ async function getData() {
   })
   .catch(error =>  {
     console.log('error', error)
-    setAlert(error)
+    setAlert("Could not fetch genes: "+error)
   });
 
 }
@@ -355,7 +355,7 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             })
             .catch(error =>  {
               console.log('error', error)
-              setAlert(error);
+              setAlert("Could not get data from Fasta-API: "+error);
             }); 
     }
 
@@ -434,7 +434,7 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
               })
               .catch(error =>  {
                 console.log('error', error)
-                setAlert(error);
+                setAlert("Could not fetch data from Fasta-API: "+error);
               });
       }
    
