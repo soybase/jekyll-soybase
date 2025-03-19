@@ -41,6 +41,7 @@ web_components: true
   <div style="margin-left: 10px;">
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
+  <hr>
   <div class="uk-margin" style="display: flex; justify-content: start;">
     <div>
       <div>
@@ -160,8 +161,10 @@ web_components: true
 
 
 <script>
+// TODO: Make page mobile-compatible
 
-// Shwos and sets alert message inside modal
+
+// Shows and sets alert message inside modal
 function setAlert(value) {
   document.getElementById("alert").removeAttribute("hidden");
   document.getElementById("alert").textContent = value;
@@ -276,6 +279,15 @@ async function getData() {
 }
 
 async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
+    // Most common error is mismatched genome assembly versions. API doesn't give a clear error message.
+    selectedCollectionName = JSON.parse(document.getElementById("collection-name").value)["collection-name"];
+    let collectionNameParts = selectedCollectionName.split('.')[1];
+    let geneNameParts = geneName.split('.')[2];
+    if (geneNameParts !== collectionNameParts) {
+      setAlert(`Collection genome assembly version (${collectionNameParts}) must match gene ID asembly version (${geneNameParts}).`);
+      return;
+    }
+
      let collectionVariantObj = JSON.parse(variantCollection.value)
      let collection = collectionVariantObj['collection-name'] //Dynamically get collection name from selections
      let fileName = collectionVariantObj.name
@@ -354,9 +366,9 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             
             })
             .catch(error =>  {
-              console.log('error', error)
-              setAlert("Could not get data from Fasta-API: "+error);
-            }); 
+                console.log('error', error);
+                setAlert("Could not fetch data from Fasta-API. Please double-check your input.");
+            });
     }
 
     async function getDataFastAWithChrom(){
@@ -433,9 +445,9 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
               
               })
               .catch(error =>  {
-                console.log('error', error)
-                setAlert("Could not fetch data from Fasta-API: "+error);
-              });
+                console.log('error', error);
+                setAlert("Could not fetch data from Fasta-API. Please double-check your input.");
+            });
       }
    
     }
