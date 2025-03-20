@@ -42,8 +42,8 @@ web_components: true
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
   <hr>
-  <div class="uk-margin uk-flex uk-flex-left">
-    <div>
+  <div class="uk-margin uk-flex uk-flex-left uk-flex-wrap">
+    <div class="uk-width-auto">
       <div>
         <label class="uk-form-label uk-text-default uk-text-bold" for="gene-name">Step 2. Enter gene ID and size of left and right flanking regions...</label>
         <div>
@@ -54,11 +54,10 @@ web_components: true
         <p class="uk-text-default uk-text-secondary" >e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</p>
       </div>
     </div>
-      <div >
-        <br>
-        <div class="uk-margin-small-left">
-          <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="flank-region"  placeholder="Enter flanking region">
-        </input>
+    <div class="uk-margin-small-left">
+      <br class="uk-visible@m">
+      <div>
+        <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="flank-region" placeholder="Enter flanking region"></input>
         <div>
           <label class="uk-form-label uk-text-default uk-text-secondary" for="flank-region">e.g 50000</label>
         </div>
@@ -161,9 +160,6 @@ web_components: true
 
 
 <script>
-// TODO: Make page mobile-compatible
-
-
 // Shows and sets alert message inside modal
 function setAlert(value) {
   document.getElementById("alert").removeAttribute("hidden");
