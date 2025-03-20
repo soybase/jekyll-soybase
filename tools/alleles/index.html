@@ -38,11 +38,11 @@ web_components: true
       {% endfor %}
     </select>
   </div>
-  <div style="margin-left: 10px;">
+  <div class="uk-margin-small-left">
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
   <hr>
-  <div class="uk-margin" style="display: flex; justify-content: start;">
+  <div class="uk-margin uk-flex uk-flex-left">
     <div>
       <div>
         <label class="uk-form-label uk-text-default uk-text-bold" for="gene-name">Step 2. Enter gene ID and size of left and right flanking regions...</label>
@@ -85,7 +85,7 @@ web_components: true
         <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-end">e.g 5000</label>
       </div>
     </div>
-    <input class="uk-button uk-margin" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getDataFastAWithChrom()" style="margin-top: 10px;"/> 
+    <input class="uk-button uk-margin uk-margin-medium-top" uk-toggle="target: #modal" id="submit" type="button" value="Search" onclick="getDataFastAWithChrom()"/> 
   </div>
 </form>
 <!-- Modal -->
@@ -131,8 +131,8 @@ web_components: true
               </table>
           </div>
       </div>
-        <div class="uk-margin" style="display: flex; justify-content: space-between;">
-          <button class="uk-button uk-modal-close" type="button" onclick="closeModal()">Close</button>
+        <div class="uk-margin uk-flex uk-flex-between">
+          <button class="uk-button uk-modal-close uk-margin-auto-right" type="button" onclick="closeModal()">Close</button>
           <div>
             <button class="uk-button" onclick="downloadTxt()">Export txt</button> 
             <button class="uk-button" onclick="csvDownload()">Export CSV</button> 
@@ -272,7 +272,7 @@ async function getData() {
       getDataFromFastA(chromosome,collectionName,start,stop, geneName);
   })
   .catch(error =>  {
-    console.log('error', error)
+    console.error('error', error);
     setAlert("Could not fetch genes: "+error)
   });
 
@@ -366,7 +366,7 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
             
             })
             .catch(error =>  {
-                console.log('error', error);
+                console.error('error', error);;
                 setAlert("Could not fetch data from Fasta-API. Please double-check your input.");
             });
     }
@@ -464,7 +464,7 @@ async function getDataFromFastA(chromosome,collectionName,start,stop,geneName) {
               
               })
               .catch(error =>  {
-                console.log('error', error);
+                console.error('error', error);;
                 setAlert("Could not fetch data from Fasta-API. Please double-check your input.");
             });
       }
