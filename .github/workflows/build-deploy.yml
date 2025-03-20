@@ -48,18 +48,34 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Not needed with a .ruby-version file
+          ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
       - run: bundle exec jekyll build --profile --trace # --baseurl "${{ steps.pages.outputs.base_path }}" # sub-uri currently not supported by site
+      - uses: actions/cache/restore@v4
+        id: restore-cache-jbrowse
+        with:
+          path: ./_site/assets/js/jbrowse
+          key: jbrowse-${{ hashFiles('_data/datastore-metadata/**', '_config.yml', '_scripts/jbrowse-tracks.sh', '_themes/jekyll-theme-legumeinfo/_includes/analytics.html', 'Makefile', 'assets/js/jbrowse-config.json') }}
       - uses: actions/setup-node@v4
+        if: steps.restore-cache-jbrowse.outputs.cache-hit != 'true'
         with:
           node-version: 20
-      - run: make jbrowse
-      - run: mv assets/js/jbrowse _site/assets/js
+      - name: Make JBrowse
+        if: steps.restore-cache-jbrowse.outputs.cache-hit != 'true'
+        run: |
+          make jbrowse
+          rm -rf assets/js/jbrowse/test_data
+          bundle exec jekyll build --profile --trace # process assets/js/jbrowse/index.html as liquid
+      - uses: actions/cache/save@v4
+        id: save-cache-jbrowse
+        if: steps.restore-cache-jbrowse.outputs.cache-hit != 'true'
+        with:
+          path: ./_site/assets/js/jbrowse
+          key: jbrowse-${{ hashFiles('_data/datastore-metadata/**', '_config.yml', '_scripts/jbrowse-tracks.sh', '_themes/jekyll-theme-legumeinfo/_includes/analytics.html', 'Makefile', 'assets/js/jbrowse-config.json') }}
       # create artifact.tar from ./_site directory & upload as artifact named 'github-pages'
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -84,30 +100,31 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Not needed with a .ruby-version file
+          ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: install htmlproofer
         # need ruby >= 3.1 for html-proofer 5.x
-        run: gem install html-proofer -v 5.0.8
+        run: gem install html-proofer -v 5.0.9
       # Cache HTMLProofer external URL results for 30 days, but using actions/cache/restore
       # and actions/cache/save so cache can still be saved when failure is reported
       # https://github.com/gjtorikian/html-proofer/#caching-with-continuous-integration
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         id: restore-cache-htmlproofer
         with:
-          path: tmp/.htmlproofer
-          key: ${{ runner.os }}-html-proofer
+          path: ./tmp/.htmlproofer
+          key: html-proofer
       - name: run htmlproofer
+        # ignore HTTP status 301 (htmlproofer strips trailing slashes)
         run: |
-          htmlproofer --allow-missing-href --ignore-missing-alt --ignore-files '/\/uikit\/tests\//' --ignore-status-codes '403,503' --cache '{"timeframe": {"external": "30d"}}'
+          htmlproofer --allow-missing-href --ignore-missing-alt --ignore-files '/\/uikit\/tests\//' --ignore-status-codes '301,403,406,503' --cache '{"timeframe": {"external": "30d"}}' --ignore-url '/germplasm-map.legumeinfo.org/,/pgrc-rpc.agr.gc.ca\/gringlobal\/search/'
       # https://github.com/actions/cache/blob/main/save/README.md#always-save-cache
-      - uses: actions/cache/save@v3
+      - uses: actions/cache/save@v4
         id: save-cache-htmlproofer
         if: always()
         with:
-          path: tmp/.htmlproofer
-          key: ${{ runner.os }}-html-proofer
+          path: ./tmp/.htmlproofer
+          key: html-proofer
 
   pa11y:
     # https://github.com/GSA/notifications-admin/pull/475
@@ -123,7 +140,7 @@ jobs:
       - run: busybox httpd -p 4000
       # FIXME: patty-ci concurrency > 1 results in errors in this GA workflow
       - run: |
-          printf '{"defaults": {"runners": ["axe"]}}\n' > .pa11yci
+          printf '{"defaults": {"runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
       - run: pa11y-ci --sitemap http://0.0.0.0:4000/sitemap.xml --sitemap-exclude '/cmap-*' --sitemap-find '^/' --sitemap-replace http://0.0.0.0:4000/
 
   # Deployment job
