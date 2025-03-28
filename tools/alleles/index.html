@@ -248,7 +248,7 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
    * Fetches gene data from the GraphQL API
    */
   async function getData() {
-    const geneName = document.getElementById("gene-name").value;
+    const geneName = document.getElementById("gene-name").value.trim();
 
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -428,8 +428,8 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
    */
   async function getDataFastAWithChrom() {
     // Get values and remove comma if present
-    let start = document.getElementById("genomic-region-start").value.replace(/,/g, '');
-    let end = document.getElementById("genomic-region-end").value.replace(/,/g, '');
+    let start = document.getElementById("genomic-region-start").trim().value.replace(/,/g, '');
+    let end = document.getElementById("genomic-region-end").trim().value.replace(/,/g, '');
 
     // Santize input
 
