@@ -3,6 +3,7 @@ title: Allele search
 sitemap: sequence map
 tools_menu: true
 web_components: true
+pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 ---
 
 <H2>Allele Search</H2>
@@ -13,29 +14,51 @@ web_components: true
     <select id="collection-name" class="uk-select uk-form-width-large uk-margin-small-top">
       {% assign genus = "Glycine" %}
       {% assign species = "max" %}
+      {% assign collections = "" | split: "" %}
+      
       {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
-      {% for metadata_file in metadata[1] %}
-      {% if metadata_file[0] contains "MANIFEST" %}
-      {% assign manifest = metadata_file %}
-      {% for item in manifest[1] %}
-      {% if item.applications contains "jbrowse" %}
-      {% assign filename_parts = item.name | split: "." %}
-      {% assign gensp = filename_parts[0] %}
-      {% assign coll_parts = filename_parts | slice: 1, 4 %}
-      {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
-      {% capture collection_name %}{{ coll_parts| join: "." }}{% endcapture %}
-      {%- capture collection_item -%}
-      {
-      "name": "{{item.name}}",
-      "collection-name": "{{collection_name}}",
-      "description": "{{item.description}}"
-      }
-      {%- endcapture %}
-      <option value='{{- collection_item | strip_newlines | strip_html -}}'>{{collection_name}}</option>
-      {% endif %}
+        {% for metadata_file in metadata[1] %}
+          {% if metadata_file[0] contains "MANIFEST" %}
+            {% assign manifest = metadata_file %}
+            {% for item in manifest[1] %}
+              {% if item.applications contains "jbrowse" %}
+                {% assign filename_parts = item.name | split: "." %}
+                {% assign gensp = filename_parts[0] %}
+                {% assign coll_parts = filename_parts | slice: 1, 4 %}
+                {% assign diversity_base = filename_parts | slice: 1, 2 | join: "." %}
+                {% capture collection_name %}{{ coll_parts| join: "." }}{% endcapture %}
+
+
+                {% comment %} Fetch synopsis from README file {% endcomment %}
+                {% for metadata_file in metadata[1] %}
+                  {% if metadata_file[0] contains "README" %}
+                    {% assign readme = metadata_file %}
+                    {% capture collection_item %}
+                      {
+                      "name": "{{item.name}}",
+                      "collection-name": "{{collection_name}}",
+                      "synopsis": "{{readme[1].synopsis}}"
+                      }
+                    {% endcapture %}
+                  {% endif %}
+                {% endfor %}
+                {% assign collection_item = collection_item | strip_newlines | strip_html %}
+
+
+                {% assign collections = collections | push: collection_item | sort %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
       {% endfor %}
-      {% endif %}
-      {% endfor %}
+      
+      {% for collection_item in collections %}
+        {% assign parsed_item = collection_item | strip_newlines | strip_html | split: ',' %}
+        {% assign collection_name = parsed_item[1] | split: ':' | last | remove: '"' | strip %}
+        <option value='{{- collection_item | strip_newlines | strip_html -}}' 
+          {% if collection_name == page.pre_selected_gene %}selected{% endif %}>
+          {{ collection_name }}
+        </option>
       {% endfor %}
     </select>
   </div>
@@ -54,7 +77,7 @@ web_components: true
         </div>
       </div>
       <div>
-        <p class="uk-text-default uk-text-secondary">e.g glyma.Wm82.gnm4.ann1.Glyma.16G044100</p>
+        <p class="uk-text-default uk-text-secondary">e.g glyma.Wm82.gnm4.ann1.Glyma.16G040000</p>
       </div>
     </div>
     <div class="uk-margin-small-left">
@@ -82,14 +105,14 @@ web_components: true
       <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region-start" rows="10"
         cols="30" placeholder="Start" title="Please enter a valid integer"></input>
       <div>
-        <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-start">e.g 1000</label>
+        <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-start">e.g 10000</label>
       </div>
     </div>
     <div>
       <input class="uk-input uk-form-width-medium uk-margin-small-top" type="text" id="genomic-region-end" rows="10"
         cols="30" placeholder="End" title="Please enter a valid integer"></input>
       <div>
-        <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-end">e.g 5000</label>
+        <label class="uk-form-label uk-text-default uk-text-secondary" for="genomic-region-end">e.g 50000</label>
       </div>
     </div>
     <input class="uk-button uk-margin uk-margin-medium-top" uk-toggle="target: #modal" id="submit" type="button"
@@ -153,16 +176,16 @@ web_components: true
 
 {% comment %} Traverse the annotation metadata, looking for a match to diversity_base {% endcomment %}
 {% for metadata in site.data.datastore-metadata[genus][species].annotations %}
-{% for metadata_file in metadata[1] %}
-{% if metadata_file[0] contains "README" %}
-{% assign annot_coll_id = metadata_file[1].identifier %}
-{% assign identifier_parts = annot_coll_id | split: "." %}
-{% assign annot_base = identifier_parts | slice: 0, 2 | join: "." %}
-{% if annot_base == diversity_base %}
-<!-- <b>Annotation collection:</b> {{ annot_coll_id }} <br> -->
-{% endif %}
-{% endif %}
-{% endfor %}
+  {% for metadata_file in metadata[1] %}
+    {% if metadata_file[0] contains "README" %}
+      {% assign annot_coll_id = metadata_file[1].identifier %}
+      {% assign identifier_parts = annot_coll_id | split: "." %}
+      {% assign annot_base = identifier_parts | slice: 0, 2 | join: "." %}
+      {% if annot_base == diversity_base %}
+        <!-- <b>Annotation collection:</b> {{ annot_coll_id }} <br> -->
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 
 
@@ -194,7 +217,7 @@ web_components: true
   function onChange() {
     try {
       let value = JSON.parse(variantCollection.value);
-      document.getElementById("synopsis").textContent = value.description || "No description available.";
+      document.getElementById("synopsis").textContent = value.synopsis || "No synopsis available.";
     } catch (error) {
       console.error("Error parsing JSON from variantCollection: ", error);
       //document.getElementById("synopsis").textContent = "Invalid selection data.";
