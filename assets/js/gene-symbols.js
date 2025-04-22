@@ -76,7 +76,7 @@ $(document).ready(function () {
                 table.row.add([
                     item.symbol,
                     item.fullName,
-                    item.geneModelID
+                    `<a href="#" class="gene-linkout" data-identifier="${item.geneModelID}">${item.geneModelID}</a>`
                     
                 ]);
             });
@@ -90,6 +90,8 @@ $(document).ready(function () {
 
     }
 
+
+    
 
     populateLetters();
     fetchAndDisplayData('all'); // Initially fetch all data

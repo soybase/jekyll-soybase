@@ -2,6 +2,7 @@
 title: Gene Symbols
 layout: default
 sitemap: tools/gene-symbols
+web_components: true
 ---
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
@@ -71,14 +72,15 @@ sitemap: tools/gene-symbols
     }
 </style>
 
-<div id="detail-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+<div id="linkout-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-width-1-1">
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
         <h2 id="modal-title"></h2>
         <div id="modal-content">
             <div id="modal-loader" class="uk-flex uk-flex-center uk-flex-middle" hidden>
                 <div uk-spinner="ratio: 1"></div>
             </div>
+            <lis-linkout-element id="linkouts"></lis-linkout-element>
         </div>
     </div>
 </div>    
@@ -107,7 +109,25 @@ sitemap: tools/gene-symbols
         </tbody>
     </table>
 </div>
-
+<script type="module">
+    import { allLinkoutsFunction } from "lis-graphql";
+    const linkoutElement = document.getElementById('linkouts');
+    const modal = UIkit.modal('#linkout-modal');
+    $(document).on("click", ".gene-linkout", function(event) {
+        event.preventDefault();
+        const {identifier} = event.currentTarget.dataset;
+        const type = 'gene';
+        const title = `Gene ID: ${identifier}`;
+        if (modal && modal.$el) {
+            modal.$el.querySelector('#modal-title').innerText = title;
+            modal.show();
+            linkoutElement.linkoutFunction = allLinkoutsFunction;
+            linkoutElement.getLinkouts({type, linkoutData: {identifier}});
+        } else {
+            console.error('Modal not properly initialized');
+        }
+    });
+</script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 
