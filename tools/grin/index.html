@@ -74,7 +74,7 @@ api-base: http://localhost:3000
     }
     .grin-trait-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.5rem;
         padding: 0.5rem;
         border: 1px solid #eee;
@@ -82,6 +82,14 @@ api-base: http://localhost:3000
     }
     .grin-trait-item:hover {
         background: #f9f9f9;
+    }
+    .grin-trait-item .uk-checkbox {
+        min-width: 18px;
+        min-height: 18px;
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        margin-top: 3px;
     }
     .grin-minmax {
         display: flex;
@@ -178,6 +186,8 @@ function clearForm() {
     // Clear results section
     const results = document.getElementById('results');
     if (results) results.innerHTML = '';
+    // Hide all filter containers
+    document.querySelectorAll('.grin-trait-filter').forEach(fc => fc.style.display = 'none');
 }
 
 document.getElementById('clearFormBtn').onclick = clearForm;
@@ -185,16 +195,27 @@ document.getElementById('showResultsBtn').onclick = handleSubmit;
 
 // Load traits from API
 async function loadTraits() {
-    const response = await fetch(`${API_BASE}/traits`);
-    const traits = await response.json();
-    state.traitData = traits;
-    const byClass = {};
-    traits.forEach(trait => {
-        if (!byClass[trait.trait_class]) byClass[trait.trait_class] = [];
-        byClass[trait.trait_class].push(trait);
-    });
-    state.traitClasses = Object.keys(byClass);
-    renderTraitClasses(byClass);
+    const container = document.getElementById('trait-classes');
+    try {
+        const response = await fetch(`${API_BASE}/traits`);
+        if (!response.ok) throw new Error('Failed to fetch traits');
+        const traits = await response.json();
+        state.traitData = traits;
+        const byClass = {};
+        traits.forEach(trait => {
+            if (!byClass[trait.trait_class]) byClass[trait.trait_class] = [];
+            byClass[trait.trait_class].push(trait);
+        });
+        state.traitClasses = Object.keys(byClass);
+        renderTraitClasses(byClass);
+    } catch (err) {
+        container.innerHTML = `
+            <div class="uk-alert-warning" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p><strong>Warning:</strong> Unable to fetch traits from the API. Please try again later.</p>
+            </div>
+        `;
+    }
 }
 
 // Render trait classes as accordion
@@ -210,7 +231,12 @@ function renderTraitClasses(byClass) {
         header.className = 'grin-trait-class-header';
         header.innerHTML = `
             <span>${traitClass}</span>
-            <span class="uk-icon" uk-icon="icon: chevron-down"></span>
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+                <label style="margin: 0; font-weight: normal; font-size: 0.95em;">
+                    <input type="checkbox" class="select-all-checkbox uk-checkbox" style="margin-right: 4px;"> Select All
+                </label>
+                <span class="uk-icon" uk-icon="icon: chevron-down"></span>
+            </span>
         `;
         
         const content = document.createElement('div');
@@ -228,11 +254,44 @@ function renderTraitClasses(byClass) {
         container.appendChild(classDiv);
         
         // Add click handler for accordion
-        header.addEventListener('click', () => {
+        header.addEventListener('click', (e) => {
+            // Prevent toggle if clicking on the select all checkbox or its label
+            if (e.target.classList.contains('select-all-checkbox') || e.target.closest('label')) {
+                return;
+            }
             content.classList.toggle('active');
             header.querySelector('.uk-icon').setAttribute('uk-icon', 
                 content.classList.contains('active') ? 'icon: chevron-up' : 'icon: chevron-down');
         });
+        // Add select all logic
+        const selectAllCheckbox = header.querySelector('.select-all-checkbox');
+        selectAllCheckbox.addEventListener('change', (e) => {
+            const checkboxes = traitList.querySelectorAll('input[type=checkbox]');
+            checkboxes.forEach(cb => {
+                if (cb.checked !== selectAllCheckbox.checked) {
+                    cb.checked = selectAllCheckbox.checked;
+                    cb.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+        // Keep select all in sync with individual checkboxes
+        const updateSelectAll = () => {
+            const checkboxes = traitList.querySelectorAll('input[type=checkbox]');
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            if (checked === 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            } else if (checked === checkboxes.length) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            }
+        };
+        traitList.addEventListener('change', updateSelectAll);
+        // Initial state
+        updateSelectAll();
     });
 }
 
@@ -240,6 +299,10 @@ function createTraitItem(traitClass, trait) {
     const item = document.createElement('div');
     item.className = 'grin-trait-item';
     item.dataset.traitName = trait.name.toLowerCase();
+    item.dataset.traitType = trait.type;
+    
+    // Debug: log trait object
+    // console.log(trait);
     
     const cb = document.createElement('input');
     cb.type = 'checkbox';
@@ -248,8 +311,10 @@ function createTraitItem(traitClass, trait) {
         if (!state.selectedTraits[traitClass]) state.selectedTraits[traitClass] = new Set();
         if (cb.checked) {
             state.selectedTraits[traitClass].add(trait.id);
+            filterContainer.style.display = '';
         } else {
             state.selectedTraits[traitClass].delete(trait.id);
+            filterContainer.style.display = 'none';
         }
     };
     
@@ -260,13 +325,26 @@ function createTraitItem(traitClass, trait) {
     item.appendChild(cb);
     item.appendChild(label);
     
-    if (trait.value_type === 'numeric') {
+    // Container for filter inputs
+    const filterContainer = document.createElement('span');
+    filterContainer.className = 'grin-trait-filter';
+    filterContainer.style.display = 'none';
+    filterContainer.style.marginLeft = '0.5rem';
+    
+    if (trait.type && trait.type.toLowerCase() === 'numeric') {
         const minmax = document.createElement('div');
         minmax.className = 'grin-minmax';
         const min = document.createElement('input');
         min.type = 'number';
         min.placeholder = 'Min';
         min.className = 'uk-input';
+        if (typeof trait.min_value !== 'undefined') {
+            min.min = trait.min_value;
+            min.value = trait.min_value;
+        }
+        if (typeof trait.max_value !== 'undefined') {
+            min.max = trait.max_value;
+        }
         min.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
             state.selectedTraitFilters[trait.id].min = min.value;
@@ -275,25 +353,44 @@ function createTraitItem(traitClass, trait) {
         max.type = 'number';
         max.placeholder = 'Max';
         max.className = 'uk-input';
+        if (typeof trait.max_value !== 'undefined') {
+            max.max = trait.max_value;
+            max.value = trait.max_value;
+        }
+        if (typeof trait.min_value !== 'undefined') {
+            max.min = trait.min_value;
+        }
         max.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
             state.selectedTraitFilters[trait.id].max = max.value;
         };
         minmax.appendChild(min);
         minmax.appendChild(max);
-        item.appendChild(minmax);
-    } else if (trait.value_type === 'categorical' && trait.values) {
+        filterContainer.appendChild(minmax);
+    } else if (
+        trait.type && trait.type.toLowerCase() === 'categorical' &&
+        trait.values &&
+        (
+            (typeof trait.values === 'string' && trait.values.trim() !== '') ||
+            (Array.isArray(trait.values) && trait.values.length > 0)
+        )
+    ) {
         const select = document.createElement('select');
         select.className = 'grin-dropdown uk-select';
-        select.innerHTML = '<option value="">Select</option>' + 
-            trait.values.split(',').map(v => `<option value="${v}">${v}</option>`).join('');
+        let options = '';
+        if (typeof trait.values === 'string') {
+            options = trait.values.split(',').map(v => `<option value="${v}">${v}</option>`).join('');
+        } else if (Array.isArray(trait.values)) {
+            options = trait.values.map(v => `<option value="${v}">${v}</option>`).join('');
+        }
+        select.innerHTML = '<option value="">Any</option>' + options;
         select.onchange = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
             state.selectedTraitFilters[trait.id].value = select.value;
         };
-        item.appendChild(select);
+        filterContainer.appendChild(select);
     }
-    
+    item.appendChild(filterContainer);
     return item;
 }
 
