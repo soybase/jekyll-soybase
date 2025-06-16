@@ -105,6 +105,17 @@ api-base: http://localhost:3000
     }
     .grin-results-section {
         margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+    .grin-results-section .dataTables_wrapper {
+        width: 100%;
+        max-width: 1200px;
+        overflow-x: auto;
+    }
+    .grin-results-section table {
+        width: 100%;
+        min-width: 800px; /* Ensures table doesn't get too compressed */
     }
 </style>
 
@@ -300,6 +311,7 @@ function createTraitItem(traitClass, trait) {
     item.className = 'grin-trait-item';
     item.dataset.traitName = trait.name.toLowerCase();
     item.dataset.traitType = trait.type;
+    item.dataset.traitId = trait.id;
     
     // Debug: log trait object
     // console.log(trait);
@@ -312,10 +324,21 @@ function createTraitItem(traitClass, trait) {
         if (cb.checked) {
             state.selectedTraits[traitClass].add(trait.id);
             filterContainer.style.display = '';
+            // Initialize filter state when trait is selected
+            if (!state.selectedTraitFilters[trait.id]) {
+                state.selectedTraitFilters[trait.id] = {
+                    min: null,
+                    max: null,
+                    value: null
+                };
+            }
         } else {
             state.selectedTraits[traitClass].delete(trait.id);
             filterContainer.style.display = 'none';
+            // Remove filter state when trait is deselected
+            delete state.selectedTraitFilters[trait.id];
         }
+        console.log('Current filter state:', state.selectedTraitFilters);
     };
     
     const label = document.createElement('span');
@@ -347,7 +370,7 @@ function createTraitItem(traitClass, trait) {
         }
         min.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
-            state.selectedTraitFilters[trait.id].min = min.value;
+            state.selectedTraitFilters[trait.id].min = min.value || null;
         };
         const max = document.createElement('input');
         max.type = 'number';
@@ -362,7 +385,7 @@ function createTraitItem(traitClass, trait) {
         }
         max.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
-            state.selectedTraitFilters[trait.id].max = max.value;
+            state.selectedTraitFilters[trait.id].max = max.value || null;
         };
         minmax.appendChild(min);
         minmax.appendChild(max);
@@ -386,7 +409,7 @@ function createTraitItem(traitClass, trait) {
         select.innerHTML = '<option value="">Any</option>' + options;
         select.onchange = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
-            state.selectedTraitFilters[trait.id].value = select.value;
+            state.selectedTraitFilters[trait.id].value = select.value || null;
         };
         filterContainer.appendChild(select);
     }
@@ -430,13 +453,47 @@ async function handleSubmit() {
         const raw = document.getElementById('cultivarInput').value;
         cultivarNames = raw.split(/[\n,]+/).map(s => s.trim()).filter(Boolean);
     }
-    // Prepare filters (not used in backend yet, but keep for future)
-    const filters = state.selectedTraitFilters;
+    
+    // Format filters for the API
+    const filters = {};
+    console.log('Raw filter state:', state.selectedTraitFilters);
+    Object.entries(state.selectedTraitFilters).forEach(([traitId, filter]) => {
+        console.log('Processing filter for trait:', traitId, filter);
+        // Find the trait item in the DOM
+        const traitItem = document.querySelector(`.grin-trait-item[data-trait-id="${traitId}"]`);
+        if (traitItem) {
+            const minInput = traitItem.querySelector('.grin-minmax input[placeholder="Min"]');
+            const maxInput = traitItem.querySelector('.grin-minmax input[placeholder="Max"]');
+            const selectInput = traitItem.querySelector('.grin-dropdown');
+            
+            // Get current values from inputs
+            const min = minInput ? minInput.value : null;
+            const max = maxInput ? maxInput.value : null;
+            const value = selectInput ? selectInput.value : null;
+            
+            // Only include if any value is set
+            if (min || max || value) {
+                filters[traitId] = {
+                    min: min || null,
+                    max: max || null,
+                    value: value || null
+                };
+            }
+        }
+    });
+    console.log('Final filters object:', filters);
+
     // Call the API
+    const requestBody = { 
+        traitIds, 
+        cultivarNames, 
+        filters 
+    };
+    console.log('Request body:', requestBody);
     const response = await fetch(`${API_BASE}/observations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ traitIds, cultivarNames, filters })
+        body: JSON.stringify(requestBody)
     });
     const data = await response.json();
     // Handle any other errors
