@@ -3,7 +3,7 @@ layout: default
 title: GRIN Data Explorer
 sitemap: tools/grin
 examples: PI 88818, PI 92743, PI 89061
-api-base: http://localhost:3000
+api-base: http://10.0.0.10:3000
 ---
 
 <!-- DataTables and jQuery CSS/JS -->
@@ -180,25 +180,37 @@ const state = {
 
 // Clear inputs
 function clearForm() {
-    document.querySelectorAll('.grin-trait-item input[type=checkbox]').forEach(cb => cb.checked = false);
-    document.querySelectorAll('.grin-trait-box input[type=checkbox].trait-class-toggle').forEach(cb => cb.checked = false);
-    document.querySelectorAll('.grin-minmax input').forEach(inp => inp.value = '');
-    document.querySelectorAll('.grin-dropdown').forEach(sel => sel.selectedIndex = 0);
-    state.selectedTraits = {};
-    state.selectedTraitFilters = {};
+    // Uncheck all trait checkboxes and reset their filter states
+    document.querySelectorAll('.grin-trait-item input[type=checkbox]').forEach(cb => {
+        cb.checked = false;
+        // Trigger the change event to update the state
+        cb.dispatchEvent(new Event('change'));
+    });
+    
+    // Reset select all checkboxes
+    document.querySelectorAll('.select-all-checkbox').forEach(cb => {
+        cb.checked = false;
+        cb.indeterminate = false;
+    });
+    
     // Clear cultivar textarea
     document.getElementById('cultivarInput').value = '';
+    
     // Reset file input
     const fileInput = document.getElementById('cultivarFile');
     if (fileInput) fileInput.value = '';
+    
     // Set 'all' radio button as checked
     const allRadio = document.querySelector('input[name="searchType"][value="all"]');
     if (allRadio) allRadio.checked = true;
+    
     // Clear results section
     const results = document.getElementById('results');
     if (results) results.innerHTML = '';
-    // Hide all filter containers
-    document.querySelectorAll('.grin-trait-filter').forEach(fc => fc.style.display = 'none');
+    
+    // Reset state
+    state.selectedTraits = {};
+    state.selectedTraitFilters = {};
 }
 
 document.getElementById('clearFormBtn').onclick = clearForm;
@@ -211,9 +223,10 @@ async function loadTraits() {
         const response = await fetch(`${API_BASE}/traits`);
         if (!response.ok) throw new Error('Failed to fetch traits');
         const traits = await response.json();
-        state.traitData = traits;
+        // Ensure db_id is present in each trait
+        state.traitData = traits.map(trait => ({ ...trait, db_id: trait.db_id }));
         const byClass = {};
-        traits.forEach(trait => {
+        state.traitData.forEach(trait => {
             if (!byClass[trait.trait_class]) byClass[trait.trait_class] = [];
             byClass[trait.trait_class].push(trait);
         });
@@ -312,6 +325,7 @@ function createTraitItem(traitClass, trait) {
     item.dataset.traitName = trait.name.toLowerCase();
     item.dataset.traitType = trait.type;
     item.dataset.traitId = trait.id;
+    item.dataset.traitDbId = trait.db_id;
     
     // Debug: log trait object
     // console.log(trait);
@@ -323,6 +337,8 @@ function createTraitItem(traitClass, trait) {
         if (!state.selectedTraits[traitClass]) state.selectedTraits[traitClass] = new Set();
         if (cb.checked) {
             state.selectedTraits[traitClass].add(trait.id);
+            console.log(`Trait selected: ID=${trait.id}, Name=${trait.name}, Class=${traitClass}`);
+            console.log('Current selected traits state:', state.selectedTraits);
             filterContainer.style.display = '';
             // Initialize filter state when trait is selected
             if (!state.selectedTraitFilters[trait.id]) {
@@ -334,6 +350,8 @@ function createTraitItem(traitClass, trait) {
             }
         } else {
             state.selectedTraits[traitClass].delete(trait.id);
+            console.log(`Trait deselected: ID=${trait.id}, Name=${trait.name}, Class=${traitClass}`);
+            console.log('Current selected traits state:', state.selectedTraits);
             filterContainer.style.display = 'none';
             // Remove filter state when trait is deselected
             delete state.selectedTraitFilters[trait.id];
@@ -437,6 +455,9 @@ document.getElementById('traitSearch').addEventListener('input', (e) => {
 async function handleSubmit() {
     // Gather selected trait IDs
     const traitIds = Object.values(state.selectedTraits).flatMap(set => Array.from(set));
+    console.log('Gathered trait IDs:', traitIds);
+    console.log('Selected traits state:', state.selectedTraits);
+    
     if (traitIds.length === 0) {
         document.getElementById('results').innerHTML = `
             <div class="uk-alert-warning" uk-alert>
@@ -483,9 +504,16 @@ async function handleSubmit() {
     });
     console.log('Final filters object:', filters);
 
+    // Collect traitDbIds for selected traitIds
+    const traitDbIds = traitIds.map(id => {
+        const trait = state.traitData.find(t => t.id === id);
+        return trait && trait.db_id ? trait.db_id : null;
+    }).filter(Boolean);
+
     // Call the API
     const requestBody = { 
         traitIds, 
+        traitDbIds,
         cultivarNames, 
         filters 
     };
@@ -520,34 +548,57 @@ function renderResultsTable(data, traitIds) {
         document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
     }
+    
+    // Debug: Log the data and traitIds
+    console.log('Data received:', data);
+    console.log('Selected trait IDs:', traitIds);
+    console.log('State trait data:', state.traitData);
+    
     // Get trait names in order of traitIds
     const traitIdToName = {};
-    state.traitData.forEach(trait => { traitIdToName[trait.id] = trait.name; });
+    state.traitData.forEach(trait => { 
+        traitIdToName[trait.id] = trait.name; 
+        console.log(`Mapping trait ID ${trait.id} to name: ${trait.name}`);
+    });
+    
+    
     // Group data by accession
     const byAccession = {};
     data.forEach(row => {
+        console.log('Processing row:', row);
         if (!byAccession[row.cultivar_name]) {
             byAccession[row.cultivar_name] = { grin_acc_id: row.grin_acc_id, traits: {} };
         }
         byAccession[row.cultivar_name].traits[row.trait_name] = row.value;
     });
+    
+    console.log('Grouped by accession:', byAccession);
+    
     // Build table
     let html = '<table id="grinResultsTable" class="display"><thead><tr>';
     html += '<th>GRIN Accession</th>';
     traitIds.forEach(id => {
-        html += `<th>${traitIdToName[id] || id}</th>`;
+        const traitName = traitIdToName[id];
+        console.log(`Adding column for trait ID ${id} with name: ${traitName}`);
+        html += `<th>${traitName || id}</th>`;
     });
     html += '</tr></thead><tbody>';
+    
     Object.entries(byAccession).forEach(([name, obj]) => {
         html += `<tr><td>${name}</td>`;
         traitIds.forEach(id => {
             const traitName = traitIdToName[id];
-            html += `<td>${obj.traits[traitName] !== undefined ? obj.traits[traitName] : ''}</td>`;
+            const value = obj.traits[traitName] !== undefined ? obj.traits[traitName] : '';
+            console.log(`Cell for ${name}, trait ${traitName}: ${value}`);
+            html += `<td>${value}</td>`;
         });
         html += '</tr>';
     });
     html += '</tbody></table>';
+    
+    console.log('Generated HTML table');
     container.innerHTML = html;
+    
     // Initialize DataTable if needed
     if (window.$ && window.$.fn.DataTable) {
         window.$('#grinResultsTable').DataTable({
