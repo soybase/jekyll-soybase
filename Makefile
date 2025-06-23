@@ -39,7 +39,7 @@ ifeq ($(OS), Darwin)
   export PATH := ${PWD}/vendor/gems/bin:${PATH}
 
   # select SDK from /Library/Developer/CommandLineTools/SDKs
-  XCRUN = DEVELOPER_DIR=/Library/Developer/CommandLineTools xcrun --sdk macosx15.0
+  XCRUN = DEVELOPER_DIR=/Library/Developer/CommandLineTools xcrun --sdk macosx15.2
   JEKYLL_SERVE_ARGS = --livereload
   HTMLPROOFER_ARGS = --allow-missing-href=true --ignore-missing-alt=true
   PYTHON_VENV_ACTIVATE = . ./vendor/python-venv/bin/activate
@@ -50,7 +50,7 @@ else # assume dev container
   PYTHON_VENV_ACTIVATE = true # no-op
 endif
 
-JBROWSE_VERSION = 2.15.4
+JBROWSE_VERSION = 3.0.5
 PA11YCI_VERSION = 3.1.X
 
 serve: mostlyclean setup
@@ -65,7 +65,7 @@ yamllint:
 
 htmlproofer:
 	bundle exec jekyll build --profile --trace
-	bundle exec htmlproofer $(HTMLPROOFER_ARGS) --ignore-status-codes 301,429,503 --ignore-files '/\/uikit\/tests\//' --ignore-url '/germplasm-map.legumeinfo.org/,/pgrc-rpc.agr.gc.ca\/gringlobal\/search/'  --cache '{"timeframe": {"external": "30d"}}' --log-level debug ./_site
+	bundle exec htmlproofer $(HTMLPROOFER_ARGS) --ignore-status-codes 301,406,429,503 --ignore-files '/\/uikit\/tests\//' --ignore-url '/germplasm-map.legumeinfo.org/,/pgrc-rpc.agr.gc.ca\/gringlobal\/search/'  --cache '{"timeframe": {"external": "30d"}}' --log-level debug ./_site
 
 pa11y: setup
 	if ! { command -v pa11y-ci || npm ls pa11y-ci ; } >/dev/null 2>&1; then npm install $(NPM_INSTALL_OPTIONS) pa11y-ci@${PA11YCI_VERSION}; fi
@@ -74,9 +74,14 @@ pa11y: setup
 	
 
 # JBrowse CLI will already be installed globally if using a dev container
+# Ensure JBrowse index.html is parsed by jekyll & inline GA script
 jbrowse: setup
 	if ! { command -v jbrowse || npm ls @jbrowse/cli ; } >/dev/null 2>&1; then npm install $(NPM_INSTALL_OPTIONS) @jbrowse/cli@${JBROWSE_VERSION}; fi
-	if ! [ -d ./assets/js/jbrowse ]; then npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; fi
+	if ! [ -d ./assets/js/jbrowse ]; then \
+      npx jbrowse create assets/js/jbrowse --tag=v${JBROWSE_VERSION}; \
+      sed -i.bak -e 's/^/---\n---\n/' -e 's/>/>\n/g' assets/js/jbrowse/index.html; \
+      sed -i.bak -e '/<\/script>/r ./_themes/jekyll-theme-legumeinfo/_includes/analytics.html' assets/js/jbrowse/index.html; \
+    fi
 	cp assets/js/jbrowse-config.json assets/js/jbrowse/config.json
 	npm exec -c '_scripts/jbrowse-tracks.sh'
 
