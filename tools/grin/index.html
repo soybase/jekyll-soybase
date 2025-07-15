@@ -326,9 +326,7 @@ function createTraitItem(traitClass, trait) {
     item.dataset.traitType = trait.type;
     item.dataset.traitId = trait.id;
     item.dataset.traitDbId = trait.db_id;
-    
-    // Debug: log trait object
-    // console.log(trait);
+
     
     const cb = document.createElement('input');
     cb.type = 'checkbox';
@@ -337,8 +335,6 @@ function createTraitItem(traitClass, trait) {
         if (!state.selectedTraits[traitClass]) state.selectedTraits[traitClass] = new Set();
         if (cb.checked) {
             state.selectedTraits[traitClass].add(trait.id);
-            console.log(`Trait selected: ID=${trait.id}, Name=${trait.name}, Class=${traitClass}`);
-            console.log('Current selected traits state:', state.selectedTraits);
             filterContainer.style.display = '';
             // Initialize filter state when trait is selected
             if (!state.selectedTraitFilters[trait.id]) {
@@ -350,13 +346,10 @@ function createTraitItem(traitClass, trait) {
             }
         } else {
             state.selectedTraits[traitClass].delete(trait.id);
-            console.log(`Trait deselected: ID=${trait.id}, Name=${trait.name}, Class=${traitClass}`);
-            console.log('Current selected traits state:', state.selectedTraits);
             filterContainer.style.display = 'none';
             // Remove filter state when trait is deselected
             delete state.selectedTraitFilters[trait.id];
         }
-        console.log('Current filter state:', state.selectedTraitFilters);
     };
     
     const label = document.createElement('span');
@@ -380,11 +373,13 @@ function createTraitItem(traitClass, trait) {
         min.placeholder = 'Min';
         min.className = 'uk-input';
         if (typeof trait.min_value !== 'undefined') {
-            min.min = trait.min_value;
-            min.value = trait.min_value;
+            const minVal = Number(trait.min_value);
+            min.min = minVal.toFixed(2);
+            min.value = minVal.toFixed(2);
         }
         if (typeof trait.max_value !== 'undefined') {
-            min.max = trait.max_value;
+            const maxVal = Number(trait.max_value);
+            min.max = maxVal.toFixed(2);
         }
         min.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
@@ -395,11 +390,13 @@ function createTraitItem(traitClass, trait) {
         max.placeholder = 'Max';
         max.className = 'uk-input';
         if (typeof trait.max_value !== 'undefined') {
-            max.max = trait.max_value;
-            max.value = trait.max_value;
+            const maxVal = Number(trait.max_value);
+            max.max = maxVal.toFixed(2);
+            max.value = maxVal.toFixed(2);
         }
         if (typeof trait.min_value !== 'undefined') {
-            max.min = trait.min_value;
+            const minVal = Number(trait.min_value);
+            max.min = minVal.toFixed(2);
         }
         max.oninput = () => {
             if (!state.selectedTraitFilters[trait.id]) state.selectedTraitFilters[trait.id] = {};
@@ -455,8 +452,6 @@ document.getElementById('traitSearch').addEventListener('input', (e) => {
 async function handleSubmit() {
     // Gather selected trait IDs
     const traitIds = Object.values(state.selectedTraits).flatMap(set => Array.from(set));
-    console.log('Gathered trait IDs:', traitIds);
-    console.log('Selected traits state:', state.selectedTraits);
     
     if (traitIds.length === 0) {
         document.getElementById('results').innerHTML = `
@@ -477,9 +472,7 @@ async function handleSubmit() {
     
     // Format filters for the API
     const filters = {};
-    console.log('Raw filter state:', state.selectedTraitFilters);
     Object.entries(state.selectedTraitFilters).forEach(([traitId, filter]) => {
-        console.log('Processing filter for trait:', traitId, filter);
         // Find the trait item in the DOM
         const traitItem = document.querySelector(`.grin-trait-item[data-trait-id="${traitId}"]`);
         if (traitItem) {
@@ -502,7 +495,6 @@ async function handleSubmit() {
             }
         }
     });
-    console.log('Final filters object:', filters);
 
     // Collect traitDbIds for selected traitIds
     const traitDbIds = traitIds.map(id => {
@@ -517,7 +509,6 @@ async function handleSubmit() {
         cultivarNames, 
         filters 
     };
-    console.log('Request body:', requestBody);
     const response = await fetch(`${API_BASE}/observations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -549,37 +540,27 @@ function renderResultsTable(data, traitIds) {
         return;
     }
     
-    // Debug: Log the data and traitIds
-    console.log('Data received:', data);
-    console.log('Selected trait IDs:', traitIds);
-    console.log('State trait data:', state.traitData);
-    
     // Get trait names in order of traitIds
     const traitIdToName = {};
     state.traitData.forEach(trait => { 
         traitIdToName[trait.id] = trait.name; 
-        console.log(`Mapping trait ID ${trait.id} to name: ${trait.name}`);
     });
     
     
     // Group data by accession
     const byAccession = {};
     data.forEach(row => {
-        console.log('Processing row:', row);
         if (!byAccession[row.cultivar_name]) {
             byAccession[row.cultivar_name] = { grin_acc_id: row.grin_acc_id, traits: {} };
         }
         byAccession[row.cultivar_name].traits[row.trait_name] = row.value;
     });
     
-    console.log('Grouped by accession:', byAccession);
-    
     // Build table
     let html = '<table id="grinResultsTable" class="display"><thead><tr>';
     html += '<th>GRIN Accession</th>';
     traitIds.forEach(id => {
         const traitName = traitIdToName[id];
-        console.log(`Adding column for trait ID ${id} with name: ${traitName}`);
         html += `<th>${traitName || id}</th>`;
     });
     html += '</tr></thead><tbody>';
@@ -589,14 +570,11 @@ function renderResultsTable(data, traitIds) {
         traitIds.forEach(id => {
             const traitName = traitIdToName[id];
             const value = obj.traits[traitName] !== undefined ? obj.traits[traitName] : '';
-            console.log(`Cell for ${name}, trait ${traitName}: ${value}`);
             html += `<td>${value}</td>`;
         });
         html += '</tr>';
     });
     html += '</tbody></table>';
-    
-    console.log('Generated HTML table');
     container.innerHTML = html;
     
     // Initialize DataTable if needed
