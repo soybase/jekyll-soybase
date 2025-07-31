@@ -2,6 +2,8 @@
 - category:
   - name: "Community resources at SoyBase"
     resources:
+    - description: "SoyBase Update Newsletter"
+      url: "/community/newsletter.html"
     - description: "Soybean Breeders Workshop"
       url: "/community/sbw"
     - description: "Biennial Conference - Molecular and Cellular Biology of the Soybean"
