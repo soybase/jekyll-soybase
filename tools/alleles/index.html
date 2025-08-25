@@ -70,6 +70,39 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
   <div class="uk-margin-small-left">
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
+  
+  <!-- Step 1.5: Strain Selection -->
+  <div class="uk-margin">
+    <label class="uk-form-label uk-text-default uk-text-bold">Step 1.5. Select strain analysis type:</label>
+    <div class="uk-margin-small-top">
+      <label class="uk-margin-small-right">
+        <input class="uk-radio" type="radio" name="strain-type" value="ref-alt" checked>
+        <span class="uk-margin-small-left">Ref / Alt only</span>
+      </label>
+      <label class="uk-margin-small-left">
+        <input class="uk-radio" type="radio" name="strain-type" value="specific-strain">
+        <span class="uk-margin-small-left">Specific strain within study</span>
+      </label>
+    </div>
+    
+    <!-- Strain selection dropdown -->
+    <div id="strain-selection" class="uk-margin-small-top" style="display: none;">
+      <label class="uk-form-label uk-text-default uk-text-bold" for="strain-select">Choose one or more strains from the list below:</label>
+      <div class="uk-text-small uk-text-secondary uk-margin-small-bottom"><code>ctrl+click</code> selects multiple strains</div>
+      
+      <!-- Loader -->
+      <div id="strain-loader" class="uk-margin-small-top" style="display: none;">
+        <div uk-spinner></div>
+        <span class="uk-margin-small-left">Loading strains...</span>
+      </div>
+      
+      <!-- Strain select (hidden until loaded) -->
+      <select id="strain-select" class="uk-select uk-form-width-large" multiple size="8" style="display: none;">
+        <option value="" disabled>Select strain...</option>
+      </select>
+    </div>
+  </div>
+  
   <hr>
   <div class="uk-margin uk-flex uk-flex-left uk-flex-wrap">
     <div class="uk-width-auto">
@@ -232,6 +265,138 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 
   variantCollection.onchange = onChange
   onChange()
+
+  // Handle strain type radio button selection
+  document.addEventListener('DOMContentLoaded', function() {
+    const strainTypeRadios = document.querySelectorAll('input[name="strain-type"]');
+    const strainSelection = document.getElementById('strain-selection');
+    
+    strainTypeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'specific-strain') {
+          strainSelection.style.display = 'block';
+          // Execute GraphQL query to get strains (only if not already cached)
+          executeStrainQuery();
+        } else {
+          strainSelection.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Cache for strains data
+  let strainsCache = null;
+
+  /**
+   * Executes GraphQL query to fetch strain information
+   */
+  async function executeStrainQuery() {
+    // Check if strains are already cached
+    if (strainsCache) {
+      loadStrainsIntoTable(strainsCache);
+      return;
+    }
+
+    // Show loader and hide select
+    const strainLoader = document.getElementById('strain-loader');
+    const strainSelect = document.getElementById('strain-select');
+    strainLoader.style.display = 'block';
+    strainSelect.style.display = 'none';
+
+    try {
+      let headers = new Headers();
+      headers.append("Content-Type", "application/json");
+
+      const graphqlQuery = {
+        query: `query OrganismsQuery($taxonId: Int, $abbreviation: String, $name: String, $genus: String, $species: String, $page: Int, $pageSize: Int) {
+          organisms(taxonId: $taxonId, abbreviation: $abbreviation, name: $name, genus: $genus, species: $species, page: $page, pageSize: $pageSize) {
+            results {
+              genus
+              species
+              strains {
+                identifier
+              }
+            }
+          }
+        }`,
+        variables: {
+          genus: "Glycine",
+          species: "max"
+        }
+      };
+
+      const requestOptions = {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(graphqlQuery),
+        redirect: 'follow'
+      };
+
+      const response = await fetch("https://graphql.soybase.ncgr.org/", requestOptions);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      
+      if (result.data && result.data.organisms && result.data.organisms.results && result.data.organisms.results.length > 0) {
+        const organismResult = result.data.organisms.results[0];
+        if (organismResult.strains && organismResult.strains.length > 0) {
+          // Cache the strains data
+          strainsCache = organismResult.strains;
+          loadStrainsIntoTable(organismResult.strains);
+        } else {
+          console.log("No strains found in the response");
+          clearStrainTable();
+        }
+      } else {
+        console.log("No organism results found");
+        clearStrainTable();
+      }
+
+    } catch (error) {
+      console.error('Error executing strain query:', error);
+      clearStrainTable();
+    } finally {
+      // Hide loader
+      strainLoader.style.display = 'none';
+    }
+  }
+
+  /**
+   * Loads strains into the strain selection table
+   */
+  function loadStrainsIntoTable(strains) {
+    const strainSelect = document.getElementById('strain-select');
+    
+    // Clear existing options except the placeholder
+    while (strainSelect.options.length > 1) {
+      strainSelect.remove(1);
+    }
+    
+    // Add strain options
+    strains.forEach((strain, index) => {
+      const option = document.createElement('option');
+      option.value = strain.identifier;
+      option.textContent = strain.identifier;
+      strainSelect.appendChild(option);
+    });
+    
+    // Show the select after loading
+    strainSelect.style.display = 'block';
+  }
+
+  /**
+   * Clears the strain table
+   */
+  function clearStrainTable() {
+    const strainSelect = document.getElementById('strain-select');
+    
+    // Clear existing options except the placeholder
+    while (strainSelect.options.length > 1) {
+      strainSelect.remove(1);
+    }
+  }
 
   // Close modal
   function closeModal() {
