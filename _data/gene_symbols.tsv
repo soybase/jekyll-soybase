@@ -171,7 +171,7 @@ ALMT1	aluminum-activated malate transporter family protein gene 1	glyma.Wm82.gnm
 FWL7	protein FW2.2-like 7 gene	glyma.Wm82.gnm1.ann1.Glyma.01G084000
 TGA01	TGA transcription factor gene 1	glyma.Wm82.gnm1.ann1.Glyma.01G084200
 MED25-2	Mediator Complex 25 gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G086600
-AOC1	allene oxide cyclase 4 gene, chloroplastic-like	glyma.Wm82.gnm1.ann1.Glyma.01G086900
+AOC1	"allene oxide cyclase 4 gene, chloroplastic-like"	glyma.Wm82.gnm1.ann1.Glyma.01G086900
 RAV1, B3-02	AP2/ERF transcription factor family protein RAV1 gene	glyma.Wm82.gnm1.ann1.Glyma.01G087500
 NAC004	NAC domain-containing protein gene 4	glyma.Wm82.gnm1.ann1.Glyma.01G088200
 PEPC1	Phosphoenolpyruvate carboxylase gene 1	glyma.Wm82.gnm1.ann1.Glyma.01G091000
@@ -279,8 +279,8 @@ bZIP7	Basic leucine zipper transcription factor-like protein gene 7	glyma.Wm82.g
 RLK3	receptor-like protein kinase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.01G197800
 G	G Locus gene	glyma.Wm82.gnm1.ann1.Glyma.01G198500
 ALMT2	aluminum-activated malate transporter family protein gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G199400
-ABCI7-3	Chloroplastic,Protein ABCI7 gene 3	glyma.Wm82.gnm1.ann1.Glyma.01G199500
-C2-2	C2-domain containing protein gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G202200 
+ABCI7-3	"Chloroplastic,Protein ABCI7 gene 3"	glyma.Wm82.gnm1.ann1.Glyma.01G199500
+C2-2	C2-domain containing protein gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G202200
 BMY3-2	Beta-amylase 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G203400
 SnRK2-2, SPK-1	SNF2-Related Kinase gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G204200
 CYP31	peptidyl-prolyl cis-trans isomerase CYP31 gene	glyma.Wm82.gnm1.ann1.Glyma.01G204300
@@ -295,7 +295,7 @@ SGR2	Stay-green gene 2	glyma.Wm82.gnm1.ann1.Glyma.01G214600
 C2-3	C2-domain containing protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.01G215100
 IQD3	protein IQ-DOMAIN gene 3	glyma.Wm82.gnm1.ann1.Glyma.01G217200
 HSF-03	heat stress transcription factor 3 gene	glyma.Wm82.gnm1.ann1.Glyma.01G217400
-OLPb	osmotin-like protein, acidic gene B	glyma.Wm82.gnm1.ann1.Glyma.01G217700
+OLPb	"osmotin-like protein, acidic gene B"	glyma.Wm82.gnm1.ann1.Glyma.01G217700
 LOR3	LURP-one related protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.01G218200
 C2-4	C2-domain containing protein gene 4	glyma.Wm82.gnm1.ann1.Glyma.01G219200
 PIP1-3	aquaporin PIP1-3 gene	glyma.Wm82.gnm1.ann1.Glyma.01G220600
@@ -334,7 +334,7 @@ B3-05	B3 Transcription Factor gene 5	glyma.Wm82.gnm1.ann1.Glyma.01G244800
 HDA1	histone deacetylase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.01G245100
 IAA4	Indole-3-Acetic Acid Responsive gene 4	glyma.Wm82.gnm1.ann1.Glyma.02G000500
 SEOA	sieve element occlusion gene a	glyma.Wm82.gnm1.ann1.Glyma.02G000700
-KCS1 	3-ketoacyl-CoA Synthase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.02G001500 
+KCS1 	3-ketoacyl-CoA Synthase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.02G001500
 SCAM-5	calmodulin gene 5	glyma.Wm82.gnm1.ann1.Glyma.02G002100
 PHO1-H1, SPX-PHO1-2, PHO1.2	phosphate transporter PHO1-like	glyma.Wm82.gnm1.ann1.Glyma.02G003700
 IQD4	protein IQ-DOMAIN gene 4	glyma.Wm82.gnm1.ann1.Glyma.02G004600
@@ -356,7 +356,7 @@ WRKY9	WRKY Transcription Factor gene 9	glyma.Wm82.gnm1.ann1.Glyma.02G010900
 PMEI11	Pectin Methylesterase Inhibitor gene 11	glyma.Wm82.gnm1.ann1.Glyma.02G011500
 LE1, Le1-1	lectin gene	glyma.Wm82.gnm1.ann1.Glyma.02G012600
 ERF8, EBP	Ethylene-Responsive Factor gene 8	glyma.Wm82.gnm1.ann1.Glyma.02G016100
-CEL7	alpha family endo-beta-1,4-glucanase gene	glyma.Wm82.gnm1.ann1.Glyma.02G016400
+CEL7	"alpha family endo-beta-1,4-glucanase gene"	glyma.Wm82.gnm1.ann1.Glyma.02G016400
 PMEI12	Pectin Methylesterase Inhibitor gene 12	glyma.Wm82.gnm1.ann1.Glyma.02G016500
 PMEI13	Pectin Methylesterase Inhibitor gene 13	glyma.Wm82.gnm1.ann1.Glyma.02G016600
 PMEI14	Pectin Methylesterase Inhibitor gene 14	glyma.Wm82.gnm1.ann1.Glyma.02G016700
@@ -518,7 +518,7 @@ PPR16	Pentatricopeptide-Repeat protein gene 16	glyma.Wm82.gnm1.ann1.Glyma.02G160
 bZIP15	Basic leucine zipper transcription factor-like protein gene 15	glyma.Wm82.gnm1.ann1.Glyma.02G161100
 ABCG24L-3	ABC transporter G family member 24-like isoform X1 gene 3	glyma.Wm82.gnm1.ann1.Glyma.02G163200
 PPR17	Pentatricopeptide-Repeat protein gene 17	glyma.Wm82.gnm1.ann1.Glyma.02G164800
-SDP6	glycerol-3-phosphate dehydrogenase SDP6, mitochondrial gene	glyma.Wm82.gnm1.ann1.Glyma.02G165500
+SDP6	"glycerol-3-phosphate dehydrogenase SDP6, mitochondrial gene"	glyma.Wm82.gnm1.ann1.Glyma.02G165500
 LBD6	LBD domain-containing transcription factor gene 6	glyma.Wm82.gnm1.ann1.Glyma.02G166400
 VTE2-2	homogentisate phytyltransferase VTE2-2 gene	glyma.Wm82.gnm1.ann1.Glyma.02G168000
 IQM6a	IQM Calcium-independent Calmoulin binding protein gene 6a	glyma.Wm82.gnm1.ann1.Glyma.02G168100
@@ -549,7 +549,7 @@ B3-07	B3 Transcription Factor gene 7	glyma.Wm82.gnm1.ann1.Glyma.02G200500
 SPY1	probable UDP-N-acetylglucosamine--peptide N-acetylglucosaminyltransferase SPINDLY-like gene	glyma.Wm82.gnm1.ann1.Glyma.02G201300
 PPR19	Pentatricopeptide-Repeat protein gene 19	glyma.Wm82.gnm1.ann1.Glyma.02G201800
 ALDH11A1	aldehyde dehydrogenase 11A1 gene	glyma.Wm82.gnm1.ann1.Glyma.02G202500
-FAD6.1	omega-6 fatty acid desaturase, chloroplastic gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G203300
+FAD6.1	"omega-6 fatty acid desaturase, chloroplastic gene 1"	glyma.Wm82.gnm1.ann1.Glyma.02G203300
 BTB010	BTB gene 10	glyma.Wm82.gnm1.ann1.Glyma.02G203400
 PPR20	Pentatricopeptide-Repeat protein gene 20	glyma.Wm82.gnm1.ann1.Glyma.02G205900
 SnRK2-4	SNF2-Related Kinase gene 4	glyma.Wm82.gnm1.ann1.Glyma.02G208500
@@ -570,7 +570,7 @@ PHT4.1	Phosphate Trasporter group 4 gene 4.1	glyma.Wm82.gnm1.ann1.Glyma.02G22420
 Lac6	Laccase gene 6	glyma.Wm82.gnm1.ann1.Glyma.02G224800
 FTSH1	Filimentation Temperature-Sensitive H gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G225300
 ABCG31L-1	ABC transporter G family member 31-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G226400
-C2-11	C2-domain containing protein gene 11	glyma.Wm82.gnm1.ann1.Glyma.02G226800 
+C2-11	C2-domain containing protein gene 11	glyma.Wm82.gnm1.ann1.Glyma.02G226800
 SMXL03	Suppressor of Max2 gene 1-like gene 3	glyma.Wm82.gnm1.ann1.Glyma.02G226900
 ANK14	Ankyrin Repeat protein gene 14	glyma.Wm82.gnm1.ann1.Glyma.02G227000
 FAD3b	omega-3-fatty acid desaturase 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.02G227200
@@ -605,15 +605,15 @@ GELP13	GDSL-type esterase/lipase protein gene 13	glyma.Wm82.gnm1.ann1.Glyma.02G2
 GASA1	gibberellin-regulated protein gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G245600
 NIP4-1	aquaporin NIP4 gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G246700
 C2-12	C2-domain containing protein gene 12	glyma.Wm82.gnm1.ann1.Glyma.02G247900
-C2-13	C2-domain containing protein gene 13	glyma.Wm82.gnm1.ann1.Glyma.02G248000 
+C2-13	C2-domain containing protein gene 13	glyma.Wm82.gnm1.ann1.Glyma.02G248000
 C2-14	C2-domain containing protein gene 14	glyma.Wm82.gnm1.ann1.Glyma.02G248100
-RCAALPHA	ribulose bisphosphate carboxylase/oxygenase activase 1, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.02G249600
+RCAALPHA	"ribulose bisphosphate carboxylase/oxygenase activase 1, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.02G249600
 LBD8	LBD domain-containing transcription factor gene 8	glyma.Wm82.gnm1.ann1.Glyma.02G249700
 PP2C2	Protein Phosphatase 2C-type gene 2	glyma.Wm82.gnm1.ann1.Glyma.02G250200
 TCF1a	tolerant to chilling and freezing 1a	glyma.Wm82.gnm1.ann1.Glyma.02G250700
 ALDH18B2	delta-1-pyrroline-5-carboxylate synthase gene 18B2 gene	glyma.Wm82.gnm1.ann1.Glyma.02G251100
 TOPP2	TOPP-type protein phosphatase gene 2	glyma.Wm82.gnm1.ann1.Glyma.02G251600
-GLN9	Glutamine Synthase gene 9	glyma.Wm82.gnm1.ann1.Glyma.02G253800 
+GLN9	Glutamine Synthase gene 9	glyma.Wm82.gnm1.ann1.Glyma.02G253800
 MYB83	MYB transcription factor 83 gene	glyma.Wm82.gnm1.ann1.Glyma.02G254200
 PIP1-10	aquaporin PIP1-10 gene	glyma.Wm82.gnm1.ann1.Glyma.02G255000
 HS1pro1	nematode resistance HS1pro1 protein gene	glyma.Wm82.gnm1.ann1.Glyma.02G255400
@@ -674,7 +674,7 @@ GLN12	Glutamine Synthase gene 12	glyma.Wm82.gnm1.ann1.Glyma.02G294000
 ERF17	Ethylene-Responsive Factor gene 17	glyma.Wm82.gnm1.ann1.Glyma.02G294100
 SABATH6	SABATH gene 6	glyma.Wm82.gnm1.ann1.Glyma.02G295300
 ANK21	Ankyrin Repeat protein gene 21	glyma.Wm82.gnm1.ann1.Glyma.02G296600
-C2-19	C2-domain containing protein gene 19	glyma.Wm82.gnm1.ann1.Glyma.02G296900 
+C2-19	C2-domain containing protein gene 19	glyma.Wm82.gnm1.ann1.Glyma.02G296900
 WRKY18	WRKY Transcription Factor gene 18	glyma.Wm82.gnm1.ann1.Glyma.02G297400
 ABCC3L-1	ABC transporter C family member 3-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.02G298300
 ABCC3L-2	ABC transporter C family member 3-like gene 2	glyma.Wm82.gnm1.ann1.Glyma.02G298400
@@ -712,7 +712,7 @@ C2-23	C2-domain containing protein gene 23	glyma.Wm82.gnm1.ann1.Glyma.03G016000
 C2-24	C2-domain containing protein gene 24	glyma.Wm82.gnm1.ann1.Glyma.03G016100
 C2-25	C2-domain containing protein gene 25	glyma.Wm82.gnm1.ann1.Glyma.03G016200
 C2-26	C2-domain containing protein gene 26	glyma.Wm82.gnm1.ann1.Glyma.03G016300
-C2-27	C2-domain containing protein gene 27	glyma.Wm82.gnm1.ann1.Glyma.03G016400 
+C2-27	C2-domain containing protein gene 27	glyma.Wm82.gnm1.ann1.Glyma.03G016400
 TCP3	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.03G018800
 GA20OX1	gibberellin 20 oxidase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.03G019800
 C2-28	C2-domain containing protein gene 28	glyma.Wm82.gnm1.ann1.Glyma.03G020800
@@ -750,7 +750,7 @@ PGM1	phosphoglucomutase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.03G042000
 SABATH7	SABATH gene 7	glyma.Wm82.gnm1.ann1.Glyma.03G042300
 PATL2	Patellin-like gene 2	glyma.Wm82.gnm1.ann1.Glyma.03G044200
 Sle2	Group-1 late embryogenesis abundant protein 2 gene 	glyma.Wm82.gnm1.ann1.Glyma.03G056000
-FAD8-2	omega-3 fatty acid desaturase, chloroplastic-like gene 2	glyma.Wm82.gnm1.ann1.Glyma.03G056700
+FAD8-2	"omega-3 fatty acid desaturase, chloroplastic-like gene 2"	glyma.Wm82.gnm1.ann1.Glyma.03G056700
 GELP19	GDSL-type esterase/lipase protein gene 19	glyma.Wm82.gnm1.ann1.Glyma.03G058000
 LAX3	auxin transporter-like protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.03G063600
 LAX4	auxin transporter-like protein gene 4	glyma.Wm82.gnm1.ann1.Glyma.03G063900
@@ -758,10 +758,10 @@ Bic-C2	Bicaudal- C gene 2	glyma.Wm82.gnm1.ann1.Glyma.03G064800
 SWEET50	sugar efflux transporter SWEET50 gene	glyma.Wm82.gnm1.ann1.Glyma.03G065500
 PYL18	Pyrabactin Resistance 1-Like gene 18	glyma.Wm82.gnm1.ann1.Glyma.03G066200
 PITP6	Phosphatidylinositol Transfer Protein-like gene 6	glyma.Wm82.gnm1.ann1.Glyma.03G066900
-RCA03	ribulose bisphosphate carboxylase/oxygenase activase 3, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.03G068100
+RCA03	"ribulose bisphosphate carboxylase/oxygenase activase 3, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.03G068100
 ALDH18B3	delta-1-pyrroline-5-carboxylate synthase gene 18B3 gene	glyma.Wm82.gnm1.ann1.Glyma.03G069400
 ARF05, B3-14	Auxin Responsive Factor gene 5	glyma.Wm82.gnm1.ann1.Glyma.03G070500
-ICS1	isochorismate synthase, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.03G070600
+ICS1	"isochorismate synthase, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.03G070600
 TUBB2	tubulin beta-2 gene	glyma.Wm82.gnm1.ann1.Glyma.03G074400
 Lac9	Laccase gene 9	glyma.Wm82.gnm1.ann1.Glyma.03G077900
 MYB51	MYB transcription factor 51 gene	glyma.Wm82.gnm1.ann1.Glyma.03G078000
@@ -819,7 +819,7 @@ CYP93A3	cytochrome P450 93A3-like gene	glyma.Wm82.gnm1.ann1.Glyma.03G142100
 C2-29	C2-domain containing protein gene 29	glyma.Wm82.gnm1.ann1.Glyma.03G142500
 SPL9C	squamosa promoter-binding-like protein 9c gene	glyma.Wm82.gnm1.ann1.Glyma.03G143100
 PHR8	MYB-CC domain-containing transcription factor PHR8 gene	glyma.Wm82.gnm1.ann1.Glyma.03G143600
-CYP93A1	3,9-dihydroxypterocarpan 6A-monooxygenase gene	glyma.Wm82.gnm1.ann1.Glyma.03G143700
+CYP93A1	"3,9-dihydroxypterocarpan 6A-monooxygenase gene"	glyma.Wm82.gnm1.ann1.Glyma.03G143700
 PM9	late embryogenesis abundant group 4 protein PM9 gene	glyma.Wm82.gnm1.ann1.Glyma.03G144400
 POD26	Peroxidase gene 26	glyma.Wm82.gnm1.ann1.Glyma.03G145600
 PTS1	pterocarpan synthase gene 1	glyma.Wm82.gnm1.ann1.Glyma.03G147700
@@ -978,7 +978,7 @@ WRKY28	WRKY Transcription Factor gene 28	glyma.Wm82.gnm1.ann1.Glyma.03G256700
 B3-18, ARF06	B3 Transcription Factor gene 18	glyma.Wm82.gnm1.ann1.Glyma.03G258300
 Td	Pubescence Color gene	glyma.Wm82.gnm1.ann1.Glyma.03G258700
 DOF3.2	Dof transcription factor Chr. 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.03G258800
-KCS2 	3-ketoacyl-CoA Synthase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.03G260300 
+KCS2 	3-ketoacyl-CoA Synthase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.03G260300
 PRR1	Pseudo-response Regulator gene 1	glyma.Wm82.gnm1.ann1.Glyma.03G261300
 LEA2-18	late embryogenesis abundant 2 gene 18	glyma.Wm82.gnm1.ann1.Glyma.03G261400
 LCL-2, LHY2b, MYB114	Late Elongated Hypocotyl/ CCA gene 2	glyma.Wm82.gnm1.ann1.Glyma.03G261800
@@ -1056,7 +1056,7 @@ CKX3	Cytokinin Oxidase/dehydrogenase gene 3	glyma.Wm82.gnm1.ann1.Glyma.04G055600
 GPA1	G protein alpha subunit gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G056600
 PPR31	Pentatricopeptide-Repeat protein gene 31	glyma.Wm82.gnm1.ann1.Glyma.04G057300
 DCL3A	endoribonuclease dicer-like 3a gene	glyma.Wm82.gnm1.ann1.Glyma.04G057400
-KCS3 	3-ketoacyl-CoA Synthase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.04G057800 
+KCS3 	3-ketoacyl-CoA Synthase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.04G057800
 ANK32	Ankyrin Repeat protein gene 32	glyma.Wm82.gnm1.ann1.Glyma.04G058500
 PP2C6	Protein Phosphatase 2C-type gene 6	glyma.Wm82.gnm1.ann1.Glyma.04G059000
 BTB021	BTB gene 21	glyma.Wm82.gnm1.ann1.Glyma.04G060800
@@ -1107,7 +1107,7 @@ NAC016	NAC domain-containing protein gene 16	glyma.Wm82.gnm1.ann1.Glyma.04G11950
 Lac11	Laccase gene 11	glyma.Wm82.gnm1.ann1.Glyma.04G119600
 TPP2	Trehalose-6-Phosphate Phosphatase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.04G119700
 MED2-1	Mediator Complex 2 gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G123300
-AOX1	ubiquinol oxidase 1 gene, mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.04G123800
+AOX1	"ubiquinol oxidase 1 gene, mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.04G123800
 bZIP35	Basic leucine zipper transcription factor-like protein gene 35	glyma.Wm82.gnm1.ann1.Glyma.04G124200
 ABCC12L-1	ABC transporter C family member 12-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G126500
 CRK8	cysteine-rich receptor-like protein kinase gene 8	glyma.Wm82.gnm1.ann1.Glyma.04G127100
@@ -1124,8 +1124,8 @@ ALA8	Aminophospholipid ATPase gene 8	glyma.Wm82.gnm1.ann1.Glyma.04G144900
 ABCG11-1	ABC transporter G family member 11 gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G145300
 ERF30	Ethylene-Responsive Factor gene 30	glyma.Wm82.gnm1.ann1.Glyma.04G147500
 SPX3	SPX containing protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.04G147600
-HO1	heme oxygenase 1, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.04G147700
-KCS4 	3-ketoacyl-CoA Synthase 4 gene	glyma.Wm82.gnm1.ann1.Glyma.04G149300 
+HO1	"heme oxygenase 1, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.04G147700
+KCS4 	3-ketoacyl-CoA Synthase 4 gene	glyma.Wm82.gnm1.ann1.Glyma.04G149300
 ERF31	Ethylene-Responsive Factor gene 31	glyma.Wm82.gnm1.ann1.Glyma.04G151100
 FATB2A	acylacyl carrier protein 2A gene	glyma.Wm82.gnm1.ann1.Glyma.04G151600
 TCP46	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 46	glyma.Wm82.gnm1.ann1.Glyma.04G152400
@@ -1146,7 +1146,7 @@ GASA5	gibberellin-regulated protein gene 5	glyma.Wm82.gnm1.ann1.Glyma.04G169600
 MYBJ2	myb-related protein 306-like gene	glyma.Wm82.gnm1.ann1.Glyma.04G170100
 TCP4	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 4	glyma.Wm82.gnm1.ann1.Glyma.04G170600
 PMEI44	Pectin Methylesterase Inhibitor gene 44	glyma.Wm82.gnm1.ann1.Glyma.04G171500
-ABCI7-2	Chloroplastic isoform X2, Protein ABCI7 gene 2	glyma.Wm82.gnm1.ann1.Glyma.04G172400
+ABCI7-2	"Chloroplastic isoform X2, Protein ABCI7 gene 2"	glyma.Wm82.gnm1.ann1.Glyma.04G172400
 ABCA7-1	ABC transporter A family member 7 gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G172900
 ABCA2-1	ABC transporter A family member 2 gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G173000
 IQD12	protein IQ-DOMAIN gene 12	glyma.Wm82.gnm1.ann1.Glyma.04G173100
@@ -1163,7 +1163,7 @@ LBD18	LBD domain-containing transcription factor gene 18	glyma.Wm82.gnm1.ann1.Gl
 HDA3	histone deacetylase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.04G187000
 HDA4	histone deacetylase 4 gene	glyma.Wm82.gnm1.ann1.Glyma.04G187100
 CHX22b	Cation/H+ Exchanger Protein 22 gene B	glyma.Wm82.gnm1.ann1.Glyma.04G187400
-C2-36	C2-domain containing protein gene 36	glyma.Wm82.gnm1.ann1.Glyma.04G187900 
+C2-36	C2-domain containing protein gene 36	glyma.Wm82.gnm1.ann1.Glyma.04G187900
 eEF3	Eukaryotic Elongation Factor gene 3	glyma.Wm82.gnm1.ann1.Glyma.04G188700
 WNK3	with no lysine kinase gene 3	glyma.Wm82.gnm1.ann1.Glyma.04G188800
 SEOC	sieve element occlusion gene c	glyma.Wm82.gnm1.ann1.Glyma.04G190300
@@ -1185,7 +1185,7 @@ ICE1	inducer of CBF expression gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G200500
 B3-26, ARF07	B3 Transcription Factor gene 26	glyma.Wm82.gnm1.ann1.Glyma.04G200600
 MED36-1	Mediator Complex 36 gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G200700
 ANK37	Ankyrin Repeat protein gene 37	glyma.Wm82.gnm1.ann1.Glyma.04G200800
-C2-37	C2-domain containing protein gene 37	glyma.Wm82.gnm1.ann1.Glyma.04G201500 
+C2-37	C2-domain containing protein gene 37	glyma.Wm82.gnm1.ann1.Glyma.04G201500
 ERF32	Ethylene-Responsive Factor gene 32	glyma.Wm82.gnm1.ann1.Glyma.04G201700
 ERF33	Ethylene-Responsive Factor gene 33	glyma.Wm82.gnm1.ann1.Glyma.04G201900
 PITP10	Phosphatidylinositol Transfer Protein-like gene 10	glyma.Wm82.gnm1.ann1.Glyma.04G202100
@@ -1244,7 +1244,7 @@ USP1	UDP-sugar pyrophosphorylase gene	glyma.Wm82.gnm1.ann1.Glyma.04G245100
 PIb	Pistillata gene b	glyma.Wm82.gnm1.ann1.Glyma.04G245500
 CYCA1;1	mitotic cyclin a1-type gene 1	glyma.Wm82.gnm1.ann1.Glyma.04G246600
 BTB024	BTB gene 24	glyma.Wm82.gnm1.ann1.Glyma.04G247400
-ALAD, HEMB	delta-aminolevulinic acid dehydratase, chloroplastic	glyma.Wm82.gnm1.ann1.Glyma.04G247700
+ALAD, HEMB	"delta-aminolevulinic acid dehydratase, chloroplastic"	glyma.Wm82.gnm1.ann1.Glyma.04G247700
 stAPX-b	Ascorbate peroxidase gene b	glyma.Wm82.gnm1.ann1.Glyma.04G248300
 ALDH3H1	aldehyde dehydrogenase family 3 member H1 gene	glyma.Wm82.gnm1.ann1.Glyma.04G248500
 NAC022	NAC domain-containing protein gene 22	glyma.Wm82.gnm1.ann1.Glyma.04G249000
@@ -1269,7 +1269,7 @@ GELP39	GDSL-type esterase/lipase protein gene 39	glyma.Wm82.gnm1.ann1.Glyma.05G0
 PPR36	Pentatricopeptide-Repeat protein gene 36	glyma.Wm82.gnm1.ann1.Glyma.05G008800
 MED17-1	Mediator Complex 17 gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G009700
 AKT1, ANK39	Potassium channel AKT1-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G010600
-KCS5 	3-ketoacyl-CoA Synthase 5 gene	glyma.Wm82.gnm1.ann1.Glyma.05G011100 
+KCS5 	3-ketoacyl-CoA Synthase 5 gene	glyma.Wm82.gnm1.ann1.Glyma.05G011100
 ABCG32-1	ABC transporter G family member 32 gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G011900
 FAT1	acyl-ACP thioesterase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.05G012300
 HDA5	histone deacetylase 5 gene	glyma.Wm82.gnm1.ann1.Glyma.05G012900
@@ -1291,7 +1291,7 @@ PRR4	Pseudo-response Regulator Gene 4	glyma.Wm82.gnm1.ann1.Glyma.05G025000
 NAC023	NAC domain-containing protein gene 23	glyma.Wm82.gnm1.ann1.Glyma.05G025500
 CDF3c, DOF5.2	Cycling Dof Factor 3 gene c	glyma.Wm82.gnm1.ann1.Glyma.05G025900
 GELP40	GDSL-type esterase/lipase protein gene 40	glyma.Wm82.gnm1.ann1.Glyma.05G026100
-Mdh2	malate dehydrogenase 2 gene, chloroplastic-like	glyma.Wm82.gnm1.ann1.Glyma.05G026300
+Mdh2	"malate dehydrogenase 2 gene, chloroplastic-like"	glyma.Wm82.gnm1.ann1.Glyma.05G026300
 PPR37	Pentatricopeptide-Repeat protein gene 37	glyma.Wm82.gnm1.ann1.Glyma.05G026400
 TCP5	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 5	glyma.Wm82.gnm1.ann1.Glyma.05G027400
 ABCA7L-2	ABC transporter A family member 7-like isoform X2 gene 2	glyma.Wm82.gnm1.ann1.Glyma.05G028500
@@ -1306,7 +1306,7 @@ GASA7	gibberellin-regulated protein gene 7	glyma.Wm82.gnm1.ann1.Glyma.05G034500
 CBP60A-1	Calmodulin Binding Protein 60A gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G034600
 HIGD1	Hypoxia Inducible Gene Domain gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G035600
 SWEET9	sugar efflux transporter SWEET9 gene	glyma.Wm82.gnm1.ann1.Glyma.05G036500
-DXR1	1-deoxy-D-xylulose 5-phosphate reductoisomerase, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.05G037500
+DXR1	"1-deoxy-D-xylulose 5-phosphate reductoisomerase, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.05G037500
 DOF5.3	Dof transcription factor Chr. 5 gene 3	glyma.Wm82.gnm1.ann1.Glyma.05G037800
 GELP41	GDSL-type esterase/lipase protein gene 41	glyma.Wm82.gnm1.ann1.Glyma.05G038400
 PITP11	Phosphatidylinositol Transfer Protein-like gene 11	glyma.Wm82.gnm1.ann1.Glyma.05G039500
@@ -1344,7 +1344,7 @@ CYP8	peptidyl-prolyl cis-trans isomerase CYP8 gene	glyma.Wm82.gnm1.ann1.Glyma.05
 LBD22	LBD domain-containing transcription factor gene 22	glyma.Wm82.gnm1.ann1.Glyma.05G081400
 SnRK2-9	SNF2-Related Kinase gene 9	glyma.Wm82.gnm1.ann1.Glyma.05G081900
 Lac13	Laccase gene 13	glyma.Wm82.gnm1.ann1.Glyma.05G082700
-KCS6 	3-ketoacyl-CoA Synthase 6 gene	glyma.Wm82.gnm1.ann1.Glyma.05G083000 
+KCS6 	3-ketoacyl-CoA Synthase 6 gene	glyma.Wm82.gnm1.ann1.Glyma.05G083000
 KRP2a	Kip-Related Protein gene 2a	glyma.Wm82.gnm1.ann1.Glyma.05G085000
 NAC160	NAC domain-containing protein gene 160	glyma.Wm82.gnm1.ann1.Glyma.05G086000
 ANK41	Ankyrin Repeat protein gene 41	glyma.Wm82.gnm1.ann1.Glyma.05G088400
@@ -1432,7 +1432,7 @@ bZIP44	Basic leucine zipper transcription factor-like protein gene 44	glyma.Wm82
 ANK45	Ankyrin Repeat protein gene 45	glyma.Wm82.gnm1.ann1.Glyma.05G167600
 bZIP45	Basic leucine zipper transcription factor-like protein gene 45	glyma.Wm82.gnm1.ann1.Glyma.05G168100
 MGT10	Magnesium Transporter gene 10	glyma.Wm82.gnm1.ann1.Glyma.05G168200
-C2-42	C2-domain containing protein gene 42	glyma.Wm82.gnm1.ann1.Glyma.05G168300 
+C2-42	C2-domain containing protein gene 42	glyma.Wm82.gnm1.ann1.Glyma.05G168300
 CAMTA1	Calmodulin binding transcription activator gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G178200
 BTB030	BTB gene 30	glyma.Wm82.gnm1.ann1.Glyma.05G178500
 ABCD1L-1	ABC transporter D family member 1-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.05G178900
@@ -1526,7 +1526,7 @@ ADC	arginine decarboxylase gene	glyma.Wm82.gnm1.ann1.Glyma.06G007500
 SFH8	Sec14 homology protein 8 gene	glyma.Wm82.gnm1.ann1.Glyma.06G010400
 SFH9	Sec14 homology protein 9 gene	glyma.Wm82.gnm1.ann1.Glyma.06G010500
 DHFR-TS	bifunctional dihydrofolate reductase-thymidylate synthase gene	glyma.Wm82.gnm1.ann1.Glyma.06G010600
-KCS7 	3-ketoacyl-CoA Synthase 7 gene	glyma.Wm82.gnm1.ann1.Glyma.06G012500 
+KCS7 	3-ketoacyl-CoA Synthase 7 gene	glyma.Wm82.gnm1.ann1.Glyma.06G012500
 GLN27	Glutamine Synthase gene 27	glyma.Wm82.gnm1.ann1.Glyma.06G012900
 NAC162	NAC domain-containing protein gene 162	glyma.Wm82.gnm1.ann1.Glyma.06G014900
 CAT5	catalase gene 5	glyma.Wm82.gnm1.ann1.Glyma.06G017900
@@ -1570,7 +1570,7 @@ PP2C9	Protein Phosphatase 2C-type gene 9	glyma.Wm82.gnm1.ann1.Glyma.06G054000
 Raf49-3	Raf49 proto-oncogene serine/threonine protein kinase gene 3	glyma.Wm82.gnm1.ann1.Glyma.06G055300
 HMA8	chloroplast copper-translocating HMA8 P-ATPase gene	glyma.Wm82.gnm1.ann1.Glyma.06G056300
 PPR48	Pentatricopeptide-Repeat protein gene 48	glyma.Wm82.gnm1.ann1.Glyma.06G057900
-KCS8 	3-ketoacyl-CoA Synthase 8 gene	glyma.Wm82.gnm1.ann1.Glyma.06G058500 
+KCS8 	3-ketoacyl-CoA Synthase 8 gene	glyma.Wm82.gnm1.ann1.Glyma.06G058500
 ANK50	Ankyrin Repeat protein gene 50	glyma.Wm82.gnm1.ann1.Glyma.06G059300
 PP2C;L2, PP2C10	phloem-specific pumpkin2C gene L2	glyma.Wm82.gnm1.ann1.Glyma.06G059700
 POD32	Peroxidase gene 32	glyma.Wm82.gnm1.ann1.Glyma.06G060100
@@ -1635,7 +1635,7 @@ ADH1-3	alcohol dehydrogenase 1 gene 3	glyma.Wm82.gnm1.ann1.Glyma.06G122600
 DOF6.1	Dof transcription factor Chr. 6 gene 1	glyma.Wm82.gnm1.ann1.Glyma.06G124300
 ERF45	Ethylene-Responsive Factor gene 45	glyma.Wm82.gnm1.ann1.Glyma.06G125100
 SPCH2	transcription factor SPEECHLESS-like gene SPCH2	glyma.Wm82.gnm1.ann1.Glyma.06G125500
-SIG5B	RNA polymerase sigma factor sigE, chloroplastic/mitochondrial-like gene	glyma.Wm82.gnm1.ann1.Glyma.06G125700
+SIG5B	"RNA polymerase sigma factor sigE, chloroplastic/mitochondrial-like gene"	glyma.Wm82.gnm1.ann1.Glyma.06G125700
 SWEET14	sugar efflux transporter SWEET14 gene	glyma.Wm82.gnm1.ann1.Glyma.06G125800
 FTSH15	Filimentation Temperature-Sensitive H gene 15	glyma.Wm82.gnm1.ann1.Glyma.06G126000
 PYL19	Pyrabactin Resistance 1-Like gene 19	glyma.Wm82.gnm1.ann1.Glyma.06G126100
@@ -1684,7 +1684,7 @@ PPR50	Pentatricopeptide-Repeat protein gene 50	glyma.Wm82.gnm1.ann1.Glyma.06G161
 SMXL09	Suppressor of Max2 gene 1-like gene 9	glyma.Wm82.gnm1.ann1.Glyma.06G162200
 PITP15	Phosphatidylinositol Transfer Protein-like gene 15	glyma.Wm82.gnm1.ann1.Glyma.06G163500
 ERF47	Ethylene-Responsive Factor gene 47	glyma.Wm82.gnm1.ann1.Glyma.06G163700
-C2-51	C2-domain containing protein gene 51	glyma.Wm82.gnm1.ann1.Glyma.06G163800 
+C2-51	C2-domain containing protein gene 51	glyma.Wm82.gnm1.ann1.Glyma.06G163800
 ANK53	Ankyrin Repeat protein gene 53	glyma.Wm82.gnm1.ann1.Glyma.06G164700
 MED36-2	Mediator Complex 36 gene 2	glyma.Wm82.gnm1.ann1.Glyma.06G164800
 ARF12, B3-33	Auxin Responsive Factor gene 12	glyma.Wm82.gnm1.ann1.Glyma.06G164900
@@ -1706,7 +1706,7 @@ CYSP2	cysteine proteinase gene 2	glyma.Wm82.gnm1.ann1.Glyma.06G174800
 SEOD	sieve element occlusion gene d	glyma.Wm82.gnm1.ann1.Glyma.06G175200
 CYP71A10	cytochrome P450 71A10 gene	glyma.Wm82.gnm1.ann1.Glyma.06G176100
 WNK7	with no lysine kinase gene 7	glyma.Wm82.gnm1.ann1.Glyma.06G176800
-TUFA, eEF12	elongation factor Tu, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.06G176900
+TUFA, eEF12	"elongation factor Tu, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.06G176900
 C2-52	C2-domain containing protein gene 52	glyma.Wm82.gnm1.ann1.Glyma.06G177800
 CHX22c	Cation/H+ Exchanger Protein 22 gene C	glyma.Wm82.gnm1.ann1.Glyma.06G178500
 LBD27	LBD domain-containing transcription factor gene 27	glyma.Wm82.gnm1.ann1.Glyma.06G178900
@@ -1716,7 +1716,7 @@ DOF6.3	Dof transcription factor Chr. 6 gene 3	glyma.Wm82.gnm1.ann1.Glyma.06G1822
 PEX14	peroxisomal membrane protein PEX14 gene	glyma.Wm82.gnm1.ann1.Glyma.06G182600
 CA1	carbonic anhydrase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.06G182700
 GF14j	14-3-3 protein GF14 gene family gene j	glyma.Wm82.gnm1.ann1.Glyma.06G182800
-ALDH2B4	aldehyde dehydrogenase family 2 member B4 gene, mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.06G183900
+ALDH2B4	"aldehyde dehydrogenase family 2 member B4 gene, mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.06G183900
 GELP50	GDSL-type esterase/lipase protein gene 50	glyma.Wm82.gnm1.ann1.Glyma.06G184700
 GASA10	gibberellin-regulated protein gene 10	glyma.Wm82.gnm1.ann1.Glyma.06G185300
 ERA1A	farnesyltransferase gene A	glyma.Wm82.gnm1.ann1.Glyma.06G185500
@@ -1756,7 +1756,7 @@ DR1	class 2 transcription repressor NC2 beta 2 gene	glyma.Wm82.gnm1.ann1.Glyma.0
 BRC1, TCP48	TCP tanscription factor BRC1 gene	glyma.Wm82.gnm1.ann1.Glyma.06G210600
 FATB2B	acylacyl carrier protein 2B gene	glyma.Wm82.gnm1.ann1.Glyma.06G211300
 B3-35	B3 Transcription Factor gene 35	glyma.Wm82.gnm1.ann1.Glyma.06G213700
-KCS9 	3-ketoacyl-CoA Synthase 9 gene	glyma.Wm82.gnm1.ann1.Glyma.06G214800 
+KCS9 	3-ketoacyl-CoA Synthase 9 gene	glyma.Wm82.gnm1.ann1.Glyma.06G214800
 ENOD93	early nodulin-93 gene	glyma.Wm82.gnm1.ann1.Glyma.06G216500
 B3-36	B3 Transcription Factor gene 36	glyma.Wm82.gnm1.ann1.Glyma.06G220000
 POD34	Peroxidase gene 34	glyma.Wm82.gnm1.ann1.Glyma.06G221700
@@ -1769,8 +1769,8 @@ B3-38	B3 Transcription Factor gene 38	glyma.Wm82.gnm1.ann1.Glyma.06G228300
 PEPC3, ppc2	Phosphoenolpyruvate carboxylase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.06G229900
 TCP31	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 31	glyma.Wm82.gnm1.ann1.Glyma.06G232300
 GLR2.1a-1, GLR2.1a-2	Glutamate Receptor 2.1a-like gene transcript 1	glyma.Wm82.gnm1.ann1.Glyma.06G233600
-HGO3	homogentisate 1,2-dioxygenase gene 3	glyma.Wm82.gnm1.ann1.Glyma.06G233800
-HGO2	homogentisate 1,2-dioxygenase gene 2	glyma.Wm82.gnm1.ann1.Glyma.06G234200
+HGO3	"homogentisate 1,2-dioxygenase gene 3"	glyma.Wm82.gnm1.ann1.Glyma.06G233800
+HGO2	"homogentisate 1,2-dioxygenase gene 2"	glyma.Wm82.gnm1.ann1.Glyma.06G234200
 NAC042	NAC domain-containing protein gene 42	glyma.Wm82.gnm1.ann1.Glyma.06G236000
 ERF49	Ethylene-Responsive Factor gene 49	glyma.Wm82.gnm1.ann1.Glyma.06G236400
 ANK55	Ankyrin Repeat protein gene 55	glyma.Wm82.gnm1.ann1.Glyma.06G237400
@@ -1778,7 +1778,7 @@ ANK56	Ankyrin Repeat protein gene 56	glyma.Wm82.gnm1.ann1.Glyma.06G237900
 PLATZ9	PLATZ gene 9	glyma.Wm82.gnm1.ann1.Glyma.06G240900
 ANK57	Ankyrin Repeat protein gene 57	glyma.Wm82.gnm1.ann1.Glyma.06G241300
 ANK58	Ankyrin Repeat protein gene 58	glyma.Wm82.gnm1.ann1.Glyma.06G241600
-C2-53	C2-domain containing protein gene 53	glyma.Wm82.gnm1.ann1.Glyma.06G241700 
+C2-53	C2-domain containing protein gene 53	glyma.Wm82.gnm1.ann1.Glyma.06G241700
 ANK59	Ankyrin Repeat protein gene 59	glyma.Wm82.gnm1.ann1.Glyma.06G242000
 WRKY65	WRKY Transcription Factor gene 65	glyma.Wm82.gnm1.ann1.Glyma.06G242200
 MT3	type 3 metallothionein MT3 gene	glyma.Wm82.gnm1.ann1.Glyma.06G242900
@@ -1960,14 +1960,14 @@ CHR15	Chromatin Remodeling Protein gene 15	glyma.Wm82.gnm1.ann1.Glyma.07G069400
 PHT4.3	Phosphate Trasporter group 4 gene 4.3	glyma.Wm82.gnm1.ann1.Glyma.07G069600
 PRD3	Putative recombination initiation defects 3 gene	glyma.Wm82.gnm1.ann1.Glyma.07G070400
 MED12-2	Mediator Complex 12 gene 2	glyma.Wm82.gnm1.ann1.Glyma.07G070700
-C2-57	C2-domain containing protein gene 57	glyma.Wm82.gnm1.ann1.Glyma.07G072500 
+C2-57	C2-domain containing protein gene 57	glyma.Wm82.gnm1.ann1.Glyma.07G072500
 KEA1b	K+ efflux Antiporter Protein 1 gene B	glyma.Wm82.gnm1.ann1.Glyma.07G073700
 C2-58	C2-domain containing protein gene 58	glyma.Wm82.gnm1.ann1.Glyma.07G075300
 C2-59	C2-domain containing protein gene 59	glyma.Wm82.gnm1.ann1.Glyma.07G076100
 C2-60	C2-domain containing protein gene 60	glyma.Wm82.gnm1.ann1.Glyma.07G076200
 C2-61	C2-domain containing protein gene 61	glyma.Wm82.gnm1.ann1.Glyma.07G076300
 C2-62	C2-domain containing protein gene 62	glyma.Wm82.gnm1.ann1.Glyma.07G076400
-C2-63	C2-domain containing protein gene 63	glyma.Wm82.gnm1.ann1.Glyma.07G076600 
+C2-63	C2-domain containing protein gene 63	glyma.Wm82.gnm1.ann1.Glyma.07G076600
 Raso2	Foxglove aphid resistance gene 2	glyma.Wm82.gnm1.ann1.Glyma.07G077700
 TCP8	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 8	glyma.Wm82.gnm1.ann1.Glyma.07G080300
 C2-64	C2-domain containing protein gene 64	glyma.Wm82.gnm1.ann1.Glyma.07G080400
@@ -2006,7 +2006,7 @@ LEA2-37	late embryogenesis abundant 2 gene 37	glyma.Wm82.gnm1.ann1.Glyma.07G1037
 LEA2-38	late embryogenesis abundant 2 gene 38	glyma.Wm82.gnm1.ann1.Glyma.07G103800
 LEA2-39	late embryogenesis abundant 2 gene 39	glyma.Wm82.gnm1.ann1.Glyma.07G103900
 FCL1	homeobox protein knotted-1-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.07G104800
-DHBK	putative 3,4-dihydroxy-2-butanone kinase gene	glyma.Wm82.gnm1.ann1.Glyma.07G107100
+DHBK	"putative 3,4-dihydroxy-2-butanone kinase gene"	glyma.Wm82.gnm1.ann1.Glyma.07G107100
 ERF53	Ethylene-Responsive Factor gene 53	glyma.Wm82.gnm1.ann1.Glyma.07G113800
 ERF54	Ethylene-Responsive Factor gene 54	glyma.Wm82.gnm1.ann1.Glyma.07G114000
 ERF55	Ethylene-Responsive Factor gene 55	glyma.Wm82.gnm1.ann1.Glyma.07G114300
@@ -2035,7 +2035,7 @@ GSTU30	tau class glutathione S-transferase gene 8	glyma.Wm82.gnm1.ann1.Glyma.07G
 Lac22	Laccase gene 22	glyma.Wm82.gnm1.ann1.Glyma.07G142400
 Lac23	Laccase gene 23	glyma.Wm82.gnm1.ann1.Glyma.07G142500
 Lac24	Laccase gene 24	glyma.Wm82.gnm1.ann1.Glyma.07G142600
-FBP	fructose-1,6-bisphosphatase gene	glyma.Wm82.gnm1.ann1.Glyma.07G142700
+FBP	"fructose-1,6-bisphosphatase gene"	glyma.Wm82.gnm1.ann1.Glyma.07G142700
 PHT4.4	Phosphate Trasporter group 4 gene 4.4	glyma.Wm82.gnm1.ann1.Glyma.07G144700
 LAX9	auxin transporter-like protein gene 9	glyma.Wm82.gnm1.ann1.Glyma.07G147000
 TLP5	Tubby-like Protein gene 5	glyma.Wm82.gnm1.ann1.Glyma.07G147700
@@ -2052,7 +2052,7 @@ CYP49	peptidyl-prolyl cis-trans isomerase CYP49 gene	glyma.Wm82.gnm1.ann1.Glyma.
 CHR16	Chromatin Remodeling Protein gene 16	glyma.Wm82.gnm1.ann1.Glyma.07G157900
 PPR62	Pentatricopeptide-Repeat protein gene 62	glyma.Wm82.gnm1.ann1.Glyma.07G159200
 WRKY72	WRKY Transcription Factor gene 72	glyma.Wm82.gnm1.ann1.Glyma.07G161100
-CYP74A1	allene oxide synthase, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.07G162900
+CYP74A1	"allene oxide synthase, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.07G162900
 B3-44	B3 Transcription Factor gene 44	glyma.Wm82.gnm1.ann1.Glyma.07G163700
 PIN3C	auxin efflux carrier component 3c gene	glyma.Wm82.gnm1.ann1.Glyma.07G164600
 TPP8	Trehalose-6-Phosphate Phosphatase 8 gene	glyma.Wm82.gnm1.ann1.Glyma.07G165100
@@ -2068,7 +2068,7 @@ BTB038	BTB gene 38	glyma.Wm82.gnm1.ann1.Glyma.07G180900
 UF3GT1-3, UGT78K1	UDP-glucose:flavonoid 3-O-glucosyltransferase gene 1	glyma.Wm82.gnm1.ann1.Glyma.07G183200
 UF3GT1-1	anthocyanidin 3-O-glucosyltransferase 7 gene 1	glyma.Wm82.gnm1.ann1.Glyma.07G183300
 UF3GT1-2	anthocyanidin 3-O-glucosyltransferase 7 gene 2	glyma.Wm82.gnm1.ann1.Glyma.07G183400
-ALDH6B1	putative methylmalonate-semialdehyde dehydrogenase [acylating], mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.07G183600
+ALDH6B1	"putative methylmalonate-semialdehyde dehydrogenase [acylating], mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.07G183600
 KEA3a	K+ efflux Antiporter Protein 3 gene A	glyma.Wm82.gnm1.ann1.Glyma.07G184800
 ANK70	Ankyrin Repeat protein gene 70	glyma.Wm82.gnm1.ann1.Glyma.07G185000
 FWL6	protein FW2.2-like 6 gene	glyma.Wm82.gnm1.ann1.Glyma.07G185200
@@ -2097,7 +2097,7 @@ bHLH7	bHLH protein gene 7	glyma.Wm82.gnm1.ann1.Glyma.07G205800
 OAS-TL4	O-acetylserine(thiol)-lyase gene 4	glyma.Wm82.gnm1.ann1.Glyma.07G206800
 ACPD-2, SAD2	stearoyl-acyl carrier protein desaturase gene 2	glyma.Wm82.gnm1.ann1.Glyma.07G207200
 IQD26	protein IQ-DOMAIN gene 26	glyma.Wm82.gnm1.ann1.Glyma.07G207300
-C2-70	C2-domain containing protein gene 70	glyma.Wm82.gnm1.ann1.Glyma.07G207700 
+C2-70	C2-domain containing protein gene 70	glyma.Wm82.gnm1.ann1.Glyma.07G207700
 SAN1B	senescence-associated nodulin 1B gene	glyma.Wm82.gnm1.ann1.Glyma.07G208900
 SAN1A	senescence-associated nodulin 1A gene	glyma.Wm82.gnm1.ann1.Glyma.07G209100
 SnRK2-12	SNF2-Related Kinase gene 12	glyma.Wm82.gnm1.ann1.Glyma.07G209400
@@ -2173,7 +2173,7 @@ GLN36	Glutamine Synthase gene 36	glyma.Wm82.gnm1.ann1.Glyma.07G266700
 LEC1-A	transcription factor LEC1-A gene	glyma.Wm82.gnm1.ann1.Glyma.07G268100
 C2-74	C2-domain containing protein gene 74	glyma.Wm82.gnm1.ann1.Glyma.07G268400
 SSH1, PITP16	polyphosphoinositide binding protein Ssh1p gene	glyma.Wm82.gnm1.ann1.Glyma.07G268700
-C2-75	C2-domain containing protein gene 75	glyma.Wm82.gnm1.ann1.Glyma.07G269000 
+C2-75	C2-domain containing protein gene 75	glyma.Wm82.gnm1.ann1.Glyma.07G269000
 CBL6	Calcineurin B-Like protein gene 6	glyma.Wm82.gnm1.ann1.Glyma.07G269200
 NHX5c	Intracellular Na+/H+ Exchanger Protein 5 gene C	glyma.Wm82.gnm1.ann1.Glyma.07G270400
 NAC053	NAC domain-containing protein gene 53	glyma.Wm82.gnm1.ann1.Glyma.07G271100
@@ -2208,14 +2208,14 @@ TUBB1, Tubulin	tubulin beta-1 gene	glyma.Wm82.gnm1.ann1.Glyma.08G014200
 PIP1-6	aquaporin PIP1-6 gene	glyma.Wm82.gnm1.ann1.Glyma.08G015300
 BTB040	BTB gene 40	glyma.Wm82.gnm1.ann1.Glyma.08G015700
 BTB041	BTB gene 41	glyma.Wm82.gnm1.ann1.Glyma.08G016800
-MDHAR-6	Monodehydroascorbate reductase 6, cytosolic gene	glyma.Wm82.gnm1.ann1.Glyma.08G017800
+MDHAR-6	"Monodehydroascorbate reductase 6, cytosolic gene"	glyma.Wm82.gnm1.ann1.Glyma.08G017800
 WRKY77	WRKY Transcription Factor gene 77	glyma.Wm82.gnm1.ann1.Glyma.08G018300
 TOPP7	TOPP-type protein phosphatase gene 7	glyma.Wm82.gnm1.ann1.Glyma.08G018500
 LOR14	LURP-one related protein gene 14	glyma.Wm82.gnm1.ann1.Glyma.08G018800
 LEA2-40	late embryogenesis abundant 2 gene 40	glyma.Wm82.gnm1.ann1.Glyma.08G019000
 ERF58	Ethylene-Responsive Factor gene 58	glyma.Wm82.gnm1.ann1.Glyma.08G020900
 WRKY46, WRKY78	WRKY transcription factor gene 46	glyma.Wm82.gnm1.ann1.Glyma.08G021900
-CEL8	endo-1,4-beta-glucanase gene	glyma.Wm82.gnm1.ann1.Glyma.08G022300
+CEL8	"endo-1,4-beta-glucanase gene"	glyma.Wm82.gnm1.ann1.Glyma.08G022300
 LEA2-41	late embryogenesis abundant 2 gene 41	glyma.Wm82.gnm1.ann1.Glyma.08G023500
 CBL7	Calcineurin B-Like protein gene 7	glyma.Wm82.gnm1.ann1.Glyma.08G023700
 FTSHi3	Filimentation Temperature-Sensitive H Inactive gene 3	glyma.Wm82.gnm1.ann1.Glyma.08G023900
@@ -2267,7 +2267,7 @@ TPS6	terpene synthase gene 6	glyma.Wm82.gnm1.ann1.Glyma.08G061600
 ANK78	Ankyrin Repeat protein gene 78	glyma.Wm82.gnm1.ann1.Glyma.08G064300
 KEA3b	K+ efflux Antiporter Protein 3 gene B	glyma.Wm82.gnm1.ann1.Glyma.08G064600
 GTR2	glutamyl-tRNA reductase gene 2	glyma.Wm82.gnm1.ann1.Glyma.08G064700
-ALDH6B2	putative methylmalonate-semialdehyde dehydrogenase [acylating], mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.08G066600
+ALDH6B2	"putative methylmalonate-semialdehyde dehydrogenase [acylating], mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.08G066600
 UGT78K2, UGT78K2-1	UDP-glucose:flavonoid 3-O-glucosyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma.08G066800
 HSP6834-A	class I heat shock protein gene	glyma.Wm82.gnm1.ann1.Glyma.08G068800
 HSP17.3-B	17.3 kDa class I heat shock protein gene B	glyma.Wm82.gnm1.ann1.Glyma.08G069000
@@ -2279,7 +2279,7 @@ ABCG11L-1	ABC transporter G family member 11-like gene 1	glyma.Wm82.gnm1.ann1.Gl
 ABCG11-5	ABC transporter G family member 11 gene 5	glyma.Wm82.gnm1.ann1.Glyma.08G071100
 ABCG2L-1	ABC transporter G family member 2-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.08G071200
 CAMTA4	Calmodulin binding transcription activator gene 4	glyma.Wm82.gnm1.ann1.Glyma.08G072100
-AOX3	alternative oxidase 3, mitochondrial gene	glyma.Wm82.gnm1.ann1.Glyma.08G072200
+AOX3	"alternative oxidase 3, mitochondrial gene"	glyma.Wm82.gnm1.ann1.Glyma.08G072200
 AOX2	alternative oxidase 2a gene	glyma.Wm82.gnm1.ann1.Glyma.08G072300
 NAC057	NAC domain-containing protein gene 57	glyma.Wm82.gnm1.ann1.Glyma.08G075300
 VTL1b	vacuole iron transporter like gene b	glyma.Wm82.gnm1.ann1.Glyma.08G076300
@@ -2403,7 +2403,7 @@ NAC059	NAC domain-containing protein gene 59	glyma.Wm82.gnm1.ann1.Glyma.08G16130
 POD40	Peroxidase gene 40	glyma.Wm82.gnm1.ann1.Glyma.08G162700
 NAC166	NAC domain-containing protein gene 166	glyma.Wm82.gnm1.ann1.Glyma.08G163100
 PHR12	MYB-CC domain-containing transcription factor PHR12 gene	glyma.Wm82.gnm1.ann1.Glyma.08G163500
-ALDH5F1	putative succinate-semialdehyde dehydrogenase gene 1, mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.08G163700
+ALDH5F1	"putative succinate-semialdehyde dehydrogenase gene 1, mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.08G163700
 DW1	ent-kaurene synthase gene	glyma.Wm82.gnm1.ann1.Glyma.08G163900
 GLN43	Glutamine Synthase gene 43	glyma.Wm82.gnm1.ann1.Glyma.08G164200
 NF-YC06	nuclear factor Y transcription factor family protein gene 6	glyma.Wm82.gnm1.ann1.Glyma.08G165700
@@ -2473,7 +2473,7 @@ NRAMP5B	metal transporter Nramp5 gene B	glyma.Wm82.gnm1.ann1.Glyma.08G218200
 WRKY56, WRKY85	WRKY transcription factor gene 56	glyma.Wm82.gnm1.ann1.Glyma.08G218600
 PLMT	phospholipid N-methyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma.08G218900
 GIF4	GIF gene 4	glyma.Wm82.gnm1.ann1.Glyma.08G221100
-MAN1	mannosyl-oligosaccharide 1,2-alpha-mannosidase gene	glyma.Wm82.gnm1.ann1.Glyma.08G221900
+MAN1	"mannosyl-oligosaccharide 1,2-alpha-mannosidase gene"	glyma.Wm82.gnm1.ann1.Glyma.08G221900
 GER7	germin-like protein gene 7	glyma.Wm82.gnm1.ann1.Glyma.08G226800
 bZIP66	Basic leucine zipper transcription factor-like protein gene 66	glyma.Wm82.gnm1.ann1.Glyma.08G227000
 WRI1A	ethylene-responsive transcription factor WRI1a gene	glyma.Wm82.gnm1.ann1.Glyma.08G227700
@@ -2506,7 +2506,7 @@ bZIP67, bZIP73B	Basic leucine zipper transcription factor-like protein gene 67	g
 COL1a	Constance-like 1 gene a	glyma.Wm82.gnm1.ann1.Glyma.08G255200
 FTL9	flowering locus T-like protein gene 9	glyma.Wm82.gnm1.ann1.Glyma.08G256000
 TCP49	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 49	glyma.Wm82.gnm1.ann1.Glyma.08G256400
-AOC5	allene oxide cyclase 4, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.08G256600
+AOC5	"allene oxide cyclase 4, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.08G256600
 ERF63	Ethylene-Responsive Factor gene 63	glyma.Wm82.gnm1.ann1.Glyma.08G257300
 ANK86	Ankyrin Repeat protein gene 86	glyma.Wm82.gnm1.ann1.Glyma.08G257600
 chitinaseII-2	Chitinase Group 2 gene 2	glyma.Wm82.gnm1.ann1.Glyma.08G259200
@@ -2528,7 +2528,7 @@ PHT2.1	Phosphate Trasporter group 2 gene 2.1	glyma.Wm82.gnm1.ann1.Glyma.08G28210
 PAO1	peroxisomal copper-containing amine oxidase gene	glyma.Wm82.gnm1.ann1.Glyma.08G282800
 CRK11	cysteine-rich receptor-like protein kinase gene 11	glyma.Wm82.gnm1.ann1.Glyma.08G284100
 MED4-2	Mediator Complex 4 gene 2	glyma.Wm82.gnm1.ann1.Glyma.08G287300
-ALDH2B5	aldehyde dehydrogenase family 2 member B5 gene, mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.08G288000
+ALDH2B5	"aldehyde dehydrogenase family 2 member B5 gene, mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.08G288000
 PPR81	Pentatricopeptide-Repeat protein gene 81	glyma.Wm82.gnm1.ann1.Glyma.08G291700
 PPR82	Pentatricopeptide-Repeat protein gene 82	glyma.Wm82.gnm1.ann1.Glyma.08G291800
 GASA12	gibberellin-regulated protein gene 12	glyma.Wm82.gnm1.ann1.Glyma.08G291900
@@ -2621,7 +2621,7 @@ GF14m, SGF14M	14-3-3 protein GF14 gene family gene m	glyma.Wm82.gnm1.ann1.Glyma.
 LBD37	LBD domain-containing transcription factor gene 37	glyma.Wm82.gnm1.ann1.Glyma.08G365100
 PPR87	Pentatricopeptide-Repeat protein gene 87	glyma.Wm82.gnm1.ann1.Glyma.09G000400
 ABA3	molybdenum cofactor sulfurtransferase 3	glyma.Wm82.gnm1.ann1.Glyma.09G002300
-C2-87	C2-domain containing protein gene 87	glyma.Wm82.gnm1.ann1.Glyma.09G003400 
+C2-87	C2-domain containing protein gene 87	glyma.Wm82.gnm1.ann1.Glyma.09G003400
 ANK90	Ankyrin Repeat protein gene 90	glyma.Wm82.gnm1.ann1.Glyma.09G004100
 GLYI-10	Glyoxylase 1 gene 10	glyma.Wm82.gnm1.ann1.Glyma.09G004300
 WRKY23, WRKY89	WRKY transcription factor gene 23	glyma.Wm82.gnm1.ann1.Glyma.09G005700
@@ -2632,14 +2632,14 @@ C2-88	C2-domain containing protein gene 88	glyma.Wm82.gnm1.ann1.Glyma.09G014700
 ALKBH2-1	AlkB homologue 2 gene 1	glyma.Wm82.gnm1.ann1.Glyma.09G014800
 WAK27	Wall Associated Kinase gene 27	glyma.Wm82.gnm1.ann1.Glyma.09G014900
 PITP21	Phosphatidylinositol Transfer Protein-like gene 21	glyma.Wm82.gnm1.ann1.Glyma.09G015100
-C2-89	C2-domain containing protein gene 89	glyma.Wm82.gnm1.ann1.Glyma.09G015700 
+C2-89	C2-domain containing protein gene 89	glyma.Wm82.gnm1.ann1.Glyma.09G015700
 CBL10	Calcineurin B-Like protein gene 10	glyma.Wm82.gnm1.ann1.Glyma.09G016000
 RAB2	guanine nucleotide regulatory protein 2 gene	glyma.Wm82.gnm1.ann1.Glyma.09G016700
 PMEI77	Pectin Methylesterase Inhibitor gene 77	glyma.Wm82.gnm1.ann1.Glyma.09G017100
 PHR13	MYB-CC domain-containing transcription factor PHR13 gene	glyma.Wm82.gnm1.ann1.Glyma.09G017300
 PHR14	MYB-CC domain-containing transcription factor PHR14 gene	glyma.Wm82.gnm1.ann1.Glyma.09G017400
 NHX5b	Intracellular Na+/H+ Exchanger Protein 5 gene B	glyma.Wm82.gnm1.ann1.Glyma.09G018200
-CEL12	endo-1,4-beta-glucancase gene	glyma.Wm82.gnm1.ann1.Glyma.09G018500
+CEL12	"endo-1,4-beta-glucancase gene"	glyma.Wm82.gnm1.ann1.Glyma.09G018500
 ADF7	Actin Deplymerizing Factor gene 7	glyma.Wm82.gnm1.ann1.Glyma.09G019200
 VAMP721D	vesicle-associated membrane protein 721d gene	glyma.Wm82.gnm1.ann1.Glyma.09G019800
 RTRP3	reverse transcriptase-like domain-containing RBR protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.09G020000
@@ -2652,7 +2652,7 @@ POD46	Peroxidase gene 46	glyma.Wm82.gnm1.ann1.Glyma.09G022500
 bZIP70	Basic leucine zipper transcription factor-like protein gene 70	glyma.Wm82.gnm1.ann1.Glyma.09G023600
 NF-YA08	nuclear transcription factor Y subunit A-8 gene	glyma.Wm82.gnm1.ann1.Glyma.09G023800
 C2-90	C2-domain containing protein gene 90	glyma.Wm82.gnm1.ann1.Glyma.09G024400
-CrRI,k1l,08	receptor-like protein kinase gene	glyma.Wm82.gnm1.ann1.Glyma.09G024700
+"CrRI,k1l,08"	receptor-like protein kinase gene	glyma.Wm82.gnm1.ann1.Glyma.09G024700
 DCL2, DCL2B	Dicer-like 2 gene	glyma.Wm82.gnm1.ann1.Glyma.09G025300
 DCL2A	endoribonuclease dicer-like 2a gene	glyma.Wm82.gnm1.ann1.Glyma.09G025400
 WAK28	Wall Associated Kinase gene 28	glyma.Wm82.gnm1.ann1.Glyma.09G027500
@@ -2683,7 +2683,7 @@ SWEET28	sugar efflux transporter SWEET28 gene	glyma.Wm82.gnm1.ann1.Glyma.09G0432
 PPR88	Pentatricopeptide-Repeat protein gene 88	glyma.Wm82.gnm1.ann1.Glyma.09G043600
 ABCC14L-1	ABC transporter C family member 14-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.09G044500
 COR2	cold-regulated protein gene 2	glyma.Wm82.gnm1.ann1.Glyma.09G045700
-C2-91	C2-domain containing protein gene 91	glyma.Wm82.gnm1.ann1.Glyma.09G045700 
+C2-91	C2-domain containing protein gene 91	glyma.Wm82.gnm1.ann1.Glyma.09G045700
 CYP81E11	isoflavone 2'-hydroxylase-like gene	glyma.Wm82.gnm1.ann1.Glyma.09G049100
 I2'H	isoflavone 2'-hydroxylase gene	glyma.Wm82.gnm1.ann1.Glyma.09G049300
 AAH2	allantoate deiminase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.09G050800
@@ -2757,7 +2757,7 @@ SPL9B	squamosa promoter-binding-like protein 9b gene	glyma.Wm82.gnm1.ann1.Glyma.
 B3-57	B3 Transcription Factor gene 57	glyma.Wm82.gnm1.ann1.Glyma.09G114900
 CHYR8	CHY Zinc-Finger and Ring Finger Protein gene 8	glyma.Wm82.gnm1.ann1.Glyma.09G115100
 WAK33	Wall Associated Kinase gene 33	glyma.Wm82.gnm1.ann1.Glyma.09G116300
-C2-92	C2-domain containing protein gene 92	glyma.Wm82.gnm1.ann1.Glyma.09G117100 
+C2-92	C2-domain containing protein gene 92	glyma.Wm82.gnm1.ann1.Glyma.09G117100
 B3-58	B3 Transcription Factor gene 58	glyma.Wm82.gnm1.ann1.Glyma.09G117200
 B3-59	B3 Transcription Factor gene 59	glyma.Wm82.gnm1.ann1.Glyma.09G117500
 PIN3D	auxin efflux carrier component 3d gene	glyma.Wm82.gnm1.ann1.Glyma.09G117900
@@ -2775,7 +2775,7 @@ MYB136	MYB transcription factor 136 gene	glyma.Wm82.gnm1.ann1.Glyma.09G131400
 HSP90A1	heat shock protein 90-A1 gene	glyma.Wm82.gnm1.ann1.Glyma.09G131500
 BCH5	beta-carotene hydroxylase gene 5	glyma.Wm82.gnm1.ann1.Glyma.09G132200
 Lac35	Laccase gene 35	glyma.Wm82.gnm1.ann1.Glyma.09G132400
-CrRI,k1l,09	receptor-like protein kinase gene	glyma.Wm82.gnm1.ann1.Glyma.09G133000
+"CrRI,k1l,09"	receptor-like protein kinase gene	glyma.Wm82.gnm1.ann1.Glyma.09G133000
 C2-93	C2-domain containing protein gene 93	glyma.Wm82.gnm1.ann1.Glyma.09G134500
 PM39	seed maturation protein PM39 gene	glyma.Wm82.gnm1.ann1.Glyma.09G139600
 HSF-18	heat stress transcription factor 18 gene	glyma.Wm82.gnm1.ann1.Glyma.09G143200
@@ -2802,7 +2802,7 @@ NAC066	NAC domain-containing protein gene 66	glyma.Wm82.gnm1.ann1.Glyma.09G16740
 PPR92	Pentatricopeptide-Repeat protein gene 92	glyma.Wm82.gnm1.ann1.Glyma.09G168800
 GBP	GAGA-binding protein gene	glyma.Wm82.gnm1.ann1.Glyma.09G170400
 NCED6	9-cis-epoxy Carotenoid Dioxygenase gene 6	glyma.Wm82.gnm1.ann1.Glyma.09G171200
-RF3	Restorer of Fertility gene 3	glyma.Wm82.gnm1.ann1.Glyma.09G171200 
+RF3	Restorer of Fertility gene 3	glyma.Wm82.gnm1.ann1.Glyma.09G171200
 FCL2	homeobox protein knotted-1-like gene 2	glyma.Wm82.gnm1.ann1.Glyma.09G172800
 GS1alpha	Glutamine synthase 1 alpha gene	glyma.Wm82.gnm1.ann1.Glyma.09G173200
 PIN1C	auxin efflux carrier component 1c gene	glyma.Wm82.gnm1.ann1.Glyma.09G176300
@@ -2814,7 +2814,7 @@ WAK34	Wall Associated Kinase gene 34	glyma.Wm82.gnm1.ann1.Glyma.09G181600
 WAK35	Wall Associated Kinase gene 35	glyma.Wm82.gnm1.ann1.Glyma.09G181960
 SARD1-3	Systemic Acquired Resistance Deficient 1 protein gene 3	glyma.Wm82.gnm1.ann1.Glyma.09G182400
 CHYR9	CHY Zinc-Finger and Ring Finger Protein gene 9	glyma.Wm82.gnm1.ann1.Glyma.09G182600
-C2-95	C2-domain containing protein gene 95	glyma.Wm82.gnm1.ann1.Glyma.09G182700 
+C2-95	C2-domain containing protein gene 95	glyma.Wm82.gnm1.ann1.Glyma.09G182700
 NAC067	NAC domain-containing protein gene 67	glyma.Wm82.gnm1.ann1.Glyma.09G184100
 bZIP71, SHMT09n	Basic leucine zipper transcription factor-like protein gene 71	glyma.Wm82.gnm1.ann1.Glyma.09G184300
 DEHYDRIN, MAT9	dehydrin-like protein gene	glyma.Wm82.gnm1.ann1.Glyma.09G185500
@@ -3037,7 +3037,7 @@ DOF10.1	Dof transcription factor Chr. 10 gene 1	glyma.Wm82.gnm1.ann1.Glyma.10G08
 NF-YA10	nuclear transcription factor Y subunit A-10 gene	glyma.Wm82.gnm1.ann1.Glyma.10G082800
 ABCG22L-2	ABC transporter G family member 22-like isoform X1 gene 2	glyma.Wm82.gnm1.ann1.Glyma.10G086800
 CHX28b	Cation/H+ Exchanger Protein 28 gene B	glyma.Wm82.gnm1.ann1.Glyma.10G089900
-C2-99	C2-domain containing protein gene 99	glyma.Wm82.gnm1.ann1.Glyma.10G091800 
+C2-99	C2-domain containing protein gene 99	glyma.Wm82.gnm1.ann1.Glyma.10G091800
 bZIP75, TGA11	Basic leucine zipper transcription factor-like protein gene 75	glyma.Wm82.gnm1.ann1.Glyma.10G092100
 C2-100	C2-domain containing protein gene 100	glyma.Wm82.gnm1.ann1.Glyma.10G092200
 PPR103	Pentatricopeptide-Repeat protein gene 103	glyma.Wm82.gnm1.ann1.Glyma.10G093800
@@ -3176,7 +3176,7 @@ CYP51	peptidyl-prolyl cis-trans isomerase CYP51 gene	glyma.Wm82.gnm1.ann1.Glyma.
 CP3	cysteine proteinase 3 gene	glyma.Wm82.gnm1.ann1.Glyma.10G207100
 ABCG24L-1	ABC transporter G family member 24-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.10G209200
 PAL2.4	phenylalanine ammonia-lyase 2 gene 4	glyma.Wm82.gnm1.ann1.Glyma.10G209800
-C2-104	C2-domain containing protein gene 104	glyma.Wm82.gnm1.ann1.Glyma.10G210000 
+C2-104	C2-domain containing protein gene 104	glyma.Wm82.gnm1.ann1.Glyma.10G210000
 BTB055	BTB gene 55	glyma.Wm82.gnm1.ann1.Glyma.10G210200
 B3-65	B3 Transcription Factor gene 65	glyma.Wm82.gnm1.ann1.Glyma.10G210600
 PIP2-13	aquaporin PIP2-13 gene	glyma.Wm82.gnm1.ann1.Glyma.10G211000
@@ -3229,7 +3229,7 @@ HSF-23	heat stress transcription factor 23 gene	glyma.Wm82.gnm1.ann1.Glyma.10G24
 IQD38	protein IQ-DOMAIN gene 38	glyma.Wm82.gnm1.ann1.Glyma.10G245000
 TCP50	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 50	glyma.Wm82.gnm1.ann1.Glyma.10G246200
 CG-1, GM7S	beta-conglycinin alpha prime subunit 1 gene	glyma.Wm82.gnm1.ann1.Glyma.10G246300
-Cgy1	beta-conglycinin 1, beta chain-like gene	glyma.Wm82.gnm1.ann1.Glyma.10G246500
+Cgy1	"beta-conglycinin 1, beta chain-like gene"	glyma.Wm82.gnm1.ann1.Glyma.10G246500
 PM24	seed maturation protein PM24 gene	glyma.Wm82.gnm1.ann1.Glyma.10G247500
 PPR106	Pentatricopeptide-Repeat protein gene 106	glyma.Wm82.gnm1.ann1.Glyma.10G247700
 WNK2	with no lysine kinase gene 2	glyma.Wm82.gnm1.ann1.Glyma.10G248400
@@ -3320,7 +3320,7 @@ PIP1-4	aquaporin PIP1-4 gene	glyma.Wm82.gnm1.ann1.Glyma.11G023200
 C2-106	C2-domain containing protein gene 106	glyma.Wm82.gnm1.ann1.Glyma.11G024300
 ADF11	Actin Deplymerizing Factor gene 11	glyma.Wm82.gnm1.ann1.Glyma.11G024500
 LOR20	LURP-one related protein gene 20	glyma.Wm82.gnm1.ann1.Glyma.11G025000
-OLPa	osmotin-like protein, acidic gene A	glyma.Wm82.gnm1.ann1.Glyma.11G025600
+OLPa	"osmotin-like protein, acidic gene A"	glyma.Wm82.gnm1.ann1.Glyma.11G025600
 HSF-26	heat stress transcription factor 26 gene	glyma.Wm82.gnm1.ann1.Glyma.11G025700
 ILPA1	anaphase-promoting complex subunit 8-like protein gene	glyma.Wm82.gnm1.ann1.Glyma.11G026400
 SGR1	Stay-green gene 1	glyma.Wm82.gnm1.ann1.Glyma.11G027400
@@ -3338,7 +3338,7 @@ SnRK2-16, SPK-2	SNF2-Related Kinase gene 16	glyma.Wm82.gnm1.ann1.Glyma.11G038800
 CBL11	Calcineurin B-Like protein gene 11	glyma.Wm82.gnm1.ann1.Glyma.11G038900
 BMY3-3	Beta-amylase 3 gene 3	glyma.Wm82.gnm1.ann1.Glyma.11G039400
 C2-107	C2-domain containing protein gene 107	glyma.Wm82.gnm1.ann1.Glyma.11G040600
-ABCI7c-2	Chloroplastic,Protein ABCI7c gene 2	glyma.Wm82.gnm1.ann1.Glyma.11G042400
+ABCI7c-2	"Chloroplastic,Protein ABCI7c gene 2"	glyma.Wm82.gnm1.ann1.Glyma.11G042400
 ALMT21	aluminum-activated malate transporter family protein gene 21	glyma.Wm82.gnm1.ann1.Glyma.11G042500
 ELS1	Early Leaf Senescence 1 gene 	glyma.Wm82.gnm1.ann1.Glyma.11G043400
 RLK2	receptor-like protein kinase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.11G043800
@@ -3382,7 +3382,7 @@ FDa2	Flowering Locus Da gene 2	glyma.Wm82.gnm1.ann1.Glyma.11G080000
 SEPB2	peroxidase sEPb2 gene	glyma.Wm82.gnm1.ann1.Glyma.11G080300
 APS-5a2	Ascorbate peroxidase 5 gene a2	glyma.Wm82.gnm1.ann1.Glyma.11G080900
 NRPB1-2	DNA-directed RNA polymerase II subunit 1 gene 2	glyma.Wm82.gnm1.ann1.Glyma.11G081200
-C2-108	C2-domain containing protein gene 108	glyma.Wm82.gnm1.ann1.Glyma.11G081500 
+C2-108	C2-domain containing protein gene 108	glyma.Wm82.gnm1.ann1.Glyma.11G081500
 ANK117	Ankyrin Repeat protein gene 117	glyma.Wm82.gnm1.ann1.Glyma.11G081800
 ANK118	Ankyrin Repeat protein gene 118	glyma.Wm82.gnm1.ann1.Glyma.11G081900
 SAT6	Serine Acetyltransferase gene 6	glyma.Wm82.gnm1.ann1.Glyma.11G084100
@@ -3391,7 +3391,7 @@ PHT3.5	Phosphate Trasporter group 3 gene 3.5	glyma.Wm82.gnm1.ann1.Glyma.11G08780
 ABCG14-2	ABC transporter G family member 14 gene 2	glyma.Wm82.gnm1.ann1.Glyma.11G090200
 ABCE2-1	ABC transporter E family member 2 gene 1	glyma.Wm82.gnm1.ann1.Glyma.11G090900
 CCS12	Copper Chaperone For Superoxide Dismutase gene 12	glyma.Wm82.gnm1.ann1.Glyma.11G091400
-SIR	sulfite reductase [ferredoxin], chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.11G093200
+SIR	"sulfite reductase [ferredoxin], chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.11G093200
 ABCG15L-6	ABC transporter G family member 15-like gene 6	glyma.Wm82.gnm1.ann1.Glyma.11G093800
 ABCG15L-7	ABC transporter G family member 15-like gene 7	glyma.Wm82.gnm1.ann1.Glyma.11G093900
 GLN52	Glutamine Synthase gene 52	glyma.Wm82.gnm1.ann1.Glyma.11G094902
@@ -3421,7 +3421,7 @@ PLATZ20	PLATZ gene 20	glyma.Wm82.gnm1.ann1.Glyma.11G109100
 DET2	Steroid reductase gene	glyma.Wm82.gnm1.ann1.Glyma.11G110300
 bZIP28, bZIP85	bZIP transcription factor gene 28	glyma.Wm82.gnm1.ann1.Glyma.11G110400
 GRF11	growth-regulating factor gene 11	glyma.Wm82.gnm1.ann1.Glyma.11G110700
-EDS5	MATE efflux family protein 4, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.11G112100
+EDS5	"MATE efflux family protein 4, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.11G112100
 CLV1A	receptor protein kinase-like protein gene	glyma.Wm82.gnm1.ann1.Glyma.11G114100
 bZIP86	Basic leucine zipper transcription factor-like protein gene 86	glyma.Wm82.gnm1.ann1.Glyma.11G114800
 SFH16	Sec14 homology protein 16 gene	glyma.Wm82.gnm1.ann1.Glyma.11G115000
@@ -3550,7 +3550,7 @@ GAI2, GR8	DELLA protein GAI gene 2	glyma.Wm82.gnm1.ann1.Glyma.11G216500
 C2-113	C2-domain containing protein gene 113	glyma.Wm82.gnm1.ann1.Glyma.11G216900
 C2-114	C2-domain containing protein gene 114	glyma.Wm82.gnm1.ann1.Glyma.11G219000
 CCS52	WD-repeat cell cycle regulatory protein gene	glyma.Wm82.gnm1.ann1.Glyma.11G219600
-RCA11	ribulose bisphosphate carboxylase/oxygenase activase 11, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.11G221000
+RCA11	"ribulose bisphosphate carboxylase/oxygenase activase 11, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.11G221000
 PP2C21	Protein Phosphatase 2C-type gene 21	glyma.Wm82.gnm1.ann1.Glyma.11G222600
 BTB065	BTB gene 65	glyma.Wm82.gnm1.ann1.Glyma.11G222900
 TCF1c	tolerant to chilling and freezing 1c	glyma.Wm82.gnm1.ann1.Glyma.11G223000
@@ -3745,7 +3745,7 @@ CrRLk1L14	receptor-like protein kinase gene 14	glyma.Wm82.gnm1.ann1.Glyma.12G148
 CYP52	peptidyl-prolyl cis-trans isomerase CYP52 gene	glyma.Wm82.gnm1.ann1.Glyma.12G148600
 WRKY116, WRKY44	WRKY Transcription Factor gene 116	glyma.Wm82.gnm1.ann1.Glyma.12G152600
 chitinaseIII-10	Chitinase Group 3 gene 10	glyma.Wm82.gnm1.ann1.Glyma.12G156600
-HGO1	homogentisate 1,2-dioxygenase gene 1	glyma.Wm82.gnm1.ann1.Glyma.12G158600
+HGO1	"homogentisate 1,2-dioxygenase gene 1"	glyma.Wm82.gnm1.ann1.Glyma.12G158600
 TCP36	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 36	glyma.Wm82.gnm1.ann1.Glyma.12G158900
 MGT24	Magnesium Transporter gene 24	glyma.Wm82.gnm1.ann1.Glyma.12G159000
 SHMT12c	SHMT/threoninealdolase 12c gene	glyma.Wm82.gnm1.ann1.Glyma.12G159200
@@ -3895,8 +3895,8 @@ ABCG11L-4	ABC transporter G family member 11-like gene 4	glyma.Wm82.gnm1.ann1.Gl
 ABCG11L-5	ABC transporter G family member 11-like gene 5	glyma.Wm82.gnm1.ann1.Glyma.13G044000
 GELP96	GDSL-type esterase/lipase protein gene 96	glyma.Wm82.gnm1.ann1.Glyma.13G044500
 GELP97	GDSL-type esterase/lipase protein gene 97	glyma.Wm82.gnm1.ann1.Glyma.13G045100
-RBCS-1	Ribulose bisphosphate carboxylase small chain 1, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.13G046200
-AOC4	allene oxide cyclase 3, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.13G047300
+RBCS-1	"Ribulose bisphosphate carboxylase small chain 1, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.13G046200
+AOC4	"allene oxide cyclase 3, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.13G047300
 TCP51	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 51	glyma.Wm82.gnm1.ann1.Glyma.13G047400
 FTSHi5	Filimentation Temperature-Sensitive H Inactive gene 5	glyma.Wm82.gnm1.ann1.Glyma.13G049800
 COL2a	Constance-like 2 gene a	glyma.Wm82.gnm1.ann1.Glyma.13G050300
@@ -3904,11 +3904,11 @@ bZIP107	Basic leucine zipper transcription factor-like protein gene 107	glyma.Wm
 MDE13, AGL8c	MADS-box Genes Downregulated by E1 gene 13	glyma.Wm82.gnm1.ann1.Glyma.13G052100
 COBL16	Regulates cell wall expansion and cellulose depostion gene 16	glyma.Wm82.gnm1.ann1.Glyma.13G053300
 GnCrRLk1L17	receptor-like protein kinase 1 like gene 17	glyma.Wm82.gnm1.ann1.Glyma.13G053600
-GinCrRI,k1l,18	receptor-like protein kinase gene 18	glyma.Wm82.gnm1.ann1.Glyma.13G053700
-GinCrRl,k1l,19	receptor-like protein kinase gene 19	glyma.Wm82.gnm1.ann1.Glyma.13G053800
+"GinCrRI,k1l,18"	receptor-like protein kinase gene 18	glyma.Wm82.gnm1.ann1.Glyma.13G053700
+"GinCrRl,k1l,19"	receptor-like protein kinase gene 19	glyma.Wm82.gnm1.ann1.Glyma.13G053800
 CrRLkUGo	receptor-like protein kinase gene	glyma.Wm82.gnm1.ann1.Glyma.13G054200
-GinCrRI,k1l,21	receptor-like protein kinase gene 21	glyma.Wm82.gnm1.ann1.Glyma.13G054300
-GinCrRI,k1l,22	receptor-like protein kinase gene 22	glyma.Wm82.gnm1.ann1.Glyma.13G054400
+"GinCrRI,k1l,21"	receptor-like protein kinase gene 21	glyma.Wm82.gnm1.ann1.Glyma.13G054300
+"GinCrRI,k1l,22"	receptor-like protein kinase gene 22	glyma.Wm82.gnm1.ann1.Glyma.13G054400
 IF7MaT	malonyl-CoA:isoflavone 7-O-glucoside-6''-O-malonyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma.13G056100
 B3-89	B3 Transcription Factor gene 89	glyma.Wm82.gnm1.ann1.Glyma.13G058500
 SMXL18	Suppressor of Max2 gene 1-like gene 18	glyma.Wm82.gnm1.ann1.Glyma.13G058600
@@ -3921,7 +3921,7 @@ DOF13.1	Dof transcription factor Chr. 13 gene 1	glyma.Wm82.gnm1.ann1.Glyma.13G06
 MYB53	MYB transcription factor 53 gene	glyma.Wm82.gnm1.ann1.Glyma.13G063200
 NAC094	NAC domain-containing protein gene 94	glyma.Wm82.gnm1.ann1.Glyma.13G063300
 ABCB19-1, ABCB29	ABC transporter B family member 19 gene 1	glyma.Wm82.gnm1.ann1.Glyma.13G063700
-MS6	Male Sterile 6,TDF1 gene	glyma.Wm82.gnm1.ann1.Glyma.13G066600
+MS6	"Male Sterile 6,TDF1 gene"	glyma.Wm82.gnm1.ann1.Glyma.13G066600
 MED4-3	Mediator Complex 4 gene 3	glyma.Wm82.gnm1.ann1.Glyma.13G067700
 CYP82A3	Cytochrome P450 82A3-like gene	glyma.Wm82.gnm1.ann1.Glyma.13G068800
 FTRC	ferredoxin thioredoxin reductase precursor	glyma.Wm82.gnm1.ann1.Glyma.13G069100
@@ -3959,7 +3959,7 @@ GLR2.5-1, GLR2.5-2	Glutamate Receptor 2.5-like gene transcript 1	glyma.Wm82.gnm1
 COL10	zinc finger protein CONSTANS-LIKE 5-like gene	glyma.Wm82.gnm1.ann1.Glyma.13G093800
 CBP60B-4	Calmodulin Binding Protein 60B gene 4	glyma.Wm82.gnm1.ann1.Glyma.13G094800
 ZTL2	clock-associated PAS protein ZEITLUPE 2 gene	glyma.Wm82.gnm1.ann1.Glyma.13G097600
-VTE2-1	homogentisate phytyltransferase 1, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.13G097800
+VTE2-1	"homogentisate phytyltransferase 1, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.13G097800
 POD75	Peroxidase gene 75	glyma.Wm82.gnm1.ann1.Glyma.13G098400
 VLN5b	Villn Actin Binding protein gene 5b	glyma.Wm82.gnm1.ann1.Glyma.13G098600
 bZIP82	bZIP transcription factor gene 82	glyma.Wm82.gnm1.ann1.Glyma.13G099500
@@ -4043,7 +4043,7 @@ IAA43	Indole-3-Acetic Acid Responsive gene 43	glyma.Wm82.gnm1.ann1.Glyma.13G1590
 SPS13	Sucrose Phosphate Synthase gene 13	glyma.Wm82.gnm1.ann1.Glyma.13G161600
 PHT4.7	Phosphate Trasporter group 4 gene 4.7	glyma.Wm82.gnm1.ann1.Glyma.13G162900
 ANK141	Ankyrin Repeat protein gene 141	glyma.Wm82.gnm1.ann1.Glyma.13G163400
-ABC18L	UPF0051 chloroplastic-like,Protein ABCI8	glyma.Wm82.gnm1.ann1.Glyma.13G163700
+ABC18L	"UPF0051 chloroplastic-like,Protein ABCI8"	glyma.Wm82.gnm1.ann1.Glyma.13G163700
 PLATZ25	PLATZ gene 25	glyma.Wm82.gnm1.ann1.Glyma.13G164800
 RPS11	ribosomal protein S11 gene	glyma.Wm82.gnm1.ann1.Glyma.13G165200
 eEF25	Eukaryotic Elongation Factor gene 25	glyma.Wm82.gnm1.ann1.Glyma.13G165400
@@ -4092,8 +4092,8 @@ ST1	sulfotransferase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.13G191400
 bZIP99, TGA2.13	bZIP transcription factor gene 99	glyma.Wm82.gnm1.ann1.Glyma.13G193700
 A1	albumin 1 gene	glyma.Wm82.gnm1.ann1.Glyma.13G194400
 ANK142	Ankyrin Repeat protein gene 142	glyma.Wm82.gnm1.ann1.Glyma.13G195200
-C2-126	C2-domain containing protein gene 126	glyma.Wm82.gnm1.ann1.Glyma.13G198600 
-GinCrRI,k1l,23	receptor-like protein kinase gene 23	glyma.Wm82.gnm1.ann1.Glyma.13G201400
+C2-126	C2-domain containing protein gene 126	glyma.Wm82.gnm1.ann1.Glyma.13G198600
+"GinCrRI,k1l,23"	receptor-like protein kinase gene 23	glyma.Wm82.gnm1.ann1.Glyma.13G201400
 CHR46	Chromatin Remodeling Protein gene 46	glyma.Wm82.gnm1.ann1.Glyma.13G201800
 ANK143	Ankyrin Repeat protein gene 143	glyma.Wm82.gnm1.ann1.Glyma.13G202000
 NF-YA13	nuclear transcription factor Y subunit A-13 gene	glyma.Wm82.gnm1.ann1.Glyma.13G202300
@@ -4174,7 +4174,7 @@ BTB071	BTB gene 71	glyma.Wm82.gnm1.ann1.Glyma.13G258700
 GA2OX6	gibberellin 2-beta-dioxygenase gene 6	glyma.Wm82.gnm1.ann1.Glyma.13G259400
 GA2OX7	gibberellin 2-beta-dioxygenase gene 7	glyma.Wm82.gnm1.ann1.Glyma.13G259500
 bZIP94	bZIP transcription factor gene 94	glyma.Wm82.gnm1.ann1.Glyma.13G260300
-C2-127	C2-domain containing protein gene 127	glyma.Wm82.gnm1.ann1.Glyma.13G261200 
+C2-127	C2-domain containing protein gene 127	glyma.Wm82.gnm1.ann1.Glyma.13G261200
 GLYII-6	putative hydroxyacylglutathione hydrolase II gene 6	glyma.Wm82.gnm1.ann1.Glyma.13G261400
 GLN68	Glutamine Synthase gene 68	glyma.Wm82.gnm1.ann1.Glyma.13G262400
 CHI3A1	chalcone isomerase 3A1 gene	glyma.Wm82.gnm1.ann1.Glyma.13G262500
@@ -4315,7 +4315,7 @@ NRAMP6A	metal transporter Nramp6 gene A	glyma.Wm82.gnm1.ann1.Glyma.13G369900
 WRKY126	WRKY Transcription Factor gene 126	glyma.Wm82.gnm1.ann1.Glyma.13G370100
 ABCC13	ABC transporter C family member 13 isoform X1 gene	glyma.Wm82.gnm1.ann1.Glyma.13G370300
 MGT30	Magnesium Transporter gene 30	glyma.Wm82.gnm1.ann1.Glyma.13G370900
-CYP701A16	ent-kaurene oxidase, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.13G371400
+CYP701A16	"ent-kaurene oxidase, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.13G371400
 NCED12, TLP14, APY6-1	9-cis-epoxy Carotenoid Dioxygenase gene 12	glyma.Wm82.gnm1.ann1.Glyma.13G371500
 4CL2	4-coumarate:coenzyme A ligase gene 2	glyma.Wm82.gnm1.ann1.Glyma.13G372000
 MED8-1	Mediator Complex 8 gene 1	glyma.Wm82.gnm1.ann1.Glyma.13G372700
@@ -4346,7 +4346,7 @@ PMEI116	Pectin Methylesterase Inhibitor gene 116	glyma.Wm82.gnm1.ann1.Glyma.14G0
 PMEI117	Pectin Methylesterase Inhibitor gene 117	glyma.Wm82.gnm1.ann1.Glyma.14G020900
 GELP114	GDSL-type esterase/lipase protein gene 114	glyma.Wm82.gnm1.ann1.Glyma.14G022500
 GPPS	geranyl-diphosphate synthase gene	glyma.Wm82.gnm1.ann1.Glyma.14G023000
-Phy, PHYTASE	Phytase, purple acid phosphatase 18-like gene	glyma.Wm82.gnm1.ann1.Glyma.14G024700
+Phy, PHYTASE	"Phytase, purple acid phosphatase 18-like gene"	glyma.Wm82.gnm1.ann1.Glyma.14G024700
 ALKBH7	AlkB homologue 7 gene 	glyma.Wm82.gnm1.ann1.Glyma.14G026500
 Raf47-1, ANK153	Raf47proto-oncogene serine/threonine protein kinase gene 1	glyma.Wm82.gnm1.ann1.Glyma.14G026700
 AGL1	agamous-like MADS-box protein AGL1 gene	glyma.Wm82.gnm1.ann1.Glyma.14G027200
@@ -4400,8 +4400,8 @@ ALDH18B4	delta-1-pyrroline-5-carboxylate synthase gene 18B4 gene	glyma.Wm82.gnm1
 GMP1	mannose-1-phosphate guanylyltransferase 1-like gene 1	glyma.Wm82.gnm1.ann1.Glyma.14G065900
 TCF1b	tolerant to chilling and freezing 1b	glyma.Wm82.gnm1.ann1.Glyma.14G066000
 PP2C25	Protein Phosphatase 2C-type gene 25	glyma.Wm82.gnm1.ann1.Glyma.14G066400
-RCA14	ribulose bisphosphate carboxylase/oxygenase activase 14, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.14G067000
-C2-135	C2-domain containing protein gene 135	glyma.Wm82.gnm1.ann1.Glyma.14G068400 
+RCA14	"ribulose bisphosphate carboxylase/oxygenase activase 14, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.14G067000
+C2-135	C2-domain containing protein gene 135	glyma.Wm82.gnm1.ann1.Glyma.14G068400
 NIP4-2	aquaporin NIP4 gene 2	glyma.Wm82.gnm1.ann1.Glyma.14G069500
 PRX9, POD85	Peroxidase gene 9	glyma.Wm82.gnm1.ann1.Glyma.14G070800
 SFH20	Sec14 homology protein 20 gene	glyma.Wm82.gnm1.ann1.Glyma.14G071900
@@ -4597,7 +4597,7 @@ MED15-3	Mediator Complex 15 gene 3	glyma.Wm82.gnm1.ann1.Glyma.15G005500
 LOR25	LURP-one related protein gene 25	glyma.Wm82.gnm1.ann1.Glyma.15G007500
 GLN79	Glutamine Synthase gene 79	glyma.Wm82.gnm1.ann1.Glyma.15G007600
 C2-140	C2-domain containing protein gene 140	glyma.Wm82.gnm1.ann1.Glyma.15G008400
-C2-141	C2-domain containing protein gene 141	glyma.Wm82.gnm1.ann1.Glyma.15G008500 
+C2-141	C2-domain containing protein gene 141	glyma.Wm82.gnm1.ann1.Glyma.15G008500
 ERF117	Ethylene-Responsive Factor gene 117	glyma.Wm82.gnm1.ann1.Glyma.15G008600
 GLYI-20	Glyoxylase 1 gene 20	glyma.Wm82.gnm1.ann1.Glyma.15G009500
 PDR1L-5	Pleiotropic drug resistance 1-like isoform X1	glyma.Wm82.gnm1.ann1.Glyma.15G011800
@@ -4642,7 +4642,7 @@ PITP29	Phosphatidylinositol Transfer Protein-like gene 29	glyma.Wm82.gnm1.ann1.G
 PPR136	Pentatricopeptide-Repeat protein gene 136	glyma.Wm82.gnm1.ann1.Glyma.15G041800
 KCS21	3-ketoacyl-CoA Synthase 21 gene	glyma.Wm82.gnm1.ann1.Glyma.15G042500
 ANK164	Ankyrin Repeat protein gene 164	glyma.Wm82.gnm1.ann1.Glyma.15G042600
-GinCrRl,k1l,2-l	receptor-like protein kinase gene 2-l	glyma.Wm82.gnm1.ann1.Glyma.15G042900
+"GinCrRl,k1l,2-l"	receptor-like protein kinase gene 2-l	glyma.Wm82.gnm1.ann1.Glyma.15G042900
 DOF15.3	Dof transcription factor Chr. 15 gene 3	glyma.Wm82.gnm1.ann1.Glyma.15G044800
 N-22	nodulin-22 gene	glyma.Wm82.gnm1.ann1.Glyma.15G045000
 KCS22	3-ketoacyl-CoA Synthase 22 gene	glyma.Wm82.gnm1.ann1.Glyma.15G046300
@@ -4722,7 +4722,7 @@ NCED7, TLP17, APY7-1	9-cis-epoxy Carotenoid Dioxygenase gene 7	glyma.Wm82.gnm1.a
 eEF27	Eukaryotic Elongation Factor gene 27	glyma.Wm82.gnm1.ann1.Glyma.15G102200
 MED5-4	Mediator Complex 5 gene 4	glyma.Wm82.gnm1.ann1.Glyma.15G102800
 IPT	isopentenyl transferase gene	glyma.Wm82.gnm1.ann1.Glyma.15G103800
-ATPC	ATP synthase gamma chain, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.15G107900
+ATPC	"ATP synthase gamma chain, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.15G107900
 ATG8C	autophagy-related protein 8 gene c	glyma.Wm82.gnm1.ann1.Glyma.15G108200
 ANK169	Ankyrin Repeat protein gene 169	glyma.Wm82.gnm1.ann1.Glyma.15G108300
 GLYI-21	Glyoxylase 1 gene 21	glyma.Wm82.gnm1.ann1.Glyma.15G108400
@@ -4731,7 +4731,7 @@ Lac63	Laccase gene 63	glyma.Wm82.gnm1.ann1.Glyma.15G109000
 WRKY142	WRKY Transcription Factor gene 142	glyma.Wm82.gnm1.ann1.Glyma.15G110300
 NF-YB3b	Nuclear Transcripiton Factor Y Subunit Beta 3 gene b	glyma.Wm82.gnm1.ann1.Glyma.15G118800
 HPS	hydrophobic seed protein precursor gene	glyma.Wm82.gnm1.ann1.Glyma.15G119700
-C2-143	C2-domain containing protein gene 143	glyma.Wm82.gnm1.ann1.Glyma.15G120400 
+C2-143	C2-domain containing protein gene 143	glyma.Wm82.gnm1.ann1.Glyma.15G120400
 ALKBH2-2	AlkB homologue 2 gene 2	glyma.Wm82.gnm1.ann1.Glyma.15G120500
 PITP30	Phosphatidylinositol Transfer Protein-like gene 30	glyma.Wm82.gnm1.ann1.Glyma.15G120800
 C2-144	C2-domain containing protein gene 144	glyma.Wm82.gnm1.ann1.Glyma.15G121500
@@ -4775,7 +4775,7 @@ POD96	Peroxidase gene 96	glyma.Wm82.gnm1.ann1.Glyma.15G155700
 PPR139	Pentatricopeptide-Repeat protein gene 139	glyma.Wm82.gnm1.ann1.Glyma.15G156600
 AAH	allantoate amidohydrolase gene	glyma.Wm82.gnm1.ann1.Glyma.15G156900
 PLATZ26	PLATZ gene 26	glyma.Wm82.gnm1.ann1.Glyma.15G158600
-FTSH9	ATP-dependent zinc metalloprotease FTSH 9, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.15G158900
+FTSH9	"ATP-dependent zinc metalloprotease FTSH 9, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.15G158900
 ERF123	Ethylene-Responsive Factor gene 123	glyma.Wm82.gnm1.ann1.Glyma.15G159200
 ANK172	Ankyrin Repeat protein gene 172	glyma.Wm82.gnm1.ann1.Glyma.15G160300
 ANK173	Ankyrin Repeat protein gene 173	glyma.Wm82.gnm1.ann1.Glyma.15G160400
@@ -4828,7 +4828,7 @@ CYP56	peptidyl-prolyl cis-trans isomerase CYP56 gene	glyma.Wm82.gnm1.ann1.Glyma.
 PHR26	MYB-CC domain-containing transcription factor PHR26 gene	glyma.Wm82.gnm1.ann1.Glyma.15G215000
 ALA25	Aminophospholipid ATPase gene 25	glyma.Wm82.gnm1.ann1.Glyma.15G215400
 DOF15.8	Dof transcription factor Chr. 15 gene 8	glyma.Wm82.gnm1.ann1.Glyma.15G215500
-ABCI8-1	UPF0051 chloroplastic, PROTEIN ABCI8 gene 1	glyma.Wm82.gnm1.ann1.Glyma.15G217000
+ABCI8-1	"UPF0051 chloroplastic, PROTEIN ABCI8 gene 1"	glyma.Wm82.gnm1.ann1.Glyma.15G217000
 COMT30	caffeic acid O-methyltransferase gene 30	glyma.Wm82.gnm1.ann1.Glyma.15G220700
 WRI1B	ethylene-responsive transcription factor WRI1b gene	glyma.Wm82.gnm1.ann1.Glyma.15G221600
 bZIP128	Basic leucine zipper transcription factor-like protein gene  128	glyma.Wm82.gnm1.ann1.Glyma.15G222400
@@ -4856,7 +4856,7 @@ GLYII-10	hydroxyacylglutathione hydrolase II gene 10	glyma.Wm82.gnm1.ann1.Glyma.
 C2-148	C2-domain containing protein gene 148	glyma.Wm82.gnm1.ann1.Glyma.15G245600
 GA2OX9	gibberellin 2-beta-dioxygenase gene 9	glyma.Wm82.gnm1.ann1.Glyma.15G248400
 GSTU47	tau class glutathione S-transferase gene 47	glyma.Wm82.gnm1.ann1.Glyma.15G251500
-GSTa	2,4-D inducible glutathione S-transferase gene	glyma.Wm82.gnm1.ann1.Glyma.15G251600
+GSTa	"2,4-D inducible glutathione S-transferase gene"	glyma.Wm82.gnm1.ann1.Glyma.15G251600
 GSTU50	tau class glutathione S-transferase gene 50	glyma.Wm82.gnm1.ann1.Glyma.15G251800
 GA2OX10	gibberellin 2-beta-dioxygenase gene 10	glyma.Wm82.gnm1.ann1.Glyma.15G252100
 GST3	lactoylglutathione lyase gene 	glyma.Wm82.gnm1.ann1.Glyma.15G252200
@@ -4874,7 +4874,7 @@ POD98	Peroxidase gene 98	glyma.Wm82.gnm1.ann1.Glyma.15G259500
 NF-YC13	nuclear factor Y transcription factor family protein gene 13	glyma.Wm82.gnm1.ann1.Glyma.15G261300
 GLN86	Glutamine Synthase gene 86	glyma.Wm82.gnm1.ann1.Glyma.15G263000
 IMPDH1	inosine monophosphate dehydrogenase gene	glyma.Wm82.gnm1.ann1.Glyma.15G263100
-ALDH5F2	putative succinate-semialdehyde dehydrogenase gene 2, mitochondrial	glyma.Wm82.gnm1.ann1.Glyma.15G263500
+ALDH5F2	"putative succinate-semialdehyde dehydrogenase gene 2, mitochondrial"	glyma.Wm82.gnm1.ann1.Glyma.15G263500
 PHR27	MYB-CC domain-containing transcription factor PHR27 gene	glyma.Wm82.gnm1.ann1.Glyma.15G263700
 NAC117	NAC domain-containing protein gene 117	glyma.Wm82.gnm1.ann1.Glyma.15G264100
 GELP142	GDSL-type esterase/lipase protein gene 142	glyma.Wm82.gnm1.ann1.Glyma.15G264200
@@ -5077,7 +5077,7 @@ WRKY152	WRKY Transcription Factor gene 152	glyma.Wm82.gnm1.ann1.Glyma.16G177000
 HSP90A2	heat shock protein 90-A2 gene	glyma.Wm82.gnm1.ann1.Glyma.16G178800
 BCH2	beta-carotene hydroxylase gene 2	glyma.Wm82.gnm1.ann1.Glyma.16G179100
 CrRLk1L25	receptor-like protein kinase gene 25	glyma.Wm82.gnm1.ann1.Glyma.16G179600
-C2-150	C2-domain containing protein gene 150	glyma.Wm82.gnm1.ann1.Glyma.16G180300 
+C2-150	C2-domain containing protein gene 150	glyma.Wm82.gnm1.ann1.Glyma.16G180300
 C2-151	C2-domain containing protein gene 151	glyma.Wm82.gnm1.ann1.Glyma.16G180400
 HSF-32	heat stress transcription factor 32 gene	glyma.Wm82.gnm1.ann1.Glyma.16G196200
 BFT	phosphatidylethanolamine-binding protein BFT gene	glyma.Wm82.gnm1.ann1.Glyma.16G196300
@@ -5204,7 +5204,7 @@ HSP70	heat shock 70 kDa protein-like gene	glyma.Wm82.gnm1.ann1.Glyma.17G072400
 ENOD55-2	early nodulin 55 gene 2	glyma.Wm82.gnm1.ann1.Glyma.17G073400
 WRKY158, WRKY24	WRKY Transcription Factor gene 158	glyma.Wm82.gnm1.ann1.Glyma.17G074000
 BTB091	BTB gene 91	glyma.Wm82.gnm1.ann1.Glyma.17G074300
-FAD6.2	delta-12 desaturase, chloroplastic gene 2	glyma.Wm82.gnm1.ann1.Glyma.17G074400
+FAD6.2	"delta-12 desaturase, chloroplastic gene 2"	glyma.Wm82.gnm1.ann1.Glyma.17G074400
 ALDH11A2	aldehyde dehydrogenase 11A2 gene	glyma.Wm82.gnm1.ann1.Glyma.17G075300
 chitinaseV-4	Chitinase Group 5 gene 4	glyma.Wm82.gnm1.ann1.Glyma.17G076100
 ZAT4	zinc finger protein ZAT4 gene	glyma.Wm82.gnm1.ann1.Glyma.17G076900
@@ -5218,7 +5218,7 @@ ABCB25-2	ABC transporter B family member 25 gene 2	glyma.Wm82.gnm1.ann1.Glyma.17
 COBL19	Regulates cell wall expansion and cellulose depostion gene 19	glyma.Wm82.gnm1.ann1.Glyma.17G080600
 AGL8a, FULd, MDE17	Agamous 8-Like gene a	glyma.Wm82.gnm1.ann1.Glyma.17G081200
 DOF17.1	Dof transcription factor Chr. 17 gene 1	glyma.Wm82.gnm1.ann1.Glyma.17G081800
-CAS	calcium sensing receptor, chloroplastic-like protein gene	glyma.Wm82.gnm1.ann1.Glyma.17G084300
+CAS	"calcium sensing receptor, chloroplastic-like protein gene"	glyma.Wm82.gnm1.ann1.Glyma.17G084300
 HDA16	histone deacetylase 16 gene	glyma.Wm82.gnm1.ann1.Glyma.17G085700
 PITP33	Phosphatidylinositol Transfer Protein-like gene 33	glyma.Wm82.gnm1.ann1.Glyma.17G087400
 CRK49	cysteine-rich receptor-like protein kinase gene 49	glyma.Wm82.gnm1.ann1.Glyma.17G088000
@@ -5242,12 +5242,12 @@ GELP157	GDSL-type esterase/lipase protein gene 157	glyma.Wm82.gnm1.ann1.Glyma.17
 CDF3d, DOF17.3	Cycling Dof Factor 3 gene d	glyma.Wm82.gnm1.ann1.Glyma.17G101000
 NAC131	NAC domain-containing protein gene 131	glyma.Wm82.gnm1.ann1.Glyma.17G101500
 TOC1, PRR13	Timing of cab expression	glyma.Wm82.gnm1.ann1.Glyma.17G102200
-GinCrRI,k1l,26	receptor-like protein kinase gene 26	glyma.Wm82.gnm1.ann1.Glyma.17G102600
+"GinCrRI,k1l,26"	receptor-like protein kinase gene 26	glyma.Wm82.gnm1.ann1.Glyma.17G102600
 chitinaseV-5	Chitinase Group 5 gene 5	glyma.Wm82.gnm1.ann1.Glyma.17G103500
 Raf42-3	Raf42 proto-oncogene serine/threonine protein kinase gene 3	glyma.Wm82.gnm1.ann1.Glyma.17G105100
 eEF34	Eukaryotic Elongation Factor gene 34	glyma.Wm82.gnm1.ann1.Glyma.17G105700
 PLATZ28	PLATZ gene 28	glyma.Wm82.gnm1.ann1.Glyma.17G106300
-ABCI8-2	UPF0051 chloroplastic-like,protein ABCI8 gene 2	glyma.Wm82.gnm1.ann1.Glyma.17G107200
+ABCI8-2	"UPF0051 chloroplastic-like,protein ABCI8 gene 2"	glyma.Wm82.gnm1.ann1.Glyma.17G107200
 ANK189	Ankyrin Repeat protein gene 189	glyma.Wm82.gnm1.ann1.Glyma.17G107500
 PHT4.10	Phosphate Trasporter group 4 gene 4.10	glyma.Wm82.gnm1.ann1.Glyma.17G108300
 TDF-5	uncharacterized protein TDF-5 gene	glyma.Wm82.gnm1.ann1.Glyma.17G109300
@@ -5296,7 +5296,7 @@ ERF135	Ethylene-Responsive Factor gene 135	glyma.Wm82.gnm1.ann1.Glyma.17G145300
 ERF136	Ethylene-Responsive Factor gene 136	glyma.Wm82.gnm1.ann1.Glyma.17G145400
 PPR156	Pentatricopeptide-Repeat protein gene 156	glyma.Wm82.gnm1.ann1.Glyma.17G146000
 EXB1	Expansin B1 like protein gene	glyma.Wm82.gnm1.ann1.Glyma.17G147500
-EXLB1	Expansin-Like B Gene 1	glyma.Wm82.gnm1.ann1.Glyma.17G147500 
+EXLB1	Expansin-Like B Gene 1	glyma.Wm82.gnm1.ann1.Glyma.17G147500
 GDH2	glutamate dehydrogenase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.17G148000
 CYP33	peptidyl-prolyl cis-trans isomerase CYP33 gene	glyma.Wm82.gnm1.ann1.Glyma.17G148700
 SnRK2-20	SNF2-Related Kinase gene 20	glyma.Wm82.gnm1.ann1.Glyma.17G148800
@@ -5442,7 +5442,7 @@ DPB3-2	dr1-associated corepressor-like 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.18G00
 ANK193	Ankyrin Repeat protein gene 193	glyma.Wm82.gnm1.ann1.Glyma.18G008500
 ANK194	Ankyrin Repeat protein gene 194	glyma.Wm82.gnm1.ann1.Glyma.18G009500
 ABCB15, MDR-3	ATP-Binding Cassette B/P-Glycoprotein gene 15	glyma.Wm82.gnm1.ann1.Glyma.18G012700
-HELRP	ATP-dependent RNA helicase DEAH12, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.18G014800
+HELRP	"ATP-dependent RNA helicase DEAH12, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.18G014800
 H3	histone H3.3 gene 4	glyma.Wm82.gnm1.ann1.Glyma.18G015300
 C2-156	C2-domain containing protein gene 156	glyma.Wm82.gnm1.ann1.Glyma.18G017500
 ABCD1L-3	ABC transporter D family member 1-like gene 3	glyma.Wm82.gnm1.ann1.Glyma.18G017600
@@ -5472,12 +5472,12 @@ ELF4B	protein EARLY FLOWERING 4b gene	glyma.Wm82.gnm1.ann1.Glyma.18G027500
 GELP165	GDSL-type esterase/lipase protein gene 165	glyma.Wm82.gnm1.ann1.Glyma.18G027800
 CHX22g	Cation/H+ Exchanger Protein 22 gene G	glyma.Wm82.gnm1.ann1.Glyma.18G027900
 LAX14	auxin transporter-like protein gene 14	glyma.Wm82.gnm1.ann1.Glyma.18G029000
-C2-160	C2-domain containing protein gene 160	glyma.Wm82.gnm1.ann1.Glyma.18G030000 
+C2-160	C2-domain containing protein gene 160	glyma.Wm82.gnm1.ann1.Glyma.18G030000
 P5CS	delta-pyrroline-5-carboxylate synthetase gene	glyma.Wm82.gnm1.ann1.Glyma.18G034300
 TCF1d	tolerant to chilling and freezing 1d	glyma.Wm82.gnm1.ann1.Glyma.18G034600
 BTB099	BTB gene 99	glyma.Wm82.gnm1.ann1.Glyma.18G034700
 PP2C31	Protein Phosphatase 2C-type gene 31	glyma.Wm82.gnm1.ann1.Glyma.18G035000
-RCABETA	ribulose bisphosphate carboxylase/oxygenase activase, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.18G036400
+RCABETA	"ribulose bisphosphate carboxylase/oxygenase activase, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.18G036400
 C2-161	C2-domain containing protein gene 161	glyma.Wm82.gnm1.ann1.Glyma.18G038400
 C2-162	C2-domain containing protein gene 162	glyma.Wm82.gnm1.ann1.Glyma.18G039700
 DHAR3, DHAR-3a, MDHAR-3a	dehydroascorbate reductase gene 3	glyma.Wm82.gnm1.ann1.Glyma.18G040100
@@ -5574,7 +5574,7 @@ GELP168	GDSL-type esterase/lipase protein gene 168	glyma.Wm82.gnm1.ann1.Glyma.18
 PPR164	Pentatricopeptide-Repeat protein gene 164	glyma.Wm82.gnm1.ann1.Glyma.18G128100
 ALA9	Aminophospholipid ATPase gene 9	glyma.Wm82.gnm1.ann1.Glyma.18G129200
 GASA31	gibberellin-regulated protein gene 31	glyma.Wm82.gnm1.ann1.Glyma.18G132100
-PAP1	PAP1, probable inactive purple acid phosphatase 1	glyma.Wm82.gnm1.ann1.Glyma.18G132500
+PAP1	"PAP1, probable inactive purple acid phosphatase 1"	glyma.Wm82.gnm1.ann1.Glyma.18G132500
 MED18-3	Mediator Complex 18 gene 3	glyma.Wm82.gnm1.ann1.Glyma.18G135700
 ALDH2B8	aldehyde dehydrogenase family 2 member B8 gene	glyma.Wm82.gnm1.ann1.Glyma.18G137300
 CRK55	cysteine-rich receptor-like protein kinase gene 55	glyma.Wm82.gnm1.ann1.Glyma.18G141500
@@ -5642,7 +5642,7 @@ S6K1B	S6 Kinase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.18G212800
 ALA24	Aminophospholipid ATPase gene 24	glyma.Wm82.gnm1.ann1.Glyma.18G213100
 WRKY172, WRKY57	WRKY Transcription Factor gene 172	glyma.Wm82.gnm1.ann1.Glyma.18G213200
 WNK11	with no lysine kinase gene 11	glyma.Wm82.gnm1.ann1.Glyma.18G215100
-GinCrRI,k1l,28	receptor-like protein kinase gene 28	glyma.Wm82.gnm1.ann1.Glyma.18G215800
+"GinCrRI,k1l,28"	receptor-like protein kinase gene 28	glyma.Wm82.gnm1.ann1.Glyma.18G215800
 BTB104	BTB gene 104	glyma.Wm82.gnm1.ann1.Glyma.18G216600
 TAP1	acetyltransferase TAP1 gene	glyma.Wm82.gnm1.ann1.Glyma.18G216900
 LEA2-93	late embryogenesis abundant 2 gene 93	glyma.Wm82.gnm1.ann1.Glyma.18G218700
@@ -5656,15 +5656,15 @@ CRK61	cysteine-rich receptor-like protein kinase gene 61	glyma.Wm82.gnm1.ann1.Gl
 DHPS1	dihydrodipicolinate synthase 1 gene	glyma.Wm82.gnm1.ann1.Glyma.18G221700
 ZPR1B	protein LITTLE ZIPPER 2-like gene B	glyma.Wm82.gnm1.ann1.Glyma.18G221802
 C2-164	C2-domain containing protein gene 164	glyma.Wm82.gnm1.ann1.Glyma.18G224000
-Tof18, SOC1_	TM3 MIKCc Transcription Factor gene	glyma.Wm82.gnm1.ann1.Glyma.18G224500
+"Tof18, SOC1_"	TM3 MIKCc Transcription Factor gene	glyma.Wm82.gnm1.ann1.Glyma.18G224500
 C2-165	C2-domain containing protein gene 165	glyma.Wm82.gnm1.ann1.Glyma.18G224800
 C2-166	C2-domain containing protein gene 166	glyma.Wm82.gnm1.ann1.Glyma.18G225300
-C2-167	C2-domain containing protein gene 167	glyma.Wm82.gnm1.ann1.Glyma.18G225400 
+C2-167	C2-domain containing protein gene 167	glyma.Wm82.gnm1.ann1.Glyma.18G225400
 PPR165	Pentatricopeptide-Repeat protein gene 165	glyma.Wm82.gnm1.ann1.Glyma.18G225600
 PHT5.5, SPX-MFS5	Phosphate Trasporter group 5 gene 5.5	glyma.Wm82.gnm1.ann1.Glyma.18G228700
 DGD2	digalactosyldiacylglycerol synthase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.18G228900
 KEA2a	K+ efflux Antiporter Protein 2 gene A	glyma.Wm82.gnm1.ann1.Glyma.18G230100
-C2-168	C2-domain containing protein gene 168	glyma.Wm82.gnm1.ann1.Glyma.18G230800 
+C2-168	C2-domain containing protein gene 168	glyma.Wm82.gnm1.ann1.Glyma.18G230800
 BBI-2	Bowman-Birk type proteinase inhibitor gene 2	glyma.Wm82.gnm1.ann1.Glyma.18G231400
 BBI-1	putative Bowman-Birk type protease inhibitor gene 1	glyma.Wm82.gnm1.ann1.Glyma.18G231500
 BES1-16	BES1-like gene 16	glyma.Wm82.gnm1.ann1.Glyma.18G232400
@@ -5679,7 +5679,7 @@ SABATH25	SABATH gene 25	glyma.Wm82.gnm1.ann1.Glyma.18G238800
 SABATH26	SABATH gene 26	glyma.Wm82.gnm1.ann1.Glyma.18G238900
 SABATH27	SABATH gene 27	glyma.Wm82.gnm1.ann1.Glyma.18G239000
 SABATH28	SABATH gene 28	glyma.Wm82.gnm1.ann1.Glyma.18G239100
-CYP97C10	protein LUTEIN DEFICIENT 5, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.18G239900
+CYP97C10	"protein LUTEIN DEFICIENT 5, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.18G239900
 TDG-4	Trigalactosyldiacylglycerol chloroplastic	glyma.Wm82.gnm1.ann1.Glyma.18G240700
 PIN5b	PIN-formed 5 gene b	glyma.Wm82.gnm1.ann1.Glyma.18G241000
 PPR166	Pentatricopeptide-Repeat protein gene 166	glyma.Wm82.gnm1.ann1.Glyma.18G241500
@@ -5700,7 +5700,7 @@ FTSH10	Filimentation Temperature-Sensitive H gene 10	glyma.Wm82.gnm1.ann1.Glyma.
 PPR167	Pentatricopeptide-Repeat protein gene 167	glyma.Wm82.gnm1.ann1.Glyma.18G260300
 CDF2, DOF18.3	Cycling Dof Factor protein 2 gene	glyma.Wm82.gnm1.ann1.Glyma.18G260500
 NAC139, NLP1	NAC domain-containing protein gene 139	glyma.Wm82.gnm1.ann1.Glyma.18G261300
-CGS1	cystathionine gamma-synthase 1, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.18G261600
+CGS1	"cystathionine gamma-synthase 1, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.18G261600
 PHO1.9, SPX-PHO1-9, PHO1-H6	PHO Phosphate Trasporter group 1 gene 1.9	glyma.Wm82.gnm1.ann1.Glyma.18G261900
 ABCC3L-13	ABC transporter C family member 3-like isoform X1 gene 13	glyma.Wm82.gnm1.ann1.Glyma.18G263200
 WRKY177	WRKY Transcription Factor gene 177	glyma.Wm82.gnm1.ann1.Glyma.18G263400
@@ -5716,8 +5716,8 @@ COMT24	caffeic acid O-methyltransferase gene 24	glyma.Wm82.gnm1.ann1.Glyma.18G26
 CrRLk1L29	receptor-like protein kinase gene 29	glyma.Wm82.gnm1.ann1.Glyma.18G269900
 GinCrRLk1L30	receptor-like protein kinase gene 30	glyma.Wm82.gnm1.ann1.Glyma.18G270100
 CrRLk1L31	receptor-like protein kinase gene 31	glyma.Wm82.gnm1.ann1.Glyma.18G270600
-GinCrRl,k1l,32	receptor-like protein kinase gene 32	glyma.Wm82.gnm1.ann1.Glyma.18G270700
-GinCrRl,k1l,33	receptor-like protein kinase gene 33	glyma.Wm82.gnm1.ann1.Glyma.18G270900
+"GinCrRl,k1l,32"	receptor-like protein kinase gene 32	glyma.Wm82.gnm1.ann1.Glyma.18G270700
+"GinCrRl,k1l,33"	receptor-like protein kinase gene 33	glyma.Wm82.gnm1.ann1.Glyma.18G270900
 GnCrRLk1L34	receptor-like protein kinase 1 like gene 34	glyma.Wm82.gnm1.ann1.Glyma.18G271000
 GnCrRLk1L35	receptor-like protein kinase 1 like gene 35	glyma.Wm82.gnm1.ann1.Glyma.18G271100
 COBL20	Regulates cell wall expansion and cellulose depostion gene 20	glyma.Wm82.gnm1.ann1.Glyma.18G271900
@@ -5730,7 +5730,7 @@ bZIP143, bZIP73A	Basic leucine zipper transcription factor-like protein gene 143
 GND	6-phosphogluconate dehydrogenase gene	glyma.Wm82.gnm1.ann1.Glyma.18G277300
 COL1b	Contsans-like 1 gene b 	glyma.Wm82.gnm1.ann1.Glyma.18G278100
 TCP53	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 53	glyma.Wm82.gnm1.ann1.Glyma.18G280700
-AOC6	allene oxide cyclase 4, chloroplastic-like gene	glyma.Wm82.gnm1.ann1.Glyma.18G280900
+AOC6	"allene oxide cyclase 4, chloroplastic-like gene"	glyma.Wm82.gnm1.ann1.Glyma.18G280900
 ERF142	Ethylene-Responsive Factor gene 142	glyma.Wm82.gnm1.ann1.Glyma.18G281400
 ANK202	Ankyrin Repeat protein gene 202	glyma.Wm82.gnm1.ann1.Glyma.18G282000
 chitinaseII-6	Chitinase Group 2 gene 6	glyma.Wm82.gnm1.ann1.Glyma.18G283400
@@ -5788,7 +5788,7 @@ MED3-2	Mediator Complex 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.19G026300
 SMXL29	Suppressor of Max2 gene 1-like gene 29	glyma.Wm82.gnm1.ann1.Glyma.19G027900
 AT133	malonyl-CoA:isoflavone 7-O-glucoside-6''-O-malonyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma.19G030500
 TCP45	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 45	glyma.Wm82.gnm1.ann1.Glyma.19G030900
-GinCrRI,k1l,36	receptor-like protein kinase gene 36	glyma.Wm82.gnm1.ann1.Glyma.19G033100
+"GinCrRI,k1l,36"	receptor-like protein kinase gene 36	glyma.Wm82.gnm1.ann1.Glyma.19G033100
 COBL23	Regulates cell wall expansion and cellulose depostion gene 23	glyma.Wm82.gnm1.ann1.Glyma.19G033500
 COBL24	Regulates cell wall expansion and cellulose depostion gene 24	glyma.Wm82.gnm1.ann1.Glyma.19G033600
 SEP1 gene	transcription factor SEP1 gene	glyma.Wm82.gnm1.ann1.Glyma.19G034500
@@ -5799,7 +5799,7 @@ COL2b	Constance-like 2 gene b	glyma.Wm82.gnm1.ann1.Glyma.19G039000
 FTSHi8	Filimentation Temperature-Sensitive H Inactive gene 8	glyma.Wm82.gnm1.ann1.Glyma.19G040200
 PDH	proline dehydrogenase gene	glyma.Wm82.gnm1.ann1.Glyma.19G043000
 TCP54	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 54	glyma.Wm82.gnm1.ann1.Glyma.19G044400
-AOC3	amine oxidase, copper containing gene 3 (vascular adhesion protein 1)	glyma.Wm82.gnm1.ann1.Glyma.19G044900
+AOC3	"amine oxidase, copper containing gene 3 (vascular adhesion protein 1)"	glyma.Wm82.gnm1.ann1.Glyma.19G044900
 GELP176	GDSL-type esterase/lipase protein gene 176	glyma.Wm82.gnm1.ann1.Glyma.19G050000
 GELP177	GDSL-type esterase/lipase protein gene 177	glyma.Wm82.gnm1.ann1.Glyma.19G050800
 GELP178	GDSL-type esterase/lipase protein gene 178	glyma.Wm82.gnm1.ann1.Glyma.19G050900
@@ -6004,7 +6004,7 @@ IAA58	Indole-3-Acetic Acid Responsive gene 58	glyma.Wm82.gnm1.ann1.Glyma.19G2219
 PIF3	bHLH transcription factor PIF3 gene	glyma.Wm82.gnm1.ann1.Glyma.19G222000
 MYB64	MYB transcription factor 64 gene	glyma.Wm82.gnm1.ann1.Glyma.19G222200
 CYP14	peptidyl-prolyl cis-trans isomerase CYP14 gene	glyma.Wm82.gnm1.ann1.Glyma.19G222600
-MAN	endo-1, 4-beta-mannosidase gene	glyma.Wm82.gnm1.ann1.Glyma.19G223000
+MAN	"endo-1, 4-beta-mannosidase gene"	glyma.Wm82.gnm1.ann1.Glyma.19G223000
 PHYA3	Phytochrome A gene 3	glyma.Wm82.gnm1.ann1.Glyma.19G224200
 SOYAP2	aspartic proteinase 2 gene	glyma.Wm82.gnm1.ann1.Glyma.19G225500
 PMEI159	Pectin Methylesterase Inhibitor gene 159	glyma.Wm82.gnm1.ann1.Glyma.19G225700
@@ -6032,7 +6032,7 @@ NHX2e	Intracellular Na+/H+ Exchanger Protein 2 gene E	glyma.Wm82.gnm1.ann1.Glyma
 WNK9, ZIK9-2	with no lysine kinase gene 9	glyma.Wm82.gnm1.ann1.Glyma.19G242900
 IQD64	protein IQ-DOMAIN gene 64	glyma.Wm82.gnm1.ann1.Glyma.19G243700
 AMT4.3	ammonium transporter 4 gene 3	glyma.Wm82.gnm1.ann1.Glyma.19G244400
-GME1	GDP-mannose 3',5'-epimerase gene	glyma.Wm82.gnm1.ann1.Glyma.19G244600
+GME1	"GDP-mannose 3',5'-epimerase gene"	glyma.Wm82.gnm1.ann1.Glyma.19G244600
 bZIP104, bZIP153	putative bZIP domain class transcription factor gene 104	glyma.Wm82.gnm1.ann1.Glyma.19G244800
 MED14-2	Mediator Complex 14 gene 2	glyma.Wm82.gnm1.ann1.Glyma.19G245100
 IAA59	Indole-3-Acetic Acid Responsive gene 59	glyma.Wm82.gnm1.ann1.Glyma.19G245200
@@ -6140,7 +6140,7 @@ ABCF3-2	ABC transporter F family member 3 gene 2	glyma.Wm82.gnm1.ann1.Glyma.20G0
 WNK8	with no lysine kinase gene 8	glyma.Wm82.gnm1.ann1.Glyma.20G066900
 ERF153, ERF104	Ethylene-Responsive Factor gene 153	glyma.Wm82.gnm1.ann1.Glyma.20G070000
 ERF154	Ethylene-Responsive Factor gene 154	glyma.Wm82.gnm1.ann1.Glyma.20G070100
-VAD1	protein VASCULAR ASSOCIATED DEATH 1, chloroplastic gene	glyma.Wm82.gnm1.ann1.Glyma.20G070800
+VAD1	"protein VASCULAR ASSOCIATED DEATH 1, chloroplastic gene"	glyma.Wm82.gnm1.ann1.Glyma.20G070800
 SMXL30	Suppressor of Max2 gene 1-like gene 30	glyma.Wm82.gnm1.ann1.Glyma.20G073000
 TPS23	terpene synthase gene 23	glyma.Wm82.gnm1.ann1.Glyma.20G074400
 ANK218	Ankyrin Repeat protein gene 218	glyma.Wm82.gnm1.ann1.Glyma.20G076500
@@ -6219,7 +6219,7 @@ PITP36	Phosphatidylinositol Transfer Protein-like gene 36	glyma.Wm82.gnm1.ann1.G
 CG-BETA-1, Cgy4	beta-conglycinin beta-subunit 1 gene	glyma.Wm82.gnm1.ann1.Glyma.20G146200
 PM25	seed maturation protein PM25 gene	glyma.Wm82.gnm1.ann1.Glyma.20G147600
 OAS-TL2	O-acetylserine(thiol)-lyase gene 2	glyma.Wm82.gnm1.ann1.Glyma.20G148100
-CG-BETA-2	beta-conglycinin, beta chain-like gene	glyma.Wm82.gnm1.ann1.Glyma.20G148200
+CG-BETA-2	"beta-conglycinin, beta chain-like gene"	glyma.Wm82.gnm1.ann1.Glyma.20G148200
 CG-ALPHA-2, Cgy2	beta-conglycinin alpha prime subunit 2 gene	glyma.Wm82.gnm1.ann1.Glyma.20G148400
 TCP55	Teosinte branched1 and cycloidea and proliferating cell factor family protein gene 55	glyma.Wm82.gnm1.ann1.Glyma.20G148500
 HMT	homocyteine S-methyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma.20G148900
@@ -6331,7 +6331,7 @@ PPCK2	phosphoenolpyruvate carboxylase kinase gene 2	glyma.Wm82.gnm1.ann1.Glyma.2
 ANK222	Ankyrin Repeat protein gene 222	glyma.Wm82.gnm1.ann1.Glyma.20G223500
 bZIP159, bZIP89	Basic leucine zipper transcription factor-like protein gene 159	glyma.Wm82.gnm1.ann1.Glyma.20G224500
 IAA63	Indole-3-Acetic Acid Responsive gene 63	glyma.Wm82.gnm1.ann1.Glyma.20G225000
-GinCrRl,k1l,38	receptor-like protein kinase gene 38	glyma.Wm82.gnm1.ann1.Glyma.20G225800
+"GinCrRl,k1l,38"	receptor-like protein kinase gene 38	glyma.Wm82.gnm1.ann1.Glyma.20G225800
 GIF8	GIF gene 8	glyma.Wm82.gnm1.ann1.Glyma.20G226500
 FTSHi9	Filimentation Temperature-Sensitive H Inactive gene 9	glyma.Wm82.gnm1.ann1.Glyma.20G227000
 CHR66	Chromatin Remodeling Protein gene 66	glyma.Wm82.gnm1.ann1.Glyma.20G227200
@@ -6365,7 +6365,7 @@ CYP10	peptidyl-prolyl cis-trans isomerase CYP10 gene	glyma.Wm82.gnm1.ann1.Glyma.
 ABCA7-3	ABC transporter A family member 7 gene 3	glyma.Wm82.gnm1.ann1.Glyma.U001700
 ANK224	Ankyrin Repeat protein gene 224	glyma.Wm82.gnm1.ann1.Glyma.U002900
 PMEI170	Pectin Methylesterase Inhibitor gene 170	glyma.Wm82.gnm1.ann1.Glyma.U004400
-PITP37	Phosphatidylinositol Transfer Protein-like gene 37	glyma.Wm82.gnm1.ann1.Glyma.U005500 
+PITP37	Phosphatidylinositol Transfer Protein-like gene 37	glyma.Wm82.gnm1.ann1.Glyma.U005500
 EXPB6	putative expansin-B2-like gene 6	glyma.Wm82.gnm1.ann1.Glyma.U014500
 PGN	polygalacturonase gene	glyma.Wm82.gnm1.ann1.Glyma.U016300
 CCD7	carotenoid cleavage dioxygenase gene 7	glyma.Wm82.gnm1.ann1.Glyma.U016700
@@ -6446,20 +6446,20 @@ P5CS1	DELTA1-PYRROLINE-5-CARBOXYLATE SYNTHASE 1 gene	glyma.Wm82.gnm1.ann1.Glyma0
 FAD8	Fatty acid desaturase 8 gene	glyma.Wm82.gnm1.ann1.Glyma01g29630
 EXLB1	expansin-like B gene 1	glyma.Wm82.gnm1.ann1.Glyma01g35070
 DGAT2D	diacylglycerol acyltransferase 2 gene D	glyma.Wm82.gnm1.ann1.Glyma01g36010
-HK07	Ubiquitous, Histidine Kinase gene 7	glyma.Wm82.gnm1.ann1.Glyma01g36950
+HK07	"Ubiquitous, Histidine Kinase gene 7"	glyma.Wm82.gnm1.ann1.Glyma01g36950
 CDPK1	Calcium-Dependent Protein Kinases gene 1	glyma.Wm82.gnm1.ann1.Glyma01g37100
 WOX01	Wuschel-related homeobox transcription factor gene 1	glyma.Wm82.gnm1.ann1.Glyma01g37190
 N:IFR	Isoflavone Reductase gene	glyma.Wm82.gnm1.ann1.Glyma01g37810
 VQ3	VQ motif containing protein gene 3	glyma.Wm82.gnm1.ann1.Glyma01g40320
-PRR48	Ubiquitous, Pseudo response regulator gene 48	glyma.Wm82.gnm1.ann1.Glyma01g40900
+PRR48	"Ubiquitous, Pseudo response regulator gene 48"	glyma.Wm82.gnm1.ann1.Glyma01g40900
 EXLB2	expansin-like B gene 2	glyma.Wm82.gnm1.ann1.Glyma01g41050
 EXLB3	expansin-like B gene 3	glyma.Wm82.gnm1.ann1.Glyma01g41330
 D1	D1 gene	glyma.Wm82.gnm1.ann1.Glyma01g42390
 PLD-gamma	Phospholipase D gamma gene	glyma.Wm82.gnm1.ann1.Glyma01g42420
 CDPK2	Calcium-Dependent Protein Kinases gene 2	glyma.Wm82.gnm1.ann1.Glyma01g43241
-RR01	Ubiquitous, Response Regulator Type-A gene 1	glyma.Wm82.gnm1.ann1.Glyma02g03140
+RR01	"Ubiquitous, Response Regulator Type-A gene 1"	glyma.Wm82.gnm1.ann1.Glyma02g03140
 FDL02	Flowering Locus D-like gene 2	glyma.Wm82.gnm1.ann1.Glyma02g05100
-HK09	Ubiquitous, Histidine Kinase gene 9	glyma.Wm82.gnm1.ann1.Glyma02g05220
+HK09	"Ubiquitous, Histidine Kinase gene 9"	glyma.Wm82.gnm1.ann1.Glyma02g05220
 CDPK3	Calcium-Dependent Protein Kinases gene 3	glyma.Wm82.gnm1.ann1.Glyma02g05440
 RNS5	RNaseT2 protein gene 5	glyma.Wm82.gnm1.ann1.Glyma02g07130
 RNS13	RNaseT2 protein gene 13	glyma.Wm82.gnm1.ann1.Glyma02g07135
@@ -6468,7 +6468,7 @@ RNS3	RNaseT2 protein gene 3	glyma.Wm82.gnm1.ann1.Glyma02g07150
 FT	FLOWERING LOCUS T 	glyma.Wm82.gnm1.ann1.Glyma02g07650
 NAC006	NAC domain-containing protein gene 6	glyma.Wm82.gnm1.ann1.Glyma02g07700
 4CL	4-coumarate--CoA ligase-like 7-like gene	glyma.Wm82.gnm1.ann1.Glyma02g09290
-HK15	root preferential, Histidine Kinase 15	glyma.Wm82.gnm1.ann1.Glyma02g09550
+HK15	"root preferential, Histidine Kinase 15"	glyma.Wm82.gnm1.ann1.Glyma02g09550
 SWEET1	sucrose effluxer gene 1 gene	glyma.Wm82.gnm1.ann1.Glyma02g09710
 Actin11	Actin 11 gene	glyma.Wm82.gnm1.ann1.Glyma02g10170
 WOX02	Wuschel-related homeobox transcription factor gene 2	glyma.Wm82.gnm1.ann1.Glyma02g10410
@@ -6477,7 +6477,7 @@ RNS7	RNaseT2 protein gene 7	glyma.Wm82.gnm1.ann1.Glyma02g12020
 PAP1	Purple acid phosphatase gene 1	glyma.Wm82.gnm1.ann1.Glyma02g13070
 SACPD-B	stearoyl-acyl carrier protein desaturase gene B	glyma.Wm82.gnm1.ann1.Glyma02g15600
 HTA8	HISTONE H2A 8 gene	glyma.Wm82.gnm1.ann1.Glyma02g16150
-HP09	Ubiquitous, Phosphotransfer Protein gene 9	glyma.Wm82.gnm1.ann1.Glyma02g16980
+HP09	"Ubiquitous, Phosphotransfer Protein gene 9"	glyma.Wm82.gnm1.ann1.Glyma02g16980
 COL13	Constans-like 13 gene	glyma.Wm82.gnm1.ann1.Glyma02g17181
 LSD1	Lys-Specific Demethylase 1 gene	glyma.Wm82.gnm1.ann1.Glyma02g18610
 NAC011, NAC193	NAC domain-containing protein gene 11	glyma.Wm82.gnm1.ann1.Glyma02g26480
@@ -6497,49 +6497,49 @@ CDPK6	Calcium-Dependent Protein Kinases gene 6	glyma.Wm82.gnm1.ann1.Glyma02g4472
 PAP2	Purple acid phosphatase gene 2	glyma.Wm82.gnm1.ann1.Glyma02g45950
 CDPK7	Calcium-Dependent Protein Kinases gene 7	glyma.Wm82.gnm1.ann1.Glyma02g46070
 NFYA	Nuclear Factor Y subunit A gene	glyma.Wm82.gnm1.ann1.Glyma02g47380
-HK10	root preferential, Histidine Kinase gene 10	glyma.Wm82.gnm1.ann1.Glyma02g47610
+HK10	"root preferential, Histidine Kinase gene 10"	glyma.Wm82.gnm1.ann1.Glyma02g47610
 PAL1	phenylalanine ammonia-lyase 1 gene	glyma.Wm82.gnm1.ann1.Glyma02g47940
 CDPK8	Calcium-Dependent Protein Kinases gene 8	glyma.Wm82.gnm1.ann1.Glyma02g48160
 WOX04	Wuschel-related homeobox transcription factor gene 4	glyma.Wm82.gnm1.ann1.Glyma03g01000
 MYB091	MYB transcription factor 91 gene	glyma.Wm82.gnm1.ann1.Glyma03g19030
 VQ6	VQ motif containing protein gene 6	glyma.Wm82.gnm1.ann1.Glyma03g27560
 VQ7	VQ motif containing protein gene 7	glyma.Wm82.gnm1.ann1.Glyma03g28360
-RR09	Root Preferential, Response Regulator Type-A gene 9	glyma.Wm82.gnm1.ann1.Glyma03g28570
+RR09	"Root Preferential, Response Regulator Type-A gene 9"	glyma.Wm82.gnm1.ann1.Glyma03g28570
 RS1	Raffinose Synthase 1 gene	glyma.Wm82.gnm1.ann1.Glyma03g29440
 CDPK9	Calcium-Dependent Protein Kinases gene 9	glyma.Wm82.gnm1.ann1.Glyma03g29450
 PBS3	avrPphB susceptible 3 gene	glyma.Wm82.gnm1.ann1.Glyma03g30590
 Gy1	Glycinin subunit G1 gene	glyma.Wm82.gnm1.ann1.Glyma03g32030
-RR34	Root Specific, Response Regulator Type-C gene 34	glyma.Wm82.gnm1.ann1.Glyma03g32720
-CHX1, SALT3, NCL	CHX-type ion transport protein 1 gene,  SALT3	glyma.Wm82.gnm1.ann1.Glyma03g32900
+RR34	"Root Specific, Response Regulator Type-C gene 34"	glyma.Wm82.gnm1.ann1.Glyma03g32720
+CHX1, SALT3, NCL	"CHX-type ion transport protein 1 gene,  SALT3"	glyma.Wm82.gnm1.ann1.Glyma03g32900
 PAP3	Purple acid phosphatase gene 3	glyma.Wm82.gnm1.ann1.Glyma03g35190
 PAP4	Purple acid phosphatase gene 4	glyma.Wm82.gnm1.ann1.Glyma03g35200
 RNS12	RNaseT2 protein gene 12	glyma.Wm82.gnm1.ann1.Glyma03g35230
 CDPK10	Calcium-Dependent Protein Kinases gene 10	glyma.Wm82.gnm1.ann1.Glyma03g36240
 VQ8	VQ motif containing protein gene 8	glyma.Wm82.gnm1.ann1.Glyma03g36330
 COL11a	Constans-like 11a gene	glyma.Wm82.gnm1.ann1.Glyma03g36810
-ERS2	root preferential, Histidine Kinase gene	glyma.Wm82.gnm1.ann1.Glyma03g37470
-HK01	Ubiquitous, Histidine Kinase gene 1	glyma.Wm82.gnm1.ann1.Glyma03g37760
+ERS2	"root preferential, Histidine Kinase gene"	glyma.Wm82.gnm1.ann1.Glyma03g37470
+HK01	"Ubiquitous, Histidine Kinase gene 1"	glyma.Wm82.gnm1.ann1.Glyma03g37760
 PHYA4	Phytochrome A gene 4	glyma.Wm82.gnm1.ann1.Glyma03g38620
 SWEET3	sucrose effluxer gene 3	glyma.Wm82.gnm1.ann1.Glyma03g39430
 VQ9	VQ motif containing protein gene 9	glyma.Wm82.gnm1.ann1.Glyma03g40941
 WOX05	Wuschel-related homeobox transcription factor gene 5	glyma.Wm82.gnm1.ann1.Glyma04g01830
-LPK1-2	Inositol 1, 3, 4, 5, 6-pentakisphosphate 2-kinase gene 2	glyma.Wm82.gnm1.ann1.Glyma04g03310
+LPK1-2	"Inositol 1, 3, 4, 5, 6-pentakisphosphate 2-kinase gene 2"	glyma.Wm82.gnm1.ann1.Glyma04g03310
 WOX06	Wuschel-related homeobox transcription factor gene 6	glyma.Wm82.gnm1.ann1.Glyma04g04310
-HK02	Root Exclusive, Histidine Kinase gene 2	glyma.Wm82.gnm1.ann1.Glyma04g06190
+HK02	"Root Exclusive, Histidine Kinase gene 2"	glyma.Wm82.gnm1.ann1.Glyma04g06190
 COL3a	Constans-like 3 gene a	glyma.Wm82.gnm1.ann1.Glyma04g06240
-RR26	Ubiquitous, Response Regiulator Type-B gene 26	glyma.Wm82.gnm1.ann1.Glyma04g06650
+RR26	"Ubiquitous, Response Regiulator Type-B gene 26"	glyma.Wm82.gnm1.ann1.Glyma04g06650
 ATS9	NON-ATPASE SUBUNIT 9 gene	glyma.Wm82.gnm1.ann1.Glyma04g08280
 VQ10	VQ motif containing protein gene 10	glyma.Wm82.gnm1.ann1.Glyma04g10780
 VQ11	VQ motif containing protein gene 11	glyma.Wm82.gnm1.ann1.Glyma04g11211
 AOX1A	alternative oxidase 1A gene	glyma.Wm82.gnm1.ann1.Glyma04g14800
 VQ12	VQ motif containing protein gene 12	glyma.Wm82.gnm1.ann1.Glyma04g16880
 ERD15A	Responsive to Desication 15 gene A	glyma.Wm82.gnm1.ann1.Glyma04g28560
-RR12	Root Preferential, Response Regulator Type-A gene 12	glyma.Wm82.gnm1.ann1.Glyma04g29250
-PRR37	Root Preferential, Pseudo response regulator 37 gene	glyma.Wm82.gnm1.ann1.Glyma04g33110
+RR12	"Root Preferential, Response Regulator Type-A gene 12"	glyma.Wm82.gnm1.ann1.Glyma04g29250
+PRR37	"Root Preferential, Pseudo response regulator 37 gene"	glyma.Wm82.gnm1.ann1.Glyma04g33110
 NAC017	NAC domain-containing protein gene 17	glyma.Wm82.gnm1.ann1.Glyma04g33270
 CDPK11	Calcium-Dependent Protein Kinases gene 11	glyma.Wm82.gnm1.ann1.Glyma04g34440
 EDS1a	Enhanced disease susceptibility 1 gene b	glyma.Wm82.gnm1.ann1.Glyma04g34800
-RR15	Root specific, Response Regulator Type-A gene 15	glyma.Wm82.gnm1.ann1.Glyma04g34820
+RR15	"Root specific, Response Regulator Type-A gene 15"	glyma.Wm82.gnm1.ann1.Glyma04g34820
 PAP5	Purple acid phosphatase gene 5	glyma.Wm82.gnm1.ann1.Glyma04g37180
 SWEET4	sucrose effluxer gene 4	glyma.Wm82.gnm1.ann1.Glyma04g37510
 SWEET5	sucrose effluxer gene 5	glyma.Wm82.gnm1.ann1.Glyma04g37520
@@ -6547,19 +6547,19 @@ SWEET6	sucrose effluxer gene 6	glyma.Wm82.gnm1.ann1.Glyma04g37530
 CDPK12	Calcium-Dependent Protein Kinases gene 12	glyma.Wm82.gnm1.ann1.Glyma04g38150
 NAC038	NAC domain-containing protein gene 38	glyma.Wm82.gnm1.ann1.Glyma04g38990
 VQ13	VQ motif containing protein gene 13	glyma.Wm82.gnm1.ann1.Glyma04g39270
-RR17	Shoot preferential, Response Regulator Type-A gene 17	glyma.Wm82.gnm1.ann1.Glyma04g40100
-PRR43, PRR5	Root Preferential, Pseudo response regulator gene 43	glyma.Wm82.gnm1.ann1.Glyma04g40640
+RR17	"Shoot preferential, Response Regulator Type-A gene 17"	glyma.Wm82.gnm1.ann1.Glyma04g40100
+PRR43, PRR5	"Root Preferential, Pseudo response regulator gene 43"	glyma.Wm82.gnm1.ann1.Glyma04g40640
 VQ14	VQ motif containing protein gene 14	glyma.Wm82.gnm1.ann1.Glyma04g41820
 SWEET8	sucrose effluxer gene 8	glyma.Wm82.gnm1.ann1.Glyma04g42040
-RR07	Ubiquitous, Response Regulator Type-A gene 7	glyma.Wm82.gnm1.ann1.Glyma04g42680
-PRR38	Ubiquitous, Pseudo response regulator 38 gene	glyma.Wm82.gnm1.ann1.Glyma05g00880
-RR03	Ubiquitous, Response Regulator Type-A gene 3	glyma.Wm82.gnm1.ann1.Glyma05g01730
+RR07	"Ubiquitous, Response Regulator Type-A gene 7"	glyma.Wm82.gnm1.ann1.Glyma04g42680
+PRR38	"Ubiquitous, Pseudo response regulator 38 gene"	glyma.Wm82.gnm1.ann1.Glyma05g00880
+RR03	"Ubiquitous, Response Regulator Type-A gene 3"	glyma.Wm82.gnm1.ann1.Glyma05g01730
 PAP6	Purple acid phosphatase gene 6	glyma.Wm82.gnm1.ann1.Glyma05g03320
 EXLB4	expansin-like B gene 4	glyma.Wm82.gnm1.ann1.Glyma05g05390
 EXLB5	expansin-like B gene 5	glyma.Wm82.gnm1.ann1.Glyma05g05420
 EXLB6	expansin-like B gene 6	glyma.Wm82.gnm1.ann1.Glyma05g05430
 EXLB7	expansin-like B gene 7	glyma.Wm82.gnm1.ann1.Glyma05g05880
-PRR46	Shoot preferential, Pseudo Response Regulator gene 46	glyma.Wm82.gnm1.ann1.Glyma05g06070
+PRR46	"Shoot preferential, Pseudo Response Regulator gene 46"	glyma.Wm82.gnm1.ann1.Glyma05g06070
 FATB1A	16:0-acyl carrier protein (ACP) thioesterase enzyme B1 gene A	glyma.Wm82.gnm1.ann1.Glyma05g08060
 FDL0513	Flowering Locus D-like 513 gene	glyma.Wm82.gnm1.ann1.Glyma05g13890
 VQ15	VQ motif containing protein gene 15	glyma.Wm82.gnm1.ann1.Glyma05g22760
@@ -6570,8 +6570,8 @@ VQ16	VQ motif containing protein gene 16	glyma.Wm82.gnm1.ann1.Glyma05g26340
 PAP7	Purple acid phosphatase gene 7	glyma.Wm82.gnm1.ann1.Glyma05g26920
 PAP8	Purple acid phosphatase gene 8	glyma.Wm82.gnm1.ann1.Glyma05g26930
 VQ17	VQ motif containing protein gene 17	glyma.Wm82.gnm1.ann1.Glyma05g27220
-RR24	Root Preferential, Response Regulator Type-B gene 24	glyma.Wm82.gnm1.ann1.Glyma05g27670
-HK13	Root Specific, Histidine Kinase gene 13	glyma.Wm82.gnm1.ann1.Glyma05g28070
+RR24	"Root Preferential, Response Regulator Type-B gene 24"	glyma.Wm82.gnm1.ann1.Glyma05g27670
+HK13	"Root Specific, Histidine Kinase gene 13"	glyma.Wm82.gnm1.ann1.Glyma05g28070
 14-3-3	14-3-3 gene	glyma.Wm82.gnm1.ann1.Glyma05g29080
 VQ18	VQ motif containing protein gene 18	glyma.Wm82.gnm1.ann1.Glyma05g31341
 VQ19	VQ motif containing protein gene 19	glyma.Wm82.gnm1.ann1.Glyma05g32350
@@ -6581,7 +6581,7 @@ PAP9	Purple acid phosphatase gene 9	glyma.Wm82.gnm1.ann1.Glyma05g33630
 PAP10	Purple acid phosphatase gene 10	glyma.Wm82.gnm1.ann1.Glyma05g33640
 PEAMT1	Phosphoethanolamine methyltransferase gene 1	glyma.Wm82.gnm1.ann1.Glyma05g33790
 WOX07	Wuschel-related homeobox transcription factor gene 7	glyma.Wm82.gnm1.ann1.Glyma05g33850
-HK16	Root Specific, Histidine Kinase 16	glyma.Wm82.gnm1.ann1.Glyma05g34310
+HK16	"Root Specific, Histidine Kinase 16"	glyma.Wm82.gnm1.ann1.Glyma05g34310
 FKF1	Flavin-binding Kelch Repeat F-Box 1 gene	glyma.Wm82.gnm1.ann1.Glyma05g34530
 COL6a	Constans-like 6 gene a	glyma.Wm82.gnm1.ann1.Glyma05g35151
 AOMT	Anthocyanin O-methyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma05g36210
@@ -6591,29 +6591,29 @@ SWEET12	sucrose effluxer gene 12 gene	glyma.Wm82.gnm1.ann1.Glyma05g38350
 WOX08	Wuschel-related homeobox transcription factor gene 8	glyma.Wm82.gnm1.ann1.Glyma06g01940
 FDL0602	Flowering Locus D-like 602 gene	glyma.Wm82.gnm1.ann1.Glyma06g02470
 PAP11	Purple acid phosphatase gene 11	glyma.Wm82.gnm1.ann1.Glyma06g03100
-LPK1-1	Inositol 1, 3, 4, 5, 6-pentakisphosphate 2-kinase gene 1	glyma.Wm82.gnm1.ann1.Glyma06g03310
+LPK1-1	"Inositol 1, 3, 4, 5, 6-pentakisphosphate 2-kinase gene 1"	glyma.Wm82.gnm1.ann1.Glyma06g03310
 FDL06	Flowering Locus D-like 6 gene	glyma.Wm82.gnm1.ann1.Glyma06g04350
 WOX09	Wuschel-related homeobox transcription factor gene 9	glyma.Wm82.gnm1.ann1.Glyma06g04470
-HK06	root preferential, Histidine Kinase gene 6	glyma.Wm82.gnm1.ann1.Glyma06g06180
-HK05	Root Specific, Histidine Kinase gene 5	glyma.Wm82.gnm1.ann1.Glyma06g06240
+HK06	"root preferential, Histidine Kinase gene 6"	glyma.Wm82.gnm1.ann1.Glyma06g06180
+HK05	"Root Specific, Histidine Kinase gene 5"	glyma.Wm82.gnm1.ann1.Glyma06g06240
 COL3b	Constans-like 3 gene b	glyma.Wm82.gnm1.ann1.Glyma06g06300
 WRKY54	WRKY Transcription Factor gene 54	glyma.Wm82.gnm1.ann1.Glyma06g06530
-RR31	Root Preferential, Response Regulator Type-B gene 31	glyma.Wm82.gnm1.ann1.Glyma06g06730
+RR31	"Root Preferential, Response Regulator Type-B gene 31"	glyma.Wm82.gnm1.ann1.Glyma06g06730
 VQ21	VQ motif containing protein gene 21	glyma.Wm82.gnm1.ann1.Glyma06g10630
 VQ22	VQ motif containing protein gene 22	glyma.Wm82.gnm1.ann1.Glyma06g10951
 VQ23	VQ motif containing protein gene 23	glyma.Wm82.gnm1.ann1.Glyma06g10960
 CCH	heavy-metal-associated domain-containing protein gene	glyma.Wm82.gnm1.ann1.Glyma06g11190
-RR08	Ubiquitous, Response Regulator Type-A gene 8	glyma.Wm82.gnm1.ann1.Glyma06g12100
+RR08	"Ubiquitous, Response Regulator Type-A gene 8"	glyma.Wm82.gnm1.ann1.Glyma06g12100
 SWEET13	sucrose effluxer gene 13 gene	glyma.Wm82.gnm1.ann1.Glyma06g12740
 VQ24	VQ motif containing protein gene 24	glyma.Wm82.gnm1.ann1.Glyma06g12960
 SWEET14	sucrose effluxer gene 14 gene	glyma.Wm82.gnm1.ann1.Glyma06g13110
-PRR39	Ubiquitous, Pseudo response regulator 39 gene	glyma.Wm82.gnm1.ann1.Glyma06g14150
-RR16	Ubiquitous, Response Regulator Type-A gene 16	glyma.Wm82.gnm1.ann1.Glyma06g14750
+PRR39	"Ubiquitous, Pseudo response regulator 39 gene"	glyma.Wm82.gnm1.ann1.Glyma06g14150
+RR16	"Ubiquitous, Response Regulator Type-A gene 16"	glyma.Wm82.gnm1.ann1.Glyma06g14750
 VQ25	VQ motif containing protein gene 25	glyma.Wm82.gnm1.ann1.Glyma06g15650
 SWEET16	sucrose effluxer gene 16 gene	glyma.Wm82.gnm1.ann1.Glyma06g17530
 SWEET17	sucrose effluxer gene 17 gene	glyma.Wm82.gnm1.ann1.Glyma06g17540
 ELO	Catalytic histone acetyltransferase subunit of the RNA polymerase II elongator complex gene	glyma.Wm82.gnm1.ann1.Glyma06g18150
-RR14	Root Preferential, Response Regulator Type-A gene 14	glyma.Wm82.gnm1.ann1.Glyma06g19870
+RR14	"Root Preferential, Response Regulator Type-A gene 14"	glyma.Wm82.gnm1.ann1.Glyma06g19870
 EDS1b	Enhanced disease susceptibility 1 gene a	glyma.Wm82.gnm1.ann1.Glyma06g19920
 SWEET18	sucrose effluxer gene 18	glyma.Wm82.gnm1.ann1.Glyma06g21570
 SWEET19	sucrose effluxer gene 19	glyma.Wm82.gnm1.ann1.Glyma06g21640
@@ -6623,11 +6623,11 @@ NAC044	NAC domain-containing protein gene 44	glyma.Wm82.gnm1.ann1.Glyma06g38440
 LDL2-1	LSD2-like2 gene 1	glyma.Wm82.gnm1.ann1.Glyma06g38600
 ZF351	tandem CCCH zinc finger protein 351 gene	glyma.Wm82.gnm1.ann1.Glyma06g44440
 FDL0647	Flowering Locus D-like 647 gene	glyma.Wm82.gnm1.ann1.Glyma06g47220
-HP07	Shoot preferential, Phosphotransfer Protein gene 7	glyma.Wm82.gnm1.ann1.Glyma07g01840
+HP07	"Shoot preferential, Phosphotransfer Protein gene 7"	glyma.Wm82.gnm1.ann1.Glyma07g01840
 VQ27	VQ motif containing protein gene 27	glyma.Wm82.gnm1.ann1.Glyma07g03240
-PHP1	Ubiquitous, Phosphotransfer Protein gene	glyma.Wm82.gnm1.ann1.Glyma07g03390
+PHP1	"Ubiquitous, Phosphotransfer Protein gene"	glyma.Wm82.gnm1.ann1.Glyma07g03390
 O-MT	O-methyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma07g05480
-PRR45	Ubiquitous, Pseudo response regulator gene 45	glyma.Wm82.gnm1.ann1.Glyma07g05530
+PRR45	"Ubiquitous, Pseudo response regulator gene 45"	glyma.Wm82.gnm1.ann1.Glyma07g05530
 RNS6	RNaseT2 protein gene 6	glyma.Wm82.gnm1.ann1.Glyma07g06520
 SDR	short-chain dehydrogenase/reductase (SDR) family protein gene	glyma.Wm82.gnm1.ann1.Glyma07g08090
 GA20OX	gibberellin oxidase gene 20 gene	glyma.Wm82.gnm1.ann1.Glyma07g08950
@@ -6637,23 +6637,23 @@ VQ28	VQ motif containing protein gene 28	glyma.Wm82.gnm1.ann1.Glyma07g10290
 WOX10	Wuschel-related homeobox transcription factor gene 10	glyma.Wm82.gnm1.ann1.Glyma07g11372
 PEAMT2	Phosphoethanolamine methyltransferase gene 2	glyma.Wm82.gnm1.ann1.Glyma07g11580
 WOX11	Wuschel-related homeobox transcription factor gene 11	glyma.Wm82.gnm1.ann1.Glyma07g15710
-RR33	Ubiquitous, Response Regiulator Type-B gene 33	glyma.Wm82.gnm1.ann1.Glyma07g26890
-HK14	Ubiquitous, Histidine Kinase gene 14	glyma.Wm82.gnm1.ann1.Glyma07g27540
+RR33	"Ubiquitous, Response Regiulator Type-B gene 33"	glyma.Wm82.gnm1.ann1.Glyma07g26890
+HK14	"Ubiquitous, Histidine Kinase gene 14"	glyma.Wm82.gnm1.ann1.Glyma07g27540
 VQ29	VQ motif containing protein gene 29	glyma.Wm82.gnm1.ann1.Glyma07g31781
 WOX12	Wuschel-related homeobox transcription factor gene 12	glyma.Wm82.gnm1.ann1.Glyma07g32430
 SACPD-A	stearoyl-acyl carrier protein desaturase gene A	glyma.Wm82.gnm1.ann1.Glyma07g32850
 FDL07	Flowering Locus D-like 7 gene	glyma.Wm82.gnm1.ann1.Glyma07g33600
 WOX13	Wuschel-related homeobox transcription factor gene 13	glyma.Wm82.gnm1.ann1.Glyma07g34425
 NAC052	NAC domain-containing protein gene 52	glyma.Wm82.gnm1.ann1.Glyma07g35630
-RR21	Root Specific, Response Regulator Type-B gene 21	glyma.Wm82.gnm1.ann1.Glyma07g37220
-HP03	Root Specific, Phosphotransfer Protein gene 3	glyma.Wm82.gnm1.ann1.Glyma07g38310
+RR21	"Root Specific, Response Regulator Type-B gene 21"	glyma.Wm82.gnm1.ann1.Glyma07g37220
+HP03	"Root Specific, Phosphotransfer Protein gene 3"	glyma.Wm82.gnm1.ann1.Glyma07g38310
 VQ30	VQ motif containing protein gene 30	glyma.Wm82.gnm1.ann1.Glyma08g00850
 SR2	Serine racemase-2 gene	glyma.Wm82.gnm1.ann1.Glyma08g01670
 RPS10C	40S ribosomal protein S10 gene	glyma.Wm82.gnm1.ann1.Glyma08g02070
 SWEET22	sucrose transporter gene 22	glyma.Wm82.gnm1.ann1.Glyma08g02890
 COL6b	Constans-like 6 gene b	glyma.Wm82.gnm1.ann1.Glyma08g04570
 VQ31	VQ motif containing protein gene 31	glyma.Wm82.gnm1.ann1.Glyma08g04651
-HK17	root preferential, Histidine Kinase 17	glyma.Wm82.gnm1.ann1.Glyma08g05370
+HK17	"root preferential, Histidine Kinase 17"	glyma.Wm82.gnm1.ann1.Glyma08g05370
 WOX14	Wuschel-related homeobox transcription factor gene 14	glyma.Wm82.gnm1.ann1.Glyma08g05831
 PAP13	Purple acid phosphatase gene 13	glyma.Wm82.gnm1.ann1.Glyma08g06090
 ANR1	Anthocyanidin reductase gene 1	glyma.Wm82.gnm1.ann1.Glyma08g06630
@@ -6666,9 +6666,9 @@ PAP14	Purple acid phosphatase gene 14	glyma.Wm82.gnm1.ann1.Glyma08g09880
 PAP15	Purple acid phosphatase gene 15	glyma.Wm82.gnm1.ann1.Glyma08g09900
 PAP16	Purple acid phosphatase gene 16	glyma.Wm82.gnm1.ann1.Glyma08g09910
 VQ33	VQ motif containing protein gene 33	glyma.Wm82.gnm1.ann1.Glyma08g10166
-RR25	Root Specific, Response Regulator Type-B gene 25	glyma.Wm82.gnm1.ann1.Glyma08g10650
+RR25	"Root Specific, Response Regulator Type-B gene 25"	glyma.Wm82.gnm1.ann1.Glyma08g10650
 KAR	3-oxoacyl-[acyl-carrier-protein] reductase gene	glyma.Wm82.gnm1.ann1.Glyma08g10760
-HK12	Root Specific, Histidine Kinase gene 12	glyma.Wm82.gnm1.ann1.Glyma08g11060
+HK12	"Root Specific, Histidine Kinase gene 12"	glyma.Wm82.gnm1.ann1.Glyma08g11060
 CHS	Chalcone synthase protein gene 	glyma.Wm82.gnm1.ann1.Glyma08g11530
 VQ34	VQ motif containing protein gene 34	glyma.Wm82.gnm1.ann1.Glyma08g14581
 VQ35	VQ motif containing protein gene 35	glyma.Wm82.gnm1.ann1.Glyma08g15620
@@ -6677,15 +6677,15 @@ LEM3	ligand-effect modulator 3 gene	glyma.Wm82.gnm1.ann1.Glyma08g17460
 VQ37	VQ motif containing protein gene 37	glyma.Wm82.gnm1.ann1.Glyma08g18820
 MAGL	Monoacylglycerol lipase gene	glyma.Wm82.gnm1.ann1.Glyma08g19060
 NAC062	NAC domain-containing protein gene 62	glyma.Wm82.gnm1.ann1.Glyma08g19300
-HP08	Ubiquitous, Phosphotransfer Protein gene 8	glyma.Wm82.gnm1.ann1.Glyma08g21510
-PHP2	Root Preferential, Phosphotransfer Protein gene	glyma.Wm82.gnm1.ann1.Glyma08g22720
+HP08	"Ubiquitous, Phosphotransfer Protein gene 8"	glyma.Wm82.gnm1.ann1.Glyma08g21510
+PHP2	"Root Preferential, Phosphotransfer Protein gene"	glyma.Wm82.gnm1.ann1.Glyma08g22720
 VQ38	VQ motif containing protein gene 38	glyma.Wm82.gnm1.ann1.Glyma08g22860
 FDL08	Flowering Locus D-like 8 gene	glyma.Wm82.gnm1.ann1.Glyma08g24340
 VQ39	VQ motif containing protein gene 39	glyma.Wm82.gnm1.ann1.Glyma08g36730
 VQ40	VQ motif containing protein gene 40	glyma.Wm82.gnm1.ann1.Glyma08g36740
 VQ41	VQ motif containing protein gene 41	glyma.Wm82.gnm1.ann1.Glyma08g36750
 PAP17	Purple acid phosphatase gene 17	glyma.Wm82.gnm1.ann1.Glyma08g40210
-RR04	Shoot preferential, Response Regulator Type-A gene 4	glyma.Wm82.gnm1.ann1.Glyma08g40330
+RR04	"Shoot preferential, Response Regulator Type-A gene 4"	glyma.Wm82.gnm1.ann1.Glyma08g40330
 VQ42	VQ motif containing protein gene 42	glyma.Wm82.gnm1.ann1.Glyma08g42125
 PAP18	Purple acid phosphatase gene 18	glyma.Wm82.gnm1.ann1.Glyma08g42670
 PAP19	Purple acid phosphatase gene 19	glyma.Wm82.gnm1.ann1.Glyma08g46550
@@ -6693,9 +6693,9 @@ SWEET26	sucrose effluxer gene 26	glyma.Wm82.gnm1.ann1.Glyma08g47560
 FT4	Flowering Locus T 4 gene	glyma.Wm82.gnm1.ann1.Glyma08g47810
 FT6	Flowering Locus T 6 gene	glyma.Wm82.gnm1.ann1.Glyma08g47820
 SWEET27	sucrose effluxer gene 27	glyma.Wm82.gnm1.ann1.Glyma08g48280
-ETR1	Ubiquitous, Histidine Kinase gene 1	glyma.Wm82.gnm1.ann1.Glyma09g00490
+ETR1	"Ubiquitous, Histidine Kinase gene 1"	glyma.Wm82.gnm1.ann1.Glyma09g00490
 NPR1-2	nonexpressor of PR1 gene	glyma.Wm82.gnm1.ann1.Glyma09g02430
-RR20	Root Preferential, Response Regulator Type-B gene 20	glyma.Wm82.gnm1.ann1.Glyma09g04470
+RR20	"Root Preferential, Response Regulator Type-B gene 20"	glyma.Wm82.gnm1.ann1.Glyma09g04470
 SWEET28	sucrose effluxer gene 28	glyma.Wm82.gnm1.ann1.Glyma09g04840
 CYP81D3	cytochrome P450 81D3-like gene	glyma.Wm82.gnm1.ann1.Glyma09g05440
 VQ43	VQ motif containing protein gene 43	glyma.Wm82.gnm1.ann1.Glyma09g05700
@@ -6703,7 +6703,7 @@ GI2	Gigantea protein gene 2	glyma.Wm82.gnm1.ann1.Glyma09g07240
 DGAT1C	diacylglycerol acyltransferase 1 gene C	glyma.Wm82.gnm1.ann1.Glyma09g07520
 MKK1b	Mitogen-activated protein kinase kinase 1 gene b	glyma.Wm82.gnm1.ann1.Glyma09g07660
 CFIM-25	mRNA and protein family gene	glyma.Wm82.gnm1.ann1.Glyma09g07670
-RR30	Root Preferential, Response Regulator Type-B gene 30	glyma.Wm82.gnm1.ann1.Glyma09g14650
+RR30	"Root Preferential, Response Regulator Type-B gene 30"	glyma.Wm82.gnm1.ann1.Glyma09g14650
 VQ44	VQ motif containing protein gene 44	glyma.Wm82.gnm1.ann1.Glyma09g17151
 CLC-C	anion channel/ voltage-gated chloride channel gene	glyma.Wm82.gnm1.ann1.Glyma09g28620
 WOX15	Wuschel-related homeobox transcription factor gene 15	glyma.Wm82.gnm1.ann1.Glyma09g30831
@@ -6716,14 +6716,14 @@ PAP20	Purple acid phosphatase gene 20	glyma.Wm82.gnm1.ann1.Glyma09g36360
 MPK4c	Mitogen-activated protein kinase kinase 4 gene c	glyma.Wm82.gnm1.ann1.Glyma09g39190
 BEN1	Brassinosteriod Insensitive 1 Enhanced 1 gene	glyma.Wm82.gnm1.ann1.Glyma09g40590
 COL12a	Constans-like 12a gene	glyma.Wm82.gnm1.ann1.Glyma10g02621
-HP10	Ubiquitous, Phosphotransfer Protein gene 10	glyma.Wm82.gnm1.ann1.Glyma10g02820
+HP10	"Ubiquitous, Phosphotransfer Protein gene 10"	glyma.Wm82.gnm1.ann1.Glyma10g02820
 NAC071	NAC domain-containing protein gene 71	glyma.Wm82.gnm1.ann1.Glyma10g04350
 WOX16	Wuschel-related homeobox transcription factor gene 16	glyma.Wm82.gnm1.ann1.Glyma10g08030
 PAP21	Purple acid phosphatase gene 21	glyma.Wm82.gnm1.ann1.Glyma10g08300
 FDL10	Flowering Locus D-like gene 10	glyma.Wm82.gnm1.ann1.Glyma10g08370
 Le5	Lectin gene 5	glyma.Wm82.gnm1.ann1.Glyma10g15480
 UO1	Urate Oxidase 1 gene	glyma.Wm82.gnm1.ann1.Glyma10g23790
-HP04	Root Specific, Phosphotransfer Protein gene 4	glyma.Wm82.gnm1.ann1.Glyma10g29890
+HP04	"Root Specific, Phosphotransfer Protein gene 4"	glyma.Wm82.gnm1.ann1.Glyma10g29890
 VQ46	VQ motif containing protein gene 46	glyma.Wm82.gnm1.ann1.Glyma10g41970
 COL7a	Constans-like 7 gene a	glyma.Wm82.gnm1.ann1.Glyma10g42090
 WOX17	Wuschel-related homeobox transcription factor gene 17	glyma.Wm82.gnm1.ann1.Glyma10g43580
@@ -6731,21 +6731,21 @@ D2	D2 gene	glyma.Wm82.gnm1.ann1.Glyma11g02980
 KEU	protein transporter gene	glyma.Wm82.gnm1.ann1.Glyma11g03230
 EXLB8	expansin-like B gene 8	glyma.Wm82.gnm1.ann1.Glyma11g04080
 EXLB9	expansin-like B gene 9	glyma.Wm82.gnm1.ann1.Glyma11g04370
-PRR49	Ubiquitous, Pseudo response regulator gene 49	glyma.Wm82.gnm1.ann1.Glyma11g04440
+PRR49	"Ubiquitous, Pseudo response regulator gene 49"	glyma.Wm82.gnm1.ann1.Glyma11g04440
 VQ47	VQ motif containing protein gene 47	glyma.Wm82.gnm1.ann1.Glyma11g04970
 WOX18	Wuschel-related homeobox transcription factor gene 18	glyma.Wm82.gnm1.ann1.Glyma11g08091
-HK08	Root preferential, Histidine Kinase gene 8	glyma.Wm82.gnm1.ann1.Glyma11g08310
+HK08	"Root preferential, Histidine Kinase gene 8"	glyma.Wm82.gnm1.ann1.Glyma11g08310
 DGAT2E	diacylglycerol acyltransferase 2 gene E	glyma.Wm82.gnm1.ann1.Glyma11g09410
 CYP81D5	cytochrome P450 81D5-like gene	glyma.Wm82.gnm1.ann1.Glyma11g09880
 EXLA1	expansin-like A gene 1	glyma.Wm82.gnm1.ann1.Glyma11g10240
 LPAT	Lysophosphatidyl acyltransferase gene	glyma.Wm82.gnm1.ann1.Glyma11g12830
 WOX19	Wuschel-related homeobox transcription factor gene 19	glyma.Wm82.gnm1.ann1.Glyma11g14940
 MYB59	MYB DNA binding / transcription factor gene 59	glyma.Wm82.gnm1.ann1.Glyma11g15180
-RR11	Root Preferential, Response Regulator Type-A gene 11	glyma.Wm82.gnm1.ann1.Glyma11g21650
+RR11	"Root Preferential, Response Regulator Type-A gene 11"	glyma.Wm82.gnm1.ann1.Glyma11g21650
 DIN1	asparagine 1 gene	glyma.Wm82.gnm1.ann1.Glyma11g27480
 WOX20	Wuschel-related homeobox transcription factor gene 20	glyma.Wm82.gnm1.ann1.Glyma11g34990
 PAP22	Purple acid phosphatase gene 22	glyma.Wm82.gnm1.ann1.Glyma11g36510
-RR23	Root Preferential, Response Regulator Type-B gene 23	glyma.Wm82.gnm1.ann1.Glyma11g37480
+RR23	"Root Preferential, Response Regulator Type-B gene 23"	glyma.Wm82.gnm1.ann1.Glyma11g37480
 VQ48	VQ motif containing protein gene 48	glyma.Wm82.gnm1.ann1.Glyma11g38180
 PAP23	Purple acid phosphatase gene 23	glyma.Wm82.gnm1.ann1.Glyma12g01000
 TMT2a	gamma-Tocopherol methyltranserase 2 gene a	glyma.Wm82.gnm1.ann1.Glyma12g01690
@@ -6753,11 +6753,11 @@ EXLA2	expansin-like A gene 2	glyma.Wm82.gnm1.ann1.Glyma12g02550
 jmjC	transcription factor; jumonji (jmjC) domain-containing protein gene	glyma.Wm82.gnm1.ann1.Glyma12g05890
 WOX21	Wuschel-related homeobox transcription factor gene 21	glyma.Wm82.gnm1.ann1.Glyma12g06895
 ADT2	AROGENATE DEHYDRATASE 2 gene	glyma.Wm82.gnm1.ann1.Glyma12g07720
-PRR42, PRR7	Ubiquitous, Pseudo response regulator gene 42	glyma.Wm82.gnm1.ann1.Glyma12g07860
+PRR42, PRR7	"Ubiquitous, Pseudo response regulator gene 42"	glyma.Wm82.gnm1.ann1.Glyma12g07860
 PRR3B	Psudo-Response Regulator 3 gene B	glyma.Wm82.gnm1.ann1.Glyma12g07861
 NAC083	NAC domain-containing protein gene 83	glyma.Wm82.gnm1.ann1.Glyma12g13710
 PLA1-IId	Phospholipase A1-Iid gene	glyma.Wm82.gnm1.ann1.Glyma12g15430
-HGO	HOMOGENTISATE 1,2-DIOXYGENASE gene	glyma.Wm82.gnm1.ann1.Glyma12g20220
+HGO	"HOMOGENTISATE 1,2-DIOXYGENASE gene"	glyma.Wm82.gnm1.ann1.Glyma12g20220
 NAC084	NAC domain-containing protein gene 84	glyma.Wm82.gnm1.ann1.Glyma12g22790
 NAC085	NAC domain-containing protein gene 85	glyma.Wm82.gnm1.ann1.Glyma12g22880
 VQ49	VQ motif containing protein gene 49	glyma.Wm82.gnm1.ann1.Glyma12g24250
@@ -6768,7 +6768,7 @@ NAC092	NAC domain-containing protein gene 92	glyma.Wm82.gnm1.ann1.Glyma12g35000
 VQ50	VQ motif containing protein gene 50	glyma.Wm82.gnm1.ann1.Glyma12g35380
 SWEET29	sucrose effluxer gene 29	glyma.Wm82.gnm1.ann1.Glyma12g36300
 COL4a	Constans-like 4 gene a	glyma.Wm82.gnm1.ann1.Glyma13g01290
-RR13	Root Preferential, Response Regulator Type-A gene 13	glyma.Wm82.gnm1.ann1.Glyma13g03560
+RR13	"Root Preferential, Response Regulator Type-A gene 13"	glyma.Wm82.gnm1.ann1.Glyma13g03560
 FDL13	Flowering Locus D-like gene 13	glyma.Wm82.gnm1.ann1.Glyma13g03880
 NAC095	NAC domain-containing protein gene 95	glyma.Wm82.gnm1.ann1.Glyma13g05540
 VQ51	VQ motif containing protein gene 51	glyma.Wm82.gnm1.ann1.Glyma13g08831
@@ -6777,15 +6777,15 @@ COL9a	Constans-like 9a gene	glyma.Wm82.gnm1.ann1.Glyma13g11592
 MKK2b	Mitogen-activated protein kinase kinase 2 gene b	glyma.Wm82.gnm1.ann1.Glyma13g16650
 KASII-B, KASIIb	beta-ketoacyl-ACP synthetase 2 gene B	glyma.Wm82.gnm1.ann1.Glyma13g17290
 DGAT3B	diacylglycerol acyltransferase 3 gene B	glyma.Wm82.gnm1.ann1.Glyma13g17860
-PRR41	Root Preferential, Pseudo response regulator gene 41	glyma.Wm82.gnm1.ann1.Glyma13g19870
+PRR41	"Root Preferential, Pseudo response regulator gene 41"	glyma.Wm82.gnm1.ann1.Glyma13g19870
 WOX22	Wuschel-related homeobox transcription factor gene 22	glyma.Wm82.gnm1.ann1.Glyma13g21860
-RR32	Root Specific, Response Regulator Type-B gene 32	glyma.Wm82.gnm1.ann1.Glyma13g22320
+RR32	"Root Specific, Response Regulator Type-B gene 32"	glyma.Wm82.gnm1.ann1.Glyma13g22320
 PAP25	Purple acid phosphatase gene 25	glyma.Wm82.gnm1.ann1.Glyma13g23090
 WOX23	Wuschel-related homeobox transcription factor gene 23	glyma.Wm82.gnm1.ann1.Glyma13g24150
 VQ53	VQ motif containing protein gene 53	glyma.Wm82.gnm1.ann1.Glyma13g24700
 VQ54	VQ motif containing protein gene 54	glyma.Wm82.gnm1.ann1.Glyma13g26290
-RR18	Root specific, Response Regulator Type-A gene 18	glyma.Wm82.gnm1.ann1.Glyma13g26770
-HP02	Ubiquitous, Phosphotransfer Protein gene 2	glyma.Wm82.gnm1.ann1.Glyma13g28390
+RR18	"Root specific, Response Regulator Type-A gene 18"	glyma.Wm82.gnm1.ann1.Glyma13g26770
+HP02	"Ubiquitous, Phosphotransfer Protein gene 2"	glyma.Wm82.gnm1.ann1.Glyma13g28390
 VQ55	VQ motif containing protein gene 55	glyma.Wm82.gnm1.ann1.Glyma13g29005
 VQ56	VQ motif containing protein gene 56	glyma.Wm82.gnm1.ann1.Glyma13g31180
 NAC099	NAC domain-containing protein gene 99	glyma.Wm82.gnm1.ann1.Glyma13g31660
@@ -6802,15 +6802,15 @@ FDL1339	Flowering Locus D-like gene 1339	glyma.Wm82.gnm1.ann1.Glyma13g39340
 WOX24	Wuschel-related homeobox transcription factor gene 24	glyma.Wm82.gnm1.ann1.Glyma13g41000
 AR791	actin binding protein gene 791	glyma.Wm82.gnm1.ann1.Glyma13g42970
 VQ58	VQ motif containing protein gene 58	glyma.Wm82.gnm1.ann1.Glyma14g00570
-HK11	Ubiquitous, Histidine Kinase gene 11	glyma.Wm82.gnm1.ann1.Glyma14g01040
+HK11	"Ubiquitous, Histidine Kinase gene 11"	glyma.Wm82.gnm1.ann1.Glyma14g01040
 PAP27	Purple acid phosphatase gene 27	glyma.Wm82.gnm1.ann1.Glyma14g02790
 ERD15D	Responsive to Desication 15 gene D	glyma.Wm82.gnm1.ann1.Glyma14g05980
 SYP38	syntaxin gene	glyma.Wm82.gnm1.ann1.Glyma14g06610
 BIK1-6	BOTRYTIS INDUCED KINASE1 gene 6	glyma.Wm82.gnm1.ann1.Glyma14g07460
 WOX25	Wuschel-related homeobox transcription factor gene 25	glyma.Wm82.gnm1.ann1.Glyma14g09310
 WRKY132	WRKY Transcription Factor gene 132	glyma.Wm82.gnm1.ann1.Glyma14g11440
-HK03	Root Specific, Histidine Kinase gene 3	glyma.Wm82.gnm1.ann1.Glyma14g12330
-RR28	Ubiquitous, Response Regiulator Type-B gene 28	glyma.Wm82.gnm1.ann1.Glyma14g13320
+HK03	"Root Specific, Histidine Kinase gene 3"	glyma.Wm82.gnm1.ann1.Glyma14g12330
+RR28	"Ubiquitous, Response Regiulator Type-B gene 28"	glyma.Wm82.gnm1.ann1.Glyma14g13320
 SWEET35	sucrose effluxer gene 35	glyma.Wm82.gnm1.ann1.Glyma14g17810
 NAC109	NAC domain-containing protein gene 109	glyma.Wm82.gnm1.ann1.Glyma14g24220
 SKP2A	protein binding gene	glyma.Wm82.gnm1.ann1.Glyma14g26660
@@ -6819,28 +6819,28 @@ SWEET38	sucrose effluxer gene 38	glyma.Wm82.gnm1.ann1.Glyma14g30940
 PP2C	protein phosphatase 2C gene	glyma.Wm82.gnm1.ann1.Glyma14g32430
 VQ60	VQ motif containing protein gene 60	glyma.Wm82.gnm1.ann1.Glyma14g34681
 COL8b	Constans-like 8b gene	glyma.Wm82.gnm1.ann1.Glyma14g36930
-FAN	microsomal omega-3 fatty acid desaturase, FAD3A gene	glyma.Wm82.gnm1.ann1.Glyma14g37350
-PHP3	Root Specific, Phosphotransfer Protein gene	glyma.Wm82.gnm1.ann1.Glyma15g01010
+FAN	"microsomal omega-3 fatty acid desaturase, FAD3A gene"	glyma.Wm82.gnm1.ann1.Glyma14g37350
+PHP3	"Root Specific, Phosphotransfer Protein gene"	glyma.Wm82.gnm1.ann1.Glyma15g01010
 WOX26	Wuschel-related homeobox transcription factor gene 26	glyma.Wm82.gnm1.ann1.Glyma15g04460
 AMF3	ammonium-facilitator 3 gene	glyma.Wm82.gnm1.ann1.Glyma15g06660
 CAMS1	CAMELLIOL C SYNTHASE 1 protein gene	glyma.Wm82.gnm1.ann1.Glyma15g07110
 NAC091, NAC113	NAC domain-containing protein gene 91	glyma.Wm82.gnm1.ann1.Glyma15g07620
 VQ61	VQ motif containing protein gene 61	glyma.Wm82.gnm1.ann1.Glyma15g08160
 DRM1	DORMANCY-ASSOCIATED PROTEIN 1 gene	glyma.Wm82.gnm1.ann1.Glyma15g08300
-HP01	Root Preferential, Phosphotransfer Protein gene 1	glyma.Wm82.gnm1.ann1.Glyma15g10660
-RR22	Root Preferential, Response Regulator Type-B gene 22	glyma.Wm82.gnm1.ann1.Glyma15g15520
+HP01	"Root Preferential, Phosphotransfer Protein gene 1"	glyma.Wm82.gnm1.ann1.Glyma15g10660
+RR22	"Root Preferential, Response Regulator Type-B gene 22"	glyma.Wm82.gnm1.ann1.Glyma15g15520
 SWEET40	sucrose effluxer gene 40	glyma.Wm82.gnm1.ann1.Glyma15g16030
 VQ62	VQ motif containing protein gene 62	glyma.Wm82.gnm1.ann1.Glyma15g16990
 MKK1a	Mitogen-activated protein kinase kinase 1 gene a	glyma.Wm82.gnm1.ann1.Glyma15g18860
-RR29	Root Preferential, Response Regulator Type-B gene 29	glyma.Wm82.gnm1.ann1.Glyma15g24770
+RR29	"Root Preferential, Response Regulator Type-B gene 29"	glyma.Wm82.gnm1.ann1.Glyma15g24770
 WRI1	WRINKLED1 gene	glyma.Wm82.gnm1.ann1.Glyma15g34770
 FDL15	Flowering Locus D-like gene 15	glyma.Wm82.gnm1.ann1.Glyma15g35080
 VQ63	VQ motif containing protein gene 63	glyma.Wm82.gnm1.ann1.Glyma15g37230
-RR06	Root specific, Response Regulator Type-A gene 6	glyma.Wm82.gnm1.ann1.Glyma15g37770
+RR06	"Root specific, Response Regulator Type-A gene 6"	glyma.Wm82.gnm1.ann1.Glyma15g37770
 VQ64	VQ motif containing protein gene 64	glyma.Wm82.gnm1.ann1.Glyma15g40000
 NCED3	NINE-CIS-EPOXYCAROTENOID DIOXYGENASE3	glyma.Wm82.gnm1.ann1.Glyma15g40070
 VQ65	VQ motif containing protein gene 65	glyma.Wm82.gnm1.ann1.Glyma15g42280
-PRR44	Ubiquitous, Pseudo response regulator gene 44	glyma.Wm82.gnm1.ann1.Glyma16g02050
+PRR44	"Ubiquitous, Pseudo response regulator gene 44"	glyma.Wm82.gnm1.ann1.Glyma16g02050
 RNS2	RNaseT2 protein gene 2	glyma.Wm82.gnm1.ann1.Glyma16g03118
 FT5a	Flowering Locus T 5 gene a	glyma.Wm82.gnm1.ann1.Glyma16g04830
 FT3a	Flowering Locus T 3 gene a	glyma.Wm82.gnm1.ann1.Glyma16g04840
@@ -6853,7 +6853,7 @@ PDH1	dirigent-like protein gene	glyma.Wm82.gnm1.ann1.Glyma16g25580
 FT2a	Flowering Locus T 2 gene a	glyma.Wm82.gnm1.ann1.Glyma16g26660
 FT2b	Flowering Locus T 2 gene b	glyma.Wm82.gnm1.ann1.Glyma16g26690
 Rj2	Host Resistance Protein gene	glyma.Wm82.gnm1.ann1.Glyma16g33780
-RR19	Root Preferential, Response Regulator Type-B gene 19	glyma.Wm82.gnm1.ann1.Glyma17g03380
+RR19	"Root Preferential, Response Regulator Type-B gene 19"	glyma.Wm82.gnm1.ann1.Glyma17g03380
 C/VIF1	pectinesterase inhibitor gene	glyma.Wm82.gnm1.ann1.Glyma17g04050
 MTO3	METHIONINE OVER-ACCUMULATOR 3 gene	glyma.Wm82.gnm1.ann1.Glyma17g04340
 DGAT3A	diacylglycerol acyltransferase 3 gene A	glyma.Wm82.gnm1.ann1.Glyma17g04650
@@ -6861,7 +6861,7 @@ KASIIa	3-ketoacyl-ACP synthase II gene a	glyma.Wm82.gnm1.ann1.Glyma17g05200
 MKK2a	Mitogen-activated protein kinase kinase 2 gene a	glyma.Wm82.gnm1.ann1.Glyma17g06020
 UC2	Uncharacterized protein gene 2	glyma.Wm82.gnm1.ann1.Glyma17g07200
 XTH43f	xyloglucan endotransglycosylase/hydrolase gene	glyma.Wm82.gnm1.ann1.Glyma17g07250
-RR02	Ubiquitous, Response Regulator Type-A gene 2	glyma.Wm82.gnm1.ann1.Glyma17g10170
+RR02	"Ubiquitous, Response Regulator Type-A gene 2"	glyma.Wm82.gnm1.ann1.Glyma17g10170
 PAP28	Purple acid phosphatase gene 28	glyma.Wm82.gnm1.ann1.Glyma17g11790
 EXLB10	expansin-like B gene 10	glyma.Wm82.gnm1.ann1.Glyma17g15640
 EXLB11	expansin-like B gene 11	glyma.Wm82.gnm1.ann1.Glyma17g15670
@@ -6869,18 +6869,18 @@ EXLB12	expansin-like B gene 12	glyma.Wm82.gnm1.ann1.Glyma17g15680
 EXLB13	expansin-like B gene 13	glyma.Wm82.gnm1.ann1.Glyma17g15690
 EXLB14	expansin-like B gene 14	glyma.Wm82.gnm1.ann1.Glyma17g15710
 EXLB15	expansin-like B gene 15	glyma.Wm82.gnm1.ann1.Glyma17g16210
-PRR47	Ubiquitous, Pseudo response regulator gene 47	glyma.Wm82.gnm1.ann1.Glyma17g16360
+PRR47	"Ubiquitous, Pseudo response regulator gene 47"	glyma.Wm82.gnm1.ann1.Glyma17g16360
 VQ66	VQ motif containing protein gene 66	glyma.Wm82.gnm1.ann1.Glyma17g17210
 POT	proton-dependent oligopeptide transport family protein gene	glyma.Wm82.gnm1.ann1.Glyma17g25390
-RR27	Root Specific, Response Regulator Type-B gene 27	glyma.Wm82.gnm1.ann1.Glyma17g33230
-HK04	Root Specific, Histidine Kinase gene 4	glyma.Wm82.gnm1.ann1.Glyma17g33670
+RR27	"Root Specific, Response Regulator Type-B gene 27"	glyma.Wm82.gnm1.ann1.Glyma17g33230
+HK04	"Root Specific, Histidine Kinase gene 4"	glyma.Wm82.gnm1.ann1.Glyma17g33670
 WOX27	Wuschel-related homeobox transcription factor gene 27	glyma.Wm82.gnm1.ann1.Glyma17g35880
 PAP29	Purple acid phosphatase gene 29	glyma.Wm82.gnm1.ann1.Glyma18g00410
 VQ67	VQ motif containing protein gene 67	glyma.Wm82.gnm1.ann1.Glyma18g02140
 WOX28	Wuschel-related homeobox transcription factor gene 28	glyma.Wm82.gnm1.ann1.Glyma18g03350
 HSP21	HEAT SHOCK PROTEIN 21 gene	glyma.Wm82.gnm1.ann1.Glyma18g10760
 VQ68	VQ motif containing protein gene 68	glyma.Wm82.gnm1.ann1.Glyma18g13001
-RR05	Ubiquitous, Response Regulator Type-A gene 5	glyma.Wm82.gnm1.ann1.Glyma18g17330
+RR05	"Ubiquitous, Response Regulator Type-A gene 5"	glyma.Wm82.gnm1.ann1.Glyma18g17330
 PAP30	Purple acid phosphatase gene 30	glyma.Wm82.gnm1.ann1.Glyma18g17580
 WOX29	Wuschel-related homeobox transcription factor gene 29	glyma.Wm82.gnm1.ann1.Glyma18g39520
 NAB	Nucleic Acids Binding protein gene	glyma.Wm82.gnm1.ann1.Glyma18g40360
@@ -6901,20 +6901,20 @@ FT5b	Flowering Locus T 5 gene b	glyma.Wm82.gnm1.ann1.Glyma19g28400
 WOX31	Wuschel-related homeobox transcription factor gene 31	glyma.Wm82.gnm1.ann1.Glyma19g29660
 VQ69	VQ motif containing protein gene 69	glyma.Wm82.gnm1.ann1.Glyma19g30531
 VQ70	VQ motif containing protein gene 70	glyma.Wm82.gnm1.ann1.Glyma19g31080
-RR10	Ubiquitous, Response Regulator Type-A gene 10	glyma.Wm82.gnm1.ann1.Glyma19g31320
-HP06	Root Preferential, Phosphotransfer Protein gene 6	glyma.Wm82.gnm1.ann1.Glyma19g33420
-RR35	Root Preferential, Response Regulator Type-C gene 35	glyma.Wm82.gnm1.ann1.Glyma19g35470
-RR36	Root Specific, Response Regulator Type-C gene 36	glyma.Wm82.gnm1.ann1.Glyma19g35480
+RR10	"Ubiquitous, Response Regulator Type-A gene 10"	glyma.Wm82.gnm1.ann1.Glyma19g31320
+HP06	"Root Preferential, Phosphotransfer Protein gene 6"	glyma.Wm82.gnm1.ann1.Glyma19g33420
+RR35	"Root Preferential, Response Regulator Type-C gene 35"	glyma.Wm82.gnm1.ann1.Glyma19g35470
+RR36	"Root Specific, Response Regulator Type-C gene 36"	glyma.Wm82.gnm1.ann1.Glyma19g35480
 PHA1	plasma membrane H+-ATPase gene 1	glyma.Wm82.gnm1.ann1.Glyma19g35930
 PAP32	Purple acid phosphatase gene 32	glyma.Wm82.gnm1.ann1.Glyma19g37850
 PAP33	Purple acid phosphatase gene 33	glyma.Wm82.gnm1.ann1.Glyma19g37860
 VQ71	VQ motif containing protein gene 71	glyma.Wm82.gnm1.ann1.Glyma19g38980
 COL11b	Constans-like 11b gene	glyma.Wm82.gnm1.ann1.Glyma19g39460
-ERS1	Ubiquitous, Histidine Kinase gene	glyma.Wm82.gnm1.ann1.Glyma19g40090
+ERS1	"Ubiquitous, Histidine Kinase gene"	glyma.Wm82.gnm1.ann1.Glyma19g40090
 NIP30	NEFA interacting protein gene 30	glyma.Wm82.gnm1.ann1.Glyma19g40910
 E3	Phytochrome A2 gene	glyma.Wm82.gnm1.ann1.Glyma19g41210
 VQ72	VQ motif containing protein gene 72	glyma.Wm82.gnm1.ann1.Glyma19g43590
-PRR40	Root Preferential, Pseudo response regulator gene 40	glyma.Wm82.gnm1.ann1.Glyma19g44970
+PRR40	"Root Preferential, Pseudo response regulator gene 40"	glyma.Wm82.gnm1.ann1.Glyma19g44970
 PAP34	Purple acid phosphatase gene 34	glyma.Wm82.gnm1.ann1.Glyma20g01470
 WOX32	Wuschel-related homeobox transcription factor gene 32	glyma.Wm82.gnm1.ann1.Glyma20g02161
 PAP35	Purple acid phosphatase gene 35	glyma.Wm82.gnm1.ann1.Glyma20g03260
@@ -6929,9 +6929,9 @@ HMGB6	Transcription factor gene	glyma.Wm82.gnm1.ann1.Glyma20g23370
 COL14a, COL7b	Constans-like 14a gene	glyma.Wm82.gnm1.ann1.Glyma20g24940
 VQ74	VQ motif containing protein gene 74	glyma.Wm82.gnm1.ann1.Glyma20g25070
 GI1	gigantea protein gene 1	glyma.Wm82.gnm1.ann1.Glyma20g30980
-UC1	Uncharacterized protein  gene 1, but possessing aMyb-DNA binding domain	glyma.Wm82.gnm1.ann1.Glyma20g32540
+UC1	"Uncharacterized protein  gene 1, but possessing aMyb-DNA binding domain"	glyma.Wm82.gnm1.ann1.Glyma20g32540
 Lbc2A	Leghemoglobin C2 gene A gene	glyma.Wm82.gnm1.ann1.Glyma20g33290
-HP05	Ubiquitous, Phosphotransfer Protein gene 5	glyma.Wm82.gnm1.ann1.Glyma20g37450
+HP05	"Ubiquitous, Phosphotransfer Protein gene 5"	glyma.Wm82.gnm1.ann1.Glyma20g37450
 PLDZ1	PHOSPHOLIPASE D ZETA1 gene	glyma.Wm82.gnm1.ann1.Glyma20g38200
 BTB001	BTB gene 1	glyma.Wm82.gnm2.ann.Glyma.01G192300
 KCS10	3-ketoacyl-CoA Synthase 10 gene	glyma.Wm82.gnm4.ann1. Glyma.08G261100
