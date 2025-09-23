@@ -1,4 +1,4 @@
-symbol	description	identifier
+gene_symbol	gene_symbol_long	identifier
 VQ3	VQ transcription factor gene 3	glyma.Wm82.gmn2.ann1.Glyma.01G195300
 TGA02	TGA transcription factor gene 2	glyma.Wm82.gmn2.ann1.Glyma.02G097900
 VQ4	VQ transcription factor gene 4	glyma.Wm82.gmn2.ann1.Glyma.02G208800
