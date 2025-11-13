@@ -12,15 +12,14 @@ categories: general
 
 SoySNP50K and SoySRRs markers have been mapped to both glyma.Wm82.gnm5 and glyma.Wm82.gnm6. The data is available to view on JBrowse and data files can be downloaded from the SoyBase DataStore.
 
-|Data Download | JBrowse View |
-|:---:|:---:|
-| [glyma.Wm82.gnm5 Data](https://data.soybase.org/Glycine/max/markers/) | [glyma.Wm82.gnm5 JBrowse](https://www.soybase.org/assets/js/jbrowse/?session=share-dUSuCJM_Jf&password=jokaz) |
-| [glyma.Wm82.gnm6 Data](https://data.soybase.org/Glycine/max/markers/)  | [glyma.Wm82.gnm6 JBrowse](https://www.soybase.org/assets/js/jbrowse/?session=share-WlaSIspetQ&password=j79UB)  |
+|   Data Download   |     |   JBrowse View   |
+|:---:|:---:|:---:|
+|[  glyma.Wm82.gnm5  ](https://data.soybase.org/Glycine/max/markers/)|     |[  glyma.Wm82.gnm5  ](https://www.soybase.org/assets/js/jbrowse/?session=share-dUSuCJM_Jf&password=jokaz)|
+|[  glyma.Wm82.gnm6  ](https://data.soybase.org/Glycine/max/markers/)|     |[  glyma.Wm82.gnm6  ](https://www.soybase.org/assets/js/jbrowse/?session=share-WlaSIspetQ&password=j79UB)|
 
 ---
-
 ### More gene symbols added 
 
-The SoyBase has curated and add over 2,000 more gene symbols to the (Gene Symbol Viewer)[https://www.soybase.org/tools/gene-symbols/]. The gene symbols within the tool are from publications or have been submitted to SoyBase.  
+The SoyBase has curated and add over 2,000 more gene symbols to the [Gene Symbol Viewer](https://www.soybase.org/tools/gene-symbols/). The gene symbols within the tool are from publications or have been submitted to SoyBase.  
 
 
