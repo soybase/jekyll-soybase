@@ -12,8 +12,10 @@ categories: general
 
 SoySNP50K and SoySRRs markers have been mapped to both glyma.Wm82.gnm5 and glyma.Wm82.gnm6. The data is available to view on JBrowse and data files can be downloaded from the SoyBase DataStore.
 
-| glyma.Wm82.gnm5 | (Data Download)[https://data.soybase.org/Glycine/max/markers/] | (JBrowse View)[https://www.soybase.org/assets/js/jbrowse/?session=share-dUSuCJM_Jf&password=jokaz] |
-| glyma.Wm82.gnm6 | (Data Download)[https://data.soybase.org/Glycine/max/markers/]  | (JBrowse View)[https://www.soybase.org/assets/js/jbrowse/?session=share-WlaSIspetQ&password=j79UB]  |
+|Data Download | JBrowse View |
+|:---:|:---:|
+| (glyma.Wm82.gnm5 Data)[https://data.soybase.org/Glycine/max/markers/] | (glyma.Wm82.gnm5 JBrowse)[https://www.soybase.org/assets/js/jbrowse/?session=share-dUSuCJM_Jf&password=jokaz] |
+| (glyma.Wm82.gnm6 Data)[https://data.soybase.org/Glycine/max/markers/]  | (glyma.Wm82.gnm6 JBrowse)[https://www.soybase.org/assets/js/jbrowse/?session=share-WlaSIspetQ&password=j79UB]  |
 
 
 **More gene symbols added**
