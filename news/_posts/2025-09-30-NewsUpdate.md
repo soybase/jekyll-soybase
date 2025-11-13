@@ -2,7 +2,7 @@
 layout: news-item
 title:  New data available!
 author: Jacqueline Campbell
-date:  2025-11-34
+date:  2025-11-14
 end_date: 2026-01-01
 summary: New marker and gene symbol data available on SoyBase!
 categories: general    
