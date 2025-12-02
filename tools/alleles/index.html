@@ -590,7 +590,35 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 
     document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
 
-    let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+    // Get selected strains if present 
+    let strainSelect = document.getElementById("strain-select");
+    let strains = '';
+    
+    // Check if strain selection is enabled and get all selected strains
+    const selectedStrainMode = document.querySelector('input[name="strain-type"]:checked');
+    if (strainSelect && selectedStrainMode && selectedStrainMode.value === 'specific-strain') {
+      // Get all selected options from the multi-select
+      const selectedOptions = Array.from(strainSelect.selectedOptions)
+        .filter(option => option.value) // Filter out empty/placeholder options
+        .map(option => option.value);
+      
+      if (selectedOptions.length > 0) {
+        strains = selectedOptions.join(',');
+      }
+    }
+    
+    let url = '';
+    if (strains) {
+      url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}?${
+        strains
+          .split(',')
+          .filter(s => s)
+          .map(s => `samples=${encodeURIComponent(s)}`)
+          .join('&')
+      }`;
+    } else {
+      url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
+    }
 
     // Handle no start/stop values
     if (!start || !stop) {
