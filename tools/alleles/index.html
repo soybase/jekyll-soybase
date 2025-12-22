@@ -178,6 +178,10 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
           <span><span id="modal-search-region"></span></span>
         </div>
       </div>
+      <div id="modal-strains" class="uk-margin-small-bottom" style="display: none;">
+        <span class="uk-text-bold">Selected strains: </span>
+        <span id="modal-strains-list"></span>
+      </div>
       <div id="modal-body" uk-overflow-auto>
         <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small">
           <thead style="background-color: lightgrey;">
@@ -465,6 +469,8 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
     document.getElementById("alert").setAttribute("hidden", true);
     document.getElementById("modal-gene-name").textContent = "";
     document.getElementById("region-searched").textContent = "";
+    document.getElementById("modal-strains").style.display = "none";
+    document.getElementById("modal-strains-list").textContent = "";
     UIkit.modal('#modal').hide();
   }
 
@@ -593,6 +599,7 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
     // Get selected strains if present 
     let strainSelect = document.getElementById("strain-select");
     let strains = '';
+    let selectedStrainList = [];
     
     // Check if strain selection is enabled and get all selected strains
     const selectedStrainMode = document.querySelector('input[name="strain-type"]:checked');
@@ -603,8 +610,19 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
         .map(option => option.value);
       
       if (selectedOptions.length > 0) {
+        selectedStrainList = selectedOptions;
         strains = selectedOptions.join(',');
       }
+    }
+    
+    // Display selected strains in modal
+    const modalStrainsDiv = document.getElementById("modal-strains");
+    const modalStrainsList = document.getElementById("modal-strains-list");
+    if (selectedStrainList.length > 0) {
+      modalStrainsList.textContent = selectedStrainList.join(', ');
+      modalStrainsDiv.style.display = 'block';
+    } else {
+      modalStrainsDiv.style.display = 'none';
     }
     
     let url = '';
@@ -725,6 +743,10 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 
       document.getElementById("region-searched").innerHTML = `<span>${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}: </span>`
       document.getElementById("modal-search-region").innerHTML = `<span>${start} - ${end}</span>`
+      
+      // Hide strains display since this function doesn't use strains
+      document.getElementById("modal-strains").style.display = "none";
+      document.getElementById("modal-strains-list").textContent = "";
 
       let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}:${start}-${end}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
 
