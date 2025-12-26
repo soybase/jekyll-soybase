@@ -70,6 +70,47 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
   <div class="uk-margin-small-left">
     <p class="uk-text-default uk-text-emphasis" for="collection-name">Synopsis: <span id="synopsis"></span></p>
   </div>
+  
+  <!-- Step 1.5: Strain Selection -->
+  <div class="uk-margin">
+    <label class="uk-form-label uk-text-default uk-text-bold">Step 1.5. Select strain analysis type:</label>
+    <div class="uk-margin-small-top">
+      <label class="uk-margin-small-right">
+        <input class="uk-radio" type="radio" name="strain-type" value="ref-alt" checked>
+        <span class="uk-margin-small-left">Ref / Alt only</span>
+      </label>
+      <label class="uk-margin-small-left">
+        <input class="uk-radio" type="radio" name="strain-type" value="specific-strain">
+        <span class="uk-margin-small-left">Specific strain within study</span>
+      </label>
+    </div>
+    
+    <!-- Strain selection dropdown -->
+    <div id="strain-selection" class="uk-margin-small-top" style="display: none;">
+      <label class="uk-form-label uk-text-default uk-text-bold" for="strain-select">Choose one or more strains from the list below:</label>
+      <div class="uk-text-small uk-text-secondary uk-margin-small-bottom"><code>ctrl+click</code> selects multiple strains</div>
+      <!-- Filter input for large strain lists -->
+      <div class="uk-margin-small-bottom">
+        <input id="strain-filter" class="uk-input uk-form-width-large" type="text" placeholder="Type to filter strains..." />
+        <div class="uk-text-meta uk-margin-small-top">
+          <span id="strain-stats"></span>
+          <button id="show-all-strains" class="uk-button uk-button-small uk-margin-small-left" style="display: none;">Show all</button>
+        </div>
+      </div>
+      
+      <!-- Loader -->
+      <div id="strain-loader" class="uk-margin-small-top" style="display: none;">
+        <div uk-spinner></div>
+        <span class="uk-margin-small-left">Loading strains...</span>
+      </div>
+      
+      <!-- Strain select (hidden until loaded) -->
+      <select id="strain-select" class="uk-select uk-form-width-large" multiple size="8" style="display: none;">
+        <option value="" disabled>Select strain...</option>
+      </select>
+    </div>
+  </div>
+  
   <hr>
   <div class="uk-margin uk-flex uk-flex-left uk-flex-wrap">
     <div class="uk-width-auto">
@@ -136,6 +177,10 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
           <span id="region-searched"></span>
           <span><span id="modal-search-region"></span></span>
         </div>
+      </div>
+      <div id="modal-strains" class="uk-margin-small-bottom" style="display: none;">
+        <span class="uk-text-bold">Selected strains: </span>
+        <span id="modal-strains-list"></span>
       </div>
       <div id="modal-body" uk-overflow-auto>
         <table id="variant-table" class="uk-table uk-table-divider uk-table-striped uk-table-small">
@@ -221,17 +266,198 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
   let variantCollection = document.getElementById("collection-name")
   function onChange() {
     try {
-      let value = JSON.parse(variantCollection.value);
+      const raw = variantCollection && typeof variantCollection.value === 'string' ? variantCollection.value.trim() : '';
+      if (!raw) {
+        return; // ignore until a real selection exists
+      }
+      let value = JSON.parse(raw);
       document.getElementById("synopsis").textContent = value.synopsis || "No synopsis available.";
+      // Reset strains when collection changes
+      strainsCache = null;
+      const strainSelect = document.getElementById('strain-select');
+      if (strainSelect) {
+        while (strainSelect.options.length > 1) {
+          strainSelect.remove(1);
+        }
+        strainSelect.style.display = 'none';
+      }
+      const filterInput = document.getElementById('strain-filter');
+      if (filterInput) filterInput.value = '';
+      const stats = document.getElementById('strain-stats');
+      if (stats) stats.textContent = '';
+      const showAllBtn = document.getElementById('show-all-strains');
+      if (showAllBtn) showAllBtn.style.display = 'none';
+
+      // If user has specific-strain selected, re-fetch strains for the new collection
+      const selectedStrainMode = document.querySelector('input[name="strain-type"]:checked');
+      if (selectedStrainMode && selectedStrainMode.value === 'specific-strain') {
+        const strainSelection = document.getElementById('strain-selection');
+        if (strainSelection) strainSelection.style.display = 'block';
+        executeStrainQuery();
+      }
     } catch (error) {
-      console.error("Error parsing JSON from variantCollection: ", error);
-      //document.getElementById("synopsis").textContent = "Invalid selection data.";
-      setAlert("Invalid selection data.");
+      // Silent no-op: selection value may temporarily be invalid; avoid user-facing alert
+      return;
     }
   }
 
   variantCollection.onchange = onChange
   onChange()
+
+  // Handle strain type radio button selection
+  document.addEventListener('DOMContentLoaded', function() {
+    const strainTypeRadios = document.querySelectorAll('input[name="strain-type"]');
+    const strainSelection = document.getElementById('strain-selection');
+    
+    strainTypeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'specific-strain') {
+          strainSelection.style.display = 'block';
+          // Execute GraphQL query to get strains (only if not already cached)
+          executeStrainQuery();
+        } else {
+          strainSelection.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Cache for strains data
+  let strainsCache = null;
+  const STRAIN_RENDER_LIMIT = 500;
+
+  /**
+   * Fetches strain identifiers from FASTA API using selected VCF file
+   */
+  async function executeStrainQuery() {
+    // Check if strains are already cached
+    if (strainsCache) {
+      loadStrainsIntoTable(strainsCache);
+      return;
+    }
+
+    // Show loader and hide select
+    const strainLoader = document.getElementById('strain-loader');
+    const strainSelect = document.getElementById('strain-select');
+    strainLoader.style.display = 'block';
+    strainSelect.style.display = 'none';
+
+    try {
+      // Use the currently selected collection option to derive the VCF URL
+      const collectionVariantObj = JSON.parse(variantCollection.value);
+      const collection = collectionVariantObj['collection-name'];
+      const fileName = collectionVariantObj.name;
+
+      const vcfUrl = `https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
+      // Strain endpoint expects the VCF URL to be double-encoded,
+      const doubleEncodedVcfUrl = encodeURIComponent(encodeURIComponent(vcfUrl));
+      const url = `http://dev.lis.ncgr.org:50043/vcf/samples/${doubleEncodedVcfUrl}`;
+
+      const requestOptions = {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        redirect: 'follow'
+      };
+
+      const response = await fetch(url, requestOptions);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      const list = (result && Array.isArray(result.samples)) ? result.samples : [];
+      const normalized = list.map(s => ({ identifier: typeof s === 'string' ? s : (s.identifier || s.name || String(s)) }));
+
+      if (normalized.length > 0) {
+        strainsCache = normalized;
+        loadStrainsIntoTable(normalized);
+      } else {
+        console.log('No strains found in the response');
+        clearStrainTable();
+      }
+    } catch (error) {
+      console.error('Error fetching strains from FASTA API:', error);
+      clearStrainTable();
+    } finally {
+      // Hide loader
+      strainLoader.style.display = 'none';
+    }
+  }
+
+  /**
+   * Loads strains into the strain selection table
+   */
+  function loadStrainsIntoTable(strains) {
+    strainsCache = strains; // persist full set for filtering
+    const strainSelect = document.getElementById('strain-select');
+    const stats = document.getElementById('strain-stats');
+    const showAllBtn = document.getElementById('show-all-strains');
+
+    // Helper to render with optional filter and limit
+    function render(filterText = '', limit = STRAIN_RENDER_LIMIT, showAll = false) {
+      // Clear existing options except the placeholder
+      while (strainSelect.options.length > 1) {
+        strainSelect.remove(1);
+      }
+
+      const normalizedFilter = filterText.trim().toLowerCase();
+      let filtered = strainsCache;
+      if (normalizedFilter) {
+        filtered = strainsCache.filter(s => (s.identifier || '').toLowerCase().includes(normalizedFilter));
+      }
+
+      const toRender = showAll ? filtered : filtered.slice(0, limit);
+
+      // Use a document fragment for performance
+      const frag = document.createDocumentFragment();
+      toRender.forEach(strain => {
+        const option = document.createElement('option');
+        option.value = strain.identifier;
+        option.textContent = strain.identifier;
+        frag.appendChild(option);
+      });
+      strainSelect.appendChild(frag);
+
+      // Update stats and Show all button visibility
+      stats.textContent = `${toRender.length} shown of ${filtered.length}${normalizedFilter ? ` (filtered)` : ''}`;
+      showAllBtn.style.display = (!showAll && filtered.length > toRender.length) ? 'inline-block' : 'none';
+
+      // Ensure the select is visible
+      strainSelect.style.display = 'block';
+    }
+
+    // Initial render
+    render('');
+
+    // Wire up filter input and show-all button (only once)
+    const filterInput = document.getElementById('strain-filter');
+    if (!filterInput._wired) {
+      filterInput.addEventListener('input', () => {
+        render(filterInput.value, STRAIN_RENDER_LIMIT, false);
+      });
+      filterInput._wired = true;
+    }
+
+    if (!showAllBtn._wired) {
+      showAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        render(filterInput.value, STRAIN_RENDER_LIMIT, true);
+      });
+      showAllBtn._wired = true;
+    }
+  }
+
+  /**
+   * Clears the strain table
+   */
+  function clearStrainTable() {
+    const strainSelect = document.getElementById('strain-select');
+    
+    // Clear existing options except the placeholder
+    while (strainSelect.options.length > 1) {
+      strainSelect.remove(1);
+    }
+  }
 
   // Close modal
   function closeModal() {
@@ -243,6 +469,8 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
     document.getElementById("alert").setAttribute("hidden", true);
     document.getElementById("modal-gene-name").textContent = "";
     document.getElementById("region-searched").textContent = "";
+    document.getElementById("modal-strains").style.display = "none";
+    document.getElementById("modal-strains-list").textContent = "";
     UIkit.modal('#modal').hide();
   }
 
@@ -368,7 +596,47 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 
     document.getElementById("modal-search-region").innerHTML = `<span>${startWithFlank} - ${stopWithFlank}</span>`
 
-    let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
+    // Get selected strains if present 
+    let strainSelect = document.getElementById("strain-select");
+    let strains = '';
+    let selectedStrainList = [];
+    
+    // Check if strain selection is enabled and get all selected strains
+    const selectedStrainMode = document.querySelector('input[name="strain-type"]:checked');
+    if (strainSelect && selectedStrainMode && selectedStrainMode.value === 'specific-strain') {
+      // Get all selected options from the multi-select
+      const selectedOptions = Array.from(strainSelect.selectedOptions)
+        .filter(option => option.value) // Filter out empty/placeholder options
+        .map(option => option.value);
+      
+      if (selectedOptions.length > 0) {
+        selectedStrainList = selectedOptions;
+        strains = selectedOptions.join(',');
+      }
+    }
+    
+    // Display selected strains in modal
+    const modalStrainsDiv = document.getElementById("modal-strains");
+    const modalStrainsList = document.getElementById("modal-strains-list");
+    if (selectedStrainList.length > 0) {
+      modalStrainsList.textContent = selectedStrainList.join(', ');
+      modalStrainsDiv.style.display = 'block';
+    } else {
+      modalStrainsDiv.style.display = 'none';
+    }
+    
+    let url = '';
+    if (strains) {
+      url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}?${
+        strains
+          .split(',')
+          .filter(s => s)
+          .map(s => `samples=${encodeURIComponent(s)}`)
+          .join('&')
+      }`;
+    } else {
+      url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${chromosome}:${startWithFlank}-${stopWithFlank}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
+    }
 
     // Handle no start/stop values
     if (!start || !stop) {
@@ -475,6 +743,10 @@ pre_selected_gene: Wm82.gnm4.div.Song_Hyten_2015
 
       document.getElementById("region-searched").innerHTML = `<span>${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}: </span>`
       document.getElementById("modal-search-region").innerHTML = `<span>${start} - ${end}</span>`
+      
+      // Hide strains display since this function doesn't use strains
+      document.getElementById("modal-strains").style.display = "none";
+      document.getElementById("modal-strains-list").textContent = "";
 
       let url = `https://app.soybase.org/api/fasta-api/vcf/fetch/${fileNameArray[0]}.${fileNameArray[1]}.${fileNameArray[2]}.${chromosome}:${start}-${end}/https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`
 
