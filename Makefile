@@ -42,7 +42,7 @@ endif
 
 ENV = PATH=$${PWD}/vendor/gems/bin:$${PATH} GEM_HOME=$${PWD}/vendor/gems 
 
-JBROWSE_VERSION = 3.0.5
+JBROWSE_VERSION = 3.7.0
 PA11YCI_VERSION = 3.1.X
 
 serve: mostlyclean setup
