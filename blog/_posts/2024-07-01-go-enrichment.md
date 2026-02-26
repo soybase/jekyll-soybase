@@ -19,7 +19,7 @@ summary: SoyBase offers two methods for calculating GO enrichment. This post exp
 SoyBase offers two methods for calculating GO enrichment.
 
 <h2>1. Use the custom service at the SoyBase tools page</h2>
-The <a href="/tools/analysis/go.html target="_blank>tools/analysis/go.html</a> page offers services for annotating your gene list with GO accessions and for calculating GO enrichment, using the method described in <a href="https://dx.doi.org/10.1071/FP12296" target="_blank">Morales et al. (2013)</a>. The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
+The <a href="/tools/analysis/go.html" target=_blank>tools/analysis/go.html</a> page offers services for annotating your gene list with GO accessions and for calculating GO enrichment, using the method described in <a href="https://dx.doi.org/10.1071/FP12296" target="_blank">Morales et al. (2013)</a>. The gene IDs need to be from the Wm82.a4.v1 assembly and annotation (aka Wm82.gnm4.ann1). Try the provided sample identifiers at the page to see the results.
 
 <h2>2. Use the GO enrichment tool at GlycineMine.</h2>
 At [GlycineMine](https://mines.legumeinfo.org/glycinemine/begin.do), enrichment can be calculated for genes from ANY <i>Glycine</i> accession and annotation in GlycineMine (there are more than 50 annotation sets as of mid-2024).
