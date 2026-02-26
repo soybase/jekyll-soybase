@@ -24,8 +24,6 @@
       url: "/community/soygermplasm"
   - name: "Soybean resources provided by the community"
     resources:
-    - description: "Soybean Single Cell Spatial Omics Atlas"
-      url: "https://soybean-atlas.com/"
     - description: "American Soybean Association"
       url: "https://soygrowers.com"
     - description: "United Soybean Board"
