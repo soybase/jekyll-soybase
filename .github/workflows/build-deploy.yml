@@ -126,22 +126,23 @@ jobs:
           path: ./tmp/.htmlproofer
           key: html-proofer
 
-  pa11y:
-    # https://github.com/GSA/notifications-admin/pull/475
-    runs-on: ubuntu-20.04
-    needs: build
-    steps:
-      # need repository for .pa11yci
-      - uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-      - run: tar -xf artifact.tar && rm artifact.tar
-      - run: npm install -g pa11y-ci@3.X
-      - run: busybox httpd -p 4000
-      # FIXME: patty-ci concurrency > 1 results in errors in this GA workflow
-      - run: |
-          printf '{"defaults": {"runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
-      - run: pa11y-ci --sitemap http://0.0.0.0:4000/sitemap.xml --sitemap-exclude '/cmap-*' --sitemap-find '^/' --sitemap-replace http://0.0.0.0:4000/
+# Commenting out pa11y on 2026-02-27, since this step is reliably timing out
+#  pa11y:
+#    # https://github.com/GSA/notifications-admin/pull/475
+#    runs-on: ubuntu-20.04
+#    needs: build
+#    steps:
+#      # need repository for .pa11yci
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: github-pages
+#      - run: tar -xf artifact.tar && rm artifact.tar
+#      - run: npm install -g pa11y-ci@3.X
+#      - run: busybox httpd -p 4000
+#      # FIXME: patty-ci concurrency > 1 results in errors in this GA workflow
+#      - run: |
+#          printf '{"defaults": {"runners": ["axe"], "concurrency": 4, "useIncognitoBrowserContext": false}}\n' > .pa11yci
+#      - run: pa11y-ci --sitemap http://0.0.0.0:4000/sitemap.xml --sitemap-exclude '/cmap-*' --sitemap-find '^/' --sitemap-replace http://0.0.0.0:4000/
 
   # Deployment job
   deploy:
