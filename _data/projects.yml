@@ -806,4 +806,4 @@
             - description: "Phenotypic data from Ridgetown Ontario location"
               url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Hashemi_Perry_2022/glyma.Wm82.gnm2.div.Hashemi_Perry_2022.Pheno_Data-Ridgetown_2021.xlsx"
             - description: "VCF file of parents and RIL, genotyped by the SoySNP50K iSelect BeadChip"
-              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm1.div.Fortune_Eskandari_2025/glyma.Wm82.gnm2.div.50KSNPchip_SoyMAGIC.vcf.gz"
+              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm1.div.Fortune_Eskandari_2026/glyma.Wm82.gnm1.div.Fortune_Eskandari_2026.50KSNPchip_SoyMAGIC.vcf.gz"
