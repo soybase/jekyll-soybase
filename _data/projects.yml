@@ -58,8 +58,7 @@
               url: https://www.ncbi.nlm.nih.gov/sra/?term=SRP062245
             - description: SRA Files germplasm set 2 (SRP105183)
               url: https://www.ncbi.nlm.nih.gov/sra/?term=SRP105183
--
-  DataStoreID: "Bhattacharyya_2018"
+- DataStoreID: "Bhattacharyya_2018"
   short_title: "Improving Biotic and Abiotic Stress Tolerance"
   SoyBaseID: "SoyBase.C2018.01"
   title: "Improving Biotic and Abiotic Stress Tolerance in Soybean Using Existing Genetic Diversity and Genome Editing"
@@ -78,8 +77,7 @@
             - description: "Soybean Science Institute (SSI) lesson plan, created by the Lincoln Public Schools (Nebraska) science curriculum team to prepare middle school science teachers."
               url: "https://data.soybase.org/annex/Glycine/max/projects/Bhattacharyya_2018/mixed.prj.Bhattacharyya_2018.SSI_Lesson_Plan.docx"
 
--
-  DataStoreID: "Bayer_Valliyodan_2021"
+- DataStoreID: "Bayer_Valliyodan_2021"
   short_title: "Sequencing the USDA core soybean collection"
   SoyBaseID: "SoyBase.C2020.02"
   title: "Sequencing the USDA core soybean collection reveals gene loss during domestication and breeding"
@@ -134,8 +132,7 @@
               url: https://data.soybase.org/Glycine/max/repeats/Wm82.rpt.C1JW/glyma.Wm82.rpt.C1JW.SOY_TE_LIB.fna.gz
             - description: "Repetitive elements from SOY_TE_LIB.fna, represented by centroids at 60% identity clustering"
               url: https://data.soybase.org/Glycine/max/repeats/Wm82.rpt.C1JW/glyma.Wm82.rpt.C1JW.SOY_TE_LIB_id60.fna.gz
--
-  DataStoreID: "vanWyk_DuPlessis_2014"
+- DataStoreID: "vanWyk_DuPlessis_2014"
   short_title: "Cysteine protease and cystatin expression"
   SoyBaseID: "SoyBase.A2014.01"
   title: "Cysteine protease and cystatin expression and activity during soybean nodule development and senescence"
@@ -156,8 +153,7 @@
             - description: "Nodule RNA 4 Weeks Vegetative Stage (BAM File 5.4 Gigs)"
               url: "https://data.soybase.org/annex/Glycine/max/projects/vanWyk_DuPlessis_2014/root_nodule_vegetative_stage.bam"
 
--
-  DataStoreID: "Lee_Jeong_2015"
+- DataStoreID: "Lee_Jeong_2015"
   short_title: "180K Axiom SNP Array"
   SoyBaseID: "SoyBase.C2021.02"
   title: "180K Axiom SoyaSNP Array"
@@ -179,8 +175,7 @@
             - description: "Genotype information for 222 cultivars (Data Store repository)"
               url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Lee_Jeong_2015/"
 
--
-  DataStoreID: "Torkamaneh_Laroche_2021"
+- DataStoreID: "Torkamaneh_Laroche_2021"
   short_title: "Soybean Haplotype Map"
   SoyBaseID: "SoyBase.C2020.01"
   title: "Soybean Haplotype Map (GmHapMap) and HaplotypeMiner"
@@ -219,8 +214,7 @@
             - description: "Download Loss of Function SNPs"
               url: "https://data.soybase.org/Glycine/max/diversity//Wm82.gnm2.div.Torkamaneh_Laroche_2019/glyma.Wm82.gnm2.div.Torkamaneh_Laroche_2019.loss_of_function.xlsx.gz"
 
--
-  DataStoreID: "Wang_Chu_2016"
+- DataStoreID: "Wang_Chu_2016"
   short_title: "NJAU 335 SNP Array"
   SoyBaseID: "SoyBase.C2021.03"
   title: "NJAU 355K SoySNP Array"
@@ -242,8 +236,7 @@
             - description: "Genotype information for 96 soybean accessions (Data Store)"
               url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm1.div.Hu_Zhang_2020/"
 
--
-  DataStoreID: "Zhang_Jiang_2020"
+- DataStoreID: "Zhang_Jiang_2020"
   short_title: "1502 Accession Genotyping"
   SoyBaseID: "SoyBase.C2021.04"
   title: "Variant information for 1,502 diverse soybean accessions"
@@ -260,8 +253,7 @@
             - description: Genotype information for 1,502 diverse soybean accessions (Data Store)
               url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Zhang_Jiang_2020/"
 
--
-  DataStoreID: "Phansak_Soonsuwon_2016"
+- DataStoreID: "Phansak_Soonsuwon_2016"
   short_title: "Seed Protein and Oil QTLs"
   SoyBaseID: "SoyBase.D2016.01"
   title: "Multi-Population Selective Genotyping to Identify Soybean (Glycine max (L.) Merr.) Seed Protein and Oil QTLs"
@@ -346,8 +338,7 @@
             - description: mutant_trait_values_table.tsv -- Mutation IDs and traits
               url: https://data.soybase.org/annex/Glycine/max/projects/FN_mutants/mutant_trait_values_table.tsv.gz
 
--
-  DataStoreID: "Kim_Baidouri_2015"
+- DataStoreID: "Kim_Baidouri_2015"
   short_title: "DNA Methylomes of Two Legume Species"
   SoyBaseID: "SoyBase.E2017.01"
   title: "Single-base resolution DNA methylomes of two legume species, Glycine max (soybean) and Phaseolus vulgaris (common bean)"
@@ -472,8 +463,7 @@
               url: https://data.soybase.org/Glycine/syndetika/genomes/G1300.gnm1.C11H
             - description: Annotation collection
               url: https://data.soybase.org/Glycine/syndetika/annotations/G1300.gnm1.ann1.RRK6
--
-  DataStoreID: "Song_Wei_2015"
+- DataStoreID: "Song_Wei_2015"
   short_title: "Development of INDEL markers"
   SoyBaseID: "SoyBase.B2014.01"
   title: "Development of Indel markers based on whole-genome resequencing in soybean"
@@ -502,8 +492,7 @@
             - description: "NCBI Short Read Archive SRP051486"
               url: "https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP051486"
 
--
-  DataStoreID: "Torkamaneh_Lemay_2019"
+- DataStoreID: "Torkamaneh_Lemay_2019"
   short_title: "Pangenome of 204 northern elite cultivars"
   SoyBaseID: "SoyBase.C2021.01"
   title: "The Pan-genome of the Cultivated Soybean (PanSoy) Reveals an Extraordinarily Conserved Gene Content"
@@ -531,8 +520,7 @@
               url: "https://data.soybase.org/Glycine/max/pangenomes/Wm82.gnm4.pan.W46N/glyma.Wm82.gnm4.pan.W46N.PanSoy_seq_not_in_Wm82.fna.gz"
             - description: "Supplementary tables S1-S7 from Torkamaneh, Lemay, Belzile (2021), including gene presence-absence variation for genes predicted in Wm82.gnm4.ann1 and in the 204 accessions described in this study."
               url: "https://data.soybase.org/Glycine/max/pangenomes/Wm82.gnm4.pan.W46N/glyma.Wm82.gnm4.pan.W46N.PanSoy_supp_tables.xlsx"
--
-  DataStoreID: "Espina_Ahmed_2018"
+- DataStoreID: "Espina_Ahmed_2018"
   short_title: "Soybean EMS Mutagenized Population"
   SoyBaseID: "SoyBase.P2019.01"
   title: "Development and Phenotypic Screening of an Ethyl Methane Sulfonate Mutant Population in Soybean"
@@ -556,8 +544,7 @@
             - description: "Espina et al. Supplementary Table NIR data.xlsx - FIX (put in DS collection)"
               url: "#"
 
--
-  DataStoreID: "MilestoneReseq_2016"
+- DataStoreID: "MilestoneReseq_2016"
   short_title: "Milestone Cultivar Sequencing"
   SoyBaseID: "SoyBase.C2016.01"
   title: "High impact research for soybean improvement using genetics and genomics"
@@ -578,8 +565,7 @@
             - description: "Interactive strain & pedigree viwer"
               url: "https://shiny.soybase.org/SNP/"
 
--
-  DataStoreID: "Iquira_Humira_2015"
+- DataStoreID: "Iquira_Humira_2015"
   short_title: "Sclerotinia stem rot resistance"
   SoyBaseID: "SoyBase.C2014.01"
   title: "Association mapping of QTLs for Sclerotinia stem rot resistance in a collection of soybean plant introductions using a genotype by sequencing approach"
@@ -596,8 +582,7 @@
             - description: "White mold GWAS Results File (XLSX File 1.2 MB) - FIX (put in DS collection)"
               url: "#"
 
--
-  DataStoreID: "SoyNAM_2014"
+- DataStoreID: "SoyNAM_2014"
   short_title: "SoyNAM"
   SoyBaseID: "SoyBase.C2014.02"
   title: "Nested Association Mapping (NAM) of Genes Controlling Soybean Yield and Other Key Traits"
@@ -772,8 +757,7 @@
               url: https://legacy.soybase.org/gb2/gbrowse/glyma.Lee.gnm1/
             - description: Genome assembly for Glycine max PI 483463
               url: https://legacy.soybase.org/gb2/gbrowse/glyso.PI483463.gnm1/
--
-  DataStoreID: "Song_Cregan_2010"
+- DataStoreID: "Song_Cregan_2010"
   short_title: "BARC Soybean Potential SSR"
   SoyBaseID: "SoyBase.barcsoyssr"
   title: "BARC Soybean potential SSR database/ BARCSOYSSR"
@@ -801,4 +785,25 @@
               url: "https://legacy.soybase.org/gb2/gbrowse/gmax1.01?label=Wm82_potential_SSR"
             - description: "Wm82 Potential SSR on assembly version 2"
               url: "https://legacy.soybase.org/gb2/gbrowse/gmax2.0?label=wm82_potential_ssr"
-
+- DataStoreID: "SoyMAGIC_2022"
+  short_title: "SoyMAGIC Populations"
+  title: "SoyMAGIC: An Unprecedented Platform for Genetic Studies and Breeding Activities in Soybean"
+  description: "Multi-Parent Advanced Generation Inter-Cross (MAGIC) populations are emerging genetic platforms for high-resolution and fine mapping of quantitative traits, such as agronomic and seed composition traits in soybean (Glycine max L.). We have established an eight-parent MAGIC population, comprising 721 recombinant inbred lines (RILs), through conical inter-mating of eight soybean lines."
+  publications:
+    - citation: "Hashemi SM, Perry G, Rajcan I, Eskandari M Front. Plant Sci 2022 13(945471):1-11."
+      doi: "/10.3389/fpls.2022.945471"
+      abstract: "Multi-Parent Advanced Generation Inter-Cross (MAGIC) populations are emerging genetic platforms for high-resolution and fine mapping of quantitative traits, such as agronomic and seed composition traits in soybean (Glycine max L.). We have established an eight-parent MAGIC population, comprising 721 recombinant inbred lines (RILs), through conical inter-mating of eight soybean lines. The parental lines were genetically diverse elite cultivars carrying different agronomic and seed composition characteristics, including amino acids and fatty acids, as well as oil and protein concentrations. This study aimed to introduce soybean MAGIC (SoyMAGIC) population as an unprecedented platform for genotypic and phenotypic investigation of agronomic and seed quality traits in soybean. The RILs were evaluated for important seed composition traits using replicated field trials during 2020 and 2021. To measure the seed composition traits, near-infrared reflectance (NIR) was employed. The RILs were genotyped using genotyping-by-sequencing (GBS) method to decipher the genome and discover single-nucleotide polymorphic (SNP) markers among the RILs. A high-density linkage map was constructed through inclusive composite interval mapping (ICIM). The linkage map was 3,770.75 cM in length and contained 12,007 SNP markers. Chromosomes 11 and 18 were recorded as the shortest and longest linkage groups with 71.01 and 341.15 cM in length, respectively. Observed transgressive segregation of the selected traits and higher recombination frequency across the genome confirmed the capability of MAGIC population in reshuffling the diversity in the soybean genome among the RILs. The assessment of haplotype blocks indicated an uneven distribution of the parents’ genomes in RILs, suggesting cryptic influence against or in favor of certain parental genomes. The SoyMAGIC population is a recombined genetic material that will accelerate further genomic studies and the development of soybean cultivars with improved seed quality traits through the development and implementation of reliable molecular-based toolkits."
+  data_links:
+    - category:
+        - name: data
+          instances:
+            - description: "SoyMAGIC Marker GFF File, genotyped by GBS"
+              url: "https://data.soybase.org/Glycine/max/markers/Wm82.gnm2.mrk.Hashemi_Perry_2022/glyma.Wm82.gnm2.mrk.SoyMAGIC.gff3.gz"
+            - description: "VCF file of parents and RIL, genotyped by GBS"
+              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Hashemi_Perry_2022/glyma.Wm82.gnm2.div.Hashemi_Perry_2022.GBS_SoyMAGIC.vcf.gz"
+            - description: "Phenotypic data from Palmyra Ontario location"
+              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Hashemi_Perry_2022/glyma.Wm82.gnm2.div.Hashemi_Perry_2022.Pheno_Data-Palmyra_2021.xlsx"
+            - description: "Phenotypic data from Ridgetown Ontario location"
+              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Hashemi_Perry_2022/glyma.Wm82.gnm2.div.Hashemi_Perry_2022.Pheno_Data-Ridgetown_2021.xlsx"
+            - description: "VCF file of parents and RIL, genotyped by the SoySNP50K iSelect BeadChip"
+              url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm1.div.Fortune_Eskandari_2026/glyma.Wm82.gnm1.div.Fortune_Eskandari_2026.50KSNPchip_SoyMAGIC.vcf.gz"
