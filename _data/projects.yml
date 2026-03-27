@@ -788,7 +788,7 @@
 - DataStoreID: "SoyMAGIC_2022"
   short_title: "SoyMAGIC Populations"
   title: "SoyMAGIC: An Unprecedented Platform for Genetic Studies and Breeding Activities in Soybean"
-  description: "Multi-Parent Advanced Generation Inter-Cross (MAGIC) populations are emerging genetic platforms for high-resolution and fine mapping of quantitative traits, such as agronomic and seed composition traits in soybean (Glycine max L.). We have established an eight-parent MAGIC population, comprising 721 recombinant inbred lines (RILs), through conical inter-mating of eight soybean lines."
+  description: "Multi-Parent Advanced Generation Inter-Cross (MAGIC) populations are emerging genetic platforms for high-resolution and fine mapping of quantitative traits, such as agronomic and seed composition traits in soybean (Glycine max L.). We have established an eight-parent MAGIC population, comprising 721 recombinant inbred lines (RILs), through conical inter-mating of eight soybean lines. The SoyMAGIC project was funded by Ontario Genomics and will accelerate the development of high-yielding soybean cultivars with value-added traits and improve the genetic gain for these target traits. "
   publications:
     - citation: "Hashemi SM, Perry G, Rajcan I, Eskandari M Front. Plant Sci 2022 13(945471):1-11."
       doi: "/10.3389/fpls.2022.945471"
