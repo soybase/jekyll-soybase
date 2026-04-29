@@ -788,7 +788,7 @@
 - DataStoreID: "SoyMAGIC_2022"
   short_title: "SoyMAGIC Populations"
   title: "SoyMAGIC: An Unprecedented Platform for Genetic Studies and Breeding Activities in Soybean"
-  description: "Multi-Parent Advanced Generation Inter-Cross (MAGIC) populations are emerging genetic platforms for high-resolution and fine mapping of quantitative traits, such as agronomic and seed composition traits in soybean (Glycine max L.). We have established an eight-parent MAGIC population, comprising 721 recombinant inbred lines (RILs), through conical inter-mating of eight soybean lines. The SoyMAGIC project was funded by Ontario Genomics and will accelerate the development of high-yielding soybean cultivars with value-added traits and improve the genetic gain for these target traits. "
+  description: "SoyMAGIC is an eight-parent soybean Multi-Parent Advanced Generation Inter-Cross (MAGIC) population developed as a high-resolution mapping resource for the genetic dissection of complex quantitative traits. The population comprises 721 recombinant inbred lines (RILs) derived through conical inter-mating of eight Canadian soybean parental lines representing maturity groups I to III and selected for diversity in agronomic and seed composition traits."
   publications:
     - citation: "Hashemi SM, Perry G, Rajcan I, Eskandari M Front. Plant Sci 2022 13(945471):1-11."
       doi: "/10.3389/fpls.2022.945471"
@@ -798,7 +798,7 @@
         - name: data
           instances:
             - description: "SoyMAGIC Marker GFF File, genotyped by GBS"
-              url: "https://data.soybase.org/Glycine/max/markers/Wm82.gnm2.mrk.Hashemi_Perry_2022/glyma.Wm82.gnm2.mrk.SoyMAGIC.gff3.gz"
+              url: "https://data.soybase.org/Glycine/max/markers/Wm82.gnm2.mrk.Hashemi_Perry_2022/glyma.Wm82.gnm2.mrk.Hashemi_Perry_2022.gff3.gz"
             - description: "VCF file of parents and RIL, genotyped by GBS"
               url: "https://data.soybase.org/Glycine/max/diversity/Wm82.gnm2.div.Hashemi_Perry_2022/glyma.Wm82.gnm2.div.Hashemi_Perry_2022.GBS_SoyMAGIC.vcf.gz"
             - description: "Phenotypic data from Palmyra Ontario location"
