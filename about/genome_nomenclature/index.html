@@ -3,49 +3,90 @@ title: Genome Nomenclature
 tools_menu: false
 ---
 
-<h2>SoyBase Gene and Genome Nomenclature</h2>
-<p>
-The second Williams 82 genome assembly was released by JGI in February, 2013. The existence of multiple assemblies and annotations prompted JGI and key user groups to develop the following nomenclature conventions.
-</p>
+<h2>Soybean Community Genome and Gene Model Nomenclature</h2>
 
-<h4>Gene Model Translation and Correspondence</h4>
-<p>
-Use <a href="https://www.soybase.org/tools/translate/"><b>this quick and easy tool</b></a> to look up the name correspondences between the multiple Glycine max annotations. If you have one or several (fewer than 100) genes to look up, use the tool above. If you have hundreds or thousands of genes to look up, you can download a correspondence table for either <a href="https://data.soybase.org/Glycine/GENUS/pangenes/Glycine.pan5.MKRS/Glycine.pan5.MKRS.table_ref_lines.tsv.gz">the reference lines</a>, or for a <a href="https://data.soybase.org/Glycine/GENUS/pangenes/Glycine.pan5.MKRS/Glycine.pan5.MKRS.table.tsv.gz">correspondence table for all pangene accessions</a>.
-<ul class="uk-list uk-list-decimal">
-    <li>Enter the full gene identifier</li>
-    <li>Select 'Glycine' from the Genus dropdown meun</li>
-    <li><i>OPTIONAL</i> to filter the results further:
-        <ul class="uk-list">
-            <li>Select a Species (e.g. 'max')</li>
-            <li>Select a Strain (e.g. FiskebyIII)</li>
-        </ul>
-    </li>
-</ul>
-</p>
-
-<h4>Genome assembly nomenclature:</h4>
-<ul class="uk-list uk-list-disc">
-    <li>glyma.Wm82.gnm1 <-- the original JGI assembly, previously known as Glyma1.01, aka assembly 1</li>
-    <li>glyma.Wm82.gnm2 <-- Williams82 assembly 2</li>
-    <li>glyma.Wm82.gnm5 <-- Williams82 assembly 5</li>
-    <li>glyma.Wm82.gnm6 <-- Williams82 assembly 6</li>
-    
-</ul>
-As other cultivars are sequenced, the genotype prefix (Wm82) will be changed as needed, e.g.:
-<ul class="uk-list uk-list-disc">
-    <li>glyma.Lee.gnm3</li>
-    <li>glyma.Peking.gnm3</li>
-    <li>glyma.PI_398296.gnm3</li>
-</ul>
+<div>
+    <h4 class="uk-background-primary uk-padding-small uk-light uk-text-bold uk-border-rounded">Gene Model Translation and Correspondence</h4>
+        <p> Use <a href="https://www.soybase.org/tools/translate/"><b>Gene-name translator</b></a> to look up the name correspondences between the multiple Glycine max annotations. If you have one or several (fewer than 100) genes to look up, use the tool above. If you have hundreds or thousands of genes to look up, you can download a correspondence table for either <a href="https://data.soybase.org/Glycine/GENUS/pangenes/Glycine.pan5.MKRS/Glycine.pan5.MKRS.table_ref_lines.tsv.gz">the reference lines</a>, or for a <a href="https://data.soybase.org/Glycine/GENUS/pangenes/Glycine.pan5.MKRS/Glycine.pan5.MKRS.table.tsv.gz">correspondence table for all pangene accessions</a>.
+            <ul class="uk-list uk-list-decimal">
+                <li>Enter the full gene identifier
+                    <ul>
+                        <li>Examples: glyma.Lee.gnm2.ann1.Gm_00017, glyma.Wm82.gnm2.ann1.Glyma.08G002000, glyma.Zh13.gnm1.ann1.SoyZH13_02G067000</li>
+                    </ul>
+                </li>
+                <li>Select 'Glycine' from the Genus dropdown meun</li>
+                <li><i>OPTIONAL</i> to filter the results further:
+                    <ul class="uk-list">
+                        <li>Select a Species (e.g. 'max')</li>
+                        <li>Select a Strain (e.g. FiskebyIII or Wm82)</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+</div>
 
 
-Similarly a G. soja genome assembly would be:
-An annotation version number is appended to the assembly name
-<ul class="uk-list uk-list-disc">
-    <li>Glyma.Wm82.a1.v1 <-- initial JGI annotation</li>
-    <li>Glyma.Wm82.a1.v1.1 <-- the JGI 1.1 annotation</li>
-    <li>Glyma.Wm82.a2.v1 <-- the current annotation</li>
-</ul>
+<div>
+    <h4 class="uk-background-primary uk-padding-small uk-light uk-text-bold uk-border-rounded">Genome assembly nomenclature</h4>
+        <p>Since the release of the first full soybean genome assembly in 2010, assemblies have been generated for more than 50 accessions, including multiple assemblies for the first reference, Williams 82 (Wm82).
+            There are several nomenclature patterns for the assemblies and annotations. The pattern used by the DOE-JGI and SoyBase has generally taken the form Wm82.a4.v1, with the middle field ("a4") indicating assembly version and the last field (v1) indicating the annotation version. Within the SoyBase and LegumeInfo Data Store, the pattern takes the form Wm82.gnm4.ann1 -- again, with the middle field ("gnm4") indicating assembly version and the last field (ann1) indicating the annotation version.
+            See below for details about the main reference genotypes and assemblies in use in the U.S.
+        </p> 
+
+    <div class="uk-overflow-auto">
+        <table class="uk-table uk-table-small uk-table-hover uk-table-divider uk-table-striped">
+            <thead>
+                <tr>
+                    <th><b>Assembly - JGI/Phytozome</b></th>
+                    <th><b>Assembly - Data Store</b></th>
+                    <th><b>Annotation - JGI/Phytozome</b></th>
+                    <th><b>Annotation - Data Store</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wm82.a2</td>
+                    <td>glyma.Wm82.gnm2</td>
+                    <td>Wm82.a2.v1</td>
+                    <td>glyma.Wm82.gnm2.ann1</td>
+                </tr>
+                <tr>
+                    <td>Wm82.a4</td>
+                    <td>glyma.Wm82.gnm4</td>
+                    <td>Wm82.a4.v1</td>
+                    <td>glyma.Wm82.gnm4.ann1</td>
+                </tr>
+                <tr>
+                    <td>Wm82.a6</td>
+                    <td>glyma.Wm82.gnm6</td>
+                    <td>Wm82.a6.v1</td>
+                    <td>glyma.Wm82.gnm6.ann1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <p> As other cultivars and species are sequenced, the genotype prefix (Wm82) will be changed as needed, e.g.:
+            <ul class="uk-list uk-list-disc">
+                <li> Cultivars:
+                    <ul>
+                        <li>glyma.Lee.gnm3</li>
+                        <li>glyma.Peking.gnm3</li>
+                        <li>glyma.PI_398296.gnm3</li>
+                    </ul>
+                </li>
+                <li> Species:
+                    <ul>
+                        <li>glycy.G1267.gnm1</li>
+                        <li>glyfa.G1718.gnm1</li>
+                        <li>glyso.PI_578357.gnm1</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </p>    
+
+</div>
 
 <h4>Gene model nomenclature:</h4>
 Since many papers have been published for the assembly 1, annotation 1 or 1.1 the names will remain unchanged
