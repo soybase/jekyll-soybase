@@ -1,11 +1,16 @@
 ---
-layout: event
-title: Southern Soybean Breeders Tour
+layout: news-item
+title: Registration open!
 author: Jacqueline Campbell
-end_date: 2026-09-03
-summary: Southern Soybean Breeders Tour in Jackson, Tennessee
+date:  2026-05-20
+end_date: 2027-09-02
+summary: Registration is open for 2026 Southern Soybean Breeders Tour.
+categories: general    
 ---
 <h1 class="uk-heading-divider"></h1>
+
+
+The University of Tennessee is proud to host the 2026 Southern Soybean Breeders Tour. For the first time since 2012, we invite the breeding community to the Volunteer State for an in-depth look at the research, innovation, and production strategies shaping the future of soybeans in the Mid-South.
 
 
   This year’s tour builds on over a decade-long tradition of excellence, offering a comprehensive look at:
