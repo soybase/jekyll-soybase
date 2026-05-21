@@ -1,6 +1,6 @@
 ---
 layout: news-item
-title: Registration open!
+title: Southern Soybean Breeders Tour
 author: Jacqueline Campbell
 date:  2026-05-20
 end_date: 2027-09-02
