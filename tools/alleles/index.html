@@ -4,35 +4,54 @@ title: Allele Search
 web_components: true
 ---
 
+{% assign genus = "Glycine" %}
+{% assign species = "max" %}
+{% assign collections = "" | split: "" %}
+{% assign added_collections = "" | split: "" %}
+
+{% for metadata in site.data.datastore-metadata[genus][species].diversity %}
+  {% for metadata_file in metadata[1] %}
+    {% if metadata_file[0] contains "MANIFEST" %}
+      {% assign manifest = metadata_file %}
+      {% for item in manifest[1] %}
+        {% if item.applications contains "jbrowse" %}
+          {% assign filename_parts = item.name | split: "." %}
+          {% assign coll_parts = filename_parts | slice: 1, 4 %}
+          {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
+          
+          {% unless added_collections contains collection_name %}
+            {% assign added_collections = added_collections | push: collection_name %}
+            
+            {% comment %} Fetch synopsis from README file {% endcomment %}
+            {% assign synopsis = "" %}
+            {% for metadata_file in metadata[1] %}
+              {% if metadata_file[0] contains "README" %}
+                {% assign synopsis = metadata_file[1].synopsis | replace: '"', '\"' %}
+              {% endif %}
+            {% endfor %}
+            
+            {% capture collection_item %}
+              {
+                "name": "{{ item.name }}",
+                "collectionName": "{{ collection_name }}",
+                "synopsis": "{{ synopsis }}"
+              }
+            {% endcapture %}
+            
+            {% assign collection_item = collection_item | strip_newlines | strip_html %}
+            {% assign collections = collections | push: collection_item %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign collections = collections | sort %}
+
 <lis-allele-search-element
   id="allele-search"
-  data-collections='[{
-    "name": "glyma.Wm82.gnm4.div.Song_Hyten_2015.vcf.gz",
-    "collectionName": "Wm82.gnm4.div.Song_Hyten_2015",
-    "synopsis": "Soybean diversity panel."
-  }]'
-  data-chromosomes='[
-    "glyma.Wm82.gnm4.Gm01",
-    "glyma.Wm82.gnm4.Gm02",
-    "glyma.Wm82.gnm4.Gm03",
-    "glyma.Wm82.gnm4.Gm04",
-    "glyma.Wm82.gnm4.Gm05",
-    "glyma.Wm82.gnm4.Gm06",
-    "glyma.Wm82.gnm4.Gm07",
-    "glyma.Wm82.gnm4.Gm08",
-    "glyma.Wm82.gnm4.Gm09",
-    "glyma.Wm82.gnm4.Gm10",
-    "glyma.Wm82.gnm4.Gm11",
-    "glyma.Wm82.gnm4.Gm12",
-    "glyma.Wm82.gnm4.Gm13",
-    "glyma.Wm82.gnm4.Gm14",
-    "glyma.Wm82.gnm4.Gm15",
-    "glyma.Wm82.gnm4.Gm16",
-    "glyma.Wm82.gnm4.Gm17",
-    "glyma.Wm82.gnm4.Gm18",
-    "glyma.Wm82.gnm4.Gm19",
-    "glyma.Wm82.gnm4.Gm20"
-  ]'
+  data-collections='[{{ collections | join: "," }}]'
 ></lis-allele-search-element>
 
 <script type="module">
@@ -131,4 +150,27 @@ web_components: true
   alleleSearchElement.locationSearchFunction = locationSearchFunction;
   alleleSearchElement.strainSearchFunction = strainSearchFunction;
   alleleSearchElement.variantSearchFunction = variantSearchFunction;
+
+  function updateChromosomes() {
+    const selectedIdx = alleleSearchElement.selectedCollectionIdx;
+    if (selectedIdx === -1 || !alleleSearchElement.collections.length) return;
+    const selectedCollection = alleleSearchElement.collections[selectedIdx];
+    const fileName = selectedCollection.name;
+    const parts = fileName.split('.');
+    const prefix = `${parts[0]}.${parts[1]}.${parts[2]}`;
+    const chromosomes = [];
+    for (let i = 1; i <= 20; i++) {
+      const num = String(i).padStart(2, '0');
+      chromosomes.push(`${prefix}.Gm${num}`);
+    }
+    alleleSearchElement.chromosomes = chromosomes;
+  }
+
+  alleleSearchElement.addEventListener('change', () => {
+    updateChromosomes();
+  });
+
+  alleleSearchElement.updateComplete.then(() => {
+    updateChromosomes();
+  });
 </script>
