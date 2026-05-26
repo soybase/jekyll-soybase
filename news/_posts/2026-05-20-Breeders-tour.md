@@ -1,8 +1,8 @@
 ---
 layout: news-item
-title: Southern Soybean Breeders Tour
+title: Soybean Breeders Tour on 9-2-26
 author: Jacqueline Campbell
-date:  2026-05-20
+date:  2026-05-26
 end_date: 2027-09-02
 summary: Registration is open for 2026 Southern Soybean Breeders Tour.
 categories: general    
