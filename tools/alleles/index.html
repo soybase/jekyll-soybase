@@ -18,10 +18,10 @@ web_components: true
           {% assign filename_parts = item.name | split: "." %}
           {% assign coll_parts = filename_parts | slice: 1, 4 %}
           {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
-          
+
           {% unless added_collections contains collection_name %}
             {% assign added_collections = added_collections | push: collection_name %}
-            
+
             {% comment %} Fetch synopsis from README file {% endcomment %}
             {% assign synopsis = "" %}
             {% for metadata_file in metadata[1] %}
@@ -29,15 +29,15 @@ web_components: true
                 {% assign synopsis = metadata_file[1].synopsis | replace: '"', '\"' %}
               {% endif %}
             {% endfor %}
-            
+
             {% capture collection_item %}
-              {
-                "name": "{{ item.name }}",
-                "collectionName": "{{ collection_name }}",
-                "synopsis": "{{ synopsis }}"
-              }
+            {
+              "name": "{{ item.name }}",
+              "collectionName": "{{ collection_name }}",
+              "synopsis": "{{ synopsis }}"
+            }
             {% endcapture %}
-            
+
             {% assign collection_item = collection_item | strip_newlines | strip_html %}
             {% assign collections = collections | push: collection_item %}
           {% endunless %}
@@ -49,10 +49,8 @@ web_components: true
 
 {% assign collections = collections | sort %}
 
-<lis-allele-search-element
-  id="allele-search"
-  data-collections='[{{ collections | join: "," }}]'
-></lis-allele-search-element>
+<lis-allele-search-element id="allele-search"
+  data-collections='[{{ collections | join: "," }}]'></lis-allele-search-element>
 
 <script type="module">
   const uri = "https://graphql.lis.ncgr.org/graphql";
