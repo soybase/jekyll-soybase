@@ -10,41 +10,41 @@ web_components: true
 {% assign added_collections = "" | split: "" %}
 
 {% for metadata in site.data.datastore-metadata[genus][species].diversity %}
-  {% for metadata_file in metadata[1] %}
-    {% if metadata_file[0] contains "MANIFEST" %}
-      {% assign manifest = metadata_file %}
-      {% for item in manifest[1] %}
-        {% if item.applications contains "jbrowse" %}
-          {% assign filename_parts = item.name | split: "." %}
-          {% assign coll_parts = filename_parts | slice: 1, 4 %}
-          {% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
+{% for metadata_file in metadata[1] %}
+{% if metadata_file[0] contains "MANIFEST" %}
+{% assign manifest = metadata_file %}
+{% for item in manifest[1] %}
+{% if item.applications contains "jbrowse" %}
+{% assign filename_parts = item.name | split: "." %}
+{% assign coll_parts = filename_parts | slice: 1, 4 %}
+{% capture collection_name %}{{ coll_parts | join: "." }}{% endcapture %}
 
-          {% unless added_collections contains collection_name %}
-            {% assign added_collections = added_collections | push: collection_name %}
+{% unless added_collections contains collection_name %}
+{% assign added_collections = added_collections | push: collection_name %}
 
-            {% comment %} Fetch synopsis from README file {% endcomment %}
-            {% assign synopsis = "" %}
-            {% for metadata_file in metadata[1] %}
-              {% if metadata_file[0] contains "README" %}
-                {% assign synopsis = metadata_file[1].synopsis | replace: '"', '\"' %}
-              {% endif %}
-            {% endfor %}
+{% comment %} Fetch synopsis from README file {% endcomment %}
+{% assign synopsis = "" %}
+{% for metadata_file in metadata[1] %}
+{% if metadata_file[0] contains "README" %}
+{% assign synopsis = metadata_file[1].synopsis | replace: '"', '\"' %}
+{% endif %}
+{% endfor %}
 
-            {% capture collection_item %}
-            {
-              "name": "{{ item.name }}",
-              "collectionName": "{{ collection_name }}",
-              "synopsis": "{{ synopsis }}"
-            }
-            {% endcapture %}
+{% capture collection_item %}
+{
+"name": "{{ item.name }}",
+"collectionName": "{{ collection_name }}",
+"synopsis": "{{ synopsis }}"
+}
+{% endcapture %}
 
-            {% assign collection_item = collection_item | strip_newlines | strip_html %}
-            {% assign collections = collections | push: collection_item %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
+{% assign collection_item = collection_item | strip_newlines | strip_html %}
+{% assign collections = collections | push: collection_item %}
+{% endunless %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
 {% endfor %}
 
 {% assign collections = collections | sort %}
@@ -111,7 +111,7 @@ web_components: true
   async function strainSearchFunction({ collection, fileName }, abortSignal) {
     const vcfUrl = `https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
     const doubleEncoded = encodeURIComponent(encodeURIComponent(vcfUrl));
-    const url = `https://dev.lis.ncgr.org:50043/vcf/samples/${doubleEncoded}`;
+    const url = `http://dev.lis.ncgr.org:50043/vcf/samples/${doubleEncoded}`;
 
     const response = await fetch(url, { signal: abortSignal });
     if (!response.ok) throw new Error("Failed to fetch strains");
@@ -128,7 +128,7 @@ web_components: true
   ) {
     const vcfUrl = `https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
     const doubleEncodedUrl = encodeURIComponent(encodeURIComponent(vcfUrl));
-    const apiBase = "https://dev.lis.ncgr.org:50043/vcf/alleles";
+    const apiBase = "http://dev.lis.ncgr.org:50043/vcf/alleles";
     const path = `${chromosome}:${start}-${end}/${doubleEncodedUrl}`;
     const url = new URL(`${apiBase}/${path}`);
 
