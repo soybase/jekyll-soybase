@@ -111,7 +111,7 @@ web_components: true
   async function strainSearchFunction({ collection, fileName }, abortSignal) {
     const vcfUrl = `https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
     const doubleEncoded = encodeURIComponent(encodeURIComponent(vcfUrl));
-    const url = `http://dev.lis.ncgr.org:50043/vcf/samples/${doubleEncoded}`;
+    const url = `https://services.lis.ncgr.org/ds_utilities/vcf/samples/${doubleEncoded}`;
 
     const response = await fetch(url, { signal: abortSignal });
     if (!response.ok) throw new Error("Failed to fetch strains");
@@ -128,7 +128,7 @@ web_components: true
   ) {
     const vcfUrl = `https://data.legumeinfo.org/Glycine/max/diversity/${collection}/${fileName}`;
     const doubleEncodedUrl = encodeURIComponent(encodeURIComponent(vcfUrl));
-    const apiBase = "http://dev.lis.ncgr.org:50043/vcf/alleles";
+    const apiBase = "https://services.lis.ncgr.org/ds_utilities/vcf/alleles";
     const path = `${chromosome}:${start}-${end}/${doubleEncodedUrl}`;
     const url = new URL(`${apiBase}/${path}`);
 
