@@ -2,8 +2,8 @@
 layout: news-item
 title: SBW 2026 presentations
 author: Jacqueline Campbell
-date:  2026-06-15
-end_date: 2027-06-15
+date:  2026-06-30
+end_date: 2027-06-30
 summary: Multiple SBW 2026 presentations posted on SoyBase.
 categories: general    
 ---
