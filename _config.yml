@@ -57,7 +57,7 @@ liquid:
 strict_front_matter: true
 
 # the GraphQL Server URI; LIS by default
-graphql_uri: https://graphql.soybase.ncgr.org/
+graphql_uri: https://graphql.soybase.ncgr.org/v2.0.1
 
 # Build settings
 theme: jekyll-theme-legumeinfo
@@ -71,9 +71,6 @@ plugins:
   # FIXME: jekyll-sitemap doesn't work with liquid.strict_variables: true
   # https://github.com/jekyll/jekyll-sitemap/issues/272
   - jekyll-sitemap
-
-# LIS Web Components
-web_components_version: 1.8.0
 
 #### jekyll-datapage-generator config
 page_gen:
