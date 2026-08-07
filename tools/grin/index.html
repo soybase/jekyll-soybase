@@ -315,20 +315,31 @@ api-base: https://grin.soybase.org
             selectAllCheckbox.addEventListener('change', (e) => {
                 const checkboxes = traitList.querySelectorAll('input[type=checkbox]');
                 checkboxes.forEach(cb => {
-                    if (cb.checked !== selectAllCheckbox.checked) {
-                        cb.checked = selectAllCheckbox.checked;
-                        cb.dispatchEvent(new Event('change'));
+                    // Only apply to visible items
+                    if (cb.closest('.grin-trait-item').style.display !== 'none') {
+                        if (cb.checked !== selectAllCheckbox.checked) {
+                            cb.checked = selectAllCheckbox.checked;
+                            cb.dispatchEvent(new Event('change'));
+                        }
                     }
                 });
             });
             // Keep select all in sync with individual checkboxes
             const updateSelectAll = () => {
                 const checkboxes = traitList.querySelectorAll('input[type=checkbox]');
-                const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+                const visibleCheckboxes = Array.from(checkboxes).filter(cb => cb.closest('.grin-trait-item').style.display !== 'none');
+
+                if (visibleCheckboxes.length === 0) {
+                    selectAllCheckbox.checked = false;
+                    selectAllCheckbox.indeterminate = false;
+                    return;
+                }
+
+                const checked = visibleCheckboxes.filter(cb => cb.checked).length;
                 if (checked === 0) {
                     selectAllCheckbox.checked = false;
                     selectAllCheckbox.indeterminate = false;
-                } else if (checked === checkboxes.length) {
+                } else if (checked === visibleCheckboxes.length) {
                     selectAllCheckbox.checked = true;
                     selectAllCheckbox.indeterminate = false;
                 } else {
@@ -337,6 +348,7 @@ api-base: https://grin.soybase.org
                 }
             };
             traitList.addEventListener('change', updateSelectAll);
+            classDiv.addEventListener('visibility-changed', updateSelectAll);
             // Initial state
             updateSelectAll();
         });
@@ -467,6 +479,7 @@ api-base: https://grin.soybase.org
             const hasVisibleItems = Array.from(classDiv.querySelectorAll('.grin-trait-item'))
                 .some(item => item.style.display !== 'none');
             classDiv.style.display = hasVisibleItems ? '' : 'none';
+            classDiv.dispatchEvent(new Event('visibility-changed'));
         });
     });
 
@@ -633,7 +646,21 @@ api-base: https://grin.soybase.org
     document.getElementById('loadExampleBtn').onclick = function (e) {
         e.preventDefault();
         document.getElementById('cultivarInput').value = '{{ page.examples }}';
+        document.querySelector('input[name="searchType"][value="selected"]').checked = true;
     };
+
+    // Load from file
+    document.getElementById('cultivarFile').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('cultivarInput').value = e.target.result;
+            document.querySelector('input[name="searchType"][value="selected"]').checked = true;
+        };
+        reader.readAsText(file);
+    });
 
     // Load traits on page load
     document.addEventListener('DOMContentLoaded', loadTraits);
