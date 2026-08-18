@@ -587,7 +587,19 @@ api-base: https://grin.soybase.org
             if (!byAccession[row.cultivar_name]) {
                 byAccession[row.cultivar_name] = { grin_acc_id: row.grin_acc_id, traits: {} };
             }
-            byAccession[row.cultivar_name].traits[row.trait_name] = row.value;
+
+            // Group synonymous traits by trait_db_id (or fallback to trait_name)
+            const key = row.trait_db_id || row.trait_name;
+            const existing = byAccession[row.cultivar_name].traits[key];
+
+            if (existing) {
+                const existingValues = existing.split(', ');
+                if (row.value && !existingValues.includes(row.value)) {
+                    byAccession[row.cultivar_name].traits[key] = existing + ', ' + row.value;
+                }
+            } else {
+                byAccession[row.cultivar_name].traits[key] = row.value || '';
+            }
         });
 
         // Build table
@@ -602,8 +614,9 @@ api-base: https://grin.soybase.org
         Object.entries(byAccession).forEach(([name, obj]) => {
             html += `<tr><td>${name}</td>`;
             traitIds.forEach(id => {
-                const traitName = traitIdToName[id];
-                const value = obj.traits[traitName] !== undefined ? obj.traits[traitName] : '';
+                const trait = state.traitData.find(t => t.id === id);
+                const key = trait && trait.db_id ? trait.db_id : traitIdToName[id];
+                const value = obj.traits[key] !== undefined ? obj.traits[key] : '';
                 html += `<td>${value}</td>`;
             });
             html += '</tr>';
