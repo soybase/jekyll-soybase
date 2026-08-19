@@ -1,0 +1,9 @@
+---
+layout: none
+---
+User-agent: *
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+Disallow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
