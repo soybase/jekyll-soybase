@@ -1,4 +1,558 @@
 ---
-layout: iframe
-iframe_url: "https://nust.soybase.org"
+title: Northern Regional Soybean Uniform Trials (NUST)
+layout: default
+sitemap: tools/nust
+nust_api_url: http://0.0.0.0:3000
 ---
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+
+<style>
+    /* 1. Button Layout */
+    .nust-button-row {
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+        margin: 25px 0 12px;
+    }
+
+    .nust-btn {
+        min-width: 195px;
+    }
+
+    /* 2. Compact Multi-Select Dropdowns */
+    .nust-selects-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px auto;
+    }
+
+    .nust-select-column {
+        width: 155px;
+        max-width: 170px;
+        flex: 0 1 155px;
+        display: flex;
+        flex-direction: column;
+    }
+    .nust-select-column .uk-form-label {
+        min-height: 22px;
+        line-height: 22px;
+        display: block;
+        margin-bottom: 2px;
+    }
+    .nust-select-column .uk-text-meta {
+        height: 42px;
+        min-height: 42px;
+        line-height: 1.35;
+        font-size: 0.8125rem;
+        margin-bottom: 8px !important;
+    }
+    .nust-select-column .uk-select {
+        padding: 4px 6px;
+    }
+
+    /* 3. Textarea & Dropzone Inline Alignment */
+    .nust-strain-textarea {
+        height: 105px !important;
+        min-height: 105px;
+        resize: vertical;
+        margin: 0 !important;
+    }
+
+    .nust-dropzone,
+    *+.nust-dropzone {
+        height: 105px;
+        min-height: 105px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px !important;
+        margin: 0 !important;
+    }
+
+    #strain-search .uk-form-label,
+    #specific-strain-phenotype-search .uk-form-label,
+    #common-test-tool .uk-form-label {
+        min-height: 22px;
+        display: block;
+    }
+
+    #strain-search .uk-text-meta,
+    #specific-strain-phenotype-search .uk-text-meta,
+    #common-test-tool .uk-text-meta {
+        min-height: 22px;
+    }
+
+    .nust-or-divider {
+        font-size: 2.25rem;
+        font-weight: 500;
+        color: #444444;
+        line-height: 1;
+        margin: 15px 0 !important;
+        user-select: none;
+    }
+
+    @media (min-width: 960px) {
+        .nust-or-divider {
+            margin: 0 !important;
+        }
+    }
+
+    /* 4. Section Spacing & Centered Dividers */
+    .nust-tool-section:not(:last-child) {
+        margin-bottom: 0 !important;
+    }
+
+    .nust-divider {
+        margin-top: 45px !important;
+        margin-bottom: 45px !important;
+    }
+
+    /* 5. Smooth Scrolling & Sticky Navbar Offset */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .nust-tool-section,
+    #results-container,
+    #table-checks,
+    #table-phenotypes,
+    #table-replicates,
+    #table-locations,
+    #table-strains,
+    #results-toolbar {
+        scroll-margin-top: 110px;
+    }
+
+    /* 6. Results Navigation Chips & Toolbar */
+    .nust-toolbar-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #3b5c3b;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .nust-table-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        background: #ffffff;
+        border: 1px solid #cbdacb;
+        color: #235626;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-decoration: none !important;
+        transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nust-table-chip:hover {
+        background: #235626;
+        border-color: #235626;
+        color: #ffffff;
+    }
+
+    .nust-table-chip:hover .nust-table-count {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+    }
+
+    .nust-table-count {
+        display: inline-block;
+        background: #e6efe6;
+        color: #235626;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 1px 7px;
+        line-height: 1.4;
+    }
+
+    .nust-export-btn {
+        background: #ffffff;
+        border: 1px solid #cbdacb;
+        color: #2b2b2b;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        height: 34px;
+        line-height: 32px;
+        padding: 0 14px;
+        text-transform: none;
+        letter-spacing: 0.2px;
+        transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nust-export-btn:hover,
+    .nust-export-btn:focus {
+        background: #f0f7f0;
+        border-color: #235626;
+        color: #235626;
+    }
+</style>
+
+<div class="uk-container uk-container-large">
+    <div id="nust-header" class="uk-margin-top uk-margin-bottom">
+        <h1 class="uk-margin-small-bottom">Northern Regional Soybean Uniform Trials (NUST)</h1>
+        <p class="uk-margin-remove-top">
+            Query phenotypic values, strain evaluations, and common test comparisons from the USDA-ARS Northern Uniform
+            Soybean Trials database.
+        </p>
+    </div>
+
+    <!-- Global Alert Container -->
+    <div id="nust-alert-container" class="uk-margin"></div>
+
+    <!-- Main Search Interface (hidden when viewing results) -->
+    <div id="nust-search-interface">
+        <!-- Tool Quick Navigation -->
+        <nav id="nust-main-nav" class="uk-flex uk-margin-medium-top uk-margin-medium-bottom">
+            <div class="uk-margin-auto uk-flex uk-flex-wrap uk-gap-small">
+                <button class="uk-button uk-button-primary" id="goto-1">General Phenotype Search Tool</button>
+                <button class="uk-button uk-button-primary" id="goto-2">Strain Search Tool</button>
+                <button class="uk-button uk-button-primary" id="goto-3">Specific Strain Phenotype Search Tool</button>
+                <button class="uk-button uk-button-primary" id="goto-4">Common Test Tool</button>
+            </div>
+        </nav>
+
+        <!-- Tool 1: General Phenotype Search Tool -->
+        <section id="general-phenotype-search" class="nust-tool-section">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2 class="uk-card-title uk-margin-remove-bottom">General Phenotype Search Tool</h2>
+                <p class="uk-text-italic uk-margin-small-top uk-text-muted">
+                    Retrieve some or all phenotypic values for all or some strains from a given year(s) and test(s). You
+                    can limit your query to a given location, strain, or phenotype.
+                </p>
+
+                <form id="general-phenotype-form">
+                    <div class="nust-selects-container uk-margin">
+                        <div class="nust-select-column">
+                            <label for="year-select1" class="uk-form-label uk-text-bold">Year:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">
+                                Hold <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> to select multiple
+                            </div>
+                            <select class="uk-select" multiple size="15" name="years" id="year-select1">
+                                <option disabled value="default">Select year...</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="test-select1" class="uk-form-label uk-text-bold">Test:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">
+                                'ALL' selects all tests
+                            </div>
+                            <select class="uk-select" multiple size="15" name="tests" id="test-select1">
+                                <option disabled value="default">Select test...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="location-select1" class="uk-form-label uk-text-bold">Location:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">
+                                'ALL' selects all locations
+                            </div>
+                            <select class="uk-select" multiple size="15" name="locations" id="location-select1">
+                                <option disabled value="default">Select location...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="strain-select1" class="uk-form-label uk-text-bold">Strain:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">
+                                'ALL' selects all strains
+                            </div>
+                            <select class="uk-select" multiple size="15" name="strains" id="strain-select1">
+                                <option disabled value="default">Select strain...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="phenotype-select1" class="uk-form-label uk-text-bold">Phenotype:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">
+                                'ALL' selects all phenotypes
+                            </div>
+                            <select class="uk-select" multiple size="15" name="phenotypes" id="phenotype-select1">
+                                <option disabled value="default">Select phenotype...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="nust-button-row">
+                        <button class="uk-button uk-button-primary nust-btn" type="submit" id="retrieve-results1"
+                            disabled>Retrieve results</button>
+                        <button class="uk-button uk-button-primary nust-btn reset-button" type="button"
+                            data-form="general-phenotype-form">Reset Selections</button>
+                    </div>
+
+                    <div class="uk-margin-top uk-text-meta">
+                        <span class="uk-text-bold">Tips:</span>
+                        <ul class="uk-list uk-list-bullet uk-margin-remove-top">
+                            <li>The dropdown lists filter down automatically as you make selections.</li>
+                            <li>To select multiple entries: hold <kbd>Ctrl</kbd> (Windows/Linux) or <kbd>Cmd</kbd> (Mac)
+                                while clicking, or hold <kbd>Shift</kbd> to select a range.</li>
+                            <li>The "Retrieve Results" button is enabled once you have made selections in all five
+                                columns.</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <hr class="uk-divider-icon nust-divider">
+
+        <!-- Tool 2: Strain Search Tool -->
+        <section id="strain-search" class="nust-tool-section">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2 class="uk-card-title uk-margin-remove-bottom">Strain Search Tool</h2>
+                <p class="uk-text-italic uk-margin-small-top uk-text-muted">
+                    Enter strain names to retrieve all the trial years and tests in which those strains were evaluated.
+                </p>
+
+                <form id="strain-search-form">
+                    <div class="uk-grid uk-grid-medium" uk-grid>
+                        <div class="uk-width-expand@m">
+                            <label for="strain-input2" class="uk-form-label uk-text-bold">Type or paste strain
+                                names:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">One strain name per line (do not use
+                                commas)</div>
+                            <textarea class="uk-textarea nust-strain-textarea" placeholder="e.g.&#10;IA3023&#10;MN1410"
+                                name="strains" id="strain-input2"></textarea>
+                            <div class="uk-margin-small-top">
+                                <button type="button"
+                                    class="uk-button uk-button-default uk-button-small example-strain-button"
+                                    data-target="strain-input2">
+                                    Load Example Strains
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="uk-width-auto@m uk-flex uk-flex-middle uk-flex-center uk-text-center">
+                            <h1 class="nust-or-divider">OR</h1>
+                        </div>
+
+                        <div class="uk-width-expand@m">
+                            <label for="strain-file2" class="uk-form-label uk-text-bold">Upload a text file of
+                                names:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">Plain text (.txt) file with one strain name
+                                per line</div>
+                            <div class="uk-placeholder uk-text-center nust-dropzone" id="strain-file-dropzone2">
+                                <span uk-icon="icon: cloud-upload; ratio: 1.5"></span>
+                                <div class="uk-margin-small-top">
+                                    <span class="uk-text-middle">Attach file by dropping it here or </span>
+                                    <div uk-form-custom>
+                                        <input type="file" accept=".txt" id="strain-file2">
+                                        <span class="uk-link">select one</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <progress id="strain-progressbar" class="uk-progress uk-margin-small-top" value="0"
+                                max="100" hidden></progress>
+                        </div>
+                    </div>
+
+                    <div class="nust-button-row">
+                        <button class="uk-button uk-button-primary nust-btn" type="submit" id="retrieve-results2"
+                            disabled>Retrieve results</button>
+                        <button class="uk-button uk-button-primary nust-btn reset-button" type="button"
+                            data-form="strain-search-form">Reset Selections</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <hr class="uk-divider-icon nust-divider">
+
+        <!-- Tool 3: Specific Strain Phenotype Search Tool -->
+        <section id="specific-strain-phenotype-search" class="nust-tool-section">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2 class="uk-card-title uk-margin-remove-bottom">Specific Strain Phenotype Search Tool</h2>
+                <p class="uk-text-italic uk-margin-small-top uk-text-muted">
+                    Retrieve phenotypic data for a specific list of strains. The query can be filtered by year, test,
+                    location, and phenotype.
+                </p>
+
+                <form id="specific-strain-phenotype-form">
+                    <div class="nust-selects-container uk-margin">
+                        <div class="nust-select-column">
+                            <label for="year-select3" class="uk-form-label uk-text-bold">Year:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">Hold <kbd>Ctrl</kbd>/<kbd>Cmd</kbd></div>
+                            <select class="uk-select" multiple size="15" name="years" id="year-select3">
+                                <option disabled value="default">Select year...</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="test-select3" class="uk-form-label uk-text-bold">Test:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">'ALL' selects all</div>
+                            <select class="uk-select" multiple size="15" name="tests" id="test-select3">
+                                <option disabled value="default">Select test...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="location-select3" class="uk-form-label uk-text-bold">Location:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">'ALL' selects all</div>
+                            <select class="uk-select" multiple size="15" name="locations" id="location-select3">
+                                <option disabled value="default">Select location...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="nust-select-column">
+                            <label for="phenotype-select3" class="uk-form-label uk-text-bold">Phenotype:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">'ALL' selects all</div>
+                            <select class="uk-select" multiple size="15" name="phenotypes" id="phenotype-select3">
+                                <option disabled value="default">Select phenotype...</option>
+                                <option value="ALL">ALL</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-grid uk-grid-medium uk-margin-top" uk-grid>
+                        <div class="uk-width-expand@m">
+                            <label for="strain-input3" class="uk-form-label uk-text-bold">Target Strains:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">One strain name per line</div>
+                            <textarea class="uk-textarea nust-strain-textarea" placeholder="Enter strain names..."
+                                name="strains" id="strain-input3"></textarea>
+                            <div class="uk-margin-small-top">
+                                <button type="button"
+                                    class="uk-button uk-button-default uk-button-small example-strain-button"
+                                    data-target="strain-input3">
+                                    Load Example Strains
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="uk-width-auto@m uk-flex uk-flex-middle uk-flex-center uk-text-center">
+                            <h1 class="nust-or-divider">OR</h1>
+                        </div>
+
+                        <div class="uk-width-expand@m">
+                            <label for="strain-file3" class="uk-form-label uk-text-bold">Upload a text file of
+                                names:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">Plain text (.txt) file with one strain name
+                                per line</div>
+                            <div class="uk-placeholder uk-text-center nust-dropzone" id="strain-file-dropzone3">
+                                <span uk-icon="icon: cloud-upload; ratio: 1.5"></span>
+                                <div class="uk-margin-small-top">
+                                    <span class="uk-text-middle">Attach file by dropping it here or </span>
+                                    <div uk-form-custom>
+                                        <input type="file" accept=".txt" id="strain-file3">
+                                        <span class="uk-link">select one</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <progress id="specific-strain-progressbar" class="uk-progress uk-margin-small-top" value="0"
+                                max="100" hidden></progress>
+                        </div>
+                    </div>
+
+                    <div class="nust-button-row">
+                        <button class="uk-button uk-button-primary nust-btn" type="submit" id="retrieve-results3"
+                            disabled>Retrieve results</button>
+                        <button class="uk-button uk-button-primary nust-btn reset-button" type="button"
+                            data-form="specific-strain-phenotype-form">Reset Selections</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <hr class="uk-divider-icon nust-divider">
+
+        <!-- Tool 4: Common Test Tool -->
+        <section id="common-test-tool" class="nust-tool-section uk-margin-large-bottom">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2 class="uk-card-title uk-margin-remove-bottom">Common Test Tool</h2>
+                <p class="uk-text-italic uk-margin-small-top uk-text-muted">
+                    Enter multiple strain names to find all trial years and tests in which all specified strains were
+                    evaluated together.
+                </p>
+
+                <form id="common-test-form">
+                    <div class="uk-grid uk-grid-medium" uk-grid>
+                        <div class="uk-width-expand@m">
+                            <label for="strain-input4" class="uk-form-label uk-text-bold">Type or paste strain
+                                names:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">One strain name per line (e.g. IA3023,
+                                MN1410)</div>
+                            <textarea class="uk-textarea nust-strain-textarea" placeholder="Enter strain names.."
+                                name="strains" id="strain-input4"></textarea>
+                            <div class="uk-margin-small-top">
+                                <button type="button"
+                                    class="uk-button uk-button-default uk-button-small example-strain-button"
+                                    data-target="strain-input4">
+                                    Load Example Strains
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="uk-width-auto@m uk-flex uk-flex-middle uk-flex-center uk-text-center">
+                            <h1 class="nust-or-divider">OR</h1>
+                        </div>
+
+                        <div class="uk-width-expand@m">
+                            <label for="strain-file4" class="uk-form-label uk-text-bold">Upload a text file of
+                                names:</label>
+                            <div class="uk-text-meta uk-margin-small-bottom">Plain text (.txt) file with one strain name
+                                per line</div>
+                            <div class="uk-placeholder uk-text-center nust-dropzone" id="strain-file-dropzone4">
+                                <span uk-icon="icon: cloud-upload; ratio: 1.5"></span>
+                                <div class="uk-margin-small-top">
+                                    <span class="uk-text-middle">Attach file by dropping it here or </span>
+                                    <div uk-form-custom>
+                                        <input type="file" accept=".txt" id="strain-file4">
+                                        <span class="uk-link">select one</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <progress id="common-test-progressbar" class="uk-progress uk-margin-small-top" value="0"
+                                max="100" hidden></progress>
+                        </div>
+                    </div>
+
+                    <div class="nust-button-row">
+                        <button class="uk-button uk-button-primary nust-btn" type="submit" id="retrieve-results4"
+                            disabled>Retrieve results</button>
+                        <button class="uk-button uk-button-primary nust-btn reset-button" type="button"
+                            data-form="common-test-form">Reset Selections</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dynamic Results Container -->
+    <div id="results-container" class="nust-tool-section uk-margin-large-bottom" hidden>
+        <div id="results-loader" class="uk-card uk-card-default uk-card-body uk-text-center uk-margin-top" hidden>
+            <div uk-spinner="ratio: 1.5"></div>
+            <h3 class="uk-card-title uk-margin-small-top uk-margin-remove-bottom">Querying NUST Database</h3>
+            <p class="uk-text-muted uk-margin-small-top loader-text">Fetching phenotypic observations and formatting
+                data tables...</p>
+        </div>
+        <div id="results-content"></div>
+    </div>
+
+    <footer class="uk-text-center uk-margin-large-top uk-margin-bottom uk-text-muted">
+        <p class="uk-text-meta">
+            Funded by the USDA-ARS. Developed by the USDA-ARS SoyBase and Legume Clade Database group at Iowa State
+            University, Ames, IA.
+        </p>
+    </footer>
+</div>
+
+<script>
+    window.NUST_API_URL = "{{ page.nust_api_url | default: 'https://nust.soybase.org' }}";
+</script>
+<script src="/assets/js/nust.js"></script>
